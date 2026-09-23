@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  GATE 1F, STAP NUL: DE CATEGORIE. Verplicht sinds 11-09-2026 (Zoe).
+  ===========================================================================
+  Tak         : G, Steigerhout
+  Kennisbank  : KENNIS/STEIGERHOUT-EN-CONSTRUCTIEF.md
+  Niet van toepassing op deze tak: P2: steigerhout komt op 2.500 mm en zaag je wel zelf
+
+  Draai de toets met de tak erbij, anders draait hij plat en kan hij goed
+  werk afkeuren:
+      python3 "CanDo SEO/_tools/gate1f-verbodenlijst.py" --tak G 29-projectpagina.html
+
+  Staat deze kop er niet, dan is de toets niet uitgevoerd, hoe schoon de
+  uitslag ook oogt. Routeringstabel: 04-VORM/VERBODENLIJST.md sectie 0.
+  ===========================================================================
+-->
+<html lang="nl">
+<head>
+<!--
+  ===========================================================================
+  STRAMIEN 29: PROJECTPAGINA (LAAG 7 VAN HET FUNDAMENT)
+  Gebouwd 09-09-2026, in de visuele taal van stramien 27. Dit bestand is de
+  VORM; de uitwerking per project staat in Uitwerking/nl-nl-steigerhout-{project}.html.
+  Uitgewerkt voorbeeld: de STEIGERHOUTEN BANK, want daarvoor bestaat het
+  maakplan (stramien 06) al. Zo is het verschil tussen de twee typen direct
+  zichtbaar op hetzelfde onderwerp.
+
+  WAAROM DIT STRAMIEN BESTAAT
+   De projectlaag is bij steigerhout bijna acht keer groter dan de materiaallaag:
+   103.570 zoekopdrachten per maand tegenover 13.050. Tafel 19.510, bank 17.400,
+   kast 13.250, bed 10.700. Er staan 23 projectpagina's live en er was geen vorm.
+   [BRON: KENNIS/STEIGERHOUT-EN-CONSTRUCTIEF.md D2 en veld 20]
+
+  DE NEGEN BLOKKEN, VOLGORDE IS BINDEND
+   1 Hero                    full-bleed EINDRESULTAAT, korte definitie, EEN knop
+                             naar de bouwtekening, plus een feitenstrook met
+                             klusniveau, tijd en plek
+   2 Zo ziet hij eruit       drie foto's van hetzelfde eindresultaat, benoemd
+                             per aanzicht. Geen tekstblok, geen links. Op mobiel
+                             een horizontale rij
+   3 Waar past hij           editorial met beeld LINKS, plus binnen dezelfde zone
+                             de drie-punts inschatting: klusniveau, tijd, wat je
+                             moet kunnen
+   4 Welk hout heb je nodig  split met beeld RECHTS. Welke plank en welke lat,
+                             met doorklik naar de materiaal- en productlaag.
+                             GEEN aantallen, GEEN zaaglijst
+   5 #bouwtekening           DE VERVOLGSTAP. Donkere band, een primaire knop.
+                             Dit blok bewaakt de grens met stramien 06. Er
+                             stond een getekende bouwtekening naast; die is
+                             eruit, zie WEGGEHAALD
+   6 Varianten               drie tekstkaarten naar hetzelfde project in een
+                             andere maat of uitvoering, elk met een eigen
+                             bestemming. Er stonden drie schema's in; die
+                             zijn eruit, zie WEGGEHAALD
+   7 Zelf gemaakt            UGC-haak, klantfoto's. OPTIONEEL BLOK, zie hieronder
+   8 Veelgestelde vragen     elke vraag een eigen details-item, minimaal vier
+                             zinnen antwoord (register D21)
+   9 Verder kijken           rustige stap naar de andere projecten met dezelfde
+                             plank
+
+  ==== HET ONDERSCHEID MET STRAMIEN 06 (MAAKPLAN). DIT IS DE KERN ====
+   De twee pagina's mogen niet samenvallen. Vallen ze samen, dan verlies je de
+   inspiratie-ingang, en dat is precies de ingang die 82,5 procent van de vraag
+   draagt. [BRON: KENNIS/STEIGERHOUT-EN-CONSTRUCTIEF.md D4 punt 2 en F1]
+
+   |                 | 29 PROJECTPAGINA            | 06 MAAKPLAN                  |
+   | vraag           | wat maak ik hiermee en hoe  | geef mij de maten en de      |
+   |                 | ziet dat eruit              | materiaallijst               |
+   | beslisstaat     | inspiratie                  | messy middle plus aankoop    |
+   | beeld           | eindresultaat in een echte  | stapbeeld en bouwtekening    |
+   |                 | ruimte, meerdere aanzichten |                              |
+   | hout            | WELKE plank en WELKE lat    | HOEVEEL planken en latten,   |
+   |                 | en waarom, zonder aantallen | per onderdeel met de maat    |
+   | maten           | geen enkele onderdeelmaat   | alle onderdeelmaten          |
+   | stappen         | geen genummerd stappenplan  | genummerd stappenplan met    |
+   |                 |                             | de valkuil bij de stap       |
+   | actie           | doorklik naar de            | retailerklik plus download   |
+   |                 | bouwtekening of het maakplan| van de bouwtekening          |
+
+   De projectpagina ROUTEERT naar het maakplan, hij VERVANGT het niet.
+   Blok 5 zegt dat ook letterlijk tegen de bezoeker, zodat de grens niet alleen
+   in dit commentaar bestaat maar ook op de pagina zelf.
+   Praktische toets bij het bouwen: staat er ergens een getal in millimeters van
+   een ONDERDEEL, dan hoort dat getal op het maakplan en niet hier. De enige
+   maten die hier mogen staan zijn de maten van de PLANK die je koopt, want dat
+   is materiaalinformatie en geen bouwinformatie.
+
+  WAT HIER NIET HOORT
+   - geen productlisting of PLP-tegels als antwoord op een inspiratievraag
+   - geen volledige materiaallijst met aantallen en onderdeelmaten (stramien 06)
+   - geen genummerd stappenplan (stramien 06)
+   - geen configurator en geen op-maat-CTA. Steigerhout is EAN, vaste lengte
+     2.500 mm, geen maatwerk. [BRON: veld 17, register D22]
+   - geen eigen afwerkproduct als CTA. CanDo voert geen beits, olie of lak.
+     Adviseren mag, doorlinken naar een eigen middel kan niet. [BRON: A4 en F2]
+   - geen prijs als argument en geen generieke levertijd [BRON: CLAUDE.md par. 5]
+   - geen reviewblok en geen sterren. Er draait geen reviewplatform op deze laag;
+     social proof loopt via blok 7, de klantfoto
+   - geen doorbuigingstabel in millimeters. De berekende waarden in veld 3 staan
+     op E-waarden die nog niet zijn bevestigd en zijn dus interne kennis
+   - geen ankerbalk of chipsnavigatie (registerregel A22/A44)
+
+  WAAR DIT NAARTOE ROUTEERT
+   primair   /nl-nl/steigerhout/bouwtekening-loungebank-steigerhout
+             de enige dominante actie, twee keer op de pagina (blok 1 en blok 5),
+             beide keren dezelfde bestemming
+   materiaal /nl-nl/hout/steigerhout/onbehandeld/  en  /gekleurd/
+             plus /nl-nl/hout/steigerhout/ als de PLP-stap richting de retailer.
+             Dit is het meetpunt van de categorie: de doorklik van projectpagina
+             naar productpagina, daarna de uitgaande retailerklik [BRON: veld 21]
+   variant   /nl-nl/hout/steigerhout/steigerbuizen-en-verbinders/
+             en de zusterprojecten onder /nl-nl/steigerhout/
+   slot      /nl-nl/steigerhout (het projectoverzicht)
+
+  BEELD
+   Alle eindresultaat- en ruimtebeelden zijn echte Bynder-foto's, gecontroleerd
+   op 09-09-2026: alle negen URL's geven 200 terug en zijn visueel bekeken.
+   Bron van de asset-id's: Desktop/Marketingplan/Strategie mijn Scope/Beeld/Meta_data_beeld_cando_*.csv
+   URL-regel: Asset id uit de CSV -> kleine letters, extra koppelteken zodat het
+   een geldige uuid wordt (8-4-4-4-12), spaties in de bestandsnaam worden
+   koppeltekens, extensie wordt .jpg:
+   https://delihome.getbynder.com/asset/{uuid}/medium-JPG/{Bestandsnaam}.jpg
+
+   BEWUSTE UITZONDERING OP REGISTERREGEL E6. Blok 1, 2 en 3 tonen dezelfde bank
+   uit meerdere hoeken. E6 verbiedt hergebruik van een serie als DECOR bij
+   verschillende onderwerpen. Op een projectpagina is het eindresultaat het
+   onderwerp zelf, dus meerdere aanzichten van hetzelfde object zijn juist de
+   inhoud. Daarom staat er per foto ook benoemd welk aanzicht het is.
+
+   Blok 6 gebruikte SCHEMA'S en geen foto's, want je kunt dezelfde bank niet
+   fotograferen in een lengte die niet gebouwd is. Die schema's zijn op 11-09
+   vervallen, zie WEGGEHAALD hieronder. Bestaat er een echte foto van een
+   variant, dan komt die op die plek.
+
+  ⛔ WEGGEHAALD OP 11-09-2026, BESLUIT ZOE, VERBODENLIJST B1
+   "De illustraties die worden gemaakt, dat doen wij niet. Wij hebben alleen
+   afbeeldingen met CanDo of onze eigen gemaakte illustraties. Behalve die
+   van de doorbuig bij massieve panelen en timmerpanelen."
+   Uit dit bestand zijn TWAALF getekende onderdelen verwijderd, verdeeld over
+   vijf blokken. De negen echte Bynder-foto's in blok 1, 2, 3 en 4 blijven
+   ongewijzigd staan.
+
+   1 BLOK 3, DE DRIE-PUNTS INSCHATTING. Drie pictogrammen van 32 px die op
+     26 px gerenderd werden: een huis bij klusniveau, een klok bij tijd, een
+     zaagblad bij wat je moet kunnen. Alle drie beelden een voorwerp uit, dus
+     het zijn illustraties en geen interface-tekens.
+     WAT ER MET HET BLOK GEBEURDE: de drie feiten staan er nog, nu puur
+     typografisch, als vetgezette regel plus toelichting. De tekst is
+     ONGEWIJZIGD.
+
+   2 BLOK 5, DE BOUWTEKENING. Een SVG van 460 bij 320: het zijaanzicht van de
+     bank met maatlijnen voor lengte, latafstand en rughoogte, met het
+     onderschrift "zijaanzicht, alle maten in de bouwtekening".
+     WAT ER MET HET BLOK GEBEURDE: de donkere band was copy links en de
+     tekening rechts, en is nu EEN kolom van maximaal 640 px. De knop naar de
+     bouwtekening en de inhoudsopgave eronder zijn ongewijzigd, en dat is
+     precies wat dit blok moet doen.
+     WAT ER MET DE TEKST GEBEURDE: niets. De opsomming noemde de maten, het
+     aantal planken en de latafstand al met zoveel woorden.
+
+   3 BLOK 6, DE DRIE VARIANTEN. Drie SVG's van 260 bij 150: de bank zonder
+     rugleuning, het bovenaanzicht van de hoekbank met de gedeelde hoek, en
+     het onderstel van steigerbuis.
+     WAT ER MET HET BLOK GEBEURDE: de kaart was een beeldvak van 220 px met
+     tekst eronder, en is nu een tekstkaart met titel, een regel uitleg en de
+     accentpijl. Er staat GEEN leeg beeldvak boven de tekst (B3). Op mobiel
+     stapelen de drie kaarten nu in plaats van horizontaal te schuiven:
+     zonder beeld leest schuiven slechter.
+     WAT ER MET DE TEKST GEBEURDE: niets. De labels in de tekeningen ("geen
+     rugleuning", "bovenaanzicht, gedeelde hoek", "onderstel van buis")
+     herhaalden de kaarttitel en de regel eronder.
+
+   4 BLOK 7, DE UGC-TEGELS. Vier identieke tegels van 34 px met een
+     camera-icoon en het woord Klantfoto.
+     WAT ER MET HET BLOK GEBEURDE: het hele tegelraster is eruit en er staat
+     NIETS voor in de plaats. Een leeg tegelraster is precies de placeholder
+     die B3 verbiedt, en de tegels waren zelf de placeholder. De copy blijft
+     staan in EEN kolom.
+     WAT ER MET DE TEKST GEBEURDE: de kleine alinea begon met "Placeholder.
+     Deze tegels zijn geen echte klantfoto's". Die zin gaat over de tegels en
+     kan dus niet meer. Er staat nu dat het blok op echte klantfoto's wacht en
+     dat de aanleverroute nog moet worden vastgelegd. Zelfde boodschap, zonder
+     te wijzen naar beeld dat er niet is.
+     [besluit nodig] DIT BLOK IS NU EEN TEKSTBLOK ZONDER FUNCTIE. Het bestond
+     om klantfoto's te tonen. Blok 7 was al gemarkeerd als OPTIONEEL, "zonder
+     echte klantfoto's bouw je het blok niet", dus in een uitwerking laat je
+     het weg tot de foto's er zijn. Het blijft in het stramien staan omdat het
+     stramien de vorm bezit en niet de vulling. Zoe beslist: weglaten tot de
+     UGC-route loopt, of laten staan als tekstuele haak.
+
+   5 BLOK 9, HET SLOT. Een SVG van 420 bij 280 met drie geschetste projecten
+     naast elkaar, bank, tafel en plantenbak, onder de regel "een plank, drie
+     projecten".
+     WAT ER MET HET BLOK GEBEURDE: de donkere kaart was copy links en de
+     tekening rechts, en is nu EEN kolom. De twee knoppen zijn ongewijzigd.
+     WAT ER MET DE TEKST GEBEURDE: niets. De alinea noemt de tafel, de
+     plantenbak en de kast al bij naam.
+
+   [besluit nodig] WELK BEELD HIER NODIG IS, DRIE DINGEN
+   a Blok 6, de varianten. Drie echte foto's van de bank in een andere
+     uitvoering: zonder rugleuning, als hoekbank, en op een onderstel van
+     steigerbuis. Bestaan niet in Bynder, gecontroleerd 09-09 op de vijf
+     Meta_data_beeld_cando-bestanden. Dit is de zwaarste van de drie, want
+     dit blok routeert naar drie zusterprojecten.
+   b Blok 7, klantfoto's. Bestaat per definitie niet in Bynder. Hangt aan het
+     besluit over de aanleverroute, zie OPEN PUNTEN 3.
+   c Blok 5 en blok 9 hebben GEEN beeld nodig. De tekst draagt daar zichzelf
+     en een extra beeld zou decor zijn.
+   Zie 05-BESLUITEN/FOTOBRIEF-AFWERKING.md sectie 5.
+
+  OPEN PUNTEN, MEENEMEN NAAR DE UITWERKING
+   1 De fontlink bevat een Magento-versienummer dat bij de volgende deploy breekt.
+     In de CMS-implementatie moet het font door het platform komen. (gelijk aan 27)
+   2 De driewegkannibalisatie op de term steigerhout is niet opgelost:
+     /hout/steigerhout/ (PLP), /nl-nl/steigerhout en /nl-nl/inspiratie/steigerhout
+     concurreren. [BRON: SITEMAP-HOUT-IA.md punt 9] Het slotblok linkt nu naar
+     /nl-nl/steigerhout. Zodra het redirectbesluit valt, wijzigt die link mee.
+   3 Blok 7 is OPTIONEEL. Zonder echte klantfoto's bouw je het blok niet, net
+     zoals het videoblok in stramien 06. De gemarkeerde tegels die hier stonden
+     zijn op 11-09 verwijderd, want het waren getekende tegels (B1). Er staat
+     nu alleen tekst. Nog te beslissen: langs welke route levert een klant zijn
+     foto aan, en of dit blok tot die tijd in een uitwerking meegaat. Zie
+     WEGGEHAALD punt 4 hierboven.
+   4 Gekleurd steigerhout draagt op de PDP de tekst "voor gebruik binnenshuis",
+     maar sectie C1 documenteert een tegenspraak in onze eigen data. Zolang die
+     niet is opgelost staat er op deze pagina GEEN uitspraak over gekleurd
+     steigerhout buiten. [te bevestigen]
+  ===========================================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steigerhouten bank, zo ziet hij eruit en dit heb je nodig | CanDo</title>
+<meta name="description" content="Bekijk hoe een steigerhouten bank eruitziet, waar hij past en welke planken je ervoor nodig hebt. Daarna pak je de bouwtekening met de maten erbij.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{
+  --text:#20272b;
+  --muted:#666b70;
+  --accent:#F7901E;
+  --accent-dark:#d95f18;
+  --border:#e5ded4;
+  --bg-soft:#f7f2ea;
+  --bg-light:#fbfaf7;
+  --bg-warm:#f4eadc;
+  --white:#fff;
+  --dark:#211914;
+  --radius:8px;
+  --shadow:0 8px 22px rgba(32,39,43,.045);
+  --shadow-hover:0 12px 28px rgba(32,39,43,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#fff;color:var(--text);font-family:Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.cando-project{width:100%;overflow-x:clip;background:#fff;color:var(--text)}
+.cando-project *,.cando-project *::before,.cando-project *::after{box-sizing:border-box}
+.cando-project h1,.cando-project h2,.cando-project h3,.cando-project .cando-cat-button,.cando-project summary,.cando-project .variant-title{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.cando-project h1{margin:0 0 14px;font-size:56px;line-height:.98;font-weight:700;color:#fff;letter-spacing:-.02em}
+.cando-project h2{margin:0;font-size:30px;line-height:1.2;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.cando-project h3{margin:0 0 7px;font-size:19px;line-height:1.3;font-weight:700;color:var(--text)}
+.cando-project p{margin:0;font-size:16px;line-height:1.68;color:#414141}
+.cando-project ul{margin:0;padding:0}
+.cando-project a{text-decoration:none;font-weight:700}
+.cando-project :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.cando-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+.cando-section{position:relative;padding:58px 0}
+.cando-section--soft{background:var(--bg-soft)}
+.cando-section--light{background:var(--bg-light)}
+.cando-section-head{max-width:720px;margin-bottom:28px}
+.cando-section-head p{margin-top:10px;color:var(--muted)}
+.cando-eyebrow{display:block;margin:0 0 8px;color:var(--accent);font-size:11px;line-height:1.2;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+
+/* Canonieke CanDo buttonstijl, gelijk aan stramien 27 */
+.cando-cat-button-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:22px}
+.cando-cat-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 24px;border-radius:999px;font-size:16px;line-height:1.2;font-weight:700;text-decoration:none;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+.cando-cat-button:active{transform:translateY(1px)}
+.cando-cat-button--primary{background:var(--accent);border:1px solid var(--accent);color:#fff!important}
+.cando-cat-button--primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff!important}
+.cando-cat-button--secondary{background:var(--bg-soft);border:1px solid var(--border);color:var(--text)!important}
+.cando-cat-button--secondary:hover{background:#efe4d6;border-color:#efe4d6;color:var(--text)!important}
+.cando-cat-button--dark{background:transparent;border:1px solid rgba(255,255,255,.7);color:#fff!important}
+.cando-cat-button--dark:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* 1. Hero: het eindresultaat vult het scherm. Een boodschap, een knop. */
+.cando-cat-hero{position:relative;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;background:#222}
+.cando-cat-hero__image{position:absolute;inset:0;z-index:0;margin:0;background:#222}
+.cando-cat-hero__image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cando-cat-hero__image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(32,39,43,.86) 0%,rgba(32,39,43,.62) 45%,rgba(32,39,43,.18) 100%)}
+.cando-cat-hero__inner{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:104px 18px 62px}
+.cando-cat-hero__content{max-width:580px}
+.cando-cat-hero p{max-width:520px;color:#fff!important;font-size:16px;line-height:1.64;opacity:.96}
+.cando-cat-hero .cando-cat-button-row{margin-top:26px}
+/* Feiten over de KLUS, niet over het product. Zelfde model als stramien 06. */
+.hero-facts{display:flex;flex-wrap:wrap;gap:9px 22px;margin-top:20px}
+.hero-facts span{display:inline-flex;align-items:center;gap:8px;color:#fff;font-size:13px;font-weight:700;opacity:.95;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.hero-facts span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:0 0 auto}
+
+/* 2. Het eindresultaat uit drie hoeken. Beeld draagt dit blok volledig. */
+.result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.result-figure{margin:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.result-figure__image{height:300px;overflow:hidden;background:var(--bg-warm)}
+.result-figure__image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.result-figure figcaption{padding:15px 18px 17px;font-size:14px;line-height:1.5;color:var(--muted);border-top:1px solid var(--border)}
+.result-figure figcaption strong{display:block;margin-bottom:3px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:16px;color:var(--text)}
+
+/* 3. Waar past hij: beeld LINKS, tekst rechts, gelijke hoogte (registerregel E2). */
+.fit-editorial{display:grid;grid-template-columns:1.02fr .98fr;align-items:stretch;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff}
+.fit-editorial__media{min-height:440px;background:var(--bg-warm);overflow:hidden}
+.fit-editorial__media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.fit-editorial__copy{padding:44px 44px 40px;display:flex;flex-direction:column;justify-content:center}
+.fit-editorial__copy p+p{margin-top:14px}
+.fit-editorial__copy .intro{font-size:17px;color:#343a3e}
+.clean-list{list-style:none;display:grid;gap:11px;margin-top:16px}
+.clean-list li{position:relative;padding-left:19px;font-size:15px;line-height:1.55;color:#414141}
+.clean-list li::before{content:"\203A";position:absolute;left:0;top:-1px;color:var(--accent);font-size:18px;font-weight:800}
+.clean-list strong{color:var(--text)}
+/* De durf-ik-dit-inschatting. Iconen als SVG, nooit als teken uit een font. */
+.fit-check{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:32px;padding-top:26px;border-top:1px solid var(--border)}
+/* De drie feiten hadden elk een getekend pictogram (huis, klok, zaagblad).
+   Die zijn eruit (verbodenlijst B1), dus dit is nu puur typografie. */
+.fit-check div{display:block}
+.fit-check strong{display:block;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:16px;line-height:1.25;color:var(--text)}
+.fit-check span{font-size:14px;line-height:1.5;color:var(--muted)}
+
+/* 4. Welk hout: tekst LINKS, beeld RECHTS. Ander ritme dan blok 3 (regel E4). */
+.wood-split{display:grid;grid-template-columns:1.06fr .94fr;gap:44px;align-items:stretch;padding:38px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.wood-copy p{margin-top:12px;color:var(--muted);max-width:560px}
+.wood-parts{display:grid;gap:18px;margin-top:26px}
+.wood-part{padding-left:16px;border-left:3px solid var(--accent)}
+.wood-part strong{display:block;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:17px;line-height:1.3;color:var(--text);margin-bottom:4px}
+.wood-part span{display:block;font-size:15px;line-height:1.58;color:#414141}
+.wood-part a{color:var(--text);text-decoration:underline;text-underline-offset:3px}
+.wood-part a:hover{color:var(--accent-dark)}
+.wood-media{border-radius:var(--radius);overflow:hidden;background:var(--bg-soft);min-height:340px}
+.wood-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+/* 5. De vervolgstap. Donkere band, dit blok bewaakt de grens met stramien 06. */
+.plan-band{position:relative;background:var(--dark);color:#fff;overflow:hidden}
+.plan-band::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(247,144,30,.12),transparent 48%);pointer-events:none}
+.plan-band .cando-wrap{position:relative;z-index:1}
+.plan-band h2{color:#fff;max-width:520px}
+/* Stond als copy naast een getekende bouwtekening. De tekening is eruit
+   (B1), dus EEN kolom met een leesbare regellengte. Geen half lege kolom
+   en geen leeg beeldvlak (B3). */
+.plan-band__grid{max-width:640px}
+.plan-band__copy>p{margin-top:12px;color:rgba(255,255,255,.80);max-width:520px}
+.plan-contents{list-style:none;display:grid;gap:10px;margin-top:24px}
+.plan-contents li{position:relative;padding-left:19px;font-size:15px;line-height:1.55;color:rgba(255,255,255,.86)}
+.plan-contents li::before{content:"\203A";position:absolute;left:0;top:-1px;color:var(--accent);font-size:18px;font-weight:800}
+.plan-band .cando-cat-button-row{margin-top:26px}
+.plan-note{margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);font-size:14px;line-height:1.6;color:rgba(255,255,255,.66)!important;max-width:520px}
+
+/* 6. Varianten van hetzelfde project. Schema's, want de foto bestaat niet. */
+.variant-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.variant-card{display:block;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.variant-card:hover{transform:translateY(-2px);border-color:#d8cdbf;box-shadow:var(--shadow-hover)}
+/* De kaarten hadden elk een getekend schema van de variant. Die zijn eruit
+   (B1). De kaart is nu een tekstkaart: titel, een regel uitleg en de
+   accentpijl. Geen leeg beeldvak boven de tekst (B3). */
+.variant-card__body{padding:22px 20px 24px;position:relative;min-height:118px}
+.variant-title{display:block;font-size:17px;font-weight:700;line-height:1.3;padding-right:30px}
+.variant-card__body::after{content:"\2192";position:absolute;right:18px;top:15px;color:var(--accent);font-size:20px}
+.variant-card__body p{margin-top:5px;font-size:14px;line-height:1.5;color:var(--muted)}
+
+/* 7. UGC-haak. Geen sterren, geen score, geen reviewplatform. */
+/* Het tegelraster met vier getekende camera-iconen is eruit (B1) en er staat
+   niets voor in de plaats (B3). Wat blijft is de copy in EEN kolom. */
+.ugc-band{max-width:680px}
+.ugc-copy p{margin-top:12px;color:var(--muted)}
+.ugc-copy .ugc-small{margin-top:16px;font-size:14px;line-height:1.6}
+
+/* 8. FAQ, ieder vraagstuk een eigen accordeonitem. Gelijk aan stramien 27. */
+.faq-layout{display:grid;grid-template-columns:.74fr 1.26fr;gap:44px;align-items:start}
+.faq-intro p{margin-top:10px;color:var(--muted)}
+.faq-list{display:grid;gap:10px}
+details.faq-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+details.faq-item summary{list-style:none;cursor:pointer;padding:17px 54px 17px 18px;font-size:16px;font-weight:700;line-height:1.35;position:relative}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{content:"+";position:absolute;right:18px;top:15px;width:25px;height:25px;border:1px solid #b8b8b8;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6c6c6c;font-size:18px;line-height:1}
+details.faq-item[open]{border-color:#d8cdbf}
+details.faq-item[open] summary{color:var(--accent);background:#fffaf6}
+details.faq-item[open] summary::after{content:"\2212";background:var(--accent);border-color:var(--accent);color:#fff}
+.faq-answer{padding:0 18px 19px}
+.faq-answer p{font-size:14px;line-height:1.62;color:#414141}
+.faq-answer a{color:var(--text);text-decoration:underline;text-underline-offset:3px}
+.faq-answer a:hover{color:var(--accent-dark)}
+
+/* 9. Rustig slot. */
+/* Stond als copy naast een getekend drieluik van bank, tafel en plantenbak.
+   Die tekening is eruit (B1), dus EEN kolom. Geen half lege kolom (B3). */
+.cando-cat-editorial{background:var(--dark);border-radius:var(--radius);overflow:hidden}
+.cando-cat-editorial__content{padding:42px 42px 40px;display:flex;flex-direction:column;justify-content:center}
+.cando-cat-editorial h2{color:#fff;max-width:470px}
+.cando-cat-editorial p{max-width:490px;margin-top:12px;color:rgba(255,255,255,.84)}
+
+@media(max-width:1020px){
+  .fit-editorial,.wood-split,.faq-layout{grid-template-columns:1fr}
+  .fit-editorial__media{min-height:340px}
+  .fit-editorial__copy{padding:34px 30px}
+  .wood-split{gap:28px}
+  .wood-media,.wood-media img{min-height:280px}
+  .faq-layout{gap:28px}
+  .result-figure__image{height:240px}
+}
+@media(max-width:760px){
+  .cando-project h1{font-size:38px}
+  .cando-project h2{font-size:26px}
+  .cando-section{padding:44px 0}
+  .cando-cat-hero{min-height:430px}
+  .cando-cat-hero__inner{padding:82px 16px 42px}
+  .cando-cat-hero p{max-width:345px;font-size:15px}
+  .cando-cat-button-row{flex-direction:column;align-items:stretch}
+  .cando-cat-button{width:100%}
+  /* Mobiel: het eindresultaat wordt een horizontale rij, zodat het beeld
+     groot blijft in plaats van dat de pagina eindeloos wordt. De varianten
+     stapelen wel gewoon: sinds de schema's eruit zijn (B1) zijn dat korte
+     tekstkaarten, en een horizontale schuifrij zonder beeld leest slechter
+     dan drie kaarten onder elkaar. */
+  .result-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(262px,82vw);overflow-x:auto;scroll-snap-type:x mandatory;padding:0 18px 10px;margin:0 -18px;scroll-padding-left:18px}
+  .result-figure{scroll-snap-align:start}
+  .variant-grid{grid-template-columns:1fr}
+  .result-figure__image{height:215px}
+  .fit-editorial__media{min-height:250px}
+  .fit-editorial__copy{padding:28px 20px 26px}
+  .fit-check{grid-template-columns:1fr;gap:20px;margin-top:26px;padding-top:22px}
+  .wood-split{gap:24px;padding:30px 0}
+  .wood-media,.wood-media img{min-height:230px}
+  .cando-cat-editorial__content{padding:30px 22px}
+}
+.cando-skip{position:absolute;left:-9999px;top:0;z-index:99;padding:12px 20px;background:var(--accent);color:#fff;font-weight:700;border-radius:0 0 var(--radius) 0}
+.cando-skip:focus{left:0}
+</style>
+</head>
+<body>
+<a class="cando-skip" href="#contentarea">Naar de inhoud</a>
+
+<main class="cando-project" id="contentarea">
+
+  <!-- 1. HERO. Het eindresultaat vult het scherm, want de bezoeker zoekt een beeld.
+       Een primaire actie: de bouwtekening. Die knop komt in blok 5 terug, zelfde bestemming. -->
+  <section class="cando-cat-hero" aria-labelledby="page-title">
+    <figure aria-hidden="true" class="cando-cat-hero__image">
+      <img src="https://delihome.getbynder.com/asset/c4114d85-7a2e-45e8-acad-0c500d986a8e/medium-JPG/Steigerhout-Bank-XL.jpg" alt="Steigerhouten bank met brede armleuningen en rugleuning, licht afgewerkt" width="1600" height="900">
+    </figure>
+    <div class="cando-cat-hero__inner">
+      <div class="cando-cat-hero__content">
+        <span class="cando-eyebrow" style="color:#FDC689">Steigerhout project</span>
+        <h1 id="page-title">Steigerhouten bank</h1>
+        <p>Een lage bank van massieve steigerplanken, met brede armleuningen en een frame van latten eronder. Je bepaalt zelf de lengte, de hoogte van de zitting en de kleur. Hieronder zie je hoe hij eruitziet, waar hij past en welk hout je ervoor nodig hebt.</p>
+        <div class="hero-facts">
+          <span>Een middag werk</span>
+          <span>Geschikt voor beginners</span>
+          <span>Binnen en buiten</span>
+        </div>
+        <div class="cando-cat-button-row">
+          <a class="cando-cat-button cando-cat-button--primary" href="/nl-nl/steigerhout/bouwtekening-loungebank-steigerhout">Naar de bouwtekening</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. HET EINDRESULTAAT UIT DRIE HOEKEN. Puur beeld, geen links, geen uitleg.
+       De onderschriften benoemen het aanzicht, zodat duidelijk is dat dit bewust
+       dezelfde bank is en geen herhaald decorbeeld (zie het commentaar bij BEELD). -->
+  <section class="cando-section" id="hoe-ziet-hij-eruit" aria-labelledby="beeld-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Het eindresultaat</span>
+        <h2 id="beeld-title">Zo ziet hij eruit</h2>
+        <p>Dezelfde bank van drie kanten. Let vooral op de armleuning: die is opgebouwd uit twee staande planken met een plank er plat overheen, en dat is wat de bank zijn massieve vorm geeft.</p>
+      </div>
+      <div class="result-grid">
+        <figure class="result-figure">
+          <div class="result-figure__image">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/9c047c73-4a36-4936-9909-6395e7573233/medium-JPG/Steigerhout-Bank-XL_2.jpg" alt="Steigerhouten bank recht van voren gezien, met de zitting op halve hoogte" width="900" height="675">
+          </div>
+          <figcaption><strong>Vooraanzicht</strong>De zitting rust op de armleuningen, niet op losse poten. Daardoor blijft de onderkant open.</figcaption>
+        </figure>
+
+        <figure class="result-figure">
+          <div class="result-figure__image">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/0dd61a08-8afc-41ac-af03-b265bcb03309/medium-JPG/Steigerhout-Bank-XL_Detail1.jpg" alt="Armleuning van dichtbij, met de schroeven en de aansluiting op de rugleuning zichtbaar" width="900" height="675">
+          </div>
+          <figcaption><strong>De armleuning</strong>De schroefkoppen blijven zichtbaar. Dat hoort bij dit meubel en het scheelt je verzinken en plamuren.</figcaption>
+        </figure>
+
+        <figure class="result-figure">
+          <div class="result-figure__image">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/4deeb7ef-5885-4d95-889c-a400f4e87239/medium-JPG/Steigerhout-Bank-XL_Detail-2.jpg" alt="Hoek van de armleuning met de kopse kant van de steigerplank in beeld" width="900" height="675">
+          </div>
+          <figcaption><strong>De kopse kant</strong>Waar je zaagt, zie je het hout van binnen. Die kant werk je apart af, zeker als de bank buiten staat.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WAAR PAST HIJ. Beeld LINKS. Binnen dezelfde zone de drie-punts inschatting,
+       want "durf ik dit" is een andere vraag dan "past dit bij mij". -->
+  <section class="cando-section cando-section--soft" id="waar-past-hij" aria-labelledby="past-title">
+    <div class="cando-wrap">
+      <div class="fit-editorial">
+        <div class="fit-editorial__media">
+          <img loading="lazy" src="https://delihome.getbynder.com/asset/2edb42a9-8013-4b98-9c70-6cf858396583/medium-JPG/CanDo_Steigerhout_geborsteld_loungeset_leeg.jpg" alt="Terras met een lage steigerhouten loungebank, twee fauteuils en een lage tafel" width="900" height="620">
+        </div>
+        <div class="fit-editorial__copy">
+          <span class="cando-eyebrow">In jouw ruimte</span>
+          <h2 id="past-title">Waar past deze bank?</h2>
+          <p class="intro">Deze bank is laag en breed. Hij vraagt dus ruimte in de diepte, en hij komt het best tot zijn recht als je hem vrij kunt zetten of langs een lange wand.</p>
+
+          <ul class="clean-list">
+            <li><strong>Binnen.</strong> Als zitbank in de woonkamer, in een serre of op een overloop. Met een matras erop wordt het een logeerplek.</li>
+            <li><strong>Buiten.</strong> Op een terras of onder een overkapping. Zet hem op tegels of op tegeldragers, niet rechtstreeks in de aarde.</li>
+            <li><strong>Tot ongeveer 2,5 meter maak je hem uit hele planken.</strong> De steigerplank is 2.500 mm lang. Blijf je daaronder, dan zit er geen enkele las in de zitting.</li>
+            <li><strong>Niet in de grond.</strong> Vuren heeft duurzaamheidsklasse 4 en het kernhout is niet te impregneren. Contact met aarde is de snelste manier om het hout te verliezen.</li>
+          </ul>
+
+          <div class="fit-check">
+            <div>
+              <div><strong>Klusniveau: beginner</strong><span>Recht zagen en schroeven. Geen pen-en-gatverbinding, geen verstek.</span></div>
+            </div>
+            <div>
+              <div><strong>Tijd: een middag</strong><span>Reken op extra droogtijd als je hem daarna nog behandelt.</span></div>
+            </div>
+            <div>
+              <div><strong>Wat je moet kunnen</strong><span>Een rechte lijn zagen, voorboren en waterpas werken. Meer is het niet.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WELK HOUT. Tekst LINKS, beeld RECHTS: bewust het omgekeerde ritme van blok 3.
+       ⛔ HIER STAAN GEEN AANTALLEN EN GEEN ONDERDEELMATEN. Alleen WELKE plank en
+       WELKE lat, plus waarom. De aantallen staan in de bouwtekening (blok 5).
+       De enige maten die hier mogen staan zijn de maten van de plank die je koopt. -->
+  <section class="cando-section" id="welk-hout" aria-labelledby="hout-title">
+    <div class="cando-wrap">
+      <div class="wood-split">
+        <div class="wood-copy">
+          <span class="cando-eyebrow">Het materiaal</span>
+          <h2 id="hout-title">Welk hout heb je hiervoor nodig?</h2>
+          <p>Deze bank bestaat uit twee dingen: brede planken die je ziet, en smalle latten die je niet ziet. Dat onderscheid is belangrijker dan de houtsoort.</p>
+
+          <div class="wood-parts">
+            <div class="wood-part">
+              <strong>De planken: 195 x 30 mm</strong>
+              <span>De zitting, de rugleuning en de armleuningen maak je van de steigerplank van 2.500 x 195 x 30 mm. Massief vuren, voorgedroogd. Kies <a href="/nl-nl/hout/steigerhout/onbehandeld/">onbehandeld steigerhout</a> als je zelf wilt kleuren of het wilt laten vergrijzen, of <a href="/nl-nl/hout/steigerhout/gekleurd/">gekleurd steigerhout</a> als je het eindbeeld meteen wilt hebben.</span>
+            </div>
+            <div class="wood-part">
+              <strong>De latten: 62 x 30 mm</strong>
+              <span>De verbindingslat is geen goedkopere plank, hij is het frame eronder. De zitting rust erop, en hoe dichter je die latten bij elkaar zet, hoe minder de zitting doorbuigt als er iemand op ploft. De afstand tussen de latten staat in de bouwtekening.</span>
+            </div>
+            <div class="wood-part">
+              <strong>Onbehandeld of geschaafd</strong>
+              <span>Geschaafd steigerhout voelt gladder aan, maar het is 3 mm dunner en daardoor merkbaar slapper over dezelfde afstand. Voor een zitting waar mensen op gaan zitten is de ruwe plank van 30 mm de veiligere keuze. Wil je toch geschaafd, zet de latten dan dichter bij elkaar.</span>
+            </div>
+          </div>
+
+          <p style="margin-top:22px">Ons steigerhout is nieuw hout, geen gebruikt steigerhout van een bouwplaats. Het is speciaal gedroogd, zodat het minder werkt, en er zitten geen spijkerresten of splinters in.</p>
+
+          <div class="cando-cat-button-row">
+            <a class="cando-cat-button cando-cat-button--secondary" href="/nl-nl/hout/steigerhout/">Bekijk alle steigerplanken</a>
+          </div>
+        </div>
+        <div class="wood-media">
+          <!-- Let op: deze bestandsnaam bevat een plusteken. De URL is op 09-09-2026
+               gecontroleerd en geeft 200 terug, dus niet omzetten naar %2B. -->
+          <img loading="lazy" src="https://delihome.getbynder.com/asset/58512cd7-2de2-4a9f-acf1-4587489042e7/medium-JPG/SteigerhoutVergrijsd_195+62mm.jpg" alt="Stapel vergrijsde steigerplanken van 195 mm breed met daartussen de smallere verbindingslatten van 62 mm" width="900" height="600">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. DE VERVOLGSTAP. Dit blok is de grens met stramien 06 en het zegt dat ook
+       tegen de bezoeker. Zelfde bestemming als de hero-knop: een dominante actie. -->
+  <section class="cando-section plan-band" id="bouwtekening" aria-labelledby="plan-title">
+    <div class="cando-wrap">
+      <div class="plan-band__grid">
+        <div class="plan-band__copy">
+          <span class="cando-eyebrow">De volgende stap</span>
+          <h2 id="plan-title">De maten staan in de bouwtekening</h2>
+          <p>Deze pagina laat zien wat je maakt. De bouwtekening vertelt je hoe. Daar staat het rekenwerk in, zodat je in de winkel precies weet wat je meeneemt.</p>
+          <ul class="plan-contents">
+            <li>Alle onderdelen met hun maat, van de zitting tot de armleuning</li>
+            <li>Hoeveel planken en hoeveel latten je nodig hebt</li>
+            <li>De afstand tussen de latten onder de zitting</li>
+            <li>De volgorde van monteren en waar je voorboort</li>
+          </ul>
+          <div class="cando-cat-button-row">
+            <a class="cando-cat-button cando-cat-button--primary" href="/nl-nl/steigerhout/bouwtekening-loungebank-steigerhout">Naar de bouwtekening</a>
+          </div>
+          <p class="plan-note">Wil je eerst een ander project bekijken? Op de <a href="/nl-nl/steigerhout/bouwtekening-steigerhout" style="color:#fff;text-decoration:underline;text-underline-offset:3px">overzichtspagina met bouwtekeningen</a> staan ze allemaal bij elkaar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. VARIANTEN VAN HETZELFDE PROJECT. Hier stonden drie schema's, omdat je
+       dezelfde bank niet kunt fotograferen in een lengte die nooit gebouwd is.
+       Die schema's zijn eruit (B1) en het zijn nu tekstkaarten. Er staat geen
+       leeg beeldvak boven de tekst. Zie WEGGEHAALD in het kopcommentaar. -->
+  <section class="cando-section" id="varianten" aria-labelledby="variant-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Varianten</span>
+        <h2 id="variant-title">Dezelfde bank, andere uitvoering</h2>
+        <p>Met dezelfde opbouw en dezelfde planken maak je een heel ander meubel. Het verschil zit in de lengte, in de rugleuning en in waar de bank op staat.</p>
+      </div>
+      <div class="variant-grid">
+        <a class="variant-card" href="/nl-nl/steigerhout/steigerhouten-loungeset">
+          <div class="variant-card__body">
+            <span class="variant-title">Zonder rugleuning</span>
+            <p>Laat de rug weg en je krijgt een loungebank die je van twee kanten gebruikt.</p>
+          </div>
+        </a>
+
+        <a class="variant-card" href="/nl-nl/steigerhout/steigerhouten-hoekbank">
+          <div class="variant-card__body">
+            <span class="variant-title">Als hoekbank</span>
+            <p>Twee banken haaks op elkaar, met één gedeelde armleuning in de hoek.</p>
+          </div>
+        </a>
+
+        <a class="variant-card" href="/nl-nl/hout/steigerhout/steigerbuizen-en-verbinders/">
+          <div class="variant-card__body">
+            <span class="variant-title">Op steigerbuizen</span>
+            <p>Een onderstel van verzinkte buis met verbinders. Demontabel, en het mag buiten staan.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. UGC-HAAK. OPTIONEEL BLOK, zelfde regel als het videoblok in stramien 06:
+       zonder echte klantfoto's bouw je dit blok niet. Nooit een studiofoto laten
+       doorgaan voor een klantfoto. Geen sterren, geen score, geen reviewblok:
+       die bestaan hier niet.
+       11-09: hier stonden vier getekende tegels met een camera-icoon. Die zijn
+       eruit (B1), want een getekende camerategel is geen klantfoto.
+
+       ⛔ OPGELOST 11-09 (Zoë): "UGC via Flowbox." Dit blok is dus GEEN
+       [besluit nodig] en geen placeholder, maar een EMBED-SLOT, net zoals het
+       formulier op stramien 12 een iframe is. Flowbox levert de feed, wij
+       leveren de omlijsting: de kop, de reden om te kijken, en de vraag om
+       zelf een foto te sturen.
+
+       De rechten zijn geregeld (besluit Zoë 24-07-2026, UGC loopt via Flowbox).
+       Zie CRO-UX-SEO-PRINCIPES §1 regel 9 en TOON-PER-PAGINATYPE.
+
+       REGEL DIE HIERUIT VOLGT, voor elk UGC-blok in elk stramien: teken nooit
+       zelf tegels, laat nooit een leeg raster staan, en zet er geen placeholder
+       in. Het is een embed of het is er niet. -->
+  <section class="cando-section cando-section--soft" id="zelf-gemaakt" aria-labelledby="ugc-title">
+    <div class="cando-wrap">
+      <div class="ugc-band">
+        <div class="ugc-copy">
+          <span class="cando-eyebrow">Van klusser tot klusser</span>
+          <h2 id="ugc-title">Zelf gemaakt</h2>
+          <p>Dezelfde bouwtekening levert elke keer een andere bank op. Een andere lengte, een andere kleur, een ander terras. Dat zie je nergens beter dan bij mensen die hem al gemaakt hebben.</p>
+          <!-- ===================================================================
+               FLOWBOX-EMBED. De feed vult dit vlak; wij tekenen hier niets.
+               Structuur overgenomen van de live implementatie op Trap op maat
+               (aangeleverd door Zoe 11-09-2026).
+
+               ⛔ DE KEY HIERONDER IS EEN TOKEN, GEEN WAARDE.
+               De key van Trap op maat (T75TB9...) is van die flow en mag NIET
+               hergebruikt worden: dan toont de houtpagina trapfoto's. Er moet
+               een NIEUWE flow komen voor hout. Actie bij Zoe en Digital.
+
+               ⚠️ LET OP DE LOCALE. De live trap-implementatie staat op
+               'en-GB' op een Nederlandstalige pagina. Hier staat 'nl-NL'.
+               Controleer of dat op de trappagina een fout is, want het raakt
+               de taal van de Flowbox-interface.
+
+               [te bevestigen: de key van de nieuwe hout-flow]
+               [onderzoek nodig: de "voeg jouw foto toe"-route. Hoe een klant
+                zijn eigen foto aanlevert en hoe die in de flow terechtkomt,
+                is nog niet uitgezocht. Zonder die route is dit blok alleen
+                een toonvlak en geen haak.]
+               =================================================================== -->
+          <!-- ⛔⛔ DIT BLOK GAAT NIET LIVE. Besluit Zoë 11-09-2026.
+               Het UGC-blok mag pas mee naar productie zodra
+               STATUS-DELI-HOME.md meldt dat Flowbox voor hout gefixt is.
+               Tot die melding er staat: dit blok uit de uitwerking laten,
+               of in de CMS-implementatie uitgeschakeld.
+
+               Wat er eerst geregeld moet zijn:
+               1. een eigen Flowbox-flow voor hout, met een eigen key
+               2. de "voeg jouw foto toe"-route, nog niet uitgezocht
+               3. de locale bevestigd op nl-NL
+
+               Wie dit blok toch live zet zonder die melding, publiceert een
+               leeg vlak of andermans foto's. -->
+          <div class="ugc-embed" data-status="niet-live-tot-flowbox-gefixt">
+            <div id="js-flowbox-flow"></div>
+            <p class="ugc-small">Heb je hem gemaakt? Deel je foto met <strong>#mycandoDIY</strong>, dan kan hij hier verschijnen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ. Elke vraag een eigen item, minimaal vier zinnen antwoord (register D21).
+       Vraag 1 en vraag 6 bewaken de grens met het maakplan en met maatwerk. -->
+  <section class="cando-section" id="vragen" aria-labelledby="faq-title">
+    <div class="cando-wrap">
+      <div class="faq-layout">
+        <div class="faq-intro">
+          <span class="cando-eyebrow">Veelgestelde vragen</span>
+          <h2 id="faq-title">Vragen over deze bank</h2>
+          <p>Alleen vragen die over dit project gaan. Voor het verschil tussen de houtsoorten en de plankdiktes verwijzen we door naar de steigerhoutpagina zelf.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Hoeveel planken heb ik nodig voor deze bank?</summary>
+            <div class="faq-answer"><p>Dat hangt volledig af van de lengte die je kiest, en daarom staat het aantal niet op deze pagina. Een bank van anderhalve meter vraagt minder zitting maar evenveel armleuning als een bank van twee meter, dus het is geen simpele vermenigvuldiging. In de <a href="/nl-nl/steigerhout/bouwtekening-loungebank-steigerhout">bouwtekening</a> staat per onderdeel hoeveel planken en latten je nodig hebt, uitgerekend voor de maat die daar wordt aangehouden. Wijk je daarvan af, dan pas je de zitting en de rugleuning aan en blijven de armleuningen gelijk.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Kan deze bank buiten staan?</summary>
+            <div class="faq-answer"><p>Ja, onbehandeld steigerhout wordt veel gebruikt voor tuinbanken en terrasmeubels. Er is wel één harde grens: geen contact met de grond. Vuren heeft duurzaamheidsklasse 4 en het kernhout is niet te impregneren, dus poten die in de aarde staan of permanent in een plas water, gaan hard achteruit. Zet de bank op tegels, op tegeldragers of op een vlonder, en laat de kopse kanten niet op de grond rusten.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Moet ik het hout behandelen?</summary>
+            <div class="faq-answer"><p>Moeten is een groot woord, het is vooral een keuze over hoe hij eruit moet zien. Laat je onbehandeld steigerhout met rust, dan vergrijst het vanzelf en dat is voor veel mensen precies het gewenste beeld. Wil je de kleur juist vasthouden of hem een tint geven, dan behandel je het hout rondom en werk je de kopse kanten apart af, want daar trekt vocht het snelst in. Ga je verven, zet dan eerst de noesten af met een kwastenmiddel, anders komen er binnen een seizoen bruine ringen door de verf heen.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Onbehandeld of geschaafd steigerhout, wat kies ik?</summary>
+            <div class="faq-answer"><p>Geschaafd steigerhout is aan de buitenkant gladder en dat is prettig voor een meubel dat je veel aanraakt. Daar staat tegenover dat de geschaafde plank 3 mm dunner is en daardoor over dezelfde afstand merkbaar meer doorbuigt. Voor een zitting waar iemand met zijn volle gewicht op gaat zitten is de ruwe plank van 30 mm daarom de veiligere keuze. Wil je toch geschaafd werken, zet de latten onder de zitting dan dichter bij elkaar en de bank blijft net zo stevig.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Heb ik steigerbuizen nodig voor de poten?</summary>
+            <div class="faq-answer"><p>Nee, deze bank staat op zijn eigen armleuningen en heeft geen los onderstel nodig. Buis kies je als je een industrieel beeld wilt of als je de bank uit elkaar wilt kunnen halen, want een buisframe is demontabel. De verbinders zijn verzinkt, dus een buisonderstel mag ook buiten staan. Kies je voor buis, kijk dan meteen naar de inbussleutel: die hoort bij de verbinder maar is een apart artikel en wordt niet meegeleverd.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Kan ik het steigerhout op maat laten zagen?</summary>
+            <div class="faq-answer"><p>Nee, steigerhout leveren we in een vaste lengte van 2.500 mm en dat zaag je zelf op maat. Dat klinkt als een beperking, maar voor deze bank is het er nauwelijks een: blijf je onder de 2,5 meter, dan komt je hele zitting uit hele planken zonder las. Meet daarom je plek op voordat je naar de winkel gaat, dan weet je precies hoeveel planken je meeneemt. Zagen doe je met een fijn vertand blad en met steun aan beide kanten, want vuren pluist eerder dan dat het schoon breekt.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. SLOT. Rustige stap naar de andere projecten met dezelfde plank.
+       LET OP: /nl-nl/steigerhout is onderdeel van de driewegkannibalisatie.
+       Zodra het redirectbesluit valt, wijzigt deze link mee. Zie OPEN PUNTEN 2. -->
+  <section class="cando-section cando-section--light" aria-labelledby="verder-title">
+    <div class="cando-wrap">
+      <div class="cando-cat-editorial">
+        <div class="cando-cat-editorial__content">
+          <span class="cando-eyebrow">Verder kijken</span>
+          <h2 id="verder-title">Van dezelfde plank maak je nog veel meer</h2>
+          <p>Wie één bank heeft gemaakt, kijkt meestal meteen naar het volgende project. Een tafel die erbij past, een plantenbak voor op hetzelfde terras of een kast voor binnen. Het zijn steeds dezelfde planken, dezelfde latten en dezelfde handelingen.</p>
+          <div class="cando-cat-button-row">
+            <a class="cando-cat-button cando-cat-button--primary" href="/nl-nl/steigerhout">Bekijk alle steigerhoutprojecten</a>
+            <a class="cando-cat-button cando-cat-button--dark" href="/nl-nl/zoek-uw-winkel/hout">Zoek een verkooppunt</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Flowbox-loader. Exact het patroon van de live Trap op maat-implementatie.
+     ⛔ Vervang TE-BEVESTIGEN-FLOWBOX-KEY-HOUT door de key van de NIEUWE hout-flow.
+     Niet de key van Trap op maat gebruiken. -->
+<script>
+  // ⛔ TECHNISCHE POORT, geen notitie. Besluit Zoe 11-09-2026.
+  // Zolang de key een token is, laadt Flowbox NIET en verbergt dit script het
+  // hele blok. Zo kan er nooit een leeg vlak of andermans feed live staan
+  // doordat iemand een markering over het hoofd zag.
+  // Live zetten is dus een handeling: vervang de key. Niet een vergissing.
+  (function (d) {
+    var KEY = 'TE-BEVESTIGEN-FLOWBOX-KEY-HOUT';
+    var blok = d.querySelector('[data-status="niet-live-tot-flowbox-gefixt"]');
+
+    if (KEY.indexOf('TE-BEVESTIGEN') === 0) {
+      if (blok) { blok.hidden = true; }
+      // Zichtbaar in de console, zodat dit bij een preview opvalt.
+      if (window.console) {
+        console.warn('CanDo: UGC-blok verborgen. Flowbox staat in STATUS-DELI-HOME.md op NIET GEFIXT. Vervang de key van de hout-flow om het blok te activeren.');
+      }
+      return;
+    }
+
+    if (blok) { blok.removeAttribute('data-status'); }
+    (function (doc, id) {
+      if (!window.flowbox) { var f = function () { f.q.push(arguments); }; f.q = []; window.flowbox = f; }
+      if (doc.getElementById(id)) { return; }
+      var s = doc.createElement('script'), fjs = doc.scripts[doc.scripts.length - 1];
+      s.id = id; s.async = true;
+      s.src = 'https://connect.getflowbox.com/flowbox.js';
+      fjs.parentNode.insertBefore(s, fjs);
+    })(d, 'flowbox-js-embed');
+    window.flowbox('init', { container: '#js-flowbox-flow', key: KEY, locale: 'nl-NL' });
+  })(document);
+</script>
+</body>
+</html>

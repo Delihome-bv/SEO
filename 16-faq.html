@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Veelgestelde vragen | CanDo</title>
+<meta name="description" content="Antwoord op de meestgestelde vragen over bestellen, op maat zagen, levering, retour, garantie en stalen. Zoek snel jouw vraag.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--border:#e5ddd3;--soft:#f7f2ea;--soft2:#fbfaf7;--radius:8px;--shadow:0 10px 24px rgba(18,27,33,.05)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+.page{overflow-x:hidden}
+h1,h2,.btn,.eyebrow,.chip,summary{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.wrap{width:100%;max-width:860px;margin:0 auto;padding:0 18px}
+section{padding:34px 0}.soft{background:var(--soft)}
+h1{margin:0 0 8px;font-size:34px;line-height:1.05;letter-spacing:-.02em}
+h2{margin:0 0 14px;font-size:22px;line-height:1.15}
+p{margin:0;color:#414141;font-size:16px;line-height:1.72}
+.eyebrow{display:block;margin:0 0 10px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.crumbs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px;color:#8c8c8c;font-size:12px}
+.crumbs a{color:#8c8c8c}.crumbs a:hover{color:var(--accent)}.crumbs span{color:#b5b5b5}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;border:1.5px solid transparent;transition:.18s ease;cursor:pointer}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-tertiary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-tertiary:hover{border-color:var(--accent);color:var(--accent)}
+.search{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #d9d4cc;border-radius:999px;padding:0 18px;min-height:52px;max-width:560px;margin-top:18px}
+.search svg{flex:none;color:var(--muted)}
+.search input{border:0;outline:0;flex:1;font-size:15px;background:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid var(--border);background:#fff;border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;color:var(--text);text-decoration:none}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.grp{margin-bottom:8px;scroll-margin-top:20px}
+.grp h2{margin:26px 0 12px}
+.faq-list{display:grid;gap:10px}
+details.faq{border:1px solid var(--border);border-radius:var(--radius);background:#fff;overflow:hidden}
+details.faq summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:700;display:flex;justify-content:space-between;gap:18px;min-height:54px;align-items:flex-start;line-height:1.35}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:22px;line-height:1.2;color:var(--accent);flex:0 0 auto;width:22px;text-align:center}
+details.faq[open]{border-color:var(--accent)}details.faq[open] summary::after{content:"\2212"}
+details.faq>div{padding:0 18px 18px}details.faq p{font-size:15px;color:#444}
+details.faq a{color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.noresult{display:none;padding:20px 0;color:var(--muted)}
+.cta{background:var(--soft);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;text-align:center;margin-top:20px}
+.cta .btn-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:16px}
+@media(min-width:760px){section{padding:46px 0}h1{font-size:42px}}
+@media(max-width:520px){.btn{width:100%}}
+</style>
+</head>
+<body>
+<!-- FAQ-OVERZICHT (vraaggestuurd, met zoekveld en thema's). Geen verkoopformulier, contact via knop. Geen header/footer. -->
+<main class="page">
+  <section>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>›</span><a href="/klantenservice/">Klantenservice</a><span>›</span>Veelgestelde vragen</nav>
+      <span class="eyebrow">Veelgestelde vragen</span>
+      <h1>Snel antwoord op je vraag</h1>
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        <input type="search" id="faq-search" placeholder="Zoek in de veelgestelde vragen" aria-label="Zoeken">
+      </div>
+      <nav class="chips" aria-label="Thema's">
+        <a class="chip" href="#bestellen">Bestellen</a>
+        <a class="chip" href="#op-maat">Op maat zagen</a>
+        <a class="chip" href="#levering">Levering &amp; ophalen</a>
+        <a class="chip" href="#retour">Retour &amp; garantie</a>
+        <a class="chip" href="#stalen">Stalen &amp; kleur</a>
+      </nav>
+    </div>
+  </section>
+
+  <section style="padding-top:6px">
+    <div class="wrap">
+      <div id="faq-root">
+        <div class="grp" id="bestellen"><h2>Bestellen</h2><div class="faq-list">
+          <details class="faq"><summary>Hoe bestel ik een product op maat?</summary><div><p>In de <a href="/hout-op-maat-laten-zagen/">configurator</a> kies je het product, de houtsoort of het decor en vul je de maten in. Je ziet meteen je prijs en rekent online af.</p></div></details>
+          <details class="faq"><summary>Kan ik mijn bestelling nog aanpassen?</summary><div><p>Neem zo snel mogelijk contact op. Zolang je bestelling nog niet in productie of onderweg is, kunnen we vaak nog iets wijzigen.</p></div></details>
+          <details class="faq"><summary>Hoe weet ik of mijn bestelling gelukt is?</summary><div><p>Je ontvangt een orderbevestiging per e-mail met je gegevens en de verwachte levertijd.</p></div></details>
+        </div></div>
+
+        <div class="grp" id="op-maat"><h2>Op maat zagen</h2><div class="faq-list">
+          <details class="faq"><summary>Hoe nauwkeurig zagen jullie op maat?</summary><div><p>Tot op de millimeter, inclusief uitsparingen voor bijvoorbeeld een spoelbak of kookplaat.</p></div></details>
+          <details class="faq"><summary>Welke maat moet ik opgeven?</summary><div><p>Meet op meerdere punten, want muren lopen zelden precies recht. Geef de grootste maat op en houd rekening met overstek.</p></div></details>
+          <details class="faq"><summary>Kan ik een op maat gezaagd product retourneren?</summary><div><p>Een op maat gemaakt product valt buiten het standaard herroepingsrecht. Klopt er iets niet, neem dan contact op, dan zoeken we een oplossing.</p></div></details>
+        </div></div>
+
+        <div class="grp" id="levering"><h2>Levering &amp; ophalen</h2><div class="faq-list">
+          <details class="faq"><summary>Wat is de levertijd?</summary><div><p>Die hangt af van het product en of het op maat wordt gemaakt. De verwachte termijn zie je bij het bestellen en in je orderbevestiging.</p></div></details>
+          <details class="faq"><summary>Waar kan ik mijn bestelling ophalen?</summary><div><p>Veel producten haal je op bij een bouwmarkt of dealer bij jou in de buurt. Bij het bestellen kies je het verkooppunt dat jou uitkomt.</p></div></details>
+          <details class="faq"><summary>Kan ik mijn bestelling volgen?</summary><div><p>Ja, je ontvangt bericht zodra je bestelling onderweg is of klaarligt om op te halen.</p></div></details>
+        </div></div>
+
+        <div class="grp" id="retour"><h2>Retour &amp; garantie</h2><div class="faq-list">
+          <details class="faq"><summary>Hoe retourneer ik een product?</summary><div><p>Voor standaardproducten geldt het gewone herroepingsrecht. Neem contact op, dan leggen we uit hoe je het product terugstuurt.</p></div></details>
+          <details class="faq"><summary>Hoelang heb ik garantie?</summary><div><p>Op onze producten zit de wettelijke garantie. Bewaar je aankoopbewijs; twijfel je of iets onder garantie valt, neem dan contact op.</p></div></details>
+          <details class="faq"><summary>Mijn product is beschadigd aangekomen, wat nu?</summary><div><p>Maak een foto van de schade en de verpakking en neem meteen contact op, dan handelen we het snel af.</p></div></details>
+        </div></div>
+
+        <div class="grp" id="stalen"><h2>Stalen &amp; kleur</h2><div class="faq-list">
+          <details class="faq"><summary>Kan ik een staal aanvragen?</summary><div><p>Ja, vraag een gratis staal aan via de <a href="/staal-aanvragen/">stalenservice</a> en bekijk de kleur thuis in je eigen licht.</p></div></details>
+          <details class="faq"><summary>Wijkt de kleur op mijn scherm af van het echte product?</summary><div><p>Een scherm geeft kleuren nooit exact weer. Vraag daarom een staal aan om de kleur en het materiaal zeker te weten.</p></div></details>
+        </div></div>
+      </div>
+      <p class="noresult" id="noresult">Geen vraag gevonden. Probeer een ander woord of neem contact op.</p>
+
+      <div class="cta">
+        <p>Staat je vraag er niet bij?</p>
+        <div class="btn-row"><a class="btn btn-primary" href="/contact/">Neem contact op</a><a class="btn btn-tertiary" href="/hulp-en-advies/">Bekijk hulp &amp; advies</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+(function(){
+  var input=document.getElementById('faq-search');
+  var items=document.querySelectorAll('#faq-root details.faq');
+  var groups=document.querySelectorAll('#faq-root .grp');
+  var noresult=document.getElementById('noresult');
+  if(!input)return;
+  input.addEventListener('input',function(){
+    var q=input.value.trim().toLowerCase();var shown=0;
+    items.forEach(function(it){
+      var t=it.textContent.toLowerCase();
+      var ok=!q||t.indexOf(q)>-1;
+      it.style.display=ok?'':'none';if(ok)shown++;
+      if(ok&&q)it.open=true;else if(q)it.open=false;
+    });
+    groups.forEach(function(g){
+      var any=g.querySelector('details.faq:not([style*="display: none"])');
+      g.style.display=any?'':'none';
+    });
+    noresult.style.display=shown?'none':'block';
+  });
+})();
+</script>
+</body>
+</html>

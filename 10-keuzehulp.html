@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keuzehulp, welk hout past bij jouw klus? | CanDo</title>
+<meta name="description" content="Weet je niet welk hout je nodig hebt? Doe de keuzehulp. Beantwoord een paar korte vragen en we wijzen je naar het juiste hout voor jouw klus.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--border:#e5ddd3;--soft:#f7f2ea;--soft2:#fbfaf7;--dark:#121b21;--radius:8px;--shadow:0 10px 24px rgba(18,27,33,.05)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.page{overflow-x:hidden}
+h1,h2,h3,.btn,.eyebrow,.kh-progress,.kh-choice__t,.kh-ctl,.kh-card__b h3{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.wrap{width:100%;max-width:960px;margin:0 auto;padding:0 18px}
+section{padding:40px 0}
+.soft{background:var(--soft)}
+h1{margin:0 0 8px;font-size:36px;line-height:1.04;letter-spacing:-.025em}
+h2{margin:0 0 12px;font-size:26px;line-height:1.12;letter-spacing:-.02em}
+h3{margin:0 0 8px;font-size:19px}
+p{margin:0;color:#414141;font-size:16px;line-height:1.72}
+.eyebrow{display:block;margin:0 0 10px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.crumbs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px;color:#8c8c8c;font-size:12px}
+.crumbs a{color:#8c8c8c}.crumbs a:hover{color:var(--accent)}.crumbs span{color:#b5b5b5}
+.head{max-width:640px;margin-bottom:22px}.head p{margin-top:10px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:700;font-size:15px;line-height:1.15;border:1.5px solid transparent;transition:.18s ease;cursor:pointer}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(247,144,30,.15)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-tertiary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-tertiary:hover{border-color:var(--accent);color:var(--accent);background:rgba(247,144,30,.04)}
+
+/* Keuzehulp */
+.kh{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.kh-controls{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid var(--border)}
+.kh-ctl{background:none;border:0;color:var(--muted);font-weight:700;cursor:pointer;font-size:14px;display:inline-flex;align-items:center;gap:6px;padding:4px 2px}
+.kh-ctl:hover{color:var(--accent)}
+.kh-ctl:disabled{opacity:.4;cursor:default}
+.kh-bar{height:4px;background:var(--border)}
+.kh-bar span{display:block;height:100%;background:var(--accent);width:50%;transition:width .3s ease}
+.kh-body{padding:26px 22px}
+.kh-progress{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
+.kh-step{display:none}.kh-step.active{display:block}
+.kh-step h2{font-size:23px;margin-bottom:18px}
+.kh-choices{display:grid;gap:14px;grid-template-columns:1fr}
+.kh-choice{display:block;position:relative;text-align:left;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;cursor:pointer;padding:0;transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease}
+.kh-choice:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow)}
+.kh-choice__img{height:140px;overflow:hidden;border-bottom:1px solid var(--border);background:var(--soft2)}
+.kh-choice__img img{width:100%;height:100%;object-fit:cover}
+.kh-choice__b{padding:14px 16px 16px}
+.kh-choice__t{font-weight:700;font-size:16px;color:var(--text);display:flex;align-items:center;gap:10px}
+.kh-choice__t::before{content:"";width:18px;height:18px;border-radius:50%;border:2px solid #c9c0b2;flex:0 0 auto}
+.kh-choice:hover .kh-choice__t::before{border-color:var(--accent);box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 5px var(--accent)}
+.kh-choice__s{font-size:13px;color:var(--muted);margin-top:4px;padding-left:28px}
+.kh-choice--text .kh-choice__b{padding:20px 18px}
+/* Resultaat */
+.kh-result__cards{display:grid;gap:14px;grid-template-columns:1fr;margin-top:4px}
+.kh-card{display:block;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease;box-shadow:var(--shadow)}
+.kh-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.kh-card__img{height:130px;overflow:hidden;border-bottom:1px solid var(--border)}
+.kh-card__img img{width:100%;height:100%;object-fit:cover}
+.kh-card__b{padding:14px 16px}.kh-card__b p{font-size:13px;color:var(--muted);margin-top:4px}
+.kh-card__cta{display:inline-block;margin-top:8px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:13px}
+.kh-card__cta::after{content:" →";color:var(--accent)}
+.kh-fallback{margin-top:22px;padding-top:18px;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+.kh-fallback a{color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* FAQ */
+.faq-list{display:grid;gap:10px}
+details.faq{border:1px solid var(--border);border-radius:var(--radius);background:#fff;overflow:hidden}
+details.faq summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:700;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;display:flex;justify-content:space-between;gap:18px;min-height:54px;align-items:flex-start;line-height:1.35}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:22px;line-height:1.2;color:var(--accent);flex:0 0 auto;width:22px;text-align:center}
+details.faq[open]{border-color:var(--accent)}details.faq[open] summary::after{content:"\2212"}
+details.faq div{padding:0 18px 18px}details.faq div p{font-size:15px;color:#444}
+
+@media(min-width:760px){
+  section{padding:52px 0}
+  h1{font-size:48px}h2{font-size:30px}
+  .kh-body{padding:34px 30px}
+  .kh-choices{grid-template-columns:repeat(3,1fr)}
+  .kh-choices--two{grid-template-columns:repeat(2,1fr)}
+  .kh-result__cards{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:520px){.btn{width:100%}}
+</style>
+</head>
+<body>
+<!-- KEUZEHULP (interactieve meerstaps-tool met beeld-keuzes, voortgangsbalk en Vorige/Starten). Geen header/footer. -->
+<main class="page">
+
+  <!-- HERO -->
+  <section class="soft">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>›</span><a href="/hout/">Hout</a><span>›</span>Keuzehulp</nav>
+      <span class="eyebrow">Keuzehulp</span>
+      <h1>Hout keuzehulp</h1>
+      <p class="head">Met de Hout keuzehulp kies je makkelijk en weloverwogen het juiste hout voor jouw klus. Beantwoord een paar korte vragen, wij wijzen je de weg, standaard of op maat.</p>
+    </div>
+  </section>
+
+  <!-- DE KEUZEHULP -->
+  <section>
+    <div class="wrap">
+      <div class="kh" id="kh">
+        <div class="kh-controls">
+          <button class="kh-ctl" id="kh-prev" disabled>‹ Vorige</button>
+          <button class="kh-ctl" id="kh-restart">↻ Opnieuw</button>
+        </div>
+        <div class="kh-bar"><span id="kh-fill" style="width:50%"></span></div>
+
+        <div class="kh-body">
+          <div class="kh-progress" id="kh-progress">Vraag 1 van 2</div>
+
+          <div class="kh-step active" data-step="1">
+            <h2>Wat ga je maken of doen?</h2>
+            <div class="kh-choices">
+              <button class="kh-choice" data-next="2">
+                <span class="kh-choice__img"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Meubelpaneel in abrikoosroze"></span>
+                <span class="kh-choice__b"><span class="kh-choice__t">Een werkblad of tafelblad</span><span class="kh-choice__s">Aanrecht, keukenblad of tafel.</span></span>
+              </button>
+              <button class="kh-choice" data-next="2">
+                <span class="kh-choice__img"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="Loft-interieur met houten afwerking"></span>
+                <span class="kh-choice__b"><span class="kh-choice__t">Iets zelf bouwen of timmeren</span><span class="kh-choice__s">Kast, meubel of klusproject.</span></span>
+              </button>
+              <button class="kh-choice" data-next="2">
+                <span class="kh-choice__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Akoestische wandpanelen in copper oak achter een zithoek"></span>
+                <span class="kh-choice__b"><span class="kh-choice__t">Een muur of ruimte afwerken</span><span class="kh-choice__s">Paneel, lattenwand of afwerking.</span></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="kh-step" data-step="2">
+            <h2>Hoe belangrijk is het dat het precies past?</h2>
+            <div class="kh-choices kh-choices--two">
+              <button class="kh-choice kh-choice--text" data-next="result"><span class="kh-choice__b"><span class="kh-choice__t">Het moet exact passen</span><span class="kh-choice__s">Op maat gezaagd, geen zaagverlies.</span></span></button>
+              <button class="kh-choice kh-choice--text" data-next="result"><span class="kh-choice__b"><span class="kh-choice__t">Een standaardmaat is prima</span><span class="kh-choice__s">Kant-en-klaar, direct mee te nemen.</span></span></button>
+            </div>
+          </div>
+
+          <div class="kh-step" data-step="result">
+            <div class="kh-progress">Ons advies</div>
+            <h2>Dit past waarschijnlijk bij jou</h2>
+            <div class="kh-result__cards">
+              <a class="kh-card" href="/hout-op-maat-laten-zagen/"><div class="kh-card__img"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Hout op maat"></div><div class="kh-card__b"><h3>Hout op maat</h3><p>Online samengesteld, mm-precies.</p><span class="kh-card__cta">Bekijk</span></div></a>
+              <a class="kh-card" href="/werkblad-op-maat/"><div class="kh-card__img"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Werkblad op maat"></div><div class="kh-card__b"><h3>Werkblad op maat</h3><p>Van eiken tot 25 decoren.</p><span class="kh-card__cta">Bekijk</span></div></a>
+              <a class="kh-card" href="/standaard-maten/"><div class="kh-card__img"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="Standaardmaten"></div><div class="kh-card__b"><h3>Standaardmaten</h3><p>Kant-en-klaar, direct aan de slag.</p><span class="kh-card__cta">Bekijk</span></div></a>
+            </div>
+          </div>
+
+          <div class="kh-fallback">
+            Liever meteen kijken? Ga direct naar <a href="/hout-op-maat-laten-zagen/">hout op maat</a>, <a href="/standaard-maten/">standaardmaten</a> of <a href="/hulp-en-advies/">hulp en advies</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UITLEG -->
+  <section class="soft">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow">Waarom een keuzehulp?</span>
+        <h2>Zeker weten dat je goed begint</h2>
+        <p>Hout kies je niet alleen op kleur. De toepassing, de maat en of je op maat wilt of een standaardmaat bepalen mee wat past. De keuzehulp neemt je in een paar stappen mee, zodat je met vertrouwen begint.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Veelgestelde vragen</span><h2>Over de keuzehulp</h2></div>
+      <div class="faq-list">
+        <details class="faq"><summary>Wat als ik mijn maat nog niet weet?</summary><div><p>Geen probleem. Doorloop eerst de keuzehulp en bepaal je maten daarna in de configurator. Meet op het breedste punt en houd rekening met overstek.</p></div></details>
+        <details class="faq"><summary>Kan ik eerst een staal bekijken?</summary><div><p>Ja, vraag een gratis staal aan en bekijk de kleur en het materiaal thuis in je eigen licht voordat je kiest.</p></div></details>
+        <details class="faq"><summary>Wat is het verschil tussen op maat en standaard?</summary><div><p>Op maat stel je zelf samen tot op de millimeter. Standaardmaten zijn kant-en-klaar en direct mee te nemen.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  var kh=document.getElementById('kh');if(!kh)return;
+  var steps=kh.querySelectorAll('.kh-step');
+  var progress=document.getElementById('kh-progress');
+  var fill=document.getElementById('kh-fill');
+  var prev=document.getElementById('kh-prev');
+  var restart=document.getElementById('kh-restart');
+  var labels={'1':'Vraag 1 van 2','2':'Vraag 2 van 2','result':'Ons advies'};
+  var widths={'1':'50%','2':'100%','result':'100%'};
+  var history=['1'];
+  function show(step){
+    steps.forEach(function(s){s.classList.toggle('active',s.getAttribute('data-step')===step);});
+    if(progress)progress.textContent=labels[step]||'';
+    if(fill)fill.style.width=widths[step]||'100%';
+    if(prev)prev.disabled=history.length<=1;
+    if(kh.scrollIntoView)kh.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  kh.addEventListener('click',function(e){
+    var n=e.target.closest('[data-next]');
+    if(n){history.push(n.getAttribute('data-next'));show(n.getAttribute('data-next'));}
+  });
+  if(prev)prev.addEventListener('click',function(){if(history.length>1){history.pop();show(history[history.length-1]);}});
+  if(restart)restart.addEventListener('click',function(){history=['1'];show('1');});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  GATE 1F, STAP NUL: DE CATEGORIE. Verplicht sinds 11-09-2026 (Zoe).
+  ===========================================================================
+  Tak         : -, Merkpagina, geen productgroep
+  Kennisbank  : geen kennisbank
+  Niet van toepassing op deze tak: de productregels P1 t/m P8 gelden niet
+
+  Draai de toets met de tak erbij, anders draait hij plat en kan hij goed
+  werk afkeuren:
+      python3 "CanDo SEO/_tools/gate1f-verbodenlijst.py" --tak - 36-b-corp.html
+
+  Staat deze kop er niet, dan is de toets niet uitgevoerd, hoe schoon de
+  uitslag ook oogt. Routeringstabel: 04-VORM/VERBODENLIJST.md sectie 0.
+  ===========================================================================
+-->
+<html lang="nl">
+<head>
+<!--
+  ===========================================================================
+  STRAMIEN 36: B CORP, DE VERDIEPINGSPAGINA
+  Opgesteld 11-09-2026, op besluit van Zoe van diezelfde dag.
+  Bron van de opdracht: 05-BESLUITEN/BESLUIT-DUURZAAMHEID-EN-B-CORP.md.
+  Vormreferentie: Stramien/27-materiaalpagina-houtsoort.html.
+  Norm: 04-VORM/SCHEMA-EN-GEO-NORM.md.
+
+  ===========================================================================
+  WAAROM DEZE PAGINA OPNIEUW IS OPGEZET
+  ===========================================================================
+  De huidige live pagina doet drie dingen tegelijk: merkverhaal, productverhaal
+  op maat, en de uitleg van de certificering. Zoe, 11-09-2026: "dat moet dus
+  even helemaal honderd procent anders." Na het besluit doet deze pagina er
+  nog EEN: de verdieping, voor wie specifiek wil weten wat B Corp betekent.
+
+  De drie lagen uit het besluit, sectie 2:
+    homepage    wat CanDo concreet doet          (een blok, drie onderdelen)
+    Over CanDo  hoe dat bij het merk hoort       (eigen sectie na de waarden)
+    B Corp      wat de certificering inhoudt     (DEZE pagina, alleen diepte)
+
+  ===========================================================================
+  DE NEGEN BLOKKEN, VOLGORDE IS BINDEND
+  ===========================================================================
+   1 Hero              De vraag als h1, het antwoord in de eerste 36 woorden.
+                       Split: tekst plus een rustig vlak met het B Corp-logo.
+                       Een knop, en die wijst VOORUIT de pagina in.
+   2 Wie is gecertificeerd
+                       Kort, scherp scope-blok in een definitiekader. Deli Home
+                       is de gecertificeerde onderneming, CanDo is een merk van
+                       Deli Home. Dit staat BEWUST voor de uitleg, zodat het
+                       onderscheid al vaststaat voordat de diepte begint.
+   3 Wat is een Certified B Corporation
+                       Lopende tekst plus een horizontale feitenstrook met de
+                       omvang van de community, en de groei in Nederland.
+   4 Waarop wordt beoordeeld
+                       De vijf gebieden als grid: governance, medewerkers,
+                       community, milieu en klanten, plus de balans tussen
+                       winst en maatschappelijke relevantie.
+   5 Hoe streng is het
+                       Donkere band. Extern getoetst, blijven verbeteren,
+                       hercertificering elke drie jaar. Beantwoordt "wie
+                       beoordeelt dat" en "hoe streng is het".
+   6 Wat merk je er als klant van
+                       DE KERN VAN DE HERZIENING. Twee gelijkwaardige kolommen:
+                       wat de certificering wel zegt en wat zij niet zegt. Hier
+                       staat eerlijk dat een certificering van het moederbedrijf
+                       geen productbelofte is. Sluit af met de enige goedgekeurde
+                       houtformulering.
+   7 Veelgestelde vragen
+                       Zes vragen, elk een eigen details-item. Voedt FAQPage.
+   8 Vervolg           Rustig beige CTA-kader met EEN primaire knop naar
+                       Over CanDo. De overige routes staan subtiel inline.
+   9 Verantwoording    Zichtbare datum laatst bijgewerkt. Kort.
+
+  COMPOSITIE: geen twee blokken met dezelfde opbouw. Split, definitiekader,
+  tekst met feitenstrook, grid van vijf, donkere volle band, twee gelijke
+  kolommen, split-accordeon, beige CTA-kader, kleine regel.
+
+  ===========================================================================
+  WAT ER BEWUST NIET OP STAAT, EN WAAROM
+  ===========================================================================
+  - GEEN hoofdstuk "Producten op maat". Dat verhuist in verkorte vorm naar de
+    homepage en Over CanDo. Besluit sectie 3 en 4. Op deze pagina maakte het
+    van de verdieping een productverhaal.
+  - GEEN hoofdstuk "100% gecertificeerd hout". Zelfde route, zelfde reden.
+  - GEEN "het duurzaamste bouwmateriaal dat er is". Absoluut verboden.
+    Feedbackregister D39 en CRO-UX-SEO-PRINCIPES-2026.md sectie 1 regel 9b.
+    Ook geen variant: geen "meest milieuvriendelijke", geen "100 procent
+    duurzaam", geen klimaat- of CO2-neutraalclaim.
+  - GEEN "hernieuwbaar, met een lage CO2-uitstoot en van nature circulair".
+    Die zin staat nu twee keer op de live pagina, een keer in het merkverhaal
+    en een keer in het houthoofdstuk. Het is dezelfde vergelijkende
+    milieuclaim zonder bewijsstuk en valt onder dezelfde regel 9b.
+  - GEEN dubbele formulering over het hout. De live pagina zegt op de ene plek
+    "Het hout dat Deli Home gebruikt is FSC- of PEFC-gecertificeerd" en op de
+    andere "CanDo gebruikt uitsluitend PEFC- of FSC-gecertificeerd hout".
+    Twee subjecten, en "uitsluitend" is sterker dan wat wij kunnen aantonen.
+    Op deze pagina staat EEN formulering, de door Zoe goedgekeurde:
+    "Het hout dat CanDo gebruikt is FSC- of PEFC-gecertificeerd."
+    Het woord "uitsluitend" komt hier niet voor.
+  - GEEN vermelding dat een beeld een render of CGI is. Feedbackregister D38.
+  - GEEN onderstreepte tekst met een pijl als knop. Elke primaire of
+    secundaire actie is een pill-knop, .btn plus .btn-primary of
+    .btn-secondary uit 04-VORM/_designsysteem/cando-base.css.
+    Feedbackregister D37 en designsysteem regel 13b.
+  - GEEN oranje balk en geen oranje rand als callout-omlijsting. Oranje is
+    accent voor knoppen, links en kleine labels, niet voor vlakken.
+    Designsysteem regel 5, 6 en 13b. De donkere band in blok 5 heeft daarom
+    ook geen oranje waas gekregen.
+  - GEEN prijzen, geen reviewblok, geen sterren, geen Trustpilot-merkscore.
+    Er is geen actief reviewplatform. CRO sectie 1 regel 9.
+  - GEEN staal-CTA. Dit is geen meubelpaneel-, werkblad- of vensterbankpagina.
+    Feedbackregister D36.
+  - GEEN ankerbalk of chipsnavigatie. Registerregel A22/A44.
+  - GEEN beeldplaceholder. Er is geen eigen B Corp-beeld en geen beeld van de
+    gecertificeerde bedrijfsvoering. Volgens registerregel A5/A48 bouw je dan
+    geen leeg beeldvlak, wel een besluitpunt. Zie de open punten.
+  - GEEN antwoord dat begint met "Nee". Elke begrenzing is geformuleerd als
+    een route. Feedbackregister D39, werkbladencorrecties 10-09.
+
+  ===========================================================================
+  OPENSTAANDE PUNTEN
+  ===========================================================================
+  [besluit nodig] BEELD. De enige beschikbare visual is het B Corp-logo,
+    https://www.cando.eu/media/wysiwyg/B-Corp-Logo-Black-CMYK.png (live,
+    geverifieerd 11-09-2026). Er is geen Bynder-beeld dat semantisch bij deze
+    pagina hoort: geen productiebeeld, geen medewerkersbeeld, geen beeld van
+    de gecertificeerde onderneming. De pagina draagt daarom EEN visual, in de
+    hero, precies een keer. Zodra er wel passend beeld is, hoort het in blok 3
+    of blok 5, en wordt de asset-id geregistreerd in tab 06 van
+    CanDo-hout-redirects-en-inventaris.xlsx.
+  [besluit nodig] OG:IMAGE. Staat nu op hetzelfde logo. Dat is geen
+    deelbeeld-formaat. Zonder passend liggend beeld is dit de minst slechte
+    keuze. Vervangen zodra er beeld is.
+  [besluit nodig] TRAILING SLASH. De opdracht geeft als canonical
+    https://www.cando.eu/nl-nl/b-corp/ met slash. De live sitemap
+    (06-DATA/Sitemap CanDo NL:NL.rtf, 21-07-2026) voert de URL zonder slash:
+    https://www.cando.eu/nl-nl/b-corp. Een van de twee moet 301'en naar de
+    ander, in dezelfde ronde, tab 01. Zolang dat niet vaststaat is er een
+    mismatch tussen canonical en de URL die Google nu kent.
+  [besluit nodig] HREFLANG NAAR PAGINA'S DIE NOG NIET BESTAAN. De norm eist
+    drie hreflang plus x-default. Uit de sitemaps van 21-07-2026: nl-NL heeft
+    /nl-nl/b-corp, be-nl heeft GEEN b-corp-pagina, be-fr heeft er ook geen.
+    Een hreflang naar een 404 is schadelijker dan een ontbrekende rij. Regel
+    voor de CMS-implementatie: emit alleen de regels die resolven. De vier
+    regels staan hier volledig omdat dit de VORM is.
+  [te bevestigen] WIE DE CERTIFICERING TOEKENT. Blok 5 zegt dat de toetsing
+    niet door het bedrijf zelf gebeurt maar door de organisatie achter het
+    keurmerk. De NAAM van die organisatie staat in geen enkel bronbestand in
+    KENNIS/ of 05-BESLUITEN/. Hij wordt daarom niet genoemd. Zodra de naam
+    bevestigd is, kan hij in blok 5 en in FAQ-vraag 3.
+  [te bevestigen] DE DREMPELSCORE. Er circuleert een minimumscore voor
+    B Corp-certificering. Die staat niet in onze bronnen en dus niet op de
+    pagina, ook niet als "ongeveer". Een getal zonder bron haalt Gate 1 niet.
+  [te bevestigen] DE OMVANG VAN DE COMMUNITY. "Ruim 10.000 B Corps, meer dan
+    160 branches, meer dan 100 landen" komt letterlijk van de huidige CanDo-
+    pagina. Daar staat geen peildatum en geen bron bij. SCHEMA-EN-GEO-NORM.md
+    sectie 5 punt 4 vraagt eenheid EN peildatum in de cel. Zolang die bron
+    ontbreekt blijft het bij de hedged formulering ("ruim", "meer dan") plus
+    de zichtbare datum laatst bijgewerkt in blok 9. Die datum is de datum van
+    deze herziening, niet de peildatum van de cijfers. Dat verschil moet
+    opgelost worden voordat de pagina live gaat.
+  [te bevestigen] DE BESCHRIJVING VAN DE VIJF GEBIEDEN. De namen van de vijf
+    beoordelingsgebieden staan in de bron. De korte toelichting per gebied is
+    een neutrale uitleg van het woord zelf, geen weergave van de
+    beoordelingsmethodiek. Zo geformuleerd dat er niets over de methodiek
+    wordt geclaimd. Bij een officiele bron mag dit preciezer.
+
+  ===========================================================================
+  SCHEMA
+  ===========================================================================
+  Article + FAQPage + BreadcrumbList, conform SCHEMA-EN-GEO-NORM.md sectie 3
+  (uitlegpagina) en sectie 3 slotregel (BreadcrumbList staat op elke pagina).
+  GEEN aggregateRating, GEEN Review, GEEN Offer, GEEN Product.
+  Elk getal in het schema staat ook zichtbaar op de pagina: 10.000, 160, 100
+  en de drie jaar staan alle vier in de zichtbare tekst, en dateModified is
+  gelijk aan de zichtbare datum in blok 9.
+
+  MEETPUNT
+  Primair: de doorklik naar Over CanDo uit blok 8. Dit is de diepste laag, er
+  is hier geen koopmoment en dus geen click-out-doel. Nooit op verkeer
+  verantwoord.
+
+  TOEGANKELIJKHEID
+  skip-to-content naar #contentarea, :focus-visible, prefers-reduced-motion,
+  lang op html, main met id contentarea. Geen header en geen footer: die komen
+  uit het CMS.
+  ===========================================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B Corp, wat het keurmerk betekent | CanDo</title>
+<meta name="description" content="Wat betekent een B Corp-certificering? Lees waarop een Certified B Corporation wordt beoordeeld, hoe streng het proces is en wat het voor jou betekent.">
+<link rel="canonical" href="https://www.cando.eu/nl-nl/b-corp/">
+<link rel="alternate" hreflang="nl-NL" href="https://www.cando.eu/nl-nl/b-corp/">
+<link rel="alternate" hreflang="nl-BE" href="https://www.cando.eu/be-nl/b-corp/">
+<link rel="alternate" hreflang="fr-BE" href="https://www.cando.eu/be-fr/b-corp/">
+<link rel="alternate" hreflang="x-default" href="https://www.cando.eu/nl-nl/b-corp/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="B Corp, wat het keurmerk betekent">
+<meta property="og:description" content="Wat betekent een B Corp-certificering? Lees waarop een Certified B Corporation wordt beoordeeld, hoe streng het proces is en wat het voor jou betekent.">
+<meta property="og:image" content="https://www.cando.eu/media/wysiwyg/B-Corp-Logo-Black-CMYK.png">
+<meta property="og:url" content="https://www.cando.eu/nl-nl/b-corp/">
+<meta property="og:locale" content="nl_NL">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{
+  --text:#20272b;
+  --muted:#666b70;
+  --accent:#F7901E;
+  --accent-dark:#d95f18;
+  --border:#e5ded4;
+  --bg-soft:#f7f2ea;
+  --bg-light:#fbfaf7;
+  --bg-warm:#f4eadc;
+  --white:#fff;
+  --dark:#211914;
+  --radius:8px;
+  --radius-pill:24px;
+  --shadow-hover:0 12px 28px rgba(32,39,43,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .cando-bcorp *{transition:none!important;animation:none!important}
+}
+body{margin:0;background:#fff;color:var(--text);font-family:Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+.cando-bcorp{width:100%;overflow-x:clip;background:#fff;color:var(--text)}
+.cando-bcorp *,.cando-bcorp *::before,.cando-bcorp *::after{box-sizing:border-box}
+.cando-bcorp h1,.cando-bcorp h2,.cando-bcorp h3,.cando-bcorp .btn,.cando-bcorp summary,.cando-bcorp .fact strong,.cando-bcorp .scope-row dt{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.cando-bcorp h1{margin:0 0 16px;font-size:44px;line-height:1.05;font-weight:700;color:var(--text);letter-spacing:-.02em}
+.cando-bcorp h2{margin:0;font-size:30px;line-height:1.2;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.cando-bcorp h3{margin:0 0 7px;font-size:19px;line-height:1.3;font-weight:700;color:var(--text)}
+.cando-bcorp p{margin:0;font-size:16px;line-height:1.68;color:#414141}
+.cando-bcorp ul{margin:0;padding:0}
+.cando-bcorp a{text-decoration:none;font-weight:700}
+.cando-bcorp :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.cando-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+.cando-wrap--narrow{max-width:860px}
+.cando-section{position:relative;padding:58px 0}
+.cando-section--soft{background:var(--bg-soft)}
+.cando-section--light{background:var(--bg-light)}
+.cando-section-head{max-width:760px;margin-bottom:28px}
+.cando-section-head p{margin-top:12px;color:var(--muted)}
+.cando-eyebrow{display:block;margin:0 0 8px;color:var(--accent);font-size:11px;line-height:1.2;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+
+/* KNOPPEN. Overgenomen uit 04-VORM/_designsysteem/cando-base.css, niet zelf bedacht.
+   Een primaire of secundaire actie is ALTIJD een pill-knop, nooit onderstreepte
+   tekst met een pijl. Feedbackregister D37, designsysteem regel 13b. */
+.btn-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 26px;border-radius:var(--radius-pill);font-size:16px;font-weight:700;line-height:1.2;text-decoration:none!important;border:1px solid transparent;cursor:pointer;transition:background .18s,border-color .18s,color .18s}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-secondary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+/* Op een donkere band: witte rand en witte tekst. Designsysteem regel 1. */
+.band-dark .btn-secondary{border-color:rgba(255,255,255,.55);color:#fff}
+.band-dark .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Subtiele inline verwijzing in de lopende tekst. Nadrukkelijk GEEN knop. */
+.cando-bcorp .prose a{color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.cando-bcorp .prose a:hover{color:var(--accent-dark)}
+
+/* 1. Hero. Split: tekst plus een rustig vlak met het enige beschikbare beeld. */
+.hero{padding:72px 0 58px;background:#fff;border-bottom:1px solid var(--border)}
+.hero__grid{display:grid;grid-template-columns:1.18fr .82fr;gap:48px;align-items:center}
+.hero__copy p{max-width:560px;font-size:18px;line-height:1.66;color:#343a3e}
+.hero__copy p+p{margin-top:14px}
+.hero__mark{display:flex;align-items:center;justify-content:center;min-height:300px;padding:44px;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius)}
+.hero__mark img{width:100%;max-width:190px;height:auto}
+
+/* 2. Scope. Definitiekader, geen kaartenrij. */
+.scope{border:1px solid var(--border);border-radius:var(--radius);background:#fff;padding:34px 36px}
+.scope__lead{max-width:720px}
+.scope__lead h2{margin-bottom:12px}
+.scope-rows{margin:26px 0 0;padding:0}
+.scope-row{display:grid;grid-template-columns:230px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--border)}
+.scope-row dt{margin:0;font-size:17px;font-weight:700;line-height:1.35;color:var(--text)}
+.scope-row dd{margin:0;font-size:15px;line-height:1.6;color:#414141}
+
+/* 3. Wat is een Certified B Corporation. Tekst plus horizontale feitenstrook. */
+.prose p+p{margin-top:15px}
+.prose{max-width:820px}
+.prose--after-strip{margin-top:28px}
+.fact-strip{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:34px 0 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.fact{padding:22px 24px 22px 0;margin-right:24px;border-right:1px solid var(--border)}
+.fact:last-child{border-right:0;margin-right:0}
+.fact strong{display:block;margin-bottom:6px;font-size:30px;line-height:1;color:var(--accent)}
+.fact span{display:block;font-size:14px;line-height:1.5;color:#414141}
+
+/* 4. Waarop wordt beoordeeld. Grid van vijf, geen kaartschaduw. */
+.area-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+/* Vijf gebieden in twee rijen: 3 boven, 2 breder eronder. Zo staat er geen
+   lege cel in het grid en is de onderste rij een bewuste keuze, geen rest. */
+.area{grid-column:span 2}
+.area:nth-child(4),.area:nth-child(5){grid-column:span 3}
+.area{padding:24px 24px 26px;background:#fff;border:1px solid var(--border);border-radius:var(--radius)}
+.area h3+p{margin-top:0}
+.area h3{font-size:18px}
+.area p{font-size:15px;line-height:1.6;color:#414141}
+.area-note{margin-top:34px;max-width:820px;font-size:16px;line-height:1.68;color:#414141}
+
+/* 5. Hoe streng is het. Donkere volle band, geen oranje vlak of rand. */
+.band-dark{background:var(--dark);color:#fff}
+.band-dark h2{color:#fff}
+.band-dark .cando-section-head p{color:rgba(255,255,255,.78)}
+.band-dark .cando-eyebrow{color:#FDC689}
+.strict-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px;padding-top:30px;border-top:1px solid rgba(255,255,255,.18)}
+.strict h3{color:#fff;font-size:18px}
+.strict p{font-size:15px;line-height:1.62;color:rgba(255,255,255,.78)}
+
+/* 6. Wat merk je er als klant van. Twee kolommen, exact gelijk gewicht. */
+.honest{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.honest__col h3{font-size:20px;margin-bottom:12px}
+.clean-list{list-style:none;display:grid;gap:12px}
+.clean-list li{position:relative;padding-left:19px;font-size:15px;line-height:1.58;color:#414141}
+.clean-list li::before{content:"\203A";position:absolute;left:0;top:-1px;color:var(--accent);font-size:18px;font-weight:800}
+.clean-list strong{color:var(--text)}
+.honest__close{margin-top:34px;padding-top:26px;border-top:1px solid var(--border);max-width:820px}
+.honest__close p{font-size:17px;line-height:1.66}
+
+/* 7. FAQ. Split, elke vraag een eigen details-item. */
+.faq-layout{display:grid;grid-template-columns:.74fr 1.26fr;gap:44px;align-items:start}
+.faq-intro p{margin-top:12px;color:var(--muted)}
+.faq-list{display:grid;gap:10px}
+details.faq-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+details.faq-item summary{list-style:none;cursor:pointer;padding:17px 54px 17px 18px;font-size:16px;font-weight:700;line-height:1.35;position:relative}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{content:"+";position:absolute;right:18px;top:15px;width:25px;height:25px;border:1px solid #b8b8b8;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6c6c6c;font-size:18px;line-height:1}
+details.faq-item[open]{border-color:#d8cdbf}
+details.faq-item[open] summary{color:var(--accent);background:#fffaf6}
+details.faq-item[open] summary::after{content:"\2212";background:var(--accent);border-color:var(--accent);color:#fff}
+.faq-answer{padding:0 18px 19px}
+.faq-answer p{font-size:15px;line-height:1.66;color:#414141}
+.faq-answer p+p{margin-top:11px}
+
+/* 8. Vervolg. Rustig beige kader met een oranje knop. Designsysteem regel 5. */
+.cta-box{background:var(--bg-warm);border-radius:var(--radius);padding:44px 44px 42px;max-width:900px}
+.cta-box h2{max-width:560px}
+.cta-box p{margin-top:12px;max-width:620px}
+
+/* 9. Verantwoording. */
+.accountability{padding:30px 0 46px}
+.accountability p{font-size:13px;line-height:1.6;color:var(--muted);max-width:820px}
+
+@media(max-width:1020px){
+  .hero__grid,.honest,.faq-layout{grid-template-columns:1fr}
+  .hero__grid{gap:32px}
+  .hero__mark{min-height:240px;padding:34px}
+  .scope-row{grid-template-columns:1fr;gap:6px}
+  .area-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .area,.area:nth-child(4),.area:nth-child(5){grid-column:auto}
+  .strict-grid{grid-template-columns:1fr;gap:26px}
+  .honest{gap:32px}
+  .faq-layout{gap:28px}
+  .cta-box{padding:34px 30px 32px}
+}
+@media(max-width:760px){
+  .cando-bcorp h1{font-size:32px}
+  .cando-bcorp h2{font-size:25px}
+  .cando-section{padding:42px 0}
+  .hero{padding:48px 0 42px}
+  .hero__copy p{font-size:17px}
+  .btn-row{flex-direction:column;align-items:stretch}
+  .btn{width:100%}
+  .scope{padding:26px 20px 24px}
+  .fact-strip{grid-template-columns:1fr;border-bottom:0}
+  .fact{padding:18px 0;margin-right:0;border-right:0;border-bottom:1px solid var(--border)}
+  .fact:last-child{border-bottom:1px solid var(--border)}
+  .area-grid{grid-template-columns:1fr;gap:14px}
+  .area,.area:nth-child(4),.area:nth-child(5){grid-column:auto}
+  .area{padding:20px 20px 22px}
+  .honest__close{margin-top:28px;padding-top:22px}
+  .cta-box{padding:28px 20px 26px}
+  .accountability{padding:24px 0 38px}
+}
+.cando-skip{position:absolute;left:-9999px;top:0;z-index:99;padding:12px 20px;background:var(--accent);color:#fff;font-weight:700;border-radius:0 0 var(--radius) 0}
+.cando-skip:focus{left:0}
+</style>
+</head>
+<body>
+<a class="cando-skip" href="#contentarea">Naar de inhoud</a>
+
+<main class="cando-bcorp" id="contentarea">
+
+  <!-- 1. Hero. Het antwoord staat in de eerste 36 woorden. Een knop, vooruit. -->
+  <section class="hero" aria-labelledby="page-title">
+    <div class="cando-wrap">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <span class="cando-eyebrow">Certificering</span>
+          <h1 id="page-title">Wat betekent een B Corp-certificering?</h1>
+          <p>Een Certified B Corporation&trade; is een onderneming die extern wordt getoetst op de impact van haar bedrijfsvoering, niet alleen op haar financi&euml;le resultaat. Deli Home is die gecertificeerde onderneming. CanDo is een merk van Deli Home.</p>
+          <p>Op deze pagina lees je waar zo'n certificering precies over gaat, waarop een bedrijf wordt beoordeeld, hoe streng dat gaat en wat je er als klant wel en niet uit mag afleiden.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#beoordeling">Lees waarop wordt beoordeeld</a>
+          </div>
+        </div>
+        <div class="hero__mark">
+          <img src="https://www.cando.eu/media/wysiwyg/B-Corp-Logo-Black-CMYK.png" alt="Het logo van Certified B Corporation" width="380" height="600">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Scope. Dit staat bewust voor de uitleg, zodat het onderscheid vaststaat. -->
+  <section class="cando-section cando-section--soft" id="wie" aria-labelledby="wie-title">
+    <div class="cando-wrap">
+      <div class="scope">
+        <div class="scope__lead">
+          <span class="cando-eyebrow">De scope</span>
+          <h2 id="wie-title">Wie is hier precies gecertificeerd?</h2>
+          <p>Een B Corp-certificering wordt toegekend aan een onderneming, niet aan een merk en niet aan een product. Het is daarom belangrijk om te weten wie in dit geval de gecertificeerde partij is.</p>
+        </div>
+        <dl class="scope-rows">
+          <div class="scope-row">
+            <dt>Deli Home</dt>
+            <dd>De onderneming achter CanDo, en de partij die de certificering tot Certified B Corporation&trade; heeft behaald. De beoordeling gaat over de bedrijfsvoering van Deli Home.</dd>
+          </div>
+          <div class="scope-row">
+            <dt>CanDo</dt>
+            <dd>Een merk van Deli Home. CanDo is daarmee onderdeel van een B Corp. Op onze pagina's lees je daarom "onderdeel van een B Corp" en niet dat CanDo zelf gecertificeerd is.</dd>
+          </div>
+          <div class="scope-row">
+            <dt>Een los product</dt>
+            <dd>Een B Corp-certificering zegt niets over een afzonderlijk product in het schap. Wat er per product geldt, staat op de pagina van dat product.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Wat is een Certified B Corporation. Lopende tekst plus feitenstrook. -->
+  <section class="cando-section" id="wat" aria-labelledby="wat-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Het keurmerk</span>
+        <h2 id="wat-title">Wat is een Certified B Corporation&trade;?</h2>
+      </div>
+      <div class="prose">
+        <p>Een Certified B Corporation&trade; is een bedrijf met een keurmerk dat aangeeft dat het voldoet aan strenge normen op het gebied van geverifieerde maatschappelijke prestaties en milieuprestaties, verantwoordelijkheid en transparantie. Het keurmerk kijkt dus naar hoe een bedrijf is ingericht en hoe het werkt, en niet naar een enkel product of een enkele campagne.</p>
+        <p>B Corp is daarnaast een internationale community. De omvang daarvan geeft een idee van hoe breed het keurmerk wordt gebruikt.</p>
+      </div>
+      <ul class="fact-strip" aria-label="De omvang van de B Corp-community">
+        <li class="fact"><strong>10.000+</strong><span>B Corps wereldwijd</span></li>
+        <li class="fact"><strong>160+</strong><span>branches waarin B Corps actief zijn</span></li>
+        <li class="fact"><strong>100+</strong><span>landen waarin B Corps gevestigd zijn</span></li>
+      </ul>
+      <div class="prose prose--after-strip">
+        <p>In Europa, en zeker in Nederland, groeit die community snel. Bekende Nederlandse bedrijven met een B Corp-certificering zijn onder meer Albert Heijn, Auping, Bol, Brabantia, Hak en Rituals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Waarop wordt beoordeeld. Vijf gebieden, gelijk gewicht. -->
+  <section class="cando-section cando-section--light" id="beoordeling" aria-labelledby="beoordeling-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">De beoordeling</span>
+        <h2 id="beoordeling-title">Waarop wordt een B Corp beoordeeld?</h2>
+        <p>Een B Corp wordt op vijf gebieden bekeken. Ze tellen alle vijf mee, want het keurmerk gaat over het bedrijf als geheel.</p>
+      </div>
+      <div class="area-grid">
+        <div class="area">
+          <h3>Governance</h3>
+          <p>Hoe het bedrijf bestuurd wordt: hoe besluiten tot stand komen, hoe verantwoordelijkheden zijn belegd en hoe daarover verantwoording wordt afgelegd.</p>
+        </div>
+        <div class="area">
+          <h3>Medewerkers</h3>
+          <p>Hoe het bedrijf omgaat met de mensen die er werken, van arbeidsvoorwaarden en ontwikkeling tot veiligheid en gezondheid op de werkvloer.</p>
+        </div>
+        <div class="area">
+          <h3>Community</h3>
+          <p>De verhouding tot de omgeving waarin het bedrijf opereert: de keten, de leveranciers en de lokale gemeenschappen die met het bedrijf te maken hebben.</p>
+        </div>
+        <div class="area">
+          <h3>Milieu</h3>
+          <p>De invloed van de bedrijfsvoering op de omgeving, van het gebruik van grondstoffen en energie tot afval en transport.</p>
+        </div>
+        <div class="area">
+          <h3>Klanten</h3>
+          <p>Hoe het bedrijf zich verhoudt tot de mensen die zijn producten kopen en gebruiken, waaronder de informatie die het over die producten geeft.</p>
+        </div>
+      </div>
+      <p class="area-note">Achter die vijf gebieden zit een uitgangspunt: een Certified B Corporation&trade; moet een goede balans zoeken tussen winst en maatschappelijke relevantie. Een sterk financieel resultaat is op zichzelf dus niet genoeg om aan de norm te voldoen.</p>
+    </div>
+  </section>
+
+  <!-- 5. Hoe streng is het. Donkere band, bewust zonder oranje vlak of rand. -->
+  <section class="cando-section band-dark" id="streng" aria-labelledby="streng-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Het proces</span>
+        <h2 id="streng-title">Hoe streng is de B Corp-certificering?</h2>
+        <p>Het certificeringsproces is streng en veelomvattend. Drie dingen maken het verschil met een verklaring die een bedrijf over zichzelf afgeeft.</p>
+      </div>
+      <div class="strict-grid">
+        <div class="strict">
+          <h3>Het is een toetsing, geen eigen verklaring</h3>
+          <p>De certificering wordt niet door het bedrijf zelf afgegeven. De prestaties worden geverifieerd en het keurmerk wordt toegekend door de organisatie achter B Corp. Een bedrijf kan zichzelf dus geen B Corp noemen.</p>
+        </div>
+        <div class="strict">
+          <h3>Blijven verbeteren hoort erbij</h3>
+          <p>Een bedrijf moet kunnen aantonen dat het zich blijft verbeteren. Voldoen aan de norm is daarmee geen eindpunt maar een doorlopende verplichting.</p>
+        </div>
+        <div class="strict">
+          <h3>Elke drie jaar opnieuw</h3>
+          <p>Een Certified B Corporation&trade; moet zich elke drie jaar opnieuw laten certificeren. Zo wordt gecontroleerd of het bedrijf nog steeds aan de normen voldoet. Een certificering van jaren geleden blijft dus niet vanzelf staan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. De kern van de herziening. Twee kolommen, exact gelijk gewicht, eerlijk. -->
+  <section class="cando-section" id="voor-jou" aria-labelledby="voor-jou-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Voor jou als klant</span>
+        <h2 id="voor-jou-title">Wat merk je er als klant van?</h2>
+        <p>Eerlijk is eerlijk: een certificering van de onderneming is geen belofte over het product dat je meeneemt. Daarom hieronder allebei de kanten.</p>
+      </div>
+      <div class="honest">
+        <div class="honest__col">
+          <h3>Wat de certificering wel zegt</h3>
+          <ul class="clean-list">
+            <li><strong>De bedrijfsvoering is extern getoetst.</strong> Niet alleen het financi&euml;le resultaat, maar ook bestuur, medewerkers, community, milieu en klanten.</li>
+            <li><strong>De toetsing herhaalt zich.</strong> Elke drie jaar volgt hercertificering, en het bedrijf moet laten zien dat het zich blijft verbeteren.</li>
+            <li><strong>Het geldt voor Deli Home als geheel.</strong> Alle merken van Deli Home, waaronder CanDo, vallen onder die bedrijfsvoering.</li>
+          </ul>
+        </div>
+        <div class="honest__col">
+          <h3>Wat de certificering niet zegt</h3>
+          <ul class="clean-list">
+            <li><strong>Het is geen productkeurmerk.</strong> Er staat geen oordeel achter over een afzonderlijke deur, kast of paneel dat je in de winkel pakt.</li>
+            <li><strong>Het vervangt geen materiaalkeurmerk.</strong> Wil je weten waar het hout vandaan komt, dan kijk je naar FSC&reg; en PEFC, niet naar B Corp.</li>
+            <li><strong>Het is geen vergelijking met andere merken.</strong> Het keurmerk zegt dat een bedrijf aan een norm voldoet, niet dat het beter scoort dan een bedrijf zonder keurmerk.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="honest__close">
+        <p>Zoek je iets concreets dat wel per product geldt: <strong>het hout dat CanDo gebruikt is FSC&reg;- of PEFC-gecertificeerd</strong>. Zo kiezen we voor hout uit verantwoord beheerde bronnen. Dat is een ander keurmerk dan B Corp, met een ander doel, en de twee staan los van elkaar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ. Elke vraag een eigen item. Voedt FAQPage. -->
+  <section class="cando-section cando-section--soft" id="vragen" aria-labelledby="faq-title">
+    <div class="cando-wrap">
+      <div class="faq-layout">
+        <div class="faq-intro">
+          <span class="cando-eyebrow">Veelgestelde vragen</span>
+          <h2 id="faq-title">Nog iets over B Corp weten?</h2>
+          <p>De vragen die het vaakst over deze certificering worden gesteld, met het antwoord dat we kunnen onderbouwen.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Is CanDo zelf een B Corp?</summary>
+            <div class="faq-answer">
+              <p>De gecertificeerde onderneming is Deli Home. CanDo is een merk van Deli Home en is daarmee onderdeel van een B Corp. Op onze pagina's staat daarom "onderdeel van een B Corp" en niet dat CanDo zelf de certificering draagt. Dat onderscheid houden we bewust zuiver, omdat een B Corp-certificering aan een onderneming wordt toegekend en niet aan een merk of een product.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Waarop wordt een Certified B Corporation beoordeeld?</summary>
+            <div class="faq-answer">
+              <p>Een Certified B Corporation wordt beoordeeld op vijf gebieden: governance, medewerkers, community, milieu en klanten. Die vijf tellen allemaal mee, want het keurmerk gaat over het bedrijf als geheel en niet over een afzonderlijk product. Daarbovenop geldt het uitgangspunt dat een B Corp een goede balans moet zoeken tussen winst en maatschappelijke relevantie. Een sterk financieel resultaat alleen is dus niet genoeg.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Hoe vaak wordt een B Corp opnieuw beoordeeld?</summary>
+            <div class="faq-answer">
+              <p>Een Certified B Corporation moet zich elke drie jaar opnieuw laten certificeren. Bij die hercertificering wordt gecontroleerd of het bedrijf nog steeds aan de normen voldoet. Daarnaast moet een bedrijf kunnen aantonen dat het zich blijft verbeteren, dus voldoen aan de norm is geen eindpunt. Een certificering die jaren geleden is behaald, blijft daardoor niet vanzelf staan.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Hoe groot is de B Corp-community?</summary>
+            <div class="faq-answer">
+              <p>Wereldwijd zijn er ruim 10.000 B Corps, actief in meer dan 160 branches en gevestigd in meer dan 100 landen. In Europa, en zeker in Nederland, groeit die community snel. Bekende Nederlandse bedrijven met een B Corp-certificering zijn onder meer Albert Heijn, Auping, Bol, Brabantia, Hak en Rituals.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Betekent B Corp dat elk CanDo-product duurzaam is?</summary>
+            <div class="faq-answer">
+              <p>Een B Corp-certificering gaat over de bedrijfsvoering van de onderneming, niet over een afzonderlijk product. Er zit dus geen oordeel achter over een specifieke deur, kast of paneel in het schap. Wil je weten wat er per product geldt, kijk dan naar de productinformatie zelf.</p>
+              <p>Wat wel over het materiaal gaat: het hout dat CanDo gebruikt is FSC&reg;- of PEFC-gecertificeerd. Zo kiezen we voor hout uit verantwoord beheerde bronnen.</p>
+            </div>
+          </details>
+          <details class="faq-item">
+            <summary>Wat is het verschil tussen B Corp en FSC of PEFC?</summary>
+            <div class="faq-answer">
+              <p>B Corp en de houtkeurmerken beantwoorden een andere vraag. B Corp kijkt naar de onderneming: hoe het bedrijf wordt bestuurd en hoe het omgaat met medewerkers, community, milieu en klanten. FSC en PEFC gaan over het materiaal: zij zeggen iets over de herkomst van het hout en over verantwoord beheerde bronnen.</p>
+              <p>De twee vervangen elkaar dus niet. Wil je weten waar het hout in een product vandaan komt, dan is FSC of PEFC de aanwijzing. Wil je weten hoe het bedrijf erachter is ingericht, dan is B Corp de aanwijzing.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Vervolg. Een primaire actie. De overige routes staan subtiel inline. -->
+  <section class="cando-section" aria-labelledby="vervolg-title">
+    <div class="cando-wrap">
+      <div class="cta-box">
+        <span class="cando-eyebrow">Verder lezen</span>
+        <h2 id="vervolg-title">Benieuwd hoe dit terugkomt in wat we maken?</h2>
+        <p class="prose">Op <a href="https://www.cando.eu/nl-nl/over-cando">Over CanDo</a> lees je waar we voor staan en hoe we nadenken over de materialen die we gebruiken. Daar staat ook wat we doen met hout uit verantwoord beheerde bronnen en met producten die op maat worden gemaakt.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://www.cando.eu/nl-nl/over-cando" data-ga4-event="doorklik_over_cando">Lees meer over CanDo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Verantwoording. Zichtbare datum, gelijk aan dateModified in het schema. -->
+  <section class="accountability" aria-label="Verantwoording">
+    <div class="cando-wrap">
+      <p>Deze pagina gaat over de certificering van Deli Home tot Certified B Corporation&trade;. CanDo is een merk van Deli Home. Laatst bijgewerkt op 11 september 2026.</p>
+    </div>
+  </section>
+
+</main>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://www.cando.eu/nl-nl/b-corp/#article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.cando.eu/nl-nl/b-corp/"
+    },
+    "headline": "Wat betekent een B Corp-certificering?",
+    "description": "Wat een Certified B Corporation is, waarop een B Corp wordt beoordeeld, hoe streng het certificeringsproces is en wat de certificering van Deli Home voor een klant van CanDo wel en niet betekent.",
+    "inLanguage": "nl-NL",
+    "datePublished": "2026-09-11",
+    "dateModified": "2026-09-11",
+    "image": "https://www.cando.eu/media/wysiwyg/B-Corp-Logo-Black-CMYK.png",
+    "author": {
+      "@type": "Organization",
+      "name": "CanDo",
+      "url": "https://www.cando.eu/nl-nl/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CanDo",
+      "url": "https://www.cando.eu/nl-nl/"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Certified B Corporation" },
+      { "@type": "Thing", "name": "B Corp-certificering" },
+      { "@type": "Thing", "name": "Deli Home" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.cando.eu/nl-nl/b-corp/#faq",
+    "inLanguage": "nl-NL",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is CanDo zelf een B Corp?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "De gecertificeerde onderneming is Deli Home. CanDo is een merk van Deli Home en is daarmee onderdeel van een B Corp. Op onze pagina's staat daarom onderdeel van een B Corp en niet dat CanDo zelf de certificering draagt. Dat onderscheid houden we bewust zuiver, omdat een B Corp-certificering aan een onderneming wordt toegekend en niet aan een merk of een product."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Waarop wordt een Certified B Corporation beoordeeld?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Een Certified B Corporation wordt beoordeeld op vijf gebieden: governance, medewerkers, community, milieu en klanten. Die vijf tellen allemaal mee, want het keurmerk gaat over het bedrijf als geheel en niet over een afzonderlijk product. Daarbovenop geldt het uitgangspunt dat een B Corp een goede balans moet zoeken tussen winst en maatschappelijke relevantie. Een sterk financieel resultaat alleen is dus niet genoeg."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe vaak wordt een B Corp opnieuw beoordeeld?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Een Certified B Corporation moet zich elke drie jaar opnieuw laten certificeren. Bij die hercertificering wordt gecontroleerd of het bedrijf nog steeds aan de normen voldoet. Daarnaast moet een bedrijf kunnen aantonen dat het zich blijft verbeteren, dus voldoen aan de norm is geen eindpunt. Een certificering die jaren geleden is behaald, blijft daardoor niet vanzelf staan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe groot is de B Corp-community?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wereldwijd zijn er ruim 10.000 B Corps, actief in meer dan 160 branches en gevestigd in meer dan 100 landen. In Europa, en zeker in Nederland, groeit die community snel. Bekende Nederlandse bedrijven met een B Corp-certificering zijn onder meer Albert Heijn, Auping, Bol, Brabantia, Hak en Rituals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Betekent B Corp dat elk CanDo-product duurzaam is?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Een B Corp-certificering gaat over de bedrijfsvoering van de onderneming, niet over een afzonderlijk product. Er zit dus geen oordeel achter over een specifieke deur, kast of paneel in het schap. Wil je weten wat er per product geldt, kijk dan naar de productinformatie zelf. Wat wel over het materiaal gaat: het hout dat CanDo gebruikt is FSC- of PEFC-gecertificeerd. Zo kiezen we voor hout uit verantwoord beheerde bronnen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat is het verschil tussen B Corp en FSC of PEFC?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "B Corp en de houtkeurmerken beantwoorden een andere vraag. B Corp kijkt naar de onderneming: hoe het bedrijf wordt bestuurd en hoe het omgaat met medewerkers, community, milieu en klanten. FSC en PEFC gaan over het materiaal: zij zeggen iets over de herkomst van het hout en over verantwoord beheerde bronnen. De twee vervangen elkaar dus niet. Wil je weten waar het hout in een product vandaan komt, dan is FSC of PEFC de aanwijzing. Wil je weten hoe het bedrijf erachter is ingericht, dan is B Corp de aanwijzing."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.cando.eu/nl-nl/b-corp/#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "CanDo", "item": "https://www.cando.eu/nl-nl/" },
+      { "@type": "ListItem", "position": 2, "name": "B Corp", "item": "https://www.cando.eu/nl-nl/b-corp/" }
+    ]
+  }
+]
+</script>
+</body>
+</html>

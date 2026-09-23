@@ -1,0 +1,722 @@
+<!-- consumes: HOUT-GEEN-STAAL -->
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  GATE 1F, STAP NUL: DE CATEGORIE. Verplicht sinds 11-09-2026 (Zoe).
+  ===========================================================================
+  Tak         : A, Plaatmateriaal
+  Kennisbank  : KENNIS/PLAATMATERIAAL.md
+  Niet van toepassing op deze tak: P2: zelf nazagen is hier normale doe-het-zelf
+
+  Draai de toets met de tak erbij, anders draait hij plat en kan hij goed
+  werk afkeuren:
+      python3 "CanDo SEO/_tools/gate1f-verbodenlijst.py" --tak A 30-vergelijkingspagina.html
+
+  Staat deze kop er niet, dan is de toets niet uitgevoerd, hoe schoon de
+  uitslag ook oogt. Routeringstabel: 04-VORM/VERBODENLIJST.md sectie 0.
+  ===========================================================================
+-->
+<html lang="nl">
+<head>
+<!--
+  ===========================================================================
+  STRAMIEN 30: VERGELIJKINGSPAGINA (materiaal tegenover materiaal)
+  Laag 7 van het fundament. Dit bestand is de VORM; de uitwerking per
+  vergelijking staat in Uitwerking/nl-nl-{a}-of-{b}.html.
+  Voorbeeldinvulling hieronder: MDF TEGENOVER MULTIPLEX, de grootste vraag.
+  Visuele taal en CSS-conventies overgenomen uit stramien 27.
+
+  WAAROM DIT STRAMIEN BESTAAT
+   `wat is sterker mdf of multiplex` doet 1.600 per maand en is daarmee de
+   grootste enkele inhoudelijke vraag in de hele plaatmateriaal-categorie,
+   bijna drie keer zo groot als `wat is mdf` (720) en `wat is multiplex` (210)
+   samen. De enkele vergelijking telt 2.650 per maand, het hele
+   vergelijkingscluster 4.430. Er was geen stramien voor.
+   [BRON: KENNIS/PLAATMATERIAAL.md veld 20c en veld 7]
+
+  ⛔ DEZE PAGINA STAAT LOS VAN DE MATERIAALPAGINA'S
+   De vergelijking hoort NIET op de MDF-pagina en NIET op de multiplexpagina.
+   Zetten we hem daar, dan concurreren die twee om dezelfde term (regel 7:
+   een term, een pagina) en verliest de bezoeker het overzicht. Deze pagina
+   bezit de vergelijkterm. De twee materiaalpagina's linken er subtiel inline
+   naar, en deze pagina routeert terug naar allebei.
+   [BRON: PLAATMATERIAAL.md veld 20c; CRO-UX-SEO-PRINCIPES-2026.md §1 regel 7]
+   URL van deze pagina: /nl-nl/hout/houten-platen/mdf-of-multiplex/
+   [te bevestigen tegen tab 01 en 09 van CanDo-hout-redirects-en-inventaris.xlsx]
+
+  DE NEGEN BLOKKEN, VOLGORDE IS BINDEND
+   1 Hero, de vraag als H1     het antwoord staat in de hero zelf, EEN knop
+                               naar de drie beslisvragen. Geen fotohero, zie BEELD
+   2 Het korte antwoord        binnen de eerste 200 woorden, twee gelijkwaardige
+                               antwoordkaarten plus de expliciete geen-winnaar-regel
+   3 De drie beslisvragen      waar komt het te staan, moet het dragen, zie je het.
+                               DIKTE IS DE VIERDE VRAAG, apart en kleiner in beeld
+   4 De vergelijking           de opbouw-uitleg in een kolom tekst plus de tabel
+                               op de eigenschappen die de keuze echt bepalen.
+                               Laatste rij is verplicht. Hier stonden twee
+                               doorsnede-SVG's; die zijn eruit, zie BEELD
+   5 Dit kies je wanneer       per optie drie SITUATIES, geen productpitch
+   6 Wat ze allebei niet doen  de zaagkant. Het eerlijke gedeelde blok dat
+                               voorkomt dat de pagina alsnog een winnaar suggereert
+   7 De andere vergelijkingen  de kleinere vraagparen uit hetzelfde cluster
+   8 Veelgestelde vragen       elke vraag een eigen details-item, minimaal vier zinnen
+   9 Vervolg                   doorklik naar de TWEE materiaalpagina's, gelijk gewicht
+
+  DE VERPLICHTE "NIET GEBRUIKEN VOOR"
+   Dit is het onderscheidende deel van de pagina en het schaarste stuk content
+   in de categorie: het staat op geen enkele huidige pagina en het is precies
+   wat AI-antwoorden citeren. Elke optie krijgt hem, altijd, ook als het
+   ongemakkelijk staat. Hij is de laatste rij van de tabel en krijgt daar het
+   zwaarste visuele gewicht (eigen band, eigen markering).
+   [BRON: PLAATMATERIAAL.md sectie B3, basis Plaatmateriaal m2m.xlsx 06-08-2026]
+
+   ⛔ GEEN DINGBATS. Nergens op deze pagina staat een vinkje, een kruisje of
+   een ander Unicode-symbool als UI-element. De niet-gebruiken-voor-markering
+   is een INLINE SVG (cirkel met diagonaal), de rest is typografie. In een
+   vergelijkingstabel is de neiging naar vinkjes het grootst, dus dit is hier
+   een harde regel, geen voorkeur. Gescoord wordt er met woorden, niet met
+   plussen en minnen: een scoreschaal maakt van de tabel alsnog een winnaar.
+
+  WAT HIER NIET HOORT
+   - geen winnaar aanwijzen. "Multiplex draagt beter, MDF is vlakker en beter
+     te frezen. Welke sterkte je bedoelt, bepaalt het antwoord" [BRON: C4]
+   - geen accentrand, badge of "aanbevolen" op een van de twee opties (A45)
+   - deze inhoud niet op de materiaalpagina's zelf zetten, zie hierboven
+   - nooit tegen de retailer benchmarken, de retailer is ons kanaal
+   - geen prijzen, geen reviewblok, geen sterren
+   - geen retailer-CTA. Dit is messy middle: de doorklik gaat naar de volgende
+     beslissing (materiaal, dan dikte, dan zagen), niet naar de winkel
+   - geen doorbuigtabel voor plaatmateriaal, wij hebben de E-modulus niet
+   - geen ankerbalk of chipsnavigatie (registerregel A22/A44)
+
+  ROUTERING
+   in : de twee materiaalpagina's (subtiel inline), de hub /hout/houten-platen,
+        organisch op de vergelijkterm zelf
+   uit: /nl-nl/hout/mdf/ en /nl-nl/hout/multiplex/ als gelijkwaardige routes,
+        plus de buurvergelijkingen naar /osb/ en /underlayment/
+   De CTA-ladder: primair = de drie beslisvragen (de dominante actie van deze
+   pagina), daarna de materiaalkeuze als uitgang. Er is geen tweede knop die
+   even zwaar weegt.
+
+  BEELD, EEN BESLUITPUNT
+   Deze pagina heeft BEWUST geen fotografie. De materiaal-close-ups (MDF,
+   multiplex, OSB, betonplex, underlayment) bestaan niet in Bynder en staan
+   als beeldprioriteit 2 in PLAATMATERIAAL.md. Volgens registerregel A5 en A48
+   bouw je een beeldvlak dan niet: geen zichtbare placeholder, wel een
+   besluitpunt. Zodra de close-ups er zijn, komen ze in blok 4, en pas dan
+   kan de hero een fotohero worden. Sinds 11-09 heeft deze pagina dus GEEN
+   beeld meer, ook geen tekening. Hij draait volledig op typografie.
+
+  ⛔ WEGGEHAALD OP 11-09-2026, BESLUIT ZOE, VERBODENLIJST B1
+   "De illustraties die worden gemaakt, dat doen wij niet. Wij hebben
+   alleen afbeeldingen met CanDo of onze eigen gemaakte illustraties.
+   Behalve die van de doorbuig bij massieve panelen en timmerpanelen."
+   Uit dit bestand zijn TWEE tekeningen verwijderd, allebei in blok 4:
+
+   1 Doorsnede van mdf. Een egale plaat met korte vezelstreepjes zonder
+     richting en het label "geperste vezels, geen richting".
+   2 Doorsnede van multiplex. Vijf kruislings verlijmde lagen met de
+     nerfrichting per laag en het label "lagen haaks op elkaar".
+
+   WAT ER MET HET BLOK GEBEURDE: het was tekst links en de twee doorsnedes
+   rechts. Het is nu een kolom lopende tekst van maximaal 820 px breed,
+   direct boven de tabel. Geen half lege kolom en geen leeg beeldvlak (B3).
+   De tabel eronder is ongewijzigd.
+   WAT ER MET DE TEKST GEBEURDE: de twee onderschriften droegen twee feiten
+   die de lopende tekst niet had, namelijk dat de gezaagde kant van mdf
+   open vezel is en zuigt, en dat de zichtbare lagen van multiplex een
+   bezwaar of juist een keuze kunnen zijn. Beide zijn in de eerste alinea
+   opgenomen.
+   [besluit nodig] WELK BEELD HIER NODIG IS: twee macro-close-ups van de
+   KOPSE KANT van een plaat, als paar geschoten, zelfde licht en zelfde
+   hoek. Links mdf, waarop te zien is dat de kant één egale massa is
+   zonder lagen. Rechts multiplex, waarop de afzonderlijke fineerlagen te
+   tellen zijn. Dit is dezelfde opname-eis als de randfoto's in
+   05-BESLUITEN/FOTOBRIEF-AFWERKING.md sectie 1 en kan in dezelfde sessie
+   mee. Deze twee staan al als beeldprioriteit 2 in PLAATMATERIAAL.md.
+  ===========================================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDF of multiplex, wat is sterker en wat kies je | CanDo</title>
+<meta name="description" content="Multiplex draagt beter, MDF is vlakker en beter te frezen. Vergelijk beide op dragen, vocht, de zaagkant en waar je ze juist niet voor gebruikt.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{
+  --text:#20272b;
+  --muted:#666b70;
+  --accent:#F7901E;
+  --accent-dark:#d95f18;
+  --border:#e5ded4;
+  --bg-soft:#f7f2ea;
+  --bg-light:#fbfaf7;
+  --bg-warm:#f4eadc;
+  --white:#fff;
+  --dark:#211914;
+  --radius:8px;
+  --shadow:0 8px 22px rgba(32,39,43,.045);
+  --shadow-hover:0 12px 28px rgba(32,39,43,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#fff;color:var(--text);font-family:Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.cando-vgl{width:100%;overflow-x:clip;background:#fff;color:var(--text)}
+.cando-vgl *,.cando-vgl *::before,.cando-vgl *::after{box-sizing:border-box}
+.cando-vgl h1,.cando-vgl h2,.cando-vgl h3,.cando-vgl .cando-cat-button,.cando-vgl summary,.cando-vgl th{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.cando-vgl h1{margin:0 0 16px;font-size:52px;line-height:1.02;font-weight:700;color:#fff;letter-spacing:-.02em}
+.cando-vgl h2{margin:0;font-size:30px;line-height:1.2;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.cando-vgl h3{margin:0 0 7px;font-size:19px;line-height:1.3;font-weight:700;color:var(--text)}
+.cando-vgl p{margin:0;font-size:16px;line-height:1.68;color:#414141}
+.cando-vgl ul{margin:0;padding:0}
+.cando-vgl a{text-decoration:none;font-weight:700}
+.cando-vgl :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.cando-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+.cando-section{position:relative;padding:58px 0}
+.cando-section--soft{background:var(--bg-soft)}
+.cando-section--light{background:var(--bg-light)}
+.cando-section-head{max-width:760px;margin-bottom:28px}
+.cando-section-head p{margin-top:10px;color:var(--muted)}
+.cando-eyebrow{display:block;margin:0 0 8px;color:var(--accent);font-size:11px;line-height:1.2;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+
+/* Canonieke CanDo buttonstijl, uit stramien 27 */
+.cando-cat-button-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:22px}
+.cando-cat-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 24px;border-radius:999px;font-size:16px;line-height:1.2;font-weight:700;text-decoration:none;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+.cando-cat-button:active{transform:translateY(1px)}
+.cando-cat-button--primary{background:var(--accent);border:1px solid var(--accent);color:#fff!important}
+.cando-cat-button--primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff!important}
+.cando-cat-button--secondary{background:var(--bg-soft);border:1px solid var(--border);color:var(--text)!important}
+.cando-cat-button--secondary:hover{background:#efe4d6;border-color:#efe4d6;color:var(--text)!important}
+
+/* 1. Antwoordhero. Geen foto, want het antwoord moet boven de vouw staan
+   en de materiaal-close-ups bestaan nog niet. Zie BEELD in het kopcommentaar. */
+.vgl-hero{position:relative;background:var(--dark);color:#fff;overflow:hidden}
+.vgl-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(247,144,30,.16),transparent 52%);pointer-events:none}
+.vgl-hero__inner{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:78px 18px 66px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.vgl-hero p{color:rgba(255,255,255,.86);font-size:17px;line-height:1.66;max-width:640px}
+.vgl-hero .cando-eyebrow{color:#FDC689}
+.vgl-hero__pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vgl-hero__chip{border:1px solid rgba(255,255,255,.22);border-radius:var(--radius);padding:20px 18px 18px;background:rgba(255,255,255,.04)}
+.vgl-hero__chip b{display:block;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:22px;line-height:1.1;color:#fff;margin-bottom:7px}
+.vgl-hero__chip span{display:block;font-size:14px;line-height:1.5;color:rgba(255,255,255,.72)}
+
+/* 2. Het korte antwoord. Twee gelijkwaardige kaarten, gelijk gewicht (A45). */
+.answer-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.answer-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px 26px 24px;display:flex;flex-direction:column}
+.answer-card__label{display:block;margin-bottom:6px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.answer-card h3{font-size:21px;margin-bottom:9px}
+.answer-card p{font-size:15px;line-height:1.6}
+.cando-vgl .answer-card__foot{margin-top:auto;padding-top:16px;font-size:14px;line-height:1.5;color:var(--muted)}
+.cando-vgl .kernzin{margin:24px 0 0;padding:22px 26px;background:var(--dark);border-radius:var(--radius);color:#fff;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:19px;line-height:1.42;font-weight:700}
+.kernzin span{color:var(--accent)}
+
+/* 3. De drie beslisvragen. Nummer lijnt uit met de titelregel (A23). */
+.vraag-lijst{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.vraag{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px 22px 22px}
+.vraag__kop{display:flex;align-items:flex-start;gap:14px}
+.vraag__nr{flex:0 0 auto;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:30px;line-height:1;font-weight:700;color:var(--accent)}
+.vraag h3{margin:0;font-size:19px;line-height:1.22}
+.vraag>p{margin-top:12px;font-size:15px;line-height:1.6}
+.vraag dl{margin:14px 0 0;padding-top:13px;border-top:1px solid var(--border);display:grid;gap:8px}
+.vraag dt{font-size:14px;font-weight:700;color:var(--text)}
+.vraag dd{margin:2px 0 0;font-size:14px;line-height:1.5;color:var(--muted)}
+.vierde-vraag{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;margin-top:16px;padding:22px 24px;background:#fff;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius)}
+.vierde-vraag__nr{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:30px;line-height:1.22;font-weight:700;color:var(--muted)}
+.vierde-vraag h3{margin-bottom:5px}
+.vierde-vraag p{font-size:15px;line-height:1.58;color:var(--muted)}
+
+/* 4. De vergelijking. Eerst waarom het verschil bestaat, dan de tabel. */
+/* Blok 4 stond als tekst links en twee doorsnedetekeningen rechts. Die
+   tekeningen zijn eruit (verbodenlijst B1), dus dit is nu EEN kolom met
+   een leesbare regellengte. Geen half lege kolom, geen leeg beeldvlak (B3). */
+.opbouw{max-width:820px;margin-bottom:34px}
+.opbouw p{margin-top:12px;color:var(--muted)}
+
+/* De tabel scrollt in een EIGEN container, de pagina zelf nooit zijwaarts.
+   Eerste kolom blijft staan, zodat je op mobiel weet welke rij je leest. */
+.cando-vgl .tabel-hint{margin:0 0 12px;font-size:14px;line-height:1.5;color:var(--muted)}
+.tabel-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--radius);background:#fff}
+.tabel-scroll:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.vgl-tabel{width:100%;min-width:680px;border-collapse:separate;border-spacing:0;font-size:15px}
+.vgl-tabel th,.vgl-tabel td{text-align:left;vertical-align:top;padding:16px 18px;border-bottom:1px solid var(--border);line-height:1.55}
+.vgl-tabel thead th{position:sticky;top:0;z-index:2;background:var(--bg-warm);font-size:17px;line-height:1.25;color:var(--text);border-bottom:1px solid var(--border)}
+.vgl-tabel thead th span{display:block;margin-top:3px;font-family:Arial,sans-serif;font-size:13px;font-weight:400;color:var(--muted)}
+.vgl-tabel tbody th{position:sticky;left:0;z-index:1;width:190px;min-width:190px;background:var(--bg-light);font-size:15px;font-weight:700;border-right:1px solid var(--border)}
+.vgl-tabel thead th:first-child{left:0;z-index:3;width:190px;min-width:190px;font-size:13px;font-weight:400;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;border-right:1px solid var(--border)}
+.vgl-tabel td{color:#414141;background:#fff}
+.vgl-tabel tbody tr:last-child th,.vgl-tabel tbody tr:last-child td{border-bottom:0}
+/* de verplichte rij, zwaarste gewicht van de tabel */
+.rij-niet th{background:#f6ece1!important;color:var(--text)}
+.rij-niet td{background:#fdf7f2;color:var(--text)}
+.rij-niet th,.rij-niet td{border-top:2px solid var(--accent);padding-top:18px;padding-bottom:20px}
+.rij-niet .rij-label{display:block;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:15px;line-height:1.25}
+.rij-niet .rij-sub{display:block;margin-top:5px;font-family:Arial,sans-serif;font-size:13px;font-weight:400;line-height:1.45;color:var(--muted)}
+.niet-lijst{list-style:none;display:grid;gap:9px;margin:0;padding:0}
+.niet-lijst li{display:grid;grid-template-columns:17px 1fr;gap:10px;align-items:start;font-size:14px;line-height:1.5}
+.niet-ico{width:17px;height:17px;margin-top:2px;color:var(--accent-dark);flex:0 0 auto}
+.niet-ico circle,.niet-ico path{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}
+
+/* 5. Dit kies je wanneer. Situaties, geen productpitch. */
+.situatie-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.situatie{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px 26px 26px;display:flex;flex-direction:column}
+.situatie h3{font-size:21px;margin-bottom:14px}
+.situatie ul{list-style:none;display:grid;gap:14px}
+.situatie li{position:relative;padding-left:19px;font-size:15px;line-height:1.58;color:#414141}
+.situatie li::before{content:"›";position:absolute;left:0;top:-1px;color:var(--accent);font-size:18px;font-weight:800}
+.situatie li b{color:var(--text)}
+.cando-vgl .situatie__foot{margin-top:auto;padding-top:18px;font-size:14px;line-height:1.5;color:var(--muted)}
+
+/* 6. Wat ze allebei niet oplossen. Donkere band, compact. */
+.deel-band{background:var(--dark);color:#fff;position:relative;overflow:hidden}
+.deel-band::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(247,144,30,.1),transparent 46%);pointer-events:none}
+.deel-band .cando-wrap{position:relative;z-index:1}
+.deel-band h2{color:#fff}
+.deel-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.deel-inner p{color:rgba(255,255,255,.8);margin-top:12px}
+.deel-punten{list-style:none;display:grid;gap:0;border-top:1px solid rgba(255,255,255,.18)}
+.deel-punten li{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.deel-punten b{display:block;margin-bottom:4px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:16px;color:#fff}
+.deel-punten span{font-size:14px;line-height:1.5;color:rgba(255,255,255,.72)}
+/* KNOPPEN. Overgenomen uit 04-VORM/_designsysteem/cando-base.css, niet zelf bedacht.
+   ⛔ Een primaire of secundaire actie is ALTIJD een pill-knop, nooit onderstreepte tekst.
+   Onderstreepte tekst met een pijl is een tertiaire inline verwijzing en niets anders. */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 26px;border-radius:var(--radius-pill,24px);font-size:16px;font-weight:700;line-height:1.2;text-decoration:none!important;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-secondary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+/* Op een donkere band: witte rand en witte tekst (designsysteem regel 1). */
+.slot .btn-secondary,.band-dark .btn-secondary{border-color:rgba(255,255,255,.55);color:#fff}
+.slot .btn-secondary:hover,.band-dark .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+
+/* 7. De buurvergelijkingen. */
+.buur-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.buur{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px 22px 22px}
+.buur h3{font-size:18px;margin-bottom:8px}
+.buur p{font-size:15px;line-height:1.58}
+.buur-link{display:inline-flex;align-items:center;gap:7px;min-height:44px;margin-top:8px;font-size:14px;color:var(--text)!important;text-decoration:underline!important;text-underline-offset:3px}
+.buur-link::after{content:"→";color:var(--accent);text-decoration:none;font-size:16px}
+
+/* 8. FAQ, ieder vraagstuk een eigen accordeonitem, gelijk aan stramien 27. */
+.faq-layout{display:grid;grid-template-columns:.74fr 1.26fr;gap:44px;align-items:start}
+.faq-intro p{margin-top:10px;color:var(--muted)}
+.faq-list{display:grid;gap:10px}
+details.faq-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+details.faq-item summary{list-style:none;cursor:pointer;padding:17px 54px 17px 18px;font-size:16px;font-weight:700;line-height:1.35;position:relative}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{content:"+";position:absolute;right:18px;top:15px;width:25px;height:25px;border:1px solid #b8b8b8;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6c6c6c;font-size:18px;line-height:1}
+details.faq-item[open]{border-color:#d8cdbf}
+details.faq-item[open] summary{color:var(--accent);background:#fffaf6}
+details.faq-item[open] summary::after{content:"−";background:var(--accent);border-color:var(--accent);color:#fff}
+.faq-answer{padding:0 18px 19px}
+.faq-answer p{font-size:14px;line-height:1.62;color:#414141}
+
+/* 9. Vervolg. Twee gelijkwaardige routes, geen accent op een van de twee (A45). */
+.route-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}
+.route-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:30px 28px 28px;position:relative;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.route-card:hover{transform:translateY(-2px);border-color:#d8cdbf;box-shadow:var(--shadow-hover)}
+.route-card h3{font-size:22px;padding-right:34px;margin-bottom:8px}
+.route-card p{font-size:15px;line-height:1.58;font-weight:400;color:var(--muted)}
+.route-card::after{content:"→";position:absolute;right:26px;top:28px;color:var(--accent);font-size:22px}
+.route-card__foot{margin-top:auto;padding-top:18px;font-size:14px;line-height:1.5;color:var(--text)}
+
+@media(max-width:1020px){
+  .vgl-hero__inner{grid-template-columns:1fr;gap:30px;padding:64px 18px 54px}
+  .deel-inner,.faq-layout{grid-template-columns:1fr}
+  .vraag-lijst{grid-template-columns:1fr}
+  .buur-grid{grid-template-columns:1fr}
+  .faq-layout{gap:28px}
+}
+@media(max-width:760px){
+  .cando-vgl h1{font-size:34px}
+  .cando-vgl h2{font-size:25px}
+  .cando-section{padding:44px 0}
+  .vgl-hero__inner{padding:52px 16px 44px}
+  .vgl-hero p{font-size:16px}
+  .cando-cat-button-row{flex-direction:column;align-items:stretch}
+  .cando-cat-button{width:100%}
+  .answer-grid,.situatie-grid,.route-grid{grid-template-columns:1fr}
+  .answer-card,.situatie{padding:24px 20px 22px}
+  .kernzin{font-size:17px;padding:20px}
+  .vraag{padding:22px 20px 20px}
+  .vierde-vraag{grid-template-columns:1fr;gap:10px;padding:20px}
+  .vgl-tabel{min-width:640px}
+  .vgl-tabel th,.vgl-tabel td{padding:14px 15px;font-size:14px}
+  .vgl-tabel tbody th,.vgl-tabel thead th:first-child{width:150px;min-width:150px}
+  .vgl-tabel thead th{font-size:16px}
+  .route-card{padding:24px 20px 22px}
+  .route-card h3{font-size:20px}
+}
+@media(max-width:440px){
+  .vgl-hero__pair{grid-template-columns:1fr}
+  .vgl-tabel tbody th,.vgl-tabel thead th:first-child{width:132px;min-width:132px}
+}
+.cando-skip{position:absolute;left:-9999px;top:0;z-index:99;padding:12px 20px;background:var(--accent);color:#fff;font-weight:700;border-radius:0 0 var(--radius) 0}
+.cando-skip:focus{left:0}
+</style>
+</head>
+<body>
+<a class="cando-skip" href="#contentarea">Naar de inhoud</a>
+
+<main class="cando-vgl" id="contentarea">
+
+  <!-- 1. De vraag is de kop en het antwoord staat er direct onder.
+       Zo wordt de vraag gesteld, en zo wordt hij geciteerd. -->
+  <section class="vgl-hero" aria-labelledby="page-title">
+    <div class="vgl-hero__inner">
+      <div>
+        <span class="cando-eyebrow">Kiezen tussen twee platen</span>
+        <h1 id="page-title">Wat is sterker, mdf of multiplex?</h1>
+        <p>Multiplex draagt beter, mdf is vlakker en beter te frezen. Welke van de twee sterker is, hangt dus af van welke sterkte je bedoelt: gewicht dragen, of een strak vlak houden dat je dekkend afwerkt. Er komt hier geen winnaar uit, want die bestaat niet. Er is wel een goede keuze voor jouw klus, en die vind je met drie vragen.</p>
+        <div class="cando-cat-button-row">
+          <a class="cando-cat-button cando-cat-button--primary" href="#drie-vragen">Doe de drie vragen</a>
+        </div>
+      </div>
+      <div class="vgl-hero__pair" aria-hidden="true">
+        <div class="vgl-hero__chip"><b>MDF</b><span>Geperste houtvezels. Een egaal vlak zonder nerf en zonder noesten.</span></div>
+        <div class="vgl-hero__chip"><b>Multiplex</b><span>Kruislings verlijmde houtlagen. Vormvast, en de kant blijft hout.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Het korte antwoord, binnen de eerste 200 woorden.
+       Twee gelijkwaardige kaarten: gelijke rand, gelijke achtergrond, gelijke lengte. -->
+  <section class="cando-section" id="antwoord" aria-labelledby="antwoord-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Het korte antwoord</span>
+        <h2 id="antwoord-title">Allebei sterk, alleen niet in hetzelfde</h2>
+        <p>De vraag "wat is sterker" gaat bijna nooit over een getal. Hij gaat over de angst dat je plank doorbuigt of dat je kastfront er goedkoop uitziet. Dat zijn twee verschillende sterktes, en daar horen twee verschillende platen bij.</p>
+      </div>
+
+      <div class="answer-grid">
+        <div class="answer-card">
+          <span class="answer-card__label">MDF</span>
+          <h3>Sterk in vlakheid</h3>
+          <p>Mdf bestaat uit houtvezels die tot een homogene plaat zijn geperst. Geen nerf, geen noesten, geen lagen. Daardoor blijft een gefreesd profiel scherp en wordt een dekkende laklaag echt glad. In onze eigen productdata staat mdf bij alle varianten als meubelmateriaal, niet als constructiemateriaal.</p>
+          <p class="answer-card__foot">Kies hierop als het straks geschilderd, gefreesd of onzichtbaar strak moet zijn.</p>
+        </div>
+        <div class="answer-card">
+          <span class="answer-card__label">Multiplex</span>
+          <h3>Sterk in dragen</h3>
+          <p>Multiplex bestaat uit dunne houtlagen die kruislings op elkaar zijn gelijmd. Daardoor werkt de plaat in beide richtingen weinig en houdt een schroef ook in de kant. Berken en hardhout dragen het meest van onze multiplexen, populieren en okoumé het minst.</p>
+          <p class="answer-card__foot">Kies hierop als er gewicht op komt of als de kant zichtbaar blijft.</p>
+        </div>
+      </div>
+
+      <p class="kernzin">Er is geen winnaar. <span>Er is een klus, en daar past de ene plaat beter bij dan de andere.</span></p>
+    </div>
+  </section>
+
+  <!-- 3. De drie beslisvragen, in deze volgorde. Dikte is de VIERDE vraag
+       en staat daarom apart, kleiner, en pas na de drie. -->
+  <section class="cando-section cando-section--soft" id="drie-vragen" aria-labelledby="vragen-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">De beslishulp</span>
+        <h2 id="vragen-title">Drie vragen die de keuze maken</h2>
+        <p>Stel ze in deze volgorde. De eerste laat de meeste opties afvallen, de tweede haalt de helft van de twijfel weg en de derde bepaalt hoeveel je kwijt bent aan afwerken.</p>
+      </div>
+
+      <div class="vraag-lijst">
+        <div class="vraag">
+          <div class="vraag__kop">
+            <span class="vraag__nr" aria-hidden="true">1</span>
+            <h3>Waar komt het te staan?</h3>
+          </div>
+          <p>Droog, licht vochtig of vochtig. Dit is de vraag waar wij per product een hard antwoord op hebben, en hij laat meteen de meeste opties vallen.</p>
+          <dl>
+            <dt>Droge woonruimte</dt>
+            <dd>Alles mag, ook blank mdf en mdf wit gegrond.</dd>
+            <dt>Vochtige ruimte, buiten het spatwater</dt>
+            <dd>Mdf zwart en mdf V313, of multiplex hardhout en okoumé. Let op: vochtwerend is niet waterdicht.</dd>
+            <dt>Buiten</dt>
+            <dd>Mdf valt af. Alleen multiplex okoumé en hardhout zijn hiervoor gepositioneerd, en dan overdekt.</dd>
+          </dl>
+        </div>
+
+        <div class="vraag">
+          <div class="vraag__kop">
+            <span class="vraag__nr" aria-hidden="true">2</span>
+            <h3>Moet het dragen, of alleen zichzelf?</h3>
+          </div>
+          <p>Komt er gewicht op, dan valt mdf af en blijven multiplex berken of hardhout over. Draagt het niets, dan gaat de rest van de keuze over uiterlijk en afwerken.</p>
+          <dl>
+            <dt>Let op wat dragen echt bepaalt</dt>
+            <dd>Niet de materiaalnaam, maar de overspanning, de belasting, het aantal steunpunten en de verbinding samen. Een plaat die op vier punten steunt, doet iets heel anders dan dezelfde plaat over een meter vrije lengte.</dd>
+            <dt>Wat wij niet doen</dt>
+            <dd>Wij publiceren geen doorbuigtabel voor plaatmateriaal. Die getallen hebben wij niet, en een verzonnen getal helpt je niet bij het ophangen van je plank.</dd>
+          </dl>
+        </div>
+
+        <div class="vraag">
+          <div class="vraag__kop">
+            <span class="vraag__nr" aria-hidden="true">3</span>
+            <h3>Zie je de plaat, of zit hij weg?</h3>
+          </div>
+          <p>Zichtwerk en wegwerk vragen een ander materiaal, en het scheelt je geld als je dat vooraf scheidt.</p>
+          <dl>
+            <dt>Je ziet hem</dt>
+            <dd>Wordt het dekkend geschilderd, dan is mdf de logische keuze. Blijft het hout zichtbaar, dan multiplex berken of okoumé.</dd>
+            <dt>Hij zit weg</dt>
+            <dd>Een ondervloer, dakbeschot of een wand die dichtgaat vraagt geen meubelplaat. Underlayment, osb of multiplex hardhout doen dat werk en zijn daar ook voor gemaakt.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="vierde-vraag">
+        <span class="vierde-vraag__nr" aria-hidden="true">4</span>
+        <div>
+          <h3>En dan pas de dikte</h3>
+          <p>De dikte is de vierde vraag, niet de eerste. Hij komt aan de beurt als het materiaal vaststaat, want de dikte hangt af van de overspanning, de belasting, de ondersteuning en de freesdiepte, en niet van de naam van je project. Dat de dikte later komt, maakt hem niet minder belangrijk: hij weegt bij dragend werk zwaarder dan de keuze tussen mdf en multiplex.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. De vergelijking. Eerst waarom het verschil bestaat (dat legt de tabel
+       uit voordat hij komt), dan de tabel zelf.
+       De tabel scrollt in een eigen container, met de eerste kolom vast.
+       De laatste rij is de verplichte "niet gebruiken voor" en krijgt daar
+       het zwaarste gewicht. Geen vinkjes, geen kruisjes, geen scoreschaal. -->
+  <section class="cando-section" id="vergelijking" aria-labelledby="vergelijk-title">
+    <div class="cando-wrap">
+      <div class="opbouw">
+        <div>
+          <span class="cando-eyebrow">Waar het verschil vandaan komt</span>
+          <h2 id="vergelijk-title">Vezels tegenover lagen</h2>
+          <p>Bijna elk verschil in de tabel hieronder komt terug op één ding: hoe de plaat is opgebouwd. Mdf is één massa geperste vezels zonder richting, dus overal hetzelfde en overal even vlak. De keerzijde zie je pas als je zaagt: die kant is open vezel en zuigt. Multiplex bestaat uit lagen die haaks op elkaar liggen, dus vormvast in twee richtingen, met een kant die de lagen blijft tonen. Dat laatste kan een bezwaar zijn of juist een keuze.</p>
+          <p>Vormvast is trouwens iets anders dan draagkrachtig. Populierenmultiplex is even vormvast als berken en draagt veel minder.</p>
+        </div>
+      </div>
+
+      <p class="tabel-hint">Vergelijk op wat de keuze echt bepaalt. Op een smal scherm schuif je de tabel opzij.</p>
+      <div class="tabel-scroll" tabindex="0" role="region" aria-label="Vergelijkingstabel mdf tegenover multiplex">
+        <table class="vgl-tabel">
+          <thead>
+            <tr>
+              <th scope="col">Wat je vergelijkt</th>
+              <th scope="col">MDF<span>Geperste houtvezels</span></th>
+              <th scope="col">Multiplex<span>Kruislings verlijmde lagen</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Waar het mag staan</th>
+              <td>Binnen en droog. Alleen de zwarte variant en de vochtwerende V313 mogen in een vochtige ruimte, en vochtwerend is niet hetzelfde als waterdicht.</td>
+              <td>Binnen, droog tot licht vochtig. Hardhout en okoumé mogen in een vochtige ruimte en zijn de enige twee die ook voor overdekt buitenwerk gepositioneerd zijn.</td>
+            </tr>
+            <tr>
+              <th scope="row">Dragen of alleen zichzelf</th>
+              <td>Alleen zichzelf. In onze eigen productdata staat geen enkele mdf-variant als constructief materiaal.</td>
+              <td>Allebei. Berken en hardhout dragen het meest, populieren en okoumé zijn zachter en dragen minder.</td>
+            </tr>
+            <tr>
+              <th scope="row">Het vlak</th>
+              <td>Geen nerf, geen noesten, egaal van rand tot rand. Dit is de eigenschap waarvoor je mdf koopt.</td>
+              <td>Een houten vlak met nerf. Berken geeft de rustigste tekening, populieren de lichtste.</td>
+            </tr>
+            <tr>
+              <th scope="row">De gezaagde kant</th>
+              <td>Open vezel. Zuigt verf en vocht, en moet in het zicht altijd worden afgewerkt.</td>
+              <td>Toont de lagen. Veel mensen kiezen daar juist voor, maar de kopse kant blijft vocht opnemen.</td>
+            </tr>
+            <tr>
+              <th scope="row">Schroeven</th>
+              <td>Houdt goed in het vlak en zwak in de kant. Voorboren bij randen en meubelverbindingen is de standaardaanpak.</td>
+              <td>Houdt in het vlak en in de kant. Berken en hardhout het best, okoumé en populieren zijn zachter.</td>
+            </tr>
+            <tr>
+              <th scope="row">Frezen en profielen</th>
+              <td>Hiervoor het beste materiaal dat er is. Homogeen, dus een scherp profiel blijft scherp.</td>
+              <td>Kan, maar in de freeslijn komen de lagen in beeld. Door een HPL-toplaag frees je niet.</td>
+            </tr>
+            <tr>
+              <th scope="row">Gewicht bij 18 mm</th>
+              <td>Ongeveer 14 kilo per vierkante meter, de zwaarste plaat in het assortiment.</td>
+              <td>Ongeveer 13,5 kilo per vierkante meter, en okoumé ongeveer 9 kilo.</td>
+            </tr>
+            <tr class="rij-niet">
+              <th scope="row"><span class="rij-label">Niet gebruiken voor</span><span class="rij-sub">De rij die je nergens anders vindt, en de belangrijkste van deze pagina</span></th>
+              <td>
+                <ul class="niet-lijst">
+                  <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Dragende constructies, in geen enkele dikte.</span></li>
+                  <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Legplanken met een lange vrije overspanning.</span></li>
+                  <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Buiten, en ook niet vochtwerend mdf.</span></li>
+                  <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Permanent natte zones zoals een douchewand.</span></li>
+                  <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Een kant die onafgewerkt in het zicht blijft.</span></li>
+                </ul>
+              </td>
+              <td>
+                <ul class="niet-lijst">
+                  <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Zwaar dragend werk in populieren of okoumé, dat zijn de zachte twee.</span></li>
+                  <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Fijn decoratief zichtwerk in hardhout, dat is een constructieplaat.</span></li>
+                  <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Freeswerk of profielranden door een HPL-toplaag.</span></li>
+                  <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Licht decoratief werk in berken, daar is het te zwaar voor.</span></li>
+                  <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Permanent natte zones, ook niet in de vochtbestendige varianten.</span></li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Dit kies je wanneer. Situaties uit het echte leven, geen productpitch.
+       Gelijke kaarten, gelijke lengte, geen aanbeveling op een van de twee. -->
+  <section class="cando-section cando-section--light" id="wanneer" aria-labelledby="wanneer-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Van eigenschap naar klus</span>
+        <h2 id="wanneer-title">Dit kies je wanneer</h2>
+        <p>Herken je jouw situatie hieronder, dan is de keuze al gemaakt. Staat jouw klus er niet bij, loop dan de drie vragen hierboven nog een keer langs.</p>
+      </div>
+
+      <div class="situatie-grid">
+        <div class="situatie">
+          <h3>Dan wordt het mdf</h3>
+          <ul>
+            <li><b>Je maakt een kastfront dat je dekkend gaat schilderen.</b> Je wilt geen nerf en geen noesten door de lak heen zien, en het moet strak blijven.</li>
+            <li><b>Je freest een profiel of een ronding.</b> Een lambrisering, een wandpaneel of een sierlijst waarbij de freeslijn scherp moet blijven van begin tot eind.</li>
+            <li><b>Je bouwt een radiatorombouw of bekleedt een nis.</b> Het verdwijnt straks in de muurkleur, het draagt niets en het moet vooral vlak zijn.</li>
+          </ul>
+          <p class="situatie__foot">In alle drie de gevallen geldt: de gezaagde kant afwerken voordat je gaat schilderen.</p>
+        </div>
+
+        <div class="situatie">
+          <h3>Dan wordt het multiplex</h3>
+          <ul>
+            <li><b>Je maakt een plank of blad waar gewicht op komt.</b> Boeken, gereedschap of een monitor, en de kant blijft in het zicht.</li>
+            <li><b>Je bouwt iets in een ruimte met wisselende luchtvochtigheid.</b> Een bijkeuken, een gangkast of een berging waar het niet altijd even warm is.</li>
+            <li><b>Je maakt buitentimmerwerk of een deurpaneel.</b> Overdekt, en dan komen alleen okoumé en hardhout in aanmerking.</li>
+          </ul>
+          <p class="situatie__foot">Kies binnen multiplex bewust je soort: die verschillen onderling meer dan mdf en multiplex verschillen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Het eerlijke gedeelde blok. Zonder dit blok leest de pagina alsnog
+       als een wedstrijd. Bovendien is dit het cluster dat wij zelf maken:
+       wij zagen op maat, dus wij maken de onafgewerkte kant. -->
+  <section class="cando-section deel-band" id="zaagkant" aria-labelledby="zaagkant-title">
+    <div class="cando-wrap">
+      <div class="deel-inner">
+        <div>
+          <span class="cando-eyebrow">Wat ze allebei niet oplossen</span>
+          <h2 id="zaagkant-title">De zaagkant, en waarom die de echte vraag is</h2>
+          <p>Bij elke plaat in deze vergelijking is het fabrieksoppervlak dichter dan de kant die eruit gezaagd wordt. Dat betekent iets eerlijks: op het moment dat wij op maat zagen, maken wij een kant die jij nog behandelt. Bij mdf zuigt die kant verf, bij multiplex toont hij de lagen en neemt hij vocht op.</p>
+          <p>Wie dat pas ontdekt als de plaat thuis ligt, is teleurgesteld. Wie het van tevoren weet, plant er een half uur voor in.</p>
+          <a class="btn btn-secondary" href="/nl-nl/hout/hulp-en-advies/">Zo werk je een zaagkant af</a>
+        </div>
+        <ul class="deel-punten">
+          <li><b>De kant bepaalt of het er duur uitziet</b><span>Het vlak is bij beide platen af. Het oordeel van je bezoek valt op de rand.</span></li>
+          <li><b>Behandel altijd beide zijden gelijk</b><span>Een plaat die je aan één kant lakt en aan de andere niet, trekt hol. Dat geldt voor mdf, multiplex en osb.</span></li>
+          <li><b>Reken de afwerking mee in je planning</b><span>Niet in geld, maar in tijd en in droogtijd. Dat is waar de meeste klussen vastlopen.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. De buurvergelijkingen uit hetzelfde cluster. Kort, met per item
+       een subtiele link. Nooit meerdere links in dezelfde zin (A33, A43). -->
+  <section class="cando-section" id="andere" aria-labelledby="andere-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Vergelijk je iets anders</span>
+        <h2 id="andere-title">De drie vergelijkingen die hierna komen</h2>
+        <p>Dezelfde drie vragen beantwoorden ook deze paren. Het antwoord is korter dan je denkt.</p>
+      </div>
+      <div class="buur-grid">
+        <div class="buur">
+          <h3>Multiplex of underlayment?</h3>
+          <p>Underlayment is ontwikkeld voor constructie, multiplex voor zichtwerk. Dat is het hele verschil in één zin. Zie je de plaat straks, dan is underlayment zelden de juiste keuze.</p>
+          <a class="buur-link" href="/nl-nl/hout/underlayment/">Bekijk underlayment</a>
+        </div>
+        <div class="buur">
+          <h3>Osb of underlayment?</h3>
+          <p>Allebei constructieplaten die niet gezien hoeven worden. Osb heeft een grove spaanderstructuur die verf zeer ongelijk aanneemt, en wij voeren osb alleen met tand en groef, dus je krijgt geen rechte kant.</p>
+          <a class="buur-link" href="/nl-nl/hout/osb/">Bekijk osb</a>
+        </div>
+        <div class="buur">
+          <h3>Mdf of spaanplaat?</h3>
+          <p>Losse spaanplaat verkopen wij niet. Je komt spaanplaat bij ons tegen als kern van een meubelpaneel, en dan met een decorlaag en een afgewerkte kantenband erop. Dat is een ander product dan een kale plaat.</p>
+          <a class="buur-link" href="/nl-nl/hout/panelen/meubelpanelen/">Bekijk meubelpanelen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ. Elke vraag een eigen item, minimaal vier zinnen antwoord (D21).
+       De vragen zijn letterlijk de zoekvragen uit het vergelijkingscluster. -->
+  <section class="cando-section cando-section--soft" id="vragen-faq" aria-labelledby="faq-title">
+    <div class="cando-wrap">
+      <div class="faq-layout">
+        <div class="faq-intro">
+          <span class="cando-eyebrow">Veelgestelde vragen</span>
+          <h2 id="faq-title">Nog twijfel over de keuze?</h2>
+          <p>De vragen die het vaakst gesteld worden over deze twee platen, met een antwoord dat je meteen kunt gebruiken.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Wat is sterker, mdf of multiplex?</summary>
+            <div class="faq-answer"><p>Dat hangt af van welke sterkte je bedoelt. Multiplex draagt beter, doordat de kruislings verlijmde lagen de plaat in beide richtingen vormvast maken en een schroef ook in de kant houden. Mdf is sterker in vlakheid: het is één homogene massa geperste vezels, dus het blijft egaal en een gefreesd profiel blijft scherp. Bij ons staat geen enkele mdf-variant als constructief materiaal, dus zodra er gewicht op komt, kijk je naar multiplex berken of hardhout.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Wat is het verschil tussen mdf en multiplex?</summary>
+            <div class="faq-answer"><p>Het verschil zit in de opbouw, en daar komt bijna al het andere uit voort. Mdf bestaat uit houtvezels die met een bindmiddel tot één plaat zijn geperst, zonder nerf, noesten of lagen. Multiplex bestaat uit dunne houtlagen die haaks op elkaar zijn gelijmd, waardoor de plaat vormvast is en de kant zichtbaar uit lagen bestaat. In de praktijk merk je dat aan drie dingen: wat het kan dragen, hoe de gezaagde kant eruitziet en hoe makkelijk je er een profiel in freest.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Welke plaat kies je voor een kast, mdf of multiplex?</summary>
+            <div class="faq-answer"><p>Dat hangt af van wat de kast moet doen en hoe hij eruit moet zien. Ga je hem dekkend schilderen en draagt hij vooral zichzelf, dan is mdf de logische keuze, want die blijft vlak en lakt strak op. Komen er zware legplanken in of blijft het hout zichtbaar, dan kies je multiplex, en dan berken als er echt gewicht op komt. En let op de legplanken apart van de kastwanden: dat is de plek waar het in de praktijk misgaat, want daar bepaalt de vrije overspanning wat je nodig hebt en niet de materiaalnaam.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Is multiplex watervast?</summary>
+            <div class="faq-answer"><p>Watervast gaat niet over de houtsoort maar over de lijm waarmee de lagen aan elkaar zitten, en die lijmklasse staat niet in onze productdata. Daarom noemen wij geen enkele plaat watervast, ook niet als je hem in de bouwmarkt zo tegenkomt. Wat wij wel weten, staat in het gebruiksveld per product: multiplex hardhout en okoumé mogen in een vochtige omgeving, populieren en berken in een licht vochtige. Voor een plek waar echt water tegenaan komt, is geen van deze platen bedoeld.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Welke dikte heb ik nodig?</summary>
+            <div class="faq-answer"><p>Die vraag komt pas als je materiaal vaststaat, en het antwoord hangt af van vier dingen tegelijk: de belasting, de vrije overspanning, het aantal steunpunten en de manier waarop je het vastzet. Achttien millimeter is de dikte die elk materiaal bij ons heeft en daarom het handigste vergelijkingspunt. Dunner is bijna altijd een keuze voor gewicht of voor een front dat niets draagt, dikker is een keuze voor overspanning. Wij publiceren bewust geen doorbuigtabel voor plaatmateriaal, omdat wij de rekenwaarden van onze eigen platen niet hebben en een geschat getal je niet helpt als je plank straks doorbuigt.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Moet ik de gezaagde kant afwerken?</summary>
+            <div class="faq-answer"><p>Als de kant in het zicht komt, dan wel. Bij elke plaat is het fabrieksoppervlak dichter dan de kant die eruit gezaagd is, dus de kant neemt verf en vocht sneller op dan het vlak. Bij mdf zie je dat het duidelijkst: de kant zuigt de eerste laag vrijwel volledig weg en blijft ruw als je hem niet eerst dichtzet. Bij multiplex is het meer een keuze dan een noodzaak, want de zichtbare lagen worden vaak juist mooi gevonden, maar de kopse kant blijft wel vocht opnemen.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Vervolg. Twee gelijkwaardige routes naar de materiaalpagina's.
+       Gelijke kaart, gelijke rand, geen accent en geen aanbeveling (A45).
+       Geen retailer-CTA: dit is messy middle, de volgende stap is een
+       beslissing en niet de winkel. -->
+  <section class="cando-section cando-section--light" aria-labelledby="vervolg-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Je keuze is gemaakt</span>
+        <h2 id="vervolg-title">Verder met het materiaal dat je koos</h2>
+        <p>Op de materiaalpagina staan de varianten, de diktes die wij voeren en wat er per soort bij je klus past. Daar zet je de volgende stap: de dikte.</p>
+      </div>
+      <div class="route-grid">
+        <a class="route-card" href="/nl-nl/hout/mdf/">
+          <h3>Verder met mdf</h3>
+          <p>Blank, wit gegrond, zwart en de vochtwerende V313. Met per variant waar hij mag staan en hoe je hem afwerkt.</p>
+          <span class="route-card__foot">Bekijk mdf op maat</span>
+        </a>
+        <a class="route-card" href="/nl-nl/hout/multiplex/">
+          <h3>Verder met multiplex</h3>
+          <p>Populieren, berken, hardhout en okoumé. Met per soort wat hij draagt en waar de zichtbare lagen tot hun recht komen.</p>
+          <span class="route-card__foot">Bekijk multiplex op maat</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

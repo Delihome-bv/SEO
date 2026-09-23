@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hout op maat laten zagen, tot op de mm | CanDo</title>
+<meta name="description" content="Hout op maat bij CanDo. Stel online samen, kies je houtsoort of decor, vul je maten in en zie meteen je prijs. Tot op de millimeter gezaagd, klaar om te monteren.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--border:#e5ddd3;--soft:#f7f2ea;--soft2:#fbfaf7;--dark:#121b21;--beige:#FDC689;--radius:8px;--shadow:0 10px 24px rgba(18,27,33,.05)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.cando-page{overflow-x:hidden}
+.cando-page h1,.cando-page h2,.cando-page h3,.btn,.eyebrow,.proof span,.num{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 18px}
+section{padding:44px 0}
+.soft{background:var(--soft)}
+.measure{max-width:720px}
+h1{margin:0;font-size:36px;line-height:1.02;letter-spacing:-.025em}
+h2{margin:0 0 14px;font-size:28px;line-height:1.1;letter-spacing:-.02em}
+h3{margin:0 0 8px;font-size:20px;line-height:1.2}
+p{margin:0;color:#414141;font-size:16px;line-height:1.72}
+p+p{margin-top:14px}
+.eyebrow{display:block;margin:0 0 10px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.head{max-width:680px;margin-bottom:26px}
+.head p{margin-top:10px;color:var(--muted)}
+
+/* Buttons: primair oranje, secundair beige, tertiair transparant met zwarte lijn */
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;line-height:1.15;border:1.5px solid transparent;transition:.18s ease;cursor:pointer}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(247,144,30,.15)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff;box-shadow:0 6px 16px rgba(247,144,30,.22)}
+.btn-secondary{background:var(--soft);border-color:var(--border);color:var(--text)}
+.btn-secondary:hover{background:#efe3d3;border-color:#efe3d3;color:var(--text)}
+.btn-tertiary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-tertiary:hover{border-color:var(--accent);color:var(--accent);background:rgba(247,144,30,.04)}
+
+/* Hero */
+.hero{padding:34px 0}
+.hero-grid{display:grid;gap:24px;align-items:center}
+.hero p{max-width:640px;margin-top:14px}
+.proof{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:20px}
+.proof span{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--text)}
+.proof span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.media{display:block;width:100%;height:260px;border-radius:var(--radius);overflow:hidden;background:#eee;box-shadow:var(--shadow)}
+.media img{width:100%;height:100%;object-fit:cover}
+
+/* Stappen */
+.steps{display:grid;gap:16px;margin-top:8px;max-width:720px}
+.step{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start}
+.num{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--border);color:var(--accent);font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center}
+.step h3{font-size:18px;margin-bottom:4px}
+.step p{font-size:15px;color:var(--muted)}
+
+/* Kaarten */
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+.card{display:block;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;color:inherit;text-decoration:none;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 14px 30px rgba(18,27,33,.07)}
+.card-img{height:170px;overflow:hidden;border-bottom:1px solid var(--border)}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:16px 16px 18px}
+.card-body p{font-size:14px;line-height:1.55;color:var(--muted);margin-top:6px}
+.card-cta{display:inline-block;margin-top:12px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:14px;color:var(--text)}
+.card-cta::after{content:" →";color:var(--accent)}
+.card:hover .card-cta{color:var(--accent)}
+.card--plain .card-body{padding:22px}
+
+/* Split houtsoorten */
+.split{display:grid;gap:24px;align-items:center}
+.split .media{height:280px}
+.checks{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.checks li{position:relative;padding-left:28px;font-size:15px;color:#414141}
+.checks li::before{content:"✓";position:absolute;left:0;top:-1px;width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.prose a{color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* FAQ */
+.faq-list{display:grid;gap:10px}
+details.faq{border:1px solid var(--border);border-radius:var(--radius);background:#fff;overflow:hidden}
+details.faq summary{list-style:none;cursor:pointer;padding:17px 18px;font-weight:700;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;color:var(--text);display:flex;justify-content:space-between;gap:18px;min-height:56px;align-items:center}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:22px;line-height:1;color:var(--accent);flex:0 0 auto}
+details.faq[open]{border-color:var(--accent)}
+details.faq[open] summary::after{content:"\2212"}
+details.faq div{padding:0 18px 18px}
+details.faq div p{font-size:15px;color:#444;max-width:720px}
+details.faq a{color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+
+/* CTA */
+.cta{background:var(--soft);border:1px solid var(--border);border-radius:var(--radius);padding:34px 28px;text-align:center}
+.cta h2{margin-bottom:8px}
+.cta p{color:#4a4133;max-width:560px;margin:0 auto}
+.cta .btn-row{justify-content:center}
+
+@media(min-width:760px){
+  section{padding:62px 0}
+  h1{font-size:52px;max-width:640px}
+  h2{font-size:34px}
+  .hero-grid,.split{grid-template-columns:1fr 1fr;gap:44px}
+  .media{height:380px}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .grid-4{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:520px){
+  .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<!-- HOUT OP MAAT (flagship landing). Geen header/footer. Beelden zijn placeholders. -->
+<main class="cando-page">
+
+  <!-- HERO -->
+  <section class="hero soft">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Hout op maat</span>
+          <h1>Laat je hout op maat zagen, tot op de mm</h1>
+          <p>Stel je hout online samen, kies je houtsoort of decor, vul je maten in en zie meteen je prijs. Wij zagen het precies passend, jij hoeft alleen nog te monteren. Geen offerte en geen belafspraak nodig.</p>
+          <div class="proof">
+            <span>Tot op de mm gezaagd</span>
+            <span>Direct je prijs in beeld</span>
+            <span>Gratis staal thuis</span>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="/hout-op-maat-laten-zagen/configurator/">Stel online samen</a>
+            <a class="btn btn-tertiary" href="#producten">Bekijk de soorten</a>
+          </div>
+        </div>
+        <div class="media"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Hout op maat gezaagd bij CanDo"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZO WERKT HET -->
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <h2>Zo werkt hout op maat</h2>
+        <p class="measure">In vier stappen van idee naar precies passend hout. Zonder zaagverlies en zonder zelf te klussen.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><h3>Kies je product en houtsoort</h3><p>Van werkblad tot plaat, in massief hout of een decor.</p></div></div>
+        <div class="step"><div class="num">2</div><div><h3>Vul je maten in</h3><p>Lengte, breedte en dikte, plus eventuele uitsparingen voor een spoelbak of kookplaat.</p></div></div>
+        <div class="step"><div class="num">3</div><div><h3>Zie meteen je prijs</h3><p>Geen offerte en geen belafspraak. Je rekent gewoon online af.</p></div></div>
+        <div class="step"><div class="num">4</div><div><h3>Wij zagen, jij monteert</h3><p>Tot op de millimeter gezaagd, klaar om te plaatsen.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OP MAAT PRODUCTEN -->
+  <section class="soft" id="producten">
+    <div class="wrap">
+      <div class="head">
+        <h2>Wat laat je op maat maken?</h2>
+        <p>Kies je product en stel het samen in de configurator.</p>
+      </div>
+      <div class="grid grid-4">
+        <a class="card" href="/werkblad-op-maat/">
+          <div class="card-img"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Werkblad op maat" loading="lazy"></div>
+          <div class="card-body"><h3>Werkblad op maat</h3><p>Van eiken tot 25 decoren.</p><span class="card-cta">Stel samen</span></div>
+        </a>
+        <a class="card" href="/tafelblad-op-maat/">
+          <div class="card-img"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="Tafelblad op maat" loading="lazy"></div>
+          <div class="card-body"><h3>Tafelblad op maat</h3><p>Maak van je tafel weer een blikvanger.</p><span class="card-cta">Stel samen</span></div>
+        </a>
+        <a class="card" href="/meubelpaneel-op-maat/">
+          <div class="card-img"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Meubelpaneel op maat" loading="lazy"></div>
+          <div class="card-body"><h3>Meubelpaneel op maat</h3><p>Plaatmateriaal precies op maat gezaagd.</p><span class="card-cta">Stel samen</span></div>
+        </a>
+        <a class="card" href="/houten-platen-op-maat/">
+          <div class="card-img"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Houten platen op maat" loading="lazy"></div>
+          <div class="card-body"><h3>Houten platen</h3><p>Voor kasten, ombouw en klusprojecten.</p><span class="card-cta">Stel samen</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAAROM -->
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <h2>Waarom hout op maat bij CanDo</h2>
+      </div>
+      <div class="grid grid-4">
+        <div class="card card--plain"><div class="card-body"><h3>Tot op de mm</h3><p>Precies gezaagd, past meteen, geen zaagverlies.</p></div></div>
+        <div class="card card--plain"><div class="card-body"><h3>Direct je prijs</h3><p>Online samenstellen en meteen afrekenen, geen offerte.</p></div></div>
+        <div class="card card--plain"><div class="card-body"><h3>Gratis staal thuis</h3><p>Bekijk de kleur en het materiaal eerst in je eigen licht.</p></div></div>
+        <div class="card card--plain"><div class="card-body"><h3>Scherp geprijsd</h3><p>Een eerlijke prijs op gelijke specificatie.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOUTSOORTEN -->
+  <section class="soft">
+    <div class="wrap">
+      <div class="split">
+        <div class="media"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Massief hout en decoren"></div>
+        <div class="prose">
+          <h2>Massief hout of een decor</h2>
+          <p>Wil je de warmte en nerf van echt hout, of juist een onderhoudsarm decor dat tegen vocht en vlekken kan? Bij hout op maat kies je zelf.</p>
+          <ul class="checks">
+            <li>Massief eiken en beuken, warm en natuurlijk</li>
+            <li>25 decoren, van houtprint tot betonlook</li>
+            <li>Onderhoudsarm en ongevoelig voor vocht</li>
+          </ul>
+          <p style="margin-top:16px">Twijfel je nog? <a href="/keuzehulp/hout/">Doe de keuzehulp</a> of <a href="/staal-aanvragen/">vraag een gratis staal aan</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <h2>Veelgestelde vragen over hout op maat</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq"><summary>Hoe nauwkeurig zagen jullie op maat?</summary><div><p>Tot op de millimeter, inclusief uitsparingen voor bijvoorbeeld een spoelbak of kookplaat. Zo past je hout meteen.</p></div></details>
+        <details class="faq"><summary>Welke houtsoorten en decoren kan ik kiezen?</summary><div><p>Van massief eiken en beuken tot 25 decoren, van houtprint tot betonlook. In de <a href="/hout-op-maat-laten-zagen/configurator/">configurator</a> zie je alle opties.</p></div></details>
+        <details class="faq"><summary>Zie ik vooraf wat het kost?</summary><div><p>Ja. Zodra je je maten invult, zie je meteen je prijs. Geen offerte en geen belafspraak nodig.</p></div></details>
+        <details class="faq"><summary>Kan ik eerst een staal bekijken?</summary><div><p>Ja, <a href="/staal-aanvragen/">vraag een gratis staal aan</a> en bekijk de kleur en het materiaal thuis in je eigen licht.</p></div></details>
+        <details class="faq"><summary>Kan ik een op maat gezaagd product retourneren?</summary><div><p>Een product dat speciaal voor jou op maat is gemaakt, valt buiten het standaard herroepingsrecht. Klopt er iets niet? Neem altijd contact op, dan zoeken we samen een oplossing.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="soft">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Klaar om je hout op maat te maken?</h2>
+        <p>Stel je hout samen in de configurator en zie meteen je prijs. Of vraag eerst een gratis staal aan.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/hout-op-maat-laten-zagen/configurator/">Stel samen in de configurator</a>
+          <a class="btn btn-tertiary" href="/staal-aanvragen/">Vraag een gratis staal aan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

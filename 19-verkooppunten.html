@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vind een verkooppunt bij jou in de buurt | CanDo</title>
+<meta name="description" content="Zoek een verkooppunt bij jou in de buurt. Vul je postcode of plaats in en bekijk waar je CanDo-producten koopt.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--border:#e5ddd3;--soft:#f7f2ea;--soft2:#fbfaf7;--radius:8px;--shadow:0 10px 24px rgba(18,27,33,.05)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+.page{overflow-x:hidden}
+h1,h2,h3,.btn,.eyebrow{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 18px}
+section{padding:34px 0}.soft{background:var(--soft)}
+h1{margin:0 0 8px;font-size:34px;line-height:1.05;letter-spacing:-.02em}
+h3{margin:0 0 4px;font-size:17px}
+p{margin:0;color:#414141;font-size:16px;line-height:1.72}
+.eyebrow{display:block;margin:0 0 10px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.crumbs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px;color:#8c8c8c;font-size:12px}
+.crumbs a{color:#8c8c8c}.crumbs a:hover{color:var(--accent)}.crumbs span{color:#b5b5b5}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;border:1.5px solid transparent;cursor:pointer;transition:.18s ease}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.zoek{display:flex;gap:10px;max-width:520px;margin-top:16px}
+.zoek input{flex:1;min-height:52px;border:1px solid #d9d4cc;border-radius:999px;padding:12px 18px;font:15px Arial,sans-serif}
+.locator{display:grid;gap:22px;grid-template-columns:1fr}
+.map{border:1px dashed #c9c0b2;border-radius:var(--radius);background:var(--soft2);min-height:280px;display:flex;align-items:center;justify-content:center;color:var(--muted);text-align:center;padding:20px}
+.results{display:grid;gap:12px}
+.store{display:flex;gap:14px;justify-content:space-between;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.store h3{margin-bottom:4px}
+.store p{font-size:14px;color:var(--muted)}
+.store .dist{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:13px;color:var(--accent);white-space:nowrap}
+.store a{display:inline-block;margin-top:8px;color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px;font-size:14px}
+.info{background:var(--soft);border:1px solid var(--border);border-radius:var(--radius);padding:22px;font-size:15px;color:#3d3d3d}
+@media(min-width:820px){section{padding:46px 0}h1{font-size:42px}.locator{grid-template-columns:1fr 1fr;align-items:start}.map{min-height:420px;position:sticky;top:20px}}
+@media(max-width:520px){.btn{width:100%}.zoek{flex-direction:column}}
+</style>
+</head>
+<body>
+<!-- VERKOOPPUNTEN / WINKELZOEKER. Winkelnamen zijn placeholder; echte data uit de store locator. Geen header/footer. -->
+<main class="page">
+  <section>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>›</span>Verkooppunten</nav>
+      <span class="eyebrow">Verkooppunten</span>
+      <h1>Vind een verkooppunt bij jou in de buurt</h1>
+      <p style="max-width:600px">CanDo is geen webshop. Vul je postcode of plaats in en bekijk waar je onze producten koopt, bij bouwmarkten en dealers door heel Nederland.</p>
+      <form class="zoek" onsubmit="return false"><input type="text" placeholder="Postcode of plaats" aria-label="Postcode of plaats"><button class="btn btn-primary" type="submit">Zoek</button></form>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="locator">
+        <div class="map">Hier komt de kaart met verkooppunten. Vul je postcode in om de dichtstbijzijnde te zien.</div>
+        <div class="results">
+          <div class="store"><div><h3>Bouwmarkt centrum</h3><p>Voorbeeldstraat 12, 1234 AB, jouw plaats</p><a href="#">Bekijk route</a></div><span class="dist">1,2 km</span></div>
+          <div class="store"><div><h3>Bouwmarkt noord</h3><p>Kanaalweg 5, 1234 CD, jouw plaats</p><a href="#">Bekijk route</a></div><span class="dist">3,4 km</span></div>
+          <div class="store"><div><h3>Bouwmarkt zuid</h3><p>Industrieweg 88, 1234 EF, jouw plaats</p><a href="#">Bekijk route</a></div><span class="dist">5,1 km</span></div>
+          <div class="store"><div><h3>Dealer oost</h3><p>Ambachtstraat 3, 1234 GH, jouw plaats</p><a href="#">Bekijk route</a></div><span class="dist">7,8 km</span></div>
+        </div>
+      </div>
+      <div class="info" style="margin-top:22px">Niet zeker welk product je nodig hebt? Bekijk eerst <a href="/hulp-en-advies/" style="color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px">hulp &amp; advies</a>, dan weet je precies waar je in de winkel naar vraagt.</div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

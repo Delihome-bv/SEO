@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aanmelden CanDo nieuwsbrief, wooninspiratie voor jouw huis | CanDo</title>
+<meta name="description" content="Ideeën voor je huis, precies op het moment dat jij ermee aan de slag wilt. Kies je interesses en ontvang inspiratie, klustips en acties die bij jouw plannen passen.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--beige:#FDC689;--dark:#121b21;--border:#e5ddd3;--soft:#f7f2ea;--soft2:#fbfaf7;--radius:8px;--shadow:0 10px 24px rgba(18,27,33,.05)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}.page{overflow-x:hidden}
+h1,h2,h3,.btn,.eyebrow,.num,.world span,.chipbox{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 18px}
+section{padding:40px 0}.soft{background:var(--soft)}.measure{max-width:640px}
+h1{margin:0 0 12px;font-size:34px;line-height:1.06;letter-spacing:-.025em}
+h2{margin:0 0 12px;font-size:28px;letter-spacing:-.02em}h3{margin:0 0 6px;font-size:18px}
+p{margin:0;color:#414141;font-size:16px;line-height:1.72}p+p{margin-top:14px}
+.eyebrow{display:block;margin:0 0 12px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.crumbs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px;color:#8c8c8c;font-size:12px}
+.crumbs a{color:#8c8c8c}.crumbs a:hover{color:var(--accent)}.crumbs span{color:#b5b5b5}
+.head{max-width:660px;margin-bottom:26px}.head p{margin-top:10px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;border:1.5px solid transparent;cursor:pointer;transition:.18s ease}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(247,144,30,.15)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-tertiary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-tertiary:hover{border-color:var(--accent);color:var(--accent)}
+/* Hero */
+.hero{position:relative;min-height:58vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
+.hero__bg{position:absolute;inset:0}.hero__bg img{width:100%;height:100%;object-fit:cover;opacity:.6}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,27,33,.9),rgba(18,27,33,.4))}
+.hero__b{position:relative;z-index:2;padding:70px 22px 48px;max-width:1120px;margin:0 auto;width:100%}
+.hero h1{color:#fff;max-width:660px}.hero .eyebrow{color:var(--beige)}.hero p{color:#e9e9e7;max-width:560px}
+.benefits{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.benefits li{position:relative;padding-left:30px;font-size:15px;color:#eaeae7}
+.benefits li::before{content:"✓";position:absolute;left:0;top:-1px;width:21px;height:21px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.hero .btn{margin-top:24px}
+/* Formulier */
+.form-grid{display:grid;gap:26px;grid-template-columns:1fr;align-items:stretch}
+.form-aside{display:flex;flex-direction:column}
+.aside-media{margin-top:22px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);flex:1;min-height:200px}
+.aside-media img{width:100%;height:100%;min-height:200px;object-fit:cover}
+.aside-list{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:11px}
+.aside-list li{position:relative;padding-left:29px;font-size:14px;color:#3d3d3d}
+.aside-list li::before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--soft);color:var(--accent-dark);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.formcard{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.field .req{color:var(--accent)}
+.field input,.field select{width:100%;min-height:48px;border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;font:15px Arial,sans-serif;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chipbox{position:relative;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);border-radius:999px;padding:9px 15px;font-size:13px;font-weight:700;color:var(--text);cursor:pointer;background:#fff}
+.chipbox input{position:absolute;opacity:0;pointer-events:none}
+.chipbox:has(input:checked){border-color:var(--accent);background:#fffaf6;color:var(--accent-dark)}
+.form-note{font-size:12px;color:var(--muted);margin-top:8px}
+.hp{position:absolute;left:-9999px}
+/* Waarom (genummerd) */
+.why{display:grid;gap:16px;grid-template-columns:1fr}
+.wcard{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.num{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:11px;background:var(--soft);color:var(--accent);font-weight:800;font-size:17px;margin-bottom:12px}
+.wcard p{font-size:14px;color:var(--muted);margin-top:5px}
+/* Categorie-kaarten */
+.cats{display:grid;gap:16px;grid-template-columns:1fr}
+.cat{position:relative;display:block;border-radius:var(--radius);overflow:hidden;min-height:200px;color:#fff;box-shadow:var(--shadow);text-decoration:none}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.cat:hover img{transform:scale(1.05)}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,27,33,0) 20%,rgba(18,27,33,.5) 52%,rgba(18,27,33,.94) 100%)}
+.cat__b{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:20px}
+.cat h3{color:#fff;margin-bottom:4px;text-shadow:0 1px 8px rgba(0,0,0,.4)}.cat p{color:#f1f1ef;font-size:13px;line-height:1.5;text-shadow:0 1px 6px rgba(0,0,0,.45)}
+.cat__b::after{content:"Bekijk inspiratie →";display:inline-block;margin-top:10px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:13px;color:var(--beige)}
+/* Slot-CTA */
+.cta{background:var(--dark);border-radius:var(--radius);padding:40px 28px;text-align:center;color:#fff}
+.cta h2{color:#fff}.cta p{color:#d7dad9;max-width:520px;margin:8px auto 0}.cta .btn{margin-top:20px}
+.cta .btn-primary{background:var(--accent);border-color:var(--accent)}
+@media(min-width:820px){section{padding:56px 0}h1{font-size:44px}.hero{min-height:64vh}.hero__b{padding:110px 24px 60px}.form-grid{grid-template-columns:1.1fr .9fr}.chip-fields{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}.why{grid-template-columns:repeat(3,1fr)}.cats{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:520px){.btn{width:100%}}
+</style>
+</head>
+<body>
+<!-- NIEUWSBRIEF / WOONINSPIRATIE (dedicated, interesse-gestuurd). Geen header/footer. -->
+<main class="page">
+  <section class="hero">
+    <div class="hero__bg"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Witte vilten wandpanelen met golfpatroon bij een zithoek"></div>
+    <div class="hero__b">
+      <nav class="crumbs" aria-label="Kruimelpad" style="color:#d8dbda"><a href="/" style="color:#d8dbda">Home</a><span style="color:#9aa0a0">›</span>Nieuwsbrief</nav>
+      <span class="eyebrow">CanDo wooninspiratie</span>
+      <h1>Ideeën voor je huis, precies op het moment dat jij ermee aan de slag wilt</h1>
+      <p>Schrijf je in en ontvang inspiratie, slimme klustips en acties die passen bij jouw plannen.</p>
+      <ul class="benefits">
+        <li>Persoonlijke inspiratie op basis van jouw interesses</li>
+        <li>Handige hulp bij kiezen, plannen en monteren</li>
+        <li>Als eerste op de hoogte van acties en nieuwe collecties</li>
+      </ul>
+      <a class="btn btn-primary" href="#aanmelden">Gratis aanmelden</a>
+    </div>
+  </section>
+
+  <section id="aanmelden">
+    <div class="wrap">
+      <div class="form-grid">
+        <div class="form-aside">
+          <span class="eyebrow">Aanmelden</span>
+          <h2>Kies waar jij mee bezig bent</h2>
+          <p class="measure">Dan sturen we je alleen inspiratie die relevant is voor jouw huis en projecten. Je kunt je altijd weer uitschrijven.</p>
+          <ul class="aside-list">
+            <li>Alleen inspiratie binnen jouw interesses</li>
+            <li>Handige klustips en productadvies, geen spam</li>
+            <li>Als eerste bij acties en nieuwe collecties</li>
+          </ul>
+          <div class="aside-media"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Wooninspiratie van CanDo" loading="lazy"></div>
+        </div>
+        <form class="formcard" onsubmit="return false">
+          <div class="chip-fields">
+            <div class="field"><label for="fn">Voornaam <span class="req">*</span></label><input id="fn" type="text" autocomplete="given-name" required></div>
+            <div class="field"><label for="ln">Achternaam <span class="req">*</span></label><input id="ln" type="text" autocomplete="family-name" required></div>
+          </div>
+          <div class="field"><label for="em">E-mailadres <span class="req">*</span></label><input id="em" type="email" autocomplete="email" required></div>
+          <div class="field">
+            <label>In welke productgroep(en) ben je geïnteresseerd?</label>
+            <div class="chips">
+              <label class="chipbox"><input type="checkbox"> Deuren</label>
+              <label class="chipbox"><input type="checkbox"> Hout</label>
+              <label class="chipbox"><input type="checkbox"> Horren</label>
+              <label class="chipbox"><input type="checkbox"> Kasten</label>
+              <label class="chipbox"><input type="checkbox"> Traprenovatie</label>
+              <label class="chipbox"><input type="checkbox"> Lattenwand</label>
+              <label class="chipbox"><input type="checkbox"> Vloeren</label>
+              <label class="chipbox"><input type="checkbox"> Wand &amp; plafond</label>
+            </div>
+          </div>
+          <div class="field"><label for="taal">Taal <span class="req">*</span></label><select id="taal"><option>Nederlands</option><option>Vlaams</option></select></div>
+          <input class="hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" placeholder="Website">
+          <button class="btn btn-primary" type="submit" style="width:100%">Aanmelden</button>
+          <p class="form-note">We gaan zorgvuldig met je gegevens om. Uitschrijven kan altijd met één klik.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Waarom aanmelden?</span><h2>Van kijken naar kiezen</h2><p>Je hoeft niet eindeloos te zoeken naar ideeën die passen bij jouw huis. Kies je interesses en ontvang inspiratie die helpt om sneller de juiste keuze te maken.</p></div>
+      <div class="why">
+        <div class="wcard"><div class="num">01</div><h3>Inspiratie</h3><p>Voor ruimtes, stijlen en projecten die je zelf kunt aanpakken.</p></div>
+        <div class="wcard"><div class="num">02</div><h3>Hulp bij kiezen</h3><p>Tips om producten, maten en afwerking beter te vergelijken.</p></div>
+        <div class="wcard"><div class="num">03</div><h3>Actueel voordeel</h3><p>Relevante acties en nieuwe collecties binnen jouw interesses.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Ontdek jouw volgende project</span><h2>Waar wil je inspiratie voor?</h2><p>Of je nu een muur wilt vernieuwen, je trap een nieuwe uitstraling wilt geven of een slimme oplossing zoekt voor ramen, deuren of opbergruimte: ontdek inspiratie, handige tips en productadvies voor jouw volgende project.</p></div>
+      <div class="cats">
+        <a class="cat" href="/inspiratie/deuren/"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Deuren" loading="lazy"><div class="cat__b"><h3>Deuren</h3><p>Van binnendeuren en schuifdeuren tot deurbeslag en kozijnen.</p></div></a>
+        <a class="cat" href="/inspiratie/hout/"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Hout" loading="lazy"><div class="cat__b"><h3>Hout</h3><p>Hout op maat, meubelpanelen, werkbladen en slimme maatwerkoplossingen.</p></div></a>
+        <a class="cat" href="/inspiratie/horren/"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="Horren" loading="lazy"><div class="cat__b"><h3>Horren</h3><p>Frisse lucht in huis, zonder insecten.</p></div></a>
+        <a class="cat" href="/inspiratie/kasten/"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Kasten" loading="lazy"><div class="cat__b"><h3>Kasten</h3><p>Stel eenvoudig een kast samen die past bij jouw ruimte.</p></div></a>
+        <a class="cat" href="/inspiratie/traprenovatie/"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="Traprenovatie" loading="lazy"><div class="cat__b"><h3>Traprenovatie</h3><p>Geef je trap een nieuwe uitstraling zonder een nieuwe trap te plaatsen.</p></div></a>
+        <a class="cat" href="/inspiratie/vloeren/"><img src="https://delihome.getbynder.com/asset/0ff12430-aca4-4bed-a95b-7d3f6e056449/medium-JPG/CanDo_Laminaat-Noten_Wit-stootbord_Hoofdbeeld.jpg" alt="Vloeren" loading="lazy"><div class="cat__b"><h3>Vloeren</h3><p>Vloeren, plinten en profielen voor een mooi eindresultaat.</p></div></a>
+        <a class="cat" href="/inspiratie/lattenwand/"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Lattenwand" loading="lazy"><div class="cat__b"><h3>Lattenwand</h3><p>Creëer warmte, sfeer en een betere akoestiek.</p></div></a>
+        <a class="cat" href="/inspiratie/wand-plafond/"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Wand en plafond" loading="lazy"><div class="cat__b"><h3>Wand &amp; plafond</h3><p>Van radiatorbekleding tot roomdividers en decoratieve oplossingen.</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <span class="eyebrow" style="color:var(--beige)">Klaar voor je volgende project?</span>
+        <h2>Kies je interesses en ontvang inspiratie die echt bij je past</h2>
+        <a class="btn btn-primary" href="#aanmelden">Meld je gratis aan</a>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

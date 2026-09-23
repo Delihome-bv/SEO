@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  GATE 1F, STAP NUL: DE CATEGORIE. Verplicht sinds 11-09-2026 (Zoe).
+  ===========================================================================
+  Tak         : D, Werkbladen
+  Kennisbank  : KENNIS/WERKBLADEN.md
+  Niet van toepassing op deze tak: P1: de stalenservice bestaat hier wel
+
+  Draai de toets met de tak erbij, anders draait hij plat en kan hij goed
+  werk afkeuren:
+      python3 "CanDo SEO/_tools/gate1f-verbodenlijst.py" --tak D 34-montagehulp.html
+
+  Staat deze kop er niet, dan is de toets niet uitgevoerd, hoe schoon de
+  uitslag ook oogt. Routeringstabel: 04-VORM/VERBODENLIJST.md sectie 0.
+  ===========================================================================
+-->
+<html lang="nl">
+<head>
+<!--
+  ===========================================================================
+  ⛔ AANGESCHERPT DOOR ZOË, 11-09-2026. BINDEND VOOR DIT PAGINATYPE.
+  ===========================================================================
+  "Zelf doen wordt nooit geadviseerd met een werkblad, omdat je daar heel
+  technisch voor moet zijn. Dit is niet zomaar doe-het-zelf. Daarvoor moet je
+  echt maatwerk doen."
+
+  Gevolg voor de vorm van deze pagina, en voor elke montagehulp-pagina:
+  1. Zagen, frezen en uitsparingen worden NOOIT als zelfklus gepresenteerd,
+     ook niet als "als je handig bent". De fout is onomkeerbaar.
+  2. Zelf zagen staat NOOIT als gelijkwaardige optie naast op maat bestellen.
+     De h1 stelde dat eerst als open vraag ("doe je dat zelf of laat je het
+     doen?"); dat is gecorrigeerd naar een antwoord.
+  3. Het zwaartepunt ligt op GOED METEN (29.860 per maand), niet op zagen
+     (2.310). De primaire knop wijst daarom naar het meetblok.
+  4. De doe-het-zelf-lijn blijft gelden, maar alleen omdat maatwerk het
+     technische deel wegneemt. Dat is de volgorde in elke tekst: eerst waarom
+     je het niet zelf zaagt, dan dat je daarom op maat bestelt, dan wat er
+     overblijft en wel te doen is.
+
+  Bron: KENNIS/WERKBLADEN.md sectie 3, het aangescherpte besluit van 11-09.
+
+  ===========================================================================
+  STRAMIEN 34: MONTAGEHULP (paginatype C5)
+  Gebouwd 11-09-2026. Dit bestand is de VORM voor elke montagehulp.
+  Uitgewerkt op het werkblad, want daar zit de vraag en daar is de fout
+  onomkeerbaar: bij een blad op maat kun je een verkeerde maat of een
+  verkeerd geplaatste uitsparing niet terugdraaien.
+
+  DIT IS EEN FAMILIEPAGINA
+  EEN pagina met varianten, geen losse URL's. W15 tot W18 uit
+  CONTENTWERKBOEK-WERKBLADEN.md vallen hier samen: zagen en frezen,
+  de spoelbakuitsparing, de kookplaatuitsparing en het stopcontact.
+  Bron van het familiebesluit: UX-FUNCTIONALITEIT-HOUT.md sectie 0b
+  (besluit Zoe 10-09-2026) en CONTENTWERKBOEK-WERKBLADEN.md sectie 1a.
+
+  ⛔ LET OP, TWEE HUIZEN SPREKEN ELKAAR HIER TEGEN
+  CONTENTWERKBOEK-WERKBLADEN.md sectie 3b voert W15 en W16 nog op als
+  twee losse PAGINA's, terwijl sectie 1a van datzelfde bestand en het
+  paginatypen-register ze tot een familie maken. Het familiebesluit is
+  jonger en staat in het register, dus dat wint. De tabel in sectie 3b
+  moet daarop worden bijgewerkt; dat hoort daar, niet hier.
+
+  DE NEGEN BLOKKEN, VOLGORDE IS BINDEND
+   1 Hero                 full-bleed beeld, het antwoord in de eerste
+                          40 woorden, EEN knop naar de stappen
+   2 Wat de klus is       asymmetrisch: tekst links, feitenstrook rechts.
+                          Neemt de faalangst weg voordat de stappen komen
+   3 Dit heb je nodig     twee kolommen in een omkaderd paneel.
+                          ⛔ STAAT VOOR DE STAPPEN, NIET ERNA (register A51)
+   4 De zeven stappen     genummerde lijst met accentrail, volle breedte.
+                          Elke stap neemt een twijfel weg (register A34/A38)
+   5 De uitsparingen      omkaderd paneel over de volle breedte, uitleg in
+                          een kolom met een uitgelichte vormregel. Dit is
+                          het blok dat de fout voorkomt en het scherpste
+                          onderscheid. Er stond een tekening links; die is
+                          eruit, zie BEELD hieronder
+   6 Maten en grenzen     brede tabel, scrollt in zijn eigen container.
+                          Feiten met eenheid, dus citeerbaar
+   7 Wat gaat er mis      donkere band, strook van vijf
+   8 Veelgestelde vragen  eigen details-item per vraag, minimaal vier
+                          zinnen antwoord (register D21). De items delen
+                          een name-attribuut, zodat er altijd maar EEN
+                          vraag tegelijk openstaat zonder een regel JS.
+                          Stramien 32 en 33 gebruiken ook <details> maar
+                          zonder name, en daar kunnen dus wel meerdere
+                          vragen tegelijk openstaan. Dat botst met
+                          designsysteem-regel 8 (FAQ single-open) en met
+                          de Gate 1-checklist. Hier opgelost; 32 en 33
+                          moeten dezelfde toevoeging krijgen.
+   9 Slot                 donkere kaart zonder beeld, een echte vervolgstap
+
+  RITME
+   Geen twee blokken onder elkaar met dezelfde compositie (register E4).
+   De volgorde is bewust: volvlaks beeld, tekst met strook, omkaderd
+   paneel, genummerde lijst, omkaderd paneel met uitgelichte regel, brede
+   tabel, donkere band, accordeon, donker slot. Nergens een rij van drie
+   gelijke kaarten.
+   LET OP na het weghalen van de tekening in blok 5: blok 3 en blok 5 zijn
+   allebei een omkaderd paneel. Ze verschillen nu alleen in inhoud, niet
+   meer in compositie. Zodra er beeld is voor blok 5, staat het ritme weer
+   zoals het bedoeld was.
+
+  WAT HIER NIET OP MAG
+   - GEEN montagedienst en GEEN inmeetdienst suggereren. Die bestaan niet.
+     Do it for me is een maatwerkladder op het POS-bord, geen dienst
+     (register A46, dossier werkbladen 02 open punt 5)
+   - NOOIT het woord eenvoudig bij montage. De officiele handleiding van
+     de leverancier schrijft twee personen voor waaronder een monteur;
+     wij houden de doe-het-zelf-lijn aan (besluit Zoe 10-09-2026) en
+     beloven niet meer dan: het precisiewerk is vooraf gedaan, het
+     plaatsen doe je met zijn tweeen
+   - GEEN merknamen van de leverancier, van de kern, van de toplaag of
+     van de spoelbakken. Wij beschrijven de eigenschap, niet het merk
+     (besluit Zoe 09-09-2026, uitgebreid 10-09-2026)
+   - GEEN link naar de montagehandleiding of de webshop van de
+     leverancier. Die dragen hun merknamen
+   - GEEN vlakinbouwspoelbak in de copy zolang de feed en de
+     configuratorfiltering het niet dragen. Zie blok 5b hieronder
+   - GEEN afgeronde hoek of ronde vorm VAN HET BLAD. Zie de valkuil
+     hieronder, dit ligt dicht tegen elkaar aan
+   - geen prijzen, geen levertijd, geen reviews, geen sterren
+   - geen ankerbalk of chipsnavigatie (register A22, A33, A44)
+   - geen dingbats of vinkjes in de zichtbare tekst. De accentpijl als
+     CSS ::before mag, zoals in stramien 27 en 32
+   - geen tekst over de pagina zelf, alleen over de klus (register C1)
+   - geen placeholder en geen leeg beeldvlak (register A5, C11, A48)
+
+  ⛔ NOG EEN TEGENSPRAAK, DE HEROBREEDTE
+   CRO-UX-SEO-PRINCIPES-2026.md sectie 7 eist dat H1 en lopende tekst in
+   een full-bleed hero tot circa 70 procent van de breedte lopen, met een
+   hero__box van ongeveer 800 px (register A41 en A42). De stramienen die
+   Zoe zelf heeft vastgesteld of goedgekeurd doen dat niet: 27 staat op
+   580 px, 32 en 33 op 600 px, binnen een container van 1180 px. Dat is
+   circa 50 procent, niet 70.
+   Volgens register D17 bezit het stramien de vorm en wint het stramien
+   bij conflict, dus dit bestand volgt 27, 32 en 33 en staat op 600 px.
+   Een van beide huizen moet worden bijgewerkt; dat hoort daar, niet hier.
+
+  ⛔ DE VALKUIL DIE IN TWEE HUIZEN TEGELIJK STAAT
+   KENNIS/WERKBLADEN.md sectie 20c punt 7 verbiedt "afgeronde hoeken" en
+   "ronde vorm" BIJ EEN WERKBLAD. Sectie 15a bevestigt dat: het blad is
+   rechthoekig met rechte hoeken, geen schuine kant, geen radius.
+   Diezelfde bron zegt in de leverancierssectie van 10-09 dat een
+   UITSPARING wel recht, afgerond of rond kan zijn.
+   Dat is geen tegenspraak maar een grens die je makkelijk overschrijft:
+   de VORM VAN HET BLAD is altijd recht, de VORM VAN DE UITSPARING niet.
+   Blok 5 en blok 6 zetten dat verschil daarom expliciet naast elkaar.
+
+  SCHEMA
+   HowTo met zeven stappen plus supply en tool, FAQPage en
+   BreadcrumbList. Geen aggregateRating, geen Review, geen Offer met
+   prijs, geen Product. Elk getal in het schema staat ook zichtbaar op de
+   pagina: de zeven stappen, de 20 mm schroeven, de 24 uur uithardtijd,
+   de 4000, 1200 en 38 mm. Geen totalTime, want "een halve dag" is geen
+   getal dat zonder interpretatie in uren om te zetten is.
+   Let op bij het natoetsen: de stapnummers 01 tot en met 07 staan wel
+   zichtbaar op de pagina maar niet in de HTML. Ze komen uit een
+   CSS-counter op .steps, net zoals de accentpijl in stramien 27 en 32
+   uit een CSS ::before komt. Een naieve grep op de HTML mist ze dus.
+
+  BEELD
+   EEN foto uit Bynder, nergens anders in de stramienen gebruikt:
+   BEBDCC45-695A-4E6F-A793F7430414A8C7  CanDo_Werkblad_Athena_Detail_Hoek
+   Asset-id registreren in tab 06 van
+   CanDo-hout-redirects-en-inventaris.xlsx.
+
+   ⛔ En dit is bewust maar EEN foto.
+   De beeldbank (Meta_data_beeld_cando_1 tot en met 5, 1.612 assets)
+   bevat geen enkele foto van zagen, meten, frezen, gereedschap of
+   iemand die een blad plaatst. Gecontroleerd op zaag, meet, rolmaat,
+   gereedschap, klus, montage, frees, boor, kit en uitsparing.
+   Wat er wel is voor werkbladen zijn vier onderwerpen: Totaal,
+   Detail_Rand, Detail_Spoelbak en Detail_Hoek. De eerste drie zijn al in
+   gebruik in stramien 32, 33 en de uitwerkingen, en een vierde variant
+   daarvan is volgens register E6 hetzelfde beeld in een andere kleur.
+   Detail_Hoek was als enige onderwerp nog ongebruikt.
+   Daarom staat er bij blok 3 tot en met 9 bewust geen foto en geen
+   placeholder. Wil Zoe daar beeld, dan is dat een fotobrief.
+
+  ⛔ WEGGEHAALD OP 11-09-2026, BESLUIT ZOE, VERBODENLIJST B1
+   "De illustraties die worden gemaakt, dat doen wij niet. Wij hebben
+   alleen afbeeldingen met CanDo of onze eigen gemaakte illustraties.
+   Behalve die van de doorbuig bij massieve panelen en timmerpanelen."
+   Uit dit bestand is EEN tekening verwijderd:
+
+   BLOK 5, DE UITSPARINGEN. Een SVG van 420 bij 250 met drie stukken
+   werkblad naast elkaar: een recht gat met scherpe hoeken, een gat met
+   afgeronde hoeken en een rond gat, elk met een maatlijn eronder.
+   WAT ER MET HET BLOK GEBEURDE: het was tekening links en tekst rechts,
+   het is nu een omkaderd paneel van een kolom. Geen half lege kolom,
+   geen leeg beeldvlak (B3).
+   WAT ER MET DE TEKST GEBEURDE: het onderschrift bij de tekening was de
+   kernregel van het blok ("de vorm van de uitsparing is vrij, de vorm van
+   het blad niet"). Die regel staat nu als uitgelichte alinea in de tekst
+   zelf, aangevuld met wat de drie vormen zijn, want dat stond eerder
+   alleen in de tekening.
+   [besluit nodig] WELK BEELD HIER NODIG IS: een foto of een CanDo-eigen
+   illustratie van drie uitsparingen in een werkblad naast elkaar, recht,
+   afgerond en rond, van bovenaf en in gelijk licht, zodat het vormverschil
+   het enige verschil is. Bestaat niet in Bynder, gecontroleerd op zaag,
+   frees en uitsparing. Dit is dus een fotobrief, zie
+   05-BESLUITEN/FOTOBRIEF-AFWERKING.md sectie 5.
+
+  ⛔ BLOKRECORD, DIT IS GEEN GROEN GATE 0
+   STATUS:    BLOCKED
+   WAAROM:    Er bestaat geen planrij voor dit paginatype. Gate 0 eist
+              rol, beslistaak, beslisstaat, zoekintentie, register, CTA
+              en meetpunt in PAGINAPLAN-HOUT.md. De twintig
+              werkbladrijen daar dekken hub, op maat, look en staal,
+              geen montage of uitsparingen. Het BE-volume is niet
+              bevestigd, alleen het NL-cluster.
+              Twee huizen geven bovendien verschillende volumes voor
+              dit contenttype: UX-FUNCTIONALITEIT-HOUT.md voert circa
+              32.000 per maand op, terwijl de clusters in
+              CONTENTWERKBOEK-WERKBLADEN.md sectie 3b optellen tot
+              10.630 (zagen 2.310, spoelbak 5.250, kookplaat 2.900,
+              stopcontact 170). Die 32.000 is nergens onderbouwd.
+   ONTBREEKT: planrij C5, BE-volume, reconciliatie van het volume
+   EIGENAAR:  Zoe
+   ACTIE:     planrij toevoegen in PAGINAPLAN-HOUT.md en in
+              CanDo-hout-paginaplan.xlsx, dan Gate 0 opnieuw draaien.
+              Dit bestand is de VORM (laag 7) en mag vooruitlopen, een
+              live pagina niet.
+
+  OPENSTAANDE PUNTEN
+   [besluit nodig] URL van de familiepagina. Hier staat
+     /nl-nl/hout/werkbladen/montage/. Het werkboek voert drie
+     concurrerende werkblad-takken op (/hout/werkbladen/,
+     /hout/hout-op-maat/werkbladen-op-maat/ en /hout/panelen/werkbladen/).
+     Zolang die knoop niet door is, zijn de canonical en de vier
+     hreflang-regels voorlopig. Zelfde openstaande punt als stramien 32.
+   [besluit nodig] Komt er een BE/FR-spoor. De hreflang naar
+     /be-fr/bois/plans-de-travail/montage/ staat er omdat de norm drie
+     hreflang plus x-default eist, maar die pagina bestaat nog niet.
+     Niet live zetten voor dat besluit valt.
+   [besluit nodig] BLOK 5b, de vlak ingebouwde spoelbak. Dat is volgens
+     de kennislaag ons scherpste onderscheid en tegelijk het enige dat
+     vandaag nergens besteld kan worden: nul hits op vlakinbouw in feed
+     3.22.28, en de configurator kent het filter niet. Daarom staat het
+     NIET in de copy. Zodra de feed en de filtering het dragen komt er
+     een blok tussen 5 en 6 met drie feiten die alle drie mee moeten:
+     de verdieping wordt in de fabriek gefreesd en de bak wordt daar in
+     het blad gezet, de bak wordt dus tegelijk met het blad gekozen, en
+     bij de instapserie kan het niet. Eerder publiceren belooft iets dat
+     de configurator niet waarmaakt.
+   [besluit nodig] De maten in blok 6 zijn die van de CanDo-lijn
+     (bouwmaat, gamma, gamma-be, hubo-be, karwei): 4000 bij 1200 mm,
+     38 mm dik. De FAB-lijn bij praxis, brico en candostart zit op
+     4000 bij 1280 mm en 39 mm, en forestea op 3050 mm lengte. FAB is
+     merkloos en geen CanDo, dus die maten horen niet op deze pagina,
+     maar een Franse of Belgische variant moet hier wel langs.
+   [te bevestigen] Voor de twee nieuwe series is geen maximale zaagmaat
+     bekend. Blok 6 draagt daarom de maat van de lijn die vandaag
+     leverbaar is, en noemt geen serienamen bij de maat.
+   [niet doen] Meten krijgt hier bewust geen eigen sectie en geen link.
+     Het maatcluster is 29.860 per maand en wordt een eigen pagina
+     (W19 en W20). Twee pagina's op dezelfde zoekintentie kannibaliseren,
+     en een link naar een pagina die nog niet bestaat mag niet. Meten
+     zit daarom alleen in stap 1 en in de laatste FAQ-vraag.
+  ===========================================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keukenblad op maat laten zagen en frezen | CanDo</title>
+<meta name="description" content="Keukenblad zagen en uitsparingen frezen is de stap die je niet terugdraait. Lees wat je vooraf laat maken, wat je nodig hebt en hoe je het blad plaatst.">
+<link rel="canonical" href="https://www.cando.eu/nl-nl/hout/werkbladen/montage/">
+<link rel="alternate" hreflang="nl-NL" href="https://www.cando.eu/nl-nl/hout/werkbladen/montage/">
+<link rel="alternate" hreflang="nl-BE" href="https://www.cando.eu/be-nl/hout/werkbladen/montage/">
+<link rel="alternate" hreflang="fr-BE" href="https://www.cando.eu/be-fr/bois/plans-de-travail/montage/">
+<link rel="alternate" hreflang="x-default" href="https://www.cando.eu/nl-nl/hout/werkbladen/montage/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Keukenblad zagen en uitsparingen laten frezen | CanDo">
+<meta property="og:description" content="Keukenblad zagen en uitsparingen frezen is de stap die je niet terugdraait. Lees wat je vooraf laat maken, wat je nodig hebt en hoe je het blad plaatst.">
+<meta property="og:image" content="https://delihome.getbynder.com/asset/bebdcc45-695a-4e6f-a793-f7430414a8c7/medium-JPG/CanDo_Werkblad_Athena_Detail_Hoek.jpg">
+<meta property="og:url" content="https://www.cando.eu/nl-nl/hout/werkbladen/montage/">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{
+  --text:#20272b;
+  --muted:#666b70;
+  --accent:#F7901E;
+  --accent-dark:#d95f18;
+  --border:#e5ded4;
+  --bg-soft:#f7f2ea;
+  --bg-light:#fbfaf7;
+  --bg-warm:#f4eadc;
+  --white:#fff;
+  --dark:#211914;
+  --radius:8px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+body{margin:0;background:#fff;color:var(--text);font-family:Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+.cando-montage{width:100%;overflow-x:clip;background:#fff;color:var(--text)}
+.cando-montage *,.cando-montage *::before,.cando-montage *::after{box-sizing:border-box}
+.cando-montage h1,.cando-montage h2,.cando-montage h3,.cando-montage .cando-cat-button,.cando-montage summary,.cando-montage th{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.cando-montage h1{margin:0 0 14px;font-size:52px;line-height:1.02;font-weight:700;color:#fff;letter-spacing:-.02em}
+.cando-montage h2{margin:0;font-size:30px;line-height:1.2;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.cando-montage h3{margin:0 0 7px;font-size:19px;line-height:1.3;font-weight:700;color:var(--text)}
+.cando-montage p{margin:0;font-size:16px;line-height:1.68;color:#414141}
+.cando-montage ul,.cando-montage ol{margin:0;padding:0}
+.cando-montage a{text-decoration:none;font-weight:700}
+.cando-montage :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.cando-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+.cando-section{position:relative;padding:58px 0}
+.cando-section--soft{background:var(--bg-soft)}
+.cando-section--light{background:var(--bg-light)}
+.cando-section-head{max-width:730px;margin-bottom:28px}
+.cando-section-head p{margin-top:10px;color:var(--muted)}
+.cando-eyebrow{display:block;margin:0 0 8px;color:var(--accent);font-size:11px;line-height:1.2;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.lede{font-size:17px;color:#343a3e}
+
+/* Canonieke CanDo buttonstijl, ongewijzigd overgenomen uit stramien 27 en 32 */
+.cando-cat-button-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:22px}
+.cando-cat-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 24px;border-radius:999px;font-size:16px;line-height:1.2;font-weight:700;text-decoration:none;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+.cando-cat-button:active{transform:translateY(1px)}
+.cando-cat-button--primary{background:var(--accent);border:1px solid var(--accent);color:#fff!important}
+.cando-cat-button--primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff!important}
+.cando-cat-button--secondary{background:var(--bg-soft);border:1px solid var(--border);color:var(--text)!important}
+.cando-cat-button--secondary:hover{background:#efe4d6;border-color:#efe4d6;color:var(--text)!important}
+.cando-cat-button--dark{background:transparent;border:1px solid rgba(255,255,255,.7);color:#fff!important}
+.cando-cat-button--dark:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* 1. Hero, volvlaks beeld met het antwoord erover */
+.cando-cat-hero{position:relative;min-height:480px;display:flex;align-items:flex-end;overflow:hidden;background:#222}
+.cando-cat-hero__image{position:absolute;inset:0;z-index:0;margin:0;background:#222}
+.cando-cat-hero__image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cando-cat-hero__image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(32,39,43,.9) 0%,rgba(32,39,43,.68) 48%,rgba(32,39,43,.22) 100%)}
+.cando-cat-hero__inner{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:98px 18px 58px}
+.cando-cat-hero__content{max-width:600px}
+.cando-cat-hero p{max-width:540px;color:#fff!important;font-size:17px;line-height:1.6;opacity:.96}
+.cando-cat-hero .cando-cat-button-row{margin-top:26px}
+
+/* 2. Wat de klus is, tekst links en een feitenstrook rechts */
+.job{display:grid;grid-template-columns:1.22fr .78fr;gap:48px;align-items:start}
+.job__copy p+p{margin-top:14px}
+.job__facts{list-style:none;border-top:2px solid var(--accent)}
+.job__facts li{display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding:15px 0;border-bottom:1px solid var(--border)}
+.job__facts dt,.job__facts strong{font-size:15px;color:var(--muted)}
+.job__facts b{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:20px;line-height:1.15;color:var(--text);text-align:right}
+.job__facts-note{margin-top:16px;font-size:14px;line-height:1.55;color:var(--muted)}
+
+/* 3. Dit heb je nodig, omkaderd paneel met twee kolommen */
+.needs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff}
+.needs__col{padding:34px 34px 32px}
+.needs__col+.needs__col{border-left:1px solid var(--border);background:var(--bg-light)}
+.needs__col h3{font-size:18px;margin-bottom:14px}
+.clean-list{list-style:none;display:grid;gap:10px}
+.clean-list li{position:relative;padding-left:19px;font-size:15px;line-height:1.55;color:#414141}
+.clean-list li::before{content:"\203A";position:absolute;left:0;top:-1px;color:var(--accent);font-size:18px;font-weight:800}
+.clean-list strong{color:var(--text)}
+.needs__note{margin-top:20px;padding:22px 26px;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);background:var(--bg-soft)}
+.needs__note p{font-size:15px;line-height:1.62}
+
+/* 4. De zeven stappen, genummerde lijst met een accentrail */
+.steps{list-style:none;counter-reset:step;display:grid;gap:0;border-top:1px solid var(--border)}
+.steps li{counter-increment:step;display:grid;grid-template-columns:96px 1fr;gap:26px;align-items:start;padding:24px 0;border-bottom:1px solid var(--border)}
+.steps li::before{content:counter(step,decimal-leading-zero);font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:34px;line-height:1;font-weight:700;color:var(--accent);letter-spacing:-.02em;padding-top:2px}
+.steps h3{margin-bottom:6px}
+.steps p{font-size:15px;line-height:1.62;max-width:760px}
+.steps p+p{margin-top:8px}
+
+/* 5. De uitsparingen, tekening links en uitleg rechts */
+/* Blok 5 stond als tekening links en uitleg rechts. De tekening is eruit
+   (verbodenlijst B1), dus dit is nu EEN kolom met een omkaderd paneel.
+   Geen half lege kolom en geen beeldvlak dat op beeld wacht. */
+.cut{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff}
+.cut__copy{padding:40px 40px 36px;max-width:900px}
+.cut__copy .lede{margin-bottom:18px}
+.cut__copy p+p{margin-top:14px}
+.cut__rule{padding:16px 18px;background:var(--bg-soft);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
+.cut__split{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:26px;padding-top:22px;border-top:1px solid var(--border)}
+.cut__split h3{font-size:17px;margin-bottom:6px}
+.cut__split p{font-size:15px;line-height:1.6}
+
+/* 6. Maten en grenzen, brede tabel die in de eigen container scrollt */
+.table-intro{max-width:760px;margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--muted)}
+.table-scroll{position:relative;border:1px solid var(--border);border-radius:var(--radius);background:#fff;overflow:hidden}
+.table-scroll__inner{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table-scroll__inner:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+/* Randverloop als scroll-aanwijzing. Alleen waar de tabel breder is dan de
+   container, en nooit klikbaar. */
+.table-scroll::after{content:"";position:absolute;top:0;right:0;width:34px;height:100%;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.92));opacity:0}
+@media(max-width:1060px){.table-scroll::after{opacity:1}}
+.size-table{width:100%;min-width:720px;border-collapse:collapse;font-size:15px}
+.size-table th,.size-table td{text-align:left;vertical-align:top;padding:17px 22px;border-bottom:1px solid var(--border)}
+.size-table thead th{background:var(--bg-soft);font-size:15px;font-weight:700;line-height:1.35;color:var(--text);border-bottom:1px solid #e0d6c8}
+.size-table tbody tr:last-child th,.size-table tbody tr:last-child td{border-bottom:0}
+.size-table tbody th{width:26%;font-size:16px;font-weight:700;line-height:1.3}
+.size-table td{line-height:1.6;color:#414141}
+.size-table td.is-lead{width:26%;background:#fffaf6;font-weight:700;color:var(--text)}
+.size-table tbody tr:nth-child(even) td.is-lead{background:#fdf6f0}
+.table-hint{margin-top:16px;font-size:15px;line-height:1.6;color:var(--muted)}
+.table-hint strong{color:var(--text)}
+
+/* 7. Wat gaat er mis, donkere band met een strook van vijf */
+.risk-band{position:relative;background:var(--dark);color:#fff;overflow:hidden}
+.risk-band::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(247,144,30,.11),transparent 46%);pointer-events:none}
+.risk-band .cando-wrap{position:relative;z-index:1}
+.risk-band h2{color:#fff}
+.risk-band .cando-section-head p{color:rgba(255,255,255,.78)}
+.risk-strip{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2)}
+.risk-strip li{padding:20px 18px 20px 0;margin-right:18px;border-right:1px solid rgba(255,255,255,.2)}
+.risk-strip li:last-child{border-right:0;margin-right:0}
+.risk-strip strong{display:block;margin-bottom:5px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:16px;color:#fff}
+.risk-strip span{font-size:13px;line-height:1.5;color:rgba(255,255,255,.74)}
+
+/* 8. FAQ, ieder vraagstuk een eigen accordeonitem */
+.faq-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:44px;align-items:start}
+.faq-intro p{margin-top:10px;color:var(--muted)}
+.faq-list{display:grid;gap:10px}
+details.faq-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+details.faq-item summary{list-style:none;cursor:pointer;padding:17px 54px 17px 18px;font-size:16px;font-weight:700;line-height:1.35;position:relative}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{content:"+";position:absolute;right:18px;top:15px;width:25px;height:25px;border:1px solid #b8b8b8;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6c6c6c;font-size:18px;line-height:1}
+details.faq-item[open]{border-color:#d8cdbf}
+details.faq-item[open] summary{color:var(--accent);background:#fffaf6}
+details.faq-item[open] summary::after{content:"\2212";background:var(--accent);border-color:var(--accent);color:#fff}
+.faq-answer{padding:0 18px 19px}
+.faq-answer p{font-size:15px;line-height:1.62;color:#414141}
+.faq-answer p+p{margin-top:10px}
+.faq-answer a{color:var(--text);text-decoration:underline;text-underline-offset:3px;font-weight:700}
+
+/* 9. Slot, donkere kaart zonder beeld */
+.closing{background:var(--dark);border-radius:var(--radius);padding:46px 46px 44px}
+.closing h2{color:#fff;max-width:620px}
+.closing p{max-width:660px;margin-top:12px;color:rgba(255,255,255,.84)}
+.closing a.inline{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+@media(max-width:1020px){
+  .job,.needs,.faq-layout{grid-template-columns:1fr}
+  .job{gap:30px}
+  .needs__col+.needs__col{border-left:0;border-top:1px solid var(--border)}
+  .risk-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .risk-strip li:nth-child(2n){border-right:0;margin-right:0}
+  .risk-strip li:nth-child(n+3){border-top:1px solid rgba(255,255,255,.2)}
+  .faq-layout{gap:28px}
+}
+@media(max-width:760px){
+  .cando-montage h1{font-size:36px}
+  .cando-montage h2{font-size:25px}
+  .cando-section{padding:44px 0}
+  .cando-cat-hero{min-height:420px}
+  .cando-cat-hero__inner{padding:80px 16px 40px}
+  .cando-cat-hero p{font-size:16px}
+  .cando-cat-button-row{flex-direction:column;align-items:stretch}
+  .cando-cat-button{width:100%}
+  .job__facts b{font-size:18px}
+  .needs__col{padding:28px 20px 26px}
+  .needs__note{padding:20px}
+  .steps li{grid-template-columns:60px 1fr;gap:16px;padding:20px 0}
+  .steps li::before{font-size:26px}
+  .cut__copy{padding:30px 20px 28px}
+  .cut__split{grid-template-columns:1fr;gap:22px;margin-top:22px;padding-top:20px}
+  .size-table th,.size-table td{padding:15px 18px}
+  .risk-strip{grid-template-columns:1fr}
+  .risk-strip li{margin-right:0;border-right:0;border-top:1px solid rgba(255,255,255,.2)}
+  .risk-strip li:first-child{border-top:0}
+  .closing{padding:30px 22px 32px}
+}
+.cando-skip{position:absolute;left:-9999px;top:0;z-index:99;padding:12px 20px;background:var(--accent);color:#fff;font-weight:700;border-radius:0 0 var(--radius) 0}
+.cando-skip:focus{left:0}
+</style>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.cando.eu/nl-nl/"},
+      {"@type":"ListItem","position":2,"name":"Hout","item":"https://www.cando.eu/nl-nl/hout/"},
+      {"@type":"ListItem","position":3,"name":"Werkbladen","item":"https://www.cando.eu/nl-nl/hout/werkbladen/"},
+      {"@type":"ListItem","position":4,"name":"Montage en uitsparingen","item":"https://www.cando.eu/nl-nl/hout/werkbladen/montage/"}
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Een keukenblad op maat plaatsen",
+    "description": "Zagen en frezen is de lastigste stap van het vervangen van een keukenblad, en de enige die je niet kunt terugdraaien. Bestel je het blad op maat, dan is die stap al gedaan en blijft er tillen, plaatsen, afkitten en aansluiten over. Dat doe je met zijn tweeën in een halve dag.",
+    "inLanguage": "nl-NL",
+    "image": "https://delihome.getbynder.com/asset/bebdcc45-695a-4e6f-a793-f7430414a8c7/medium-JPG/CanDo_Werkblad_Athena_Detail_Hoek.jpg",
+    "supply": [
+      {"@type":"HowToSupply","name":"Siliconenkit in de kleur van je blad"},
+      {"@type":"HowToSupply","name":"Schroeven van 20 mm"},
+      {"@type":"HowToSupply","name":"Hoekverbinders"},
+      {"@type":"HowToSupply","name":"Markeringstape en schilderstape"},
+      {"@type":"HowToSupply","name":"Een emmer, doekjes en afwasmiddel"}
+    ],
+    "tool": [
+      {"@type":"HowToTool","name":"Accuboormachine"},
+      {"@type":"HowToTool","name":"Rolmaat en potlood"},
+      {"@type":"HowToTool","name":"Afbreekmes en verfschraper"},
+      {"@type":"HowToTool","name":"Verstelbare moersleutel"},
+      {"@type":"HowToTool","name":"Platte schroevendraaier"},
+      {"@type":"HowToTool","name":"Kitpistool en afstrijkplaatjes"},
+      {"@type":"HowToTool","name":"Plantenspuit"}
+    ],
+    "step": [
+      {"@type":"HowToStep","position":1,"name":"Meten en voorbereiden","url":"https://www.cando.eu/nl-nl/hout/werkbladen/montage/#stappen","text":"Meet de lengte, de breedte en de dikte van je huidige blad. Kijk of het blad onder de achterwand doorloopt, want dat verandert de totale breedte. Noteer daarna waar de uitsparingen moeten komen."},
+      {"@type":"HowToStep","position":2,"name":"Op maat bestellen","url":"https://www.cando.eu/nl-nl/hout/werkbladen/montage/#stappen","text":"Bestel het blad op maat en geef de uitsparingen bij de bestelling op. Het zagen en frezen gebeurt dan vooraf, zodat je thuis geen zaagsel en geen risico op uitscheuren hebt."},
+      {"@type":"HowToStep","position":3,"name":"Apparaten loskoppelen","url":"https://www.cando.eu/nl-nl/hout/werkbladen/montage/#stappen","text":"Haal de deuren en laden eruit, draai de watertoevoer dicht en maak de sifon los. Markeer de warme en de koude waterleiding met tape. Haal de kraan eraf en trek de stekker van de kookplaat eruit."},
+      {"@type":"HowToStep","position":4,"name":"Het oude blad eruit","url":"https://www.cando.eu/nl-nl/hout/werkbladen/montage/#stappen","text":"Snijd de kitrand los met een afbreekmes en draai de schroeven aan de onderkant los. Til het oude blad er met zijn tweeën af."},
+      {"@type":"HowToStep","position":5,"name":"Het nieuwe blad erop","url":"https://www.cando.eu/nl-nl/hout/werkbladen/montage/#stappen","text":"Maak de onderkasten schoon en haal oude kitresten weg. Controleer of de kasten vlak en waterpas staan. Leg het blad erop zonder het onder spanning te brengen en zet het vast met kitdotten of schroeven, en boor bij schroeven eerst voor."},
+      {"@type":"HowToStep","position":6,"name":"Afkitten","url":"https://www.cando.eu/nl-nl/hout/werkbladen/montage/#stappen","text":"Plak schilderstape boven en onder langs de naad. Breng de kit rustig en gelijkmatig aan, spuit de kit en de kitstrijker licht in met zeepsop en strijk glad. Haal de tape eraf terwijl de kit nog nat is."},
+      {"@type":"HowToStep","position":7,"name":"Apparaten terugplaatsen","url":"https://www.cando.eu/nl-nl/hout/werkbladen/montage/#stappen","text":"Zet de kookplaat, de spoelbak en de kraan terug en sluit de leidingen aan met de markeringstape als gids. Controleer op lekkage en hang de deuren en laden terug. Geef de kit 24 uur om uit te harden."}
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "nl-NL",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Moet ik zelf nog zagen als ik mijn keukenblad op maat bestel?",
+        "acceptedAnswer": {"@type":"Answer","text":"Nee. Het blad wordt op jouw maat gezaagd en de uitsparingen worden vooraf gefreesd, dus je hoeft thuis niets meer door te zagen. Dat scheelt precies de stap die in elk regulier stappenplan als de lastigste staat: een uitsparing zagen met een decoupeerzaag, met schilderstape op de zaaglijn tegen uitscheuren. Blijkt er onverhoopt toch nog iets bij te moeten, plak dan schilderstape op de zaaglijn en gebruik een decoupeerzaag met een fijn zaagblad. Wordt er ter plaatse geboord of gezaagd, werk dan op een geventileerde plek met afzuiging, adembescherming, een veiligheidsbril en gehoorbescherming."}
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ik meerdere uitsparingen in een blad laten maken?",
+        "acceptedAnswer": {"@type":"Answer","text":"Ja, meerdere uitsparingen in hetzelfde blad kunnen gewoon. Het gaat ook niet alleen om de spoelbak, de kraan en de kookplaat: een zeepdispenser, een stopcontact of elke andere plek waar een gat nodig is kan mee. Elke uitsparing is een aanvullende bewerking, die apart wordt gekozen en apart wordt berekend. Geef ze allemaal tegelijk op bij je bestelling, want achteraf een gat toevoegen in een afgewerkt blad is precies wat je met een blad op maat wilde voorkomen."}
+      },
+      {
+        "@type": "Question",
+        "name": "Hoeveel mensen heb ik nodig om een keukenblad te plaatsen?",
+        "acceptedAnswer": {"@type":"Answer","text":"Reken op twee personen. Een blad van drie meter is te groot en te zwaar om in je eentje recht en zonder spanning op de kasten te leggen, en je hebt bij het optillen aan beide kanten iemand nodig. Draag het blad verticaal en houd het in de verpakking tot je het echt gaat plaatsen. Er zijn twee momenten waarop je die tweede persoon echt nodig hebt: het oude blad eraf tillen en het nieuwe erop leggen zonder het ergens tegenaan te klemmen."}
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe lang moet de kit uitharden voordat ik het blad kan gebruiken?",
+        "acceptedAnswer": {"@type":"Answer","text":"Reken op ongeveer 24 uur. Zolang de kit niet is uitgehard hecht de naad nog niet volledig, dus ontzie het blad in die periode en leg er niets zwaars op. Verwijder kitresten wel meteen, want opgedroogde kit krijg je er later niet meer netjes af. Haal de schilderstape eraf terwijl de kit nog nat is, dan blijft de rand strak."}
+      },
+      {
+        "@type": "Question",
+        "name": "Mag ik een kras of een zaagkant bijwerken met schuurpapier?",
+        "acceptedAnswer": {"@type":"Answer","text":"Nee. De toplaag van een werkblad mag nooit geschuurd of gepolijst worden, want dat geeft blijvende glansverschillen op de plek waar je gewerkt hebt. Ook harde schuurmiddelen zoals staalwol of een diamantspons beschadigen het oppervlak permanent. Een zaagkant hoef je bij een blad op maat niet bij te werken, want die is al afgewerkt. Zit er toch schade in de toplaag, dan is dat niet meer te herstellen en vervang je het blad."}
+      },
+      {
+        "@type": "Question",
+        "name": "Wat meet ik op voordat ik een nieuw keukenblad bestel?",
+        "acceptedAnswer": {"@type":"Answer","text":"Meet de lengte, de breedte en de dikte van het blad dat er nu ligt. Let er daarbij op of het blad onder de achterwand doorloopt, want dan is de werkelijke breedte groter dan wat je bovenop ziet. Noteer daarna van elke uitsparing de plek, gemeten vanaf dezelfde hoek van het blad, zodat er geen twijfel is over links of rechts. Meet liever twee keer dan één keer: het blad wordt op jouw maat gezaagd en dat is niet terug te draaien."}
+      }
+    ]
+  }
+]
+</script>
+</head>
+
+<body>
+<a class="cando-skip" href="#contentarea">Naar de inhoud</a>
+
+<main class="cando-montage" id="contentarea">
+
+  <!-- 1. Hero. Het antwoord staat in de eerste 40 woorden, voor de opbouw. -->
+  <section class="cando-cat-hero" aria-labelledby="page-title">
+    <figure aria-hidden="true" class="cando-cat-hero__image">
+      <img src="https://delihome.getbynder.com/asset/bebdcc45-695a-4e6f-a793-f7430414a8c7/medium-JPG/CanDo_Werkblad_Athena_Detail_Hoek.jpg" alt="Detailopname van de hoek van een werkblad" width="1600" height="900" fetchpriority="high">
+    </figure>
+    <div class="cando-cat-hero__inner">
+      <div class="cando-cat-hero__content">
+        <span class="cando-eyebrow" style="color:#FDC689">Montage werkbladen</span>
+        <h1 id="page-title">Keukenblad zagen doe je niet zelf, en dat hoeft ook niet</h1>
+        <p>Zagen en frezen is de lastigste stap van de hele klus, de enige die je niet kunt terugdraaien, en je moet er echt technisch voor zijn. Daarom bestel je je blad op maat: dan is die stap al gedaan. Wat overblijft is meten, tillen, plaatsen, afkitten en het aansluiten laten doen.</p>
+        <div class="cando-cat-button-row">
+          <a class="cando-cat-button cando-cat-button--primary" href="#meten">Zo meet je je blad op</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Wat de klus is. Tekst links, feitenstrook rechts. Neemt de faalangst
+       weg voordat de stappen komen. -->
+  <section class="cando-section" id="klus" aria-labelledby="klus-title">
+    <div class="cando-wrap">
+      <div class="job">
+        <div class="job__copy">
+          <span class="cando-eyebrow">De klus</span>
+          <h2 id="klus-title">Hoe groot is de klus als het blad al gezaagd is?</h2>
+          <p class="lede" style="margin-top:14px">Een keukenblad vervangen is een klus van een halve dag, met zijn tweeën. Dat klinkt overzichtelijker dan het aanvoelt, en dat komt door een stap die er bij jou niet meer in zit.</p>
+          <p>In elk regulier stappenplan voor het vervangen van een keukenblad is het zagen en frezen de lastigste en de risicovolste stap. De uitsparing voor de spoelbak, het kraangat, het gat voor de kookplaat: allemaal met schilderstape op de zaaglijn en een decoupeerzaag met een fijn zaagblad, in een blad dat je maar één keer hebt. Zaag je scheef of scheurt de toplaag uit, dan ligt er een blad dat je niet meer kunt gebruiken.</p>
+          <p>Bij een blad op maat gebeurt dat precisiewerk vooraf, met machines die er wel op gebouwd zijn. Wat er voor jou overblijft is het oude blad eruit tillen, het nieuwe erop leggen, vastzetten, afkitten en de kraan en de kookplaat weer aansluiten. Dat is werk waar je een tweede persoon en een rustige middag voor nodig hebt, geen zaagervaring.</p>
+        </div>
+        <div>
+          <ul class="job__facts">
+            <li><strong>Klusniveau</strong><b>Gemiddeld</b></li>
+            <li><strong>Tijd</strong><b>Een halve dag</b></li>
+            <li><strong>Met hoeveel</strong><b>Met zijn tweeën</b></li>
+            <li><strong>Aantal stappen</strong><b>Zeven</b></li>
+            <li><strong>Zelf zagen</strong><b>Doen we niet</b></li>
+          </ul>
+          <p class="job__facts-note">Twee personen is geen slag om de arm maar een voorwaarde. Een blad van drie meter til je niet in je eentje recht op de kasten, en scheef neerleggen is precies waar het misgaat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Dit heb je nodig. Staat VOOR de stappen, niet erna (register A51):
+       je begint pas aan een klus als alles in huis is. -->
+  <section class="cando-section cando-section--light" id="nodig" aria-labelledby="nodig-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Voor je begint</span>
+        <h2 id="nodig-title">Wat heb je in huis nodig?</h2>
+        <p>Leg alles klaar voordat je de watertoevoer dichtdraait. Halverwege de klus naar de winkel moeten betekent een keuken die een avond onbruikbaar is.</p>
+      </div>
+
+      <div class="needs">
+        <div class="needs__col">
+          <h3>Gereedschap</h3>
+          <ul class="clean-list">
+            <li><strong>Accuboormachine.</strong> Voor de schroeven onder het blad en voor het voorboren.</li>
+            <li><strong>Rolmaat en potlood.</strong> Voor het opmeten en het aftekenen.</li>
+            <li><strong>Afbreekmes en verfschraper.</strong> Om de oude kitrand los te snijden en de resten weg te halen.</li>
+            <li><strong>Verstelbare moersleutel en platte schroevendraaier.</strong> Voor de sifon, de kraan en de bevestiging.</li>
+            <li><strong>Kitpistool en afstrijkplaatjes.</strong> Voor een strakke, gelijkmatige naad.</li>
+            <li><strong>Plantenspuit.</strong> Met zeepsop, om de kit en de kitstrijker licht in te spuiten.</li>
+          </ul>
+        </div>
+        <div class="needs__col">
+          <h3>Materiaal</h3>
+          <ul class="clean-list">
+            <li><strong>Siliconenkit</strong> in de kleur die bij je blad past.</li>
+            <li><strong>Schroeven van 20 mm</strong> en hoekverbinders.</li>
+            <li><strong>Markeringstape.</strong> Voor de warme en de koude waterleiding, apart gemarkeerd.</li>
+            <li><strong>Schilderstape.</strong> Boven en onder langs de naad, voor het afkitten.</li>
+            <li><strong>Emmer, doekjes en afwasmiddel.</strong> Voor de ondergrond en voor het schoonmaken achteraf.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="needs__note">
+        <p>Een decoupeerzaag staat wel in de standaardlijst, maar die heb je alleen nodig als er nog gezaagd moet worden. Bestel je je blad op maat met de uitsparingen erbij, dan kan de zaag in de kast blijven. Dat is meteen het verschil tussen een klus waarin iets onherstelbaar mis kan gaan en een klus waarin dat niet meer kan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. De zeven stappen. Elke stap neemt een twijfel weg in plaats van
+       alleen de handeling te noemen (register A34 en A38). -->
+  <section class="cando-section" id="stappen" aria-labelledby="stappen-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Stap voor stap</span>
+        <h2 id="stappen-title">Hoe vervang je een keukenblad in zeven stappen?</h2>
+        <p>Van opmeten tot de kraan weer open. Lees ze één keer helemaal door voordat je begint, dan weet je waar de twee momenten zitten waarop je even iemand naast je nodig hebt.</p>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <div>
+            <h3>Meten en voorbereiden</h3>
+            <p>Meet de lengte, de breedte en de dikte van het blad dat er nu ligt. Let op of het blad onder de achterwand doorloopt, want dan is de werkelijke breedte groter dan wat je bovenop ziet. Noteer daarna van elke uitsparing de plek, steeds gemeten vanaf dezelfde hoek, zodat er achteraf geen twijfel is over links of rechts.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Op maat bestellen, met de uitsparingen erbij</h3>
+            <p>Geef je maten en je uitsparingen in één keer op. Het blad wordt daarna tot op de millimeter gezaagd en de gaten worden gefreesd, met een afgewerkte rand die je thuis niet hoeft bij te werken. Je hoeft de deur niet uit en er komt geen zaagsel in je keuken.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Apparaten loskoppelen</h3>
+            <p>Haal de deuren en de laden eruit, zodat je vrij bij de onderkant kunt. Draai de watertoevoer dicht, maak de sifon los en haal de kraan eraf. Markeer de warme en de koude waterleiding met tape, apart van elkaar, want aan het eind van de dag weet niemand dat nog uit zijn hoofd. Trek daarna de stekker van de kookplaat eruit.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Het oude blad eruit</h3>
+            <p>Snijd de kitrand rondom los met een afbreekmes en draai de schroeven aan de onderkant los. Til het blad er daarna met zijn tweeën af, recht omhoog. Dit is het eerste moment waarop je die tweede persoon echt nodig hebt.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Het nieuwe blad erop</h3>
+            <p>Maak de onderkasten schoon en haal alle oude kitresten weg, want een korrel onder het blad is later een kier. Controleer of de kasten vlak en waterpas staan en stel ze zo nodig bij. Leg het blad erop zonder het ergens tegenaan te klemmen: een blad dat onder spanning ligt kan breken. Zet het vast met kitdotten of met schroeven, en boor bij schroeven eerst voor.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Afkitten</h3>
+            <p>Plak schilderstape boven en onder langs de naad, zodat je een rechte rand krijgt zonder te knoeien. Breng de kit rustig en gelijkmatig aan. Spuit de kit en de kitstrijker licht in met zeepsop en strijk de naad in één beweging glad. Haal de tape eraf terwijl de kit nog nat is, anders trek je de rand kapot.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Apparaten terugplaatsen</h3>
+            <p>Zet de kookplaat, de spoelbak en de kraan terug en sluit de leidingen aan met je markeringstape als gids. Draai het water open en controleer rustig op lekkage voordat je de kastdeuren en de laden terughangt. Geef de kit daarna 24 uur om uit te harden en leg er in die periode niets zwaars op.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5. De uitsparingen. Dit blok voorkomt de onomkeerbare fout. De tekening
+       zet de drie vormen naast elkaar, de tekst zet de grens tussen de vorm
+       van het BLAD en de vorm van de UITSPARING. -->
+  <section class="cando-section cando-section--soft" id="uitsparingen" aria-labelledby="uitsparingen-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Vooraf laten maken</span>
+        <h2 id="uitsparingen-title">Welke uitsparingen laat je vooraf frezen?</h2>
+        <p>Alles wat een gat in je blad nodig heeft, geef je op bij de bestelling. Dat is geen luxe maar de kern van het verhaal: een gat op de verkeerde plek kun je niet terugleggen.</p>
+      </div>
+
+      <div class="cut">
+        <div class="cut__copy">
+          <p class="lede">Een uitsparing kan recht, afgerond of rond zijn, in de maat die jouw apparaat vraagt. En het gaat om meer dan de spoelbak alleen.</p>
+          <p class="cut__rule"><strong>De vorm van de uitsparing is vrij. De vorm van het blad zelf niet:</strong> dat blijft rechthoekig met rechte hoeken. Een recht gat heeft scherpe hoeken, een afgerond gat zachte hoeken, en een rond gat gebruik je voor een kraan of een dispenser.</p>
+          <p>Naast de spoelbak, de kraan en de kookplaat kun je ook een zeepdispenser, een stopcontact of elke andere plek waar een gat nodig is laten meenemen. Meerdere uitsparingen in hetzelfde blad kunnen gewoon, mits je ze allemaal bij de bestelling opgeeft.</p>
+          <p>Elke uitsparing is een aanvullende bewerking. Je kiest hem apart en hij wordt apart berekend, want het gat wordt op jouw apparaat gemaakt en niet op een standaardmaat. Meet daarom niet alleen het gat, maar ook de afstand tot de rand van het blad.</p>
+
+          <div class="cut__split">
+            <div>
+              <h3>De spoelbak koop je los</h3>
+              <p>Kies je een opbouwspoelbak, dan laat je alleen de uitsparing maken en koop je de bak er zelf bij. De bak wordt op het blad gemonteerd en laat een randje achter, dus houd bij het opmeten rekening met de maat van die rand.</p>
+            </div>
+            <div>
+              <h3>De kookplaat en het stopcontact</h3>
+              <p>Voor een kookplaat geldt hetzelfde: het gat wordt op jouw model gemaakt, dus heb je de inbouwmaat van de fabrikant nodig voordat je bestelt. Een inbouwstopcontact in het blad vraagt om dezelfde voorbereiding en om een stopcontact dat je vooraf kiest.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Maten en grenzen. Feiten met eenheid in een tabel, want een tabelrij
+       is de makkelijkst citeerbare eenheid die er is. -->
+  <section class="cando-section" id="maten" aria-labelledby="maten-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Binnen welke grenzen</span>
+        <h2 id="maten-title">Hoe groot mag een keukenblad op maat zijn?</h2>
+        <p>Je blad wordt tot op de millimeter gezaagd, maar niet elke maat en niet elke vorm kan. Dit zijn de grenzen waar je je maten binnen tekent.</p>
+      </div>
+
+      <p class="table-intro" id="maten-toelichting">Maten van het keukenblad op maat. Controleer je eigen maten hiertegen voordat je bestelt.</p>
+
+      <div class="table-scroll">
+        <div class="table-scroll__inner" tabindex="0" role="region" aria-labelledby="maten-title">
+          <table class="size-table" aria-describedby="maten-toelichting">
+            <thead>
+              <tr>
+                <th scope="col">Wat</th>
+                <th scope="col">De maat</th>
+                <th scope="col">Waar je op let</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Lengte</th>
+                <td class="is-lead">Tot 4000 mm</td>
+                <td>Dit is de langste maat die in één keer gezaagd wordt. Is je keukenwand langer, dan bestaat je blad uit meer dan een deel en krijg je dus een naad.</td>
+              </tr>
+              <tr>
+                <th scope="row">Diepte</th>
+                <td class="is-lead">Tot 1200 mm</td>
+                <td>Meet de diepte inclusief het stuk dat onder de achterwand doorloopt, want dat zie je van bovenaf niet. Elke maat binnen deze grens kan, dus je zit niet vast aan een standaarddiepte.</td>
+              </tr>
+              <tr>
+                <th scope="row">Dikte</th>
+                <td class="is-lead">38 mm</td>
+                <td>De dikte bepaalt mee hoe het blad op de kasten aansluit. Vervang je een dunner blad, controleer dan of je kastdeuren en laden nog vrij lopen.</td>
+              </tr>
+              <tr>
+                <th scope="row">Vorm van het blad</th>
+                <td class="is-lead">Rechthoekig</td>
+                <td>Rechte hoeken, geen schuine kant en geen afgeronde hoek. De bovenrand krijgt wel een heel kleine breking, zodat de rand niet als een scherpe lijn aanvoelt.</td>
+              </tr>
+              <tr>
+                <th scope="row">Vorm van de uitsparing</th>
+                <td class="is-lead">Recht, afgerond of rond</td>
+                <td>Hier kan wel meer dan bij het blad zelf. De vorm volgt je apparaat, dus neem de inbouwmaat van de fabrikant over en gok niet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="table-hint"><strong>Twijfel je over een maat?</strong> Meet dan twee keer en noteer beide uitkomsten. Een blad op maat wordt precies zo gezaagd als jij het opgeeft, en dat is precies de reden dat het past en de reden dat je het niet kunt corrigeren.</p>
+    </div>
+  </section>
+
+  <!-- 7. Wat gaat er mis. Donkere band, strook van vijf. Dit komt uit de
+       montagevoorschriften en uit het onderhoudsadvies. -->
+  <section class="cando-section risk-band" id="misgaat" aria-labelledby="misgaat-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Voorkomen</span>
+        <h2 id="misgaat-title">Wat gaat er bij het plaatsen het vaakst mis?</h2>
+        <p>Vijf dingen die de klus achteraf duur maken, en alle vijf zijn ze vooraf te voorkomen.</p>
+      </div>
+      <ul class="risk-strip">
+        <li><strong>Kasten niet waterpas</strong><span>Onderkasten moeten volkomen vlak en waterpas staan. Een blad op een scheve kast ligt nergens goed op.</span></li>
+        <li><strong>Blad onder spanning</strong><span>Klem het blad nooit tussen twee wanden of kasten. Een blad dat onder spanning ligt kan breken.</span></li>
+        <li><strong>Te vroeg uitpakken</strong><span>Controleer eerst kleur en maat, houd het blad tot het plaatsen in de verpakking en draag het verticaal.</span></li>
+        <li><strong>Schuren of polijsten</strong><span>De toplaag mag nooit geschuurd of gepolijst worden. Dat geeft blijvende glansverschillen.</span></li>
+        <li><strong>Kitresten laten staan</strong><span>Haal kitresten meteen weg. De kit heeft daarna ongeveer 24 uur nodig om uit te harden.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. FAQ. Elke vraag een eigen item, minimaal vier zinnen antwoord
+       (register D21). De tekst is gelijk aan het FAQPage-schema. -->
+  <section class="cando-section cando-section--soft" id="vragen" aria-labelledby="faq-title">
+    <div class="cando-wrap">
+      <div class="faq-layout">
+        <div class="faq-intro">
+          <span class="cando-eyebrow">Veelgestelde vragen</span>
+          <h2 id="faq-title">Nog iets over zagen of plaatsen?</h2>
+          <p>Alleen vragen die over de klus zelf gaan. Over decoren, series en het onderhoud van je blad lees je verder op de overzichtspagina.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" name="faq-montage">
+            <summary>Moet ik zelf nog zagen als ik mijn keukenblad op maat bestel?</summary>
+            <div class="faq-answer">
+              <p>Nee. Het blad wordt op jouw maat gezaagd en de uitsparingen worden vooraf gefreesd, dus je hoeft thuis niets meer door te zagen. Dat scheelt precies de stap die in elk regulier stappenplan als de lastigste staat: een uitsparing zagen met een decoupeerzaag, met schilderstape op de zaaglijn tegen uitscheuren. Blijkt er onverhoopt toch nog iets bij te moeten, plak dan schilderstape op de zaaglijn en gebruik een decoupeerzaag met een fijn zaagblad. Wordt er ter plaatse geboord of gezaagd, werk dan op een geventileerde plek met afzuiging, adembescherming, een veiligheidsbril en gehoorbescherming.</p>
+            </div>
+          </details>
+          <details class="faq-item" name="faq-montage">
+            <summary>Kan ik meerdere uitsparingen in een blad laten maken?</summary>
+            <div class="faq-answer">
+              <p>Ja, meerdere uitsparingen in hetzelfde blad kunnen gewoon. Het gaat ook niet alleen om de spoelbak, de kraan en de kookplaat: een zeepdispenser, een stopcontact of elke andere plek waar een gat nodig is kan mee. Elke uitsparing is een aanvullende bewerking, die apart wordt gekozen en apart wordt berekend. Geef ze allemaal tegelijk op bij je bestelling, want achteraf een gat toevoegen in een afgewerkt blad is precies wat je met een blad op maat wilde voorkomen.</p>
+            </div>
+          </details>
+          <details class="faq-item" name="faq-montage">
+            <summary>Hoeveel mensen heb ik nodig om een keukenblad te plaatsen?</summary>
+            <div class="faq-answer">
+              <p>Reken op twee personen. Een blad van drie meter is te groot en te zwaar om in je eentje recht en zonder spanning op de kasten te leggen, en je hebt bij het optillen aan beide kanten iemand nodig. Draag het blad verticaal en houd het in de verpakking tot je het echt gaat plaatsen. Er zijn twee momenten waarop je die tweede persoon echt nodig hebt: het oude blad eraf tillen en het nieuwe erop leggen zonder het ergens tegenaan te klemmen.</p>
+            </div>
+          </details>
+          <details class="faq-item" name="faq-montage">
+            <summary>Hoe lang moet de kit uitharden voordat ik het blad kan gebruiken?</summary>
+            <div class="faq-answer">
+              <p>Reken op ongeveer 24 uur. Zolang de kit niet is uitgehard hecht de naad nog niet volledig, dus ontzie het blad in die periode en leg er niets zwaars op. Verwijder kitresten wel meteen, want opgedroogde kit krijg je er later niet meer netjes af. Haal de schilderstape eraf terwijl de kit nog nat is, dan blijft de rand strak.</p>
+            </div>
+          </details>
+          <details class="faq-item" name="faq-montage">
+            <summary>Mag ik een kras of een zaagkant bijwerken met schuurpapier?</summary>
+            <div class="faq-answer">
+              <p>Nee. De toplaag van een werkblad mag nooit geschuurd of gepolijst worden, want dat geeft blijvende glansverschillen op de plek waar je gewerkt hebt. Ook harde schuurmiddelen zoals staalwol of een diamantspons beschadigen het oppervlak permanent. Een zaagkant hoef je bij een blad op maat niet bij te werken, want die is al afgewerkt. Zit er toch schade in de toplaag, dan is dat niet meer te herstellen en vervang je het blad.</p>
+            </div>
+          </details>
+          <details class="faq-item" name="faq-montage">
+            <summary>Wat meet ik op voordat ik een nieuw keukenblad bestel?</summary>
+            <div class="faq-answer">
+              <p>Meet de lengte, de breedte en de dikte van het blad dat er nu ligt. Let er daarbij op of het blad onder de achterwand doorloopt, want dan is de werkelijke breedte groter dan wat je bovenop ziet. Noteer daarna van elke uitsparing de plek, gemeten vanaf dezelfde hoek van het blad, zodat er geen twijfel is over links of rechts. Meet liever twee keer dan één keer: het blad wordt op jouw maat gezaagd en dat is niet terug te draaien.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Slot. Een echte vervolgstap, geen knop terug naar boven. De
+       drempelverlager staat pal bij de primaire actie, als tertiaire
+       inline verwijzing en niet als derde knop. -->
+  <section class="cando-section" aria-labelledby="vervolg-title">
+    <div class="cando-wrap">
+      <div class="closing">
+        <span class="cando-eyebrow">De volgende stap</span>
+        <h2 id="vervolg-title">Jouw maat, alvast gezaagd en gefreesd</h2>
+        <p>Geef je maten en je uitsparingen in één keer op, dan komt het blad kant en klaar bij je thuis en begint jouw klus pas bij stap drie. Wil je het decor eerst in het echt zien en voelen, vraag dan een <a class="inline" href="/nl-nl/hout/hout-op-maat/werkbladen-op-maat/stalenservice-werkbladen">gratis staal</a> aan.</p>
+        <div class="cando-cat-button-row">
+          <a class="cando-cat-button cando-cat-button--primary" href="/nl-nl/hout/hout-op-maat/werkbladen-op-maat/">Bekijk werkbladen op maat</a>
+          <a class="cando-cat-button cando-cat-button--dark" href="/nl-nl/zoek-uw-winkel/">Zoek een verkooppunt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

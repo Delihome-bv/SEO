@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keuzehulp: vind wat past bij jouw klus | CanDo</title>
+<meta name="description" content="Weet je niet zeker wat je nodig hebt? Kies je categorie en de keuzehulp wijst je in een paar stappen de weg. Hout, vloeren, kasten, horren en meer.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--beige:#FDC689;--dark:#121b21;--border:#e5ddd3;--soft:#f7f2ea;--soft2:#fbfaf7;--radius:8px;--shadow:0 10px 24px rgba(18,27,33,.05)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}.page{overflow-x:hidden}
+h1,h2,h3,.btn,.eyebrow{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 18px}
+section{padding:38px 0}.soft{background:var(--soft)}
+h1{margin:0 0 12px;font-size:34px;line-height:1.05;letter-spacing:-.02em}
+h2{margin:0 0 12px;font-size:26px;letter-spacing:-.02em}h3{margin:0 0 6px;font-size:18px}
+p{margin:0;color:#414141;font-size:16px;line-height:1.72}
+.eyebrow{display:block;margin:0 0 10px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.crumbs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px;color:#8c8c8c;font-size:12px}
+.crumbs a{color:#8c8c8c}.crumbs a:hover{color:var(--accent)}.crumbs span{color:#b5b5b5}
+.head{max-width:640px;margin-bottom:26px}.head p{margin-top:10px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;border:1.5px solid transparent;transition:.18s ease;cursor:pointer}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(247,144,30,.15)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-tertiary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-tertiary:hover{border-color:var(--accent);color:var(--accent)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+/* Categorie-keuzehulp-kaarten */
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+.kc{display:flex;gap:16px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-decoration:none;color:var(--text);box-shadow:var(--shadow);transition:border-color .2s ease,transform .2s ease}
+.kc:hover{border-color:var(--accent);transform:translateY(-2px)}
+.kc__img{flex:0 0 auto;width:84px;height:84px;border-radius:var(--radius);overflow:hidden;background:var(--soft);border:1px solid var(--border)}
+.kc__img img{width:100%;height:100%;object-fit:cover}
+.kc__b{flex:1;min-width:0}
+.kc__b h3::after{content:" →";color:var(--accent)}
+.kc__b p{font-size:14px;color:var(--muted);line-height:1.5}
+/* Hoe werkt het */
+.steps{display:grid;gap:16px;grid-template-columns:1fr;counter-reset:s}
+.step{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.step .n{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:var(--soft);color:var(--accent);font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:800;font-size:17px;margin-bottom:12px}
+.step p{font-size:14px;color:var(--muted);margin-top:4px}
+.cta{background:var(--dark);border-radius:var(--radius);padding:36px 26px;text-align:center}
+.cta h2{color:#fff}.cta p{color:#d7dad9;max-width:520px;margin:0 auto}.cta .btn-row{justify-content:center}
+.cta .btn-tertiary{border-color:rgba(255,255,255,.5);color:#fff}.cta .btn-tertiary:hover{border-color:var(--beige);color:var(--beige)}
+@media(min-width:760px){section{padding:50px 0}h1{font-size:42px}.grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.btn{width:100%}}
+</style>
+</head>
+<body>
+<!-- KEUZEHULP-OVERZICHT / ROUTER. Landing voor /keuzehulp/. Verwijst naar de 8 categorie-specifieke keuzehulpen. Geen header/footer. -->
+<main class="page">
+  <section>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>›</span>Keuzehulp</nav>
+      <div class="head">
+        <span class="eyebrow">Keuzehulp</span>
+        <h1>Niet zeker wat je nodig hebt?</h1>
+        <p>Kies hieronder waar je mee bezig bent. De keuzehulp stelt je een paar korte vragen en wijst je precies de weg naar wat bij jouw klus past.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="grid">
+        <a class="kc" href="/keuzehulp/hout/"><div class="kc__img"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Meubelpaneel in abrikoosroze" loading="lazy"></div><div class="kc__b"><h3>Hout</h3><p>Hout op maat, timmer- en klushout of onderdelen zoals vensterbanken.</p></div></a>
+        <a class="kc" href="/keuzehulp/vloeren/"><div class="kc__img"><img src="https://delihome.getbynder.com/asset/0ff12430-aca4-4bed-a95b-7d3f6e056449/medium-JPG/CanDo_Laminaat-Noten_Wit-stootbord_Hoofdbeeld.jpg" alt="Laminaatvloer in notenlook met wit stootbord" loading="lazy"></div><div class="kc__b"><h3>Vloeren</h3><p>Vind het laminaat of de vloer die past bij je ruimte en gebruik.</p></div></a>
+        <a class="kc" href="/keuzehulp/kasten/"><div class="kc__img"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Schuifdeurkast op maat met omlijste eiken deuren" loading="lazy"></div><div class="kc__b"><h3>Kasten</h3><p>Van kast op maat tot schuifdeuren, kies wat bij jouw ruimte past.</p></div></a>
+        <a class="kc" href="/keuzehulp/wand-plafond/"><div class="kc__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Akoestische wandpanelen in copper oak achter een zithoek" loading="lazy"></div><div class="kc__b"><h3>Wand &amp; plafond</h3><p>Ontdek welke wand- of plafondafwerking bij jouw klus hoort.</p></div></a>
+        <a class="kc" href="/keuzehulp/lattenwand/"><div class="kc__img"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Witte vilten wandpanelen met golfpatroon bij een zithoek" loading="lazy"></div><div class="kc__b"><h3>Lattenwand</h3><p>Welk type lattenwand past bij je ruimte, akoestiek en stijl?</p></div></a>
+        <a class="kc" href="/keuzehulp/traprenovatie/"><div class="kc__img"><img src="https://delihome.getbynder.com/asset/0ff12430-aca4-4bed-a95b-7d3f6e056449/medium-JPG/CanDo_Laminaat-Noten_Wit-stootbord_Hoofdbeeld.jpg" alt="Laminaatvloer in notenlook met wit stootbord" loading="lazy"></div><div class="kc__b"><h3>Traprenovatie</h3><p>Kies de aanpak en materialen om je trap een nieuwe look te geven.</p></div></a>
+        <a class="kc" href="/keuzehulp/horren/"><div class="kc__img"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="Loft-interieur met houten afwerking" loading="lazy"></div><div class="kc__b"><h3>Horren</h3><p>Vind het hortype dat past bij je raam, deur en situatie.</p></div></a>
+        <a class="kc" href="/keuzehulp/deuren/"><div class="kc__img"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Schuifdeurkast op maat met omlijste eiken deuren" loading="lazy"></div><div class="kc__b"><h3>Deuren</h3><p>Welke binnendeur past bij je interieur, maat en afwerking?</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Zo werkt het</span><h2>In drie stappen naar de juiste keuze</h2></div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3>Kies je categorie</h3><p>Waar ben je mee bezig? Kies hierboven waar je hulp bij wilt.</p></div>
+        <div class="step"><div class="n">2</div><h3>Beantwoord een paar vragen</h3><p>Over je ruimte, maat en wat je wilt bereiken. Kost nog geen minuut.</p></div>
+        <div class="step"><div class="n">3</div><h3>Bekijk wat past</h3><p>Je krijgt een gericht advies, met de producten die bij jouw klus horen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <h2>Liever eerst rondkijken?</h2>
+        <p>Bekijk alle categorieën of lees ons advies per onderwerp, en kom altijd terug bij de keuzehulp.</p>
+        <div class="btn-row"><a class="btn btn-primary" href="/categorieen/">Bekijk alle categorieën</a><a class="btn btn-tertiary" href="/hulp-en-advies/">Naar hulp &amp; advies</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lattenwand, breng sfeer in huis met CanDo Decowall | CanDo</title>
+<meta name="description" content="Ontdek de Decowall-lattenwanden van CanDo. Akoestisch, vilt, uit voorraad en op maat. Filter op type, kleur en prijs en vind de lattenwand die bij je past.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--border:#e5ddd3;--soft:#f7f2ea;--soft2:#fbfaf7;--dark:#121b21;--radius:8px;--shadow:0 10px 24px rgba(18,27,33,.05)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.page{overflow-x:hidden}
+h1,h2,h3,.btn,.eyebrow,th,.prod__p,.filters h3,.filters__title{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 18px}
+section{padding:38px 0}
+.soft{background:var(--soft)}
+.measure{max-width:760px}
+h1{margin:0 0 6px;font-size:34px;line-height:1.05;letter-spacing:-.02em}
+h2{margin:0 0 12px;font-size:26px;line-height:1.12;letter-spacing:-.02em}
+h3{margin:0 0 8px;font-size:19px;line-height:1.2}
+p{margin:0;color:#414141;font-size:16px;line-height:1.72}
+p+p{margin-top:14px}
+.eyebrow{display:block;margin:0 0 10px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.crumbs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px;color:#8c8c8c;font-size:12px}
+.crumbs a{color:#8c8c8c}.crumbs a:hover{color:var(--accent)}.crumbs span{color:#b5b5b5}
+.head{max-width:760px;margin-bottom:22px}.head p{margin-top:10px;color:var(--muted)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;line-height:1.15;border:1.5px solid transparent;transition:.18s ease;cursor:pointer}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(247,144,30,.15)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-tertiary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-tertiary:hover{border-color:var(--accent);color:var(--accent);background:rgba(247,144,30,.04)}
+
+/* Hero (topcontent) */
+.hero{position:relative;min-height:52vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
+.hero__bg{position:absolute;inset:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,27,33,.84) 0%,rgba(18,27,33,.5) 48%,rgba(18,27,33,.12) 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,27,33,.28) 0,rgba(18,27,33,0) 34%,rgba(18,27,33,0) 55%,rgba(18,27,33,.6) 100%)}
+.hero .wrap{position:relative;z-index:2;padding:66px 18px 42px}
+.hero .crumbs,.hero .crumbs a{color:#d8dbda}.hero .crumbs span{color:#9aa0a0}
+.hero h1{color:#fff}.hero .sub{color:#e9e9e7;font-size:18px;margin-top:6px}
+.proof{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:16px}
+.proof span{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--text);font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.proof span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.hero .btn-tertiary{border-color:rgba(255,255,255,.75);color:#fff}
+.hero .btn-tertiary:hover{border-color:#fff;color:#fff;background:rgba(255,255,255,.1)}
+
+/* LISTING layout: filters + producten */
+.listing{display:grid;gap:24px;grid-template-columns:1fr}
+.plp-filterbtn{display:none;align-items:center;gap:8px;border:1.5px solid var(--text);background:#fff;border-radius:999px;padding:10px 18px;font-weight:700;font-size:14px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;color:var(--text);cursor:pointer}
+.filters-backdrop{display:none}
+.filters{border:1px solid var(--border);border-radius:var(--radius);background:#fff;padding:4px 18px 10px}
+.filters__head,.filters__foot{display:none}
+.filter-group{border-bottom:1px solid var(--border)}
+.filter-group:last-of-type{border-bottom:0}
+.filter-group>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:14px 0;font-size:12px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;color:var(--text);font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.filter-group>summary::-webkit-details-marker{display:none}
+.filter-group>summary::after{content:"+";font-size:18px;color:var(--muted);font-weight:700}
+.filter-group[open]>summary::after{content:"\2212"}
+.filter-group__inner{padding:0 0 12px}
+.filter-group label{display:flex;align-items:center;gap:10px;font-size:14px;color:#414141;padding:5px 0;cursor:pointer}
+.filter-group label .cnt{margin-left:auto;color:var(--muted);font-size:13px}
+.filter-group input{width:16px;height:16px;accent-color:var(--accent);flex:0 0 auto}
+.plp-toolbar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.plp-count{font-size:13px;color:var(--muted);font-weight:700}
+.plp-sort{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;font-weight:700}
+.plp-sort select{appearance:none;-webkit-appearance:none;border:1px solid var(--border);border-radius:999px;padding:9px 34px 9px 14px;font-size:13px;font-weight:700;color:var(--text);cursor:pointer;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F7901E' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 13px center}
+.plp-grid{display:grid;gap:14px;grid-template-columns:repeat(2,1fr)}
+.prod{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.prod:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow)}
+.prod__img{height:150px;overflow:hidden;background:#fff;border-bottom:1px solid var(--border)}
+.prod__img img{width:100%;height:100%;object-fit:cover}
+.prod__b{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.prod__n{font-size:14px;line-height:1.35;color:var(--text);font-weight:700}
+.prod__p{margin-top:auto;font-size:16px;font-weight:800;color:var(--text)}
+.plp-pager{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:26px}
+.plp-page{min-width:42px;height:42px;padding:0 14px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:999px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:14px;color:var(--text);text-decoration:none}
+.plp-page:hover{border-color:var(--accent)}
+.plp-page.active{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* Promo */
+.promo{display:grid;gap:16px;grid-template-columns:1fr}
+.pcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease}
+.pcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.pcard__img{height:150px;overflow:hidden;border-bottom:1px solid var(--border)}
+.pcard__img img{width:100%;height:100%;object-fit:cover}
+.pcard__b{padding:18px;display:flex;flex-direction:column;flex:1}
+.pcard__b p{font-size:14px;color:var(--muted);margin-top:6px}
+.pcard__cta{margin-top:auto;padding-top:12px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:14px;color:var(--text)}
+.pcard__cta::after{content:" →";color:var(--accent)}
+
+/* Info-kaarten + split + swatches */
+.info{display:grid;gap:16px;grid-template-columns:1fr}
+.icard{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.icard p{font-size:14px;color:var(--muted);margin-top:6px}
+.split{display:grid;gap:22px;align-items:center}
+.split .media{height:260px;border-radius:var(--radius);overflow:hidden;background:#eee;box-shadow:var(--shadow)}
+.split .media img{width:100%;height:100%;object-fit:cover}
+.swatches{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}
+.sw{width:110px}.sw__c{height:60px;border-radius:8px;border:1px solid rgba(0,0,0,.06)}.sw__n{font-size:12px;font-weight:700;color:var(--text);margin-top:8px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.c1{background:linear-gradient(135deg,#e7d7be,#c9b088)}.c2{background:linear-gradient(135deg,#caa46e,#9c7443)}.c3{background:linear-gradient(135deg,#6a4a34,#3c2a1d)}.c4{background:linear-gradient(135deg,#3a3330,#17140f)}.c5{background:linear-gradient(135deg,#d9d3c7,#b7b0a3)}
+
+/* FAQ */
+.faq-list{display:grid;gap:10px}
+details.faq{border:1px solid var(--border);border-radius:var(--radius);background:#fff;overflow:hidden}
+details.faq summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:700;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;display:flex;justify-content:space-between;gap:18px;min-height:54px;align-items:flex-start;line-height:1.35}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:22px;line-height:1.2;color:var(--accent);flex:0 0 auto;width:22px;text-align:center}
+details.faq[open]{border-color:var(--accent)}details.faq[open] summary::after{content:"\2212"}
+details.faq div{padding:0 18px 18px}details.faq div p{font-size:15px;color:#444;max-width:760px}
+
+/* CTA */
+.cta{background:var(--soft);border:1px solid var(--border);border-radius:var(--radius);padding:30px 26px;text-align:center}
+.cta h2{margin-bottom:8px}.cta p{color:#4a4133;max-width:520px;margin:0 auto}.cta .btn-row{justify-content:center}
+
+@media(min-width:820px){
+  section{padding:50px 0}
+  h1{font-size:44px}h2{font-size:32px}
+  .hero{min-height:56vh}.hero .wrap{padding:96px 24px 52px}
+  .listing{grid-template-columns:250px 1fr;align-items:start}
+  .plp-grid{grid-template-columns:repeat(3,1fr)}
+  .promo{grid-template-columns:repeat(3,1fr)}
+  .info{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr 1fr;gap:40px}
+  .split--flip .media{order:2}
+  .split .media{height:340px}
+}
+@media(max-width:819px){
+  .plp-filterbtn{display:inline-flex}
+  .plp-count{display:none}
+  .filters{position:fixed;top:0;left:0;bottom:0;width:86%;max-width:340px;z-index:70;transform:translateX(-100%);transition:transform .25s ease;overflow-y:auto;border-radius:0;border:0;box-shadow:0 0 40px rgba(0,0,0,.25);padding:0 18px 20px}
+  .filters.open{transform:translateX(0)}
+  .filters__head{display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff;padding:16px 0;border-bottom:1px solid var(--border);font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:16px;z-index:2}
+  .filters__close{background:none;border:0;font-size:26px;line-height:1;color:var(--muted);cursor:pointer}
+  .filters__foot{display:block;position:sticky;bottom:0;background:#fff;padding:14px 0;border-top:1px solid var(--border);margin-top:8px}
+  .filters__foot .btn{width:100%;min-height:48px}
+  .filters-backdrop{display:block;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:69;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease}
+  .filters-backdrop.open{opacity:1;visibility:visible}
+  body.filters-open{overflow:hidden}
+}
+@media(max-width:520px){.btn{width:100%}}
+</style>
+</head>
+<body>
+<!-- CATEGORIEPAGINA / PLP, LATTENWAND. Structuur: topcontent -> listing (filters + producten) -> bottomcontent. Geen header/footer. -->
+<main class="page">
+
+  <!-- ===== TOPCONTENT (wit, schone intro zoals het ruwe stramien) ===== -->
+  <section class="top">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>›</span><a href="/wand-plafond/">Wand &amp; plafond</a><span>›</span>Lattenwand</nav>
+      <h1>Lattenwand</h1>
+      <p class="measure" style="margin-top:8px">Breng eenvoudig sfeer in huis met CanDo Decowall. Een lattenwand geeft iedere ruimte een unieke mix van warmte, textuur en sfeer, of je nu kiest voor een eyecatcher in de woonkamer, betere akoestiek of rust in de slaapkamer.</p>
+      <p class="measure" style="margin-top:14px">Met de Decowall-collectie vind je altijd een paneel dat past bij jouw stijl, ruimte en project. Akoestisch of vilt, uit voorraad of op maat, en eenvoudig zelf te monteren.</p>
+      <div class="proof"><span>Akoestisch</span><span>Vilt</span><span>Uit voorraad en op maat</span><span>Eenvoudige montage</span></div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#meer">Lees meer over lattenwanden</a>
+        <a class="btn btn-tertiary" href="#faq">Veelgestelde vragen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LISTING (filters + producten, ALTIJD op wit) ===== -->
+  <section id="assortiment">
+    <div class="wrap">
+      <div class="head" style="margin-bottom:14px"><span class="eyebrow">Assortiment</span><h2>Alle lattenwanden</h2></div>
+      <div class="listing">
+        <!-- Filters (Magento facetten) -->
+        <aside class="filters" id="filters" aria-label="Filters">
+          <div class="filters__head">Filter <button class="filters__close" id="filterclose" type="button" aria-label="Filter sluiten">×</button></div>
+          <details class="filter-group" open>
+            <summary>Type</summary>
+            <div class="filter-group__inner">
+              <label><input type="checkbox"> Acoustic <span class="cnt">42</span></label>
+              <label><input type="checkbox"> Essential <span class="cnt">12</span></label>
+              <label><input type="checkbox"> Acoustic Tile <span class="cnt">9</span></label>
+              <label><input type="checkbox"> Roomdivider <span class="cnt">6</span></label>
+              <label><input type="checkbox"> Eindprofiel <span class="cnt">14</span></label>
+              <label><input type="checkbox"> Outdoor <span class="cnt">5</span></label>
+            </div>
+          </details>
+          <details class="filter-group" open>
+            <summary>Kleur</summary>
+            <div class="filter-group__inner">
+              <label><input type="checkbox"> Licht eiken <span class="cnt">18</span></label>
+              <label><input type="checkbox"> Natuur eiken <span class="cnt">22</span></label>
+              <label><input type="checkbox"> Brons eiken <span class="cnt">12</span></label>
+              <label><input type="checkbox"> Grijs eiken <span class="cnt">8</span></label>
+              <label><input type="checkbox"> Walnoot <span class="cnt">10</span></label>
+              <label><input type="checkbox"> Zwart <span class="cnt">9</span></label>
+            </div>
+          </details>
+          <details class="filter-group" open>
+            <summary>Prijs</summary>
+            <div class="filter-group__inner">
+              <label><input type="checkbox"> Tot € 25 <span class="cnt">20</span></label>
+              <label><input type="checkbox"> € 25 - € 75 <span class="cnt">41</span></label>
+              <label><input type="checkbox"> € 75 - € 130 <span class="cnt">46</span></label>
+            </div>
+          </details>
+          <div class="filters__foot"><button class="btn btn-primary" id="filterapply" type="button">Toon resultaten</button></div>
+        </aside>
+        <div class="filters-backdrop" id="backdrop"></div>
+        <!-- Producten -->
+        <div>
+          <div class="plp-toolbar">
+            <button class="plp-filterbtn" id="filterbtn" type="button">Filter</button>
+            <span class="plp-count">Producten 1-24 van 107</span>
+            <label class="plp-sort">Sorteren op
+              <select aria-label="Sorteren"><option>Positie</option><option>Naam, A tot Z</option><option>Prijs, laag naar hoog</option><option>Prijs, hoog naar laag</option></select>
+            </label>
+          </div>
+          <div class="plp-grid">
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Wood Decowall Brackets" loading="lazy"></div><div class="prod__b"><span class="prod__n">Wood Decowall Brackets</span><span class="prod__p">€ 16,49</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://www.cando.eu/media/.renditions/wysiwyg/small_JPG-CanDo_Decowall_acoustic-Blend_Natuur_eiken_Woonkamer_1_Close-up_1_1.jpg" alt="Wood Decowall Vuren" loading="lazy"></div><div class="prod__b"><span class="prod__n">Wood Decowall Vuren</span><span class="prod__p">€ 42,80</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Wood Decowall MDF Eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Wood Decowall MDF Eiken</span><span class="prod__p">€ 55,15</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Wood Decowall Donker eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Wood Decowall Donker eiken</span><span class="prod__p">€ 55,15</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Decowall Acoustic licht eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Acoustic licht eiken 260x30cm 2 stuks</span><span class="prod__p">€ 85,75</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Decowall Acoustic zwart" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Acoustic zwart 260x30cm 2 stuks</span><span class="prod__p">€ 85,75</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://www.cando.eu/media/.renditions/wysiwyg/small_JPG-CanDo_Decowall_acoustic-Blend_Natuur_eiken_Woonkamer_1_Close-up_1_1.jpg" alt="Eindprofiel Decowall Acoustic licht eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Eindprofiel Decowall Acoustic licht eiken</span><span class="prod__p">€ 12,95</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://www.cando.eu/media/.renditions/wysiwyg/small_JPG-CanDo_Decowall_acoustic-Blend_Natuur_eiken_Woonkamer_1_Close-up_1_1.jpg" alt="Eindprofiel Decowall Acoustic grijs eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Eindprofiel Decowall Acoustic grijs eiken</span><span class="prod__p">€ 12,95</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://www.cando.eu/media/.renditions/wysiwyg/small_JPG-CanDo_Decowall_acoustic-Blend_Natuur_eiken_Woonkamer_1_Close-up_1_1.jpg" alt="Eindprofiel Decowall Acoustic zwart" loading="lazy"></div><div class="prod__b"><span class="prod__n">Eindprofiel Decowall Acoustic zwart</span><span class="prod__p">€ 12,95</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Decowall Acoustic brons eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Acoustic brons eiken 260x30cm 2 stuks</span><span class="prod__p">€ 85,75</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Decowall Acoustic walnoot" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Acoustic walnoot 260x30cm 2 stuks</span><span class="prod__p">€ 85,75</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://www.cando.eu/media/.renditions/wysiwyg/small_JPG-CanDo_Decowall_acoustic-Blend_Natuur_eiken_Woonkamer_1_Close-up_1_1.jpg" alt="Eindprofiel Decowall Acoustic brons eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Eindprofiel Decowall Acoustic brons eiken</span><span class="prod__p">€ 12,95</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://www.cando.eu/media/.renditions/wysiwyg/small_JPG-CanDo_Decowall_acoustic-Blend_Natuur_eiken_Woonkamer_1_Close-up_1_1.jpg" alt="Eindprofiel Decowall Acoustic walnoot" loading="lazy"></div><div class="prod__b"><span class="prod__n">Eindprofiel Decowall Acoustic walnoot</span><span class="prod__p">€ 12,95</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Decowall Acoustic Tile natuur eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Acoustic Tile natuur eiken 50x50cm 4 stuks</span><span class="prod__p">€ 89,99</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Decowall Acoustic grijs eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Acoustic grijs eiken 260x30cm 2 stuks</span><span class="prod__p">€ 85,75</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Decowall Acoustic Tile Brons Eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Acoustic Tile Brons Eiken 50x50cm 4 stuks</span><span class="prod__p">€ 89,99</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Decowall Acoustic Tile walnoot" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Acoustic Tile walnoot 50x50cm 4 stuks</span><span class="prod__p">€ 89,99</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Decowall Acoustic natuur eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Acoustic natuur eiken 260x30cm 2 stuks</span><span class="prod__p">€ 129,95</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://www.cando.eu/media/.renditions/wysiwyg/small_JPG-CanDo_Decowall_acoustic-Blend_Natuur_eiken_Woonkamer_1_Close-up_1_1.jpg" alt="Decowall Essential natuur eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Essential natuur eiken 260x30cm 2 stuks</span><span class="prod__p">€ 49,99</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://www.cando.eu/media/.renditions/wysiwyg/small_JPG-CanDo_Decowall_acoustic-Blend_Natuur_eiken_Woonkamer_1_Close-up_1_1.jpg" alt="Decowall Essential brons eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Essential brons eiken 260x30cm 2 stuks</span><span class="prod__p">€ 49,99</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://www.cando.eu/media/.renditions/wysiwyg/small_JPG-CanDo_Decowall_acoustic-Blend_Natuur_eiken_Woonkamer_1_Close-up_1_1.jpg" alt="Decowall Essential walnoot" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Essential walnoot 260x30cm 2 stuks</span><span class="prod__p">€ 49,99</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Wood Decowall Grafiet eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Wood Decowall Grafiet eiken</span><span class="prod__p">€ 55,15</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Decowall Acoustic Advanced natuur eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Acoustic Advanced natuur eiken 260x30cm 2 stuks</span><span class="prod__p">€ 101,40</span></div></a>
+            <a class="prod" href="/wand-plafond/lattenwand/"><div class="prod__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Decowall Acoustic Advanced brons eiken" loading="lazy"></div><div class="prod__b"><span class="prod__n">Decowall Acoustic Advanced brons eiken 260x30cm 2 stuks</span><span class="prod__p">€ 101,40</span></div></a>
+          </div>
+          <nav class="plp-pager" aria-label="Paginering">
+            <span class="plp-page active" aria-current="page">1</span>
+            <a class="plp-page" href="#">2</a>
+            <a class="plp-page" href="#">3</a>
+            <a class="plp-page" href="#">4</a>
+            <a class="plp-page" href="#">5</a>
+            <a class="plp-page" href="#">Volgende ›</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOTTOMCONTENT ===== -->
+  <section>
+    <div class="wrap">
+      <div class="promo">
+        <a class="pcard" href="/staal-aanvragen/?product=lattenwand"><div class="pcard__img"><img src="https://www.cando.eu/media/.renditions/wysiwyg/small_JPG-CanDo_Decowall_acoustic-Blend_Natuur_eiken_Woonkamer_1_Close-up_1_1.jpg" alt="Stalen" loading="lazy"></div><div class="pcard__b"><h3>Vind de perfecte match</h3><p>Vraag gratis stalen aan en ervaar de look &amp; feel van onze lattenwanden thuis.</p><span class="pcard__cta">Vraag gratis stalen aan</span></div></a>
+        <a class="pcard" href="/hulp-en-advies/lattenwand-monteren/"><div class="pcard__img"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Montage" loading="lazy"></div><div class="pcard__b"><h3>Monteer eenvoudig zelf</h3><p>Bekijk onze handige tips en stap-voor-stap uitleg om direct aan de slag te gaan.</p><span class="pcard__cta">Bekijk montagehulp</span></div></a>
+        <a class="pcard" href="/inspiratie/lattenwand/"><div class="pcard__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Inspiratie" loading="lazy"></div><div class="pcard__b"><h3>Geef je interieur een upgrade</h3><p>Ontdek hoe je jouw interieur een upgrade geeft met een CanDo lattenwand.</p><span class="pcard__cta">Inspiratieblogs bekijken</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="meer">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Uitleg</span><h2>Wat is een lattenwand?</h2></div>
+      <p class="measure">Een lattenwand functioneert als decoratief wandpaneel en is een stijlvolle, veelzijdige toevoeging aan elk interieur. Deze wandbekleding bestaat uit houten latjes die verticaal of horizontaal geplaatst kunnen worden. Een muur met houten latjes voegt niet alleen een visueel element toe, maar kan ook functioneel zijn, bijvoorbeeld als subtiele ruimtescheiding, decoratief accent of voor betere akoestiek. Of je nu een modern loft, een Scandinavisch of een klassiek interieur hebt, een houten latjes wand past moeiteloos in elke setting en geeft je ruimte direct warmte en karakter.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Voor elke ruimte een eigen look</span><h2>Het Decowall-assortiment</h2></div>
+      <div class="info">
+        <div class="icard"><h3>Akoestische lattenwanden</h3><p>De Acoustic-lijn combineert houten latten met een vilten achterzijde voor een stijlvol uiterlijk én merkbaar betere akoestiek. Onder meer de rustige Acoustic Advanced, de speelse Acoustic Blend en de organische Acoustic Curve. Perfect voor woonkamers, kantoren en slaapkamers.</p></div>
+        <div class="icard"><h3>Roomdivider</h3><p>Creëer functionele afscheidingen zonder licht en ruimtelijkheid te verliezen. In rechte en schuine varianten, ideaal om een werkplek in de woonkamer te scheiden of een hal een stijlvolle entree te geven.</p></div>
+        <div class="icard"><h3>Decowall Acoustic Tile</h3><p>Geen hele wand nodig? Met Acoustic Tile geniet je toch van het akoestische effect en de warme uitstraling. Plaats de modulaire tegels horizontaal, verticaal of in creatieve patronen.</p></div>
+        <div class="icard"><h3>Decowall Outdoor</h3><p>Voor wie het buiten net zo mooi wil maken als binnen. Weerbestendige panelen voor balkons, terrassen en tuinafscheidingen, bestand tegen de elementen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Kleur en formaat</span><h2>Verschillende afwerkingen, kleuren en formaten</h2></div>
+      <p class="measure">Van Scandinavisch licht eiken tot warm walnoot en industrieel zwart, met bijpassende viltkleuren. De panelen zijn er in standaardhoogte 260 cm en op maat tot 300 cm, met smalle, brede, ronde of ovale latten. Kies matte of glanzende oppervlakken en combineer hout- en vilttinten voor een ton-sur-ton effect of juist contrast.</p>
+      <div class="swatches">
+        <div class="sw"><div class="sw__c c1"></div><div class="sw__n">Licht eiken</div></div>
+        <div class="sw"><div class="sw__c c2"></div><div class="sw__n">Natuur eiken</div></div>
+        <div class="sw"><div class="sw__c c3"></div><div class="sw__n">Walnoot</div></div>
+        <div class="sw"><div class="sw__c c4"></div><div class="sw__n">Zwart</div></div>
+        <div class="sw"><div class="sw__c c5"></div><div class="sw__n">Vilt licht</div></div>
+      </div>
+      <div class="btn-row"><a class="btn btn-primary" href="/staal-aanvragen/?product=lattenwand">Vraag gratis stalen aan</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="eyebrow">Montage is eenvoudig</span>
+          <h2>Doe het zelf of op maat geleverd</h2>
+          <p>Bij de DIY-panelen zaag je de lattenwand zelf op maat met een fijngetande zaag en bevestig je ze met montagekit of schroeven. Voor plafonds en grote oppervlakken adviseren we extra schroefbevestiging.</p>
+          <p>Wil je geen zaagwerk? Kies dan voor de op-maat-service: wij zagen de panelen exact op jouw maat, zodat je ze direct kunt monteren.</p>
+          <div class="btn-row">
+            <a class="btn btn-tertiary" href="/hulp-en-advies/lattenwand-monteren/">Decowall montage</a>
+            <a class="btn btn-tertiary" href="/hulp-en-advies/lattenwand-op-maat-monteren/">Op maat montage</a>
+          </div>
+        </div>
+        <div class="media"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Lattenwand monteren"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="faq">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Veelgestelde vragen</span><h2>Veelgestelde vragen over lattenwanden</h2></div>
+      <div class="faq-list">
+        <details class="faq"><summary>Zijn CanDo Decowall lattenwanden eenvoudig zelf te monteren?</summary><div><p>Ja. Met een fijngetande zaag zaag je de DIY-panelen zelf op maat en bevestig je ze met montagekit of schroeven. Met de stap-voor-stap instructies bereik je een strak resultaat.</p></div></details>
+        <details class="faq"><summary>Van welk materiaal zijn deze lattenwanden gemaakt?</summary><div><p>Houten latten op een achterpaneel, bij de akoestische varianten met een vilten achterzijde. In diverse houttinten en viltkleuren.</p></div></details>
+        <details class="faq"><summary>Welke afmetingen en kleuren zijn beschikbaar?</summary><div><p>Standaardhoogte 260 cm en op maat tot 300 cm, met smalle, brede, ronde of ovale latten. In houttinten van licht eiken tot walnoot en zwart, plus viltkleuren.</p></div></details>
+        <details class="faq"><summary>Waar kan ik CanDo Decowall lattenwanden kopen?</summary><div><p>Je vindt CanDo Decowall bij bouwmarkten en dealers door heel Nederland. Op de verkooppunten-pagina zie je waar je terecht kunt.</p></div></details>
+        <details class="faq"><summary>Hoe bevestig je een lattenwand?</summary><div><p>Met montagekit of schroeven op een vlakke ondergrond. Voor plafonds en grote oppervlakken adviseren we extra schroefbevestiging.</p></div></details>
+        <details class="faq"><summary>Is een lattenwand isolerend?</summary><div><p>De akoestische varianten met vilten achterzijde verbeteren merkbaar de akoestiek. Voor thermische isolatie is een lattenwand niet bedoeld.</p></div></details>
+        <details class="faq"><summary>Waar kan ik een lattenwand plaatsen?</summary><div><p>In vrijwel elke ruimte: woonkamer, slaapkamer, kantoor of hal. Met de Outdoor-lijn ook op een balkon, terras of als tuinafscheiding.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <h2>Klaar om jouw lattenwand te kiezen?</h2>
+        <p>Bekijk het assortiment of vraag eerst gratis stalen aan en ervaar de look &amp; feel thuis.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#assortiment">Bekijk alle lattenwanden</a>
+          <a class="btn btn-tertiary" href="/staal-aanvragen/?product=lattenwand">Vraag gratis stalen aan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script>
+(function(){
+  var btn=document.getElementById('filterbtn'),fil=document.getElementById('filters'),bd=document.getElementById('backdrop'),cl=document.getElementById('filterclose'),ap=document.getElementById('filterapply');
+  function open(){if(fil)fil.classList.add('open');if(bd)bd.classList.add('open');document.body.classList.add('filters-open');}
+  function close(){if(fil)fil.classList.remove('open');if(bd)bd.classList.remove('open');document.body.classList.remove('filters-open');}
+  if(btn)btn.addEventListener('click',open);
+  if(cl)cl.addEventListener('click',close);
+  if(bd)bd.addEventListener('click',close);
+  if(ap)ap.addEventListener('click',close);
+})();
+</script>
+</body>
+</html>

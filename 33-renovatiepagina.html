@@ -1,0 +1,1005 @@
+<!-- consumes: WB-FAB-DIKTE, WB-VLAKINBOUW-NIET-BESTELBAAR -->
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  GATE 1F, STAP NUL: DE CATEGORIE. Verplicht sinds 11-09-2026 (Zoe).
+  ===========================================================================
+  Tak         : D, Werkbladen
+  Kennisbank  : KENNIS/WERKBLADEN.md
+  Niet van toepassing op deze tak: P1: de stalenservice bestaat hier wel
+
+  Draai de toets met de tak erbij, anders draait hij plat en kan hij goed
+  werk afkeuren:
+      python3 "CanDo SEO/_tools/gate1f-verbodenlijst.py" --tak D 33-renovatiepagina.html
+
+  Staat deze kop er niet, dan is de toets niet uitgevoerd, hoe schoon de
+  uitslag ook oogt. Routeringstabel: 04-VORM/VERBODENLIJST.md sectie 0.
+  ===========================================================================
+-->
+<html lang="nl">
+<head>
+<!--
+  ===========================================================================
+  STRAMIEN 33: RENOVATIEPAGINA (paginatype P6)
+  Uitgewerkt op W1 "Keukenblad of aanrechtblad vervangen".
+  Opgesteld 11-09-2026. Dit bestand is de VORM voor het hele renovatietype,
+  niet alleen voor dit onderwerp. GOLFPLAN-HOUT.md noteerde voor de golf
+  WERKBLADEN: "vorm: nog geen stramien voor het renovatie-type". Dit vult
+  dat gat. CONTENTWERKBOEK-WERKBLADEN.md W1 punt 3 kan hiermee van
+  Gate 0 BLOCKED af op de dimensie Vorm.
+
+  WAAROM DIT PAGINATYPE BESTAAT
+  Het cluster renovatie en vervangen doet in NL 63.460 zoekopdrachten per
+  maand over 1.333 keywords, tegenover 17.440 over 428 keywords voor het
+  hele op-maat-cluster. Factor 3,6. Vrijwel alle bestaande content gaat over
+  op maat. Bron: KENNIS/WERKBLADEN.md sectie 20a, uit
+  Zoekwoordenonderzoek_Werkbladen_NL_2026.xlsx, bestandsdatum 08-06-2026.
+
+  ===========================================================================
+  MARKTNUANCE, BINDEND: DIT STRAMIEN IS NL-EERST
+  ===========================================================================
+  De factor 3,6 geldt ALLEEN in Nederland. In Belgie keert de verhouding om:
+  renovatie en vervangen 1.870 per maand over 261 keywords, op maat 3.920
+  over 253 keywords (zelfde bron, BE-bestand, bestandsdatum 11-06-2026).
+  Bron: KENNIS/WERKBLADEN.md sectie 20a, CONTENTWERKBOEK-WERKBLADEN.md
+  sectie 2 punt 1 nuance.
+  Gevolg voor de bouw:
+   - Bouw dit type EERST voor nl-NL. Voor be-nl is op maat de grotere vraag,
+     dus daar is de renovatiepagina een vervolg, geen instap.
+   - Sectie 20a zegt bovendien: "BE: aanrechtblad weglaten". De BE-variant
+     van deze pagina mag het woord aanrechtblad niet als dragende term
+     gebruiken.
+   - De marktnuance staat OOK op de pagina zelf, zichtbaar, in blok 9.
+     Niet als cijfer richting de consument, wel als eerlijke landgrens.
+     Zie de regel "wees expliciet over de grens" in SCHEMA-EN-GEO-NORM.md
+     sectie 5 punt 6.
+
+  ===========================================================================
+  DE NEGEN BLOKKEN, VOLGORDE IS BINDEND
+  ===========================================================================
+   1 Hero                  Het antwoord binnen de eerste 40 woorden, en in
+                           diezelfde alinea de eerlijke tegenhanger. Een knop,
+                           en die knop wijst naar de keuze, niet naar de kassa.
+   2 Het verschil          Waarom de twee ingrepen verschillen: een laag op
+                           het oude oppervlak tegenover een nieuw oppervlak.
+                           Een kolom lopende tekst. Sluit op de kernzin
+                           "er is geen winnaar". Hier stonden twee
+                           doorsnede-SVG's; die zijn eruit, zie BEELD
+   3 Wanneer wat past      DE KERN. Twee kolommen, exact gelijk gewicht.
+                           Elke kolom sluit af met een eigen "wat dit niet
+                           oplost". Ook onze eigen kolom. Zonder die tweede
+                           lijst is het geen advies maar een pitch.
+   4 Voor je beslist       Maat, spoelbak, kookplaat, staat van de onderkasten.
+                           Asymmetrische split, genummerde redactionele items,
+                           geen kaarten.
+   5 Wat er misgaat        Preventieblok, donkere band. De vier fouten die de
+                           bronnen echt noemen, inclusief de UX-frictie van
+                           het lege winkelmandje.
+   6 Zo gaat het           Vier stappen, horizontale strook. Hier staat de
+                           eerste retailer-uitvouw, op het beslismoment.
+   7 Veelgestelde vragen   Zeven vragen, elk een eigen details-item, elk
+                           antwoord minimaal vier zinnen. Voedt FAQPage.
+   8 Vervolg               Donkere editorial band. Primaire actie, staal als
+                           ghost, en de interne routes subtiel inline.
+   9 Verantwoording        Zichtbare peildatum plus de landgrens. Kort.
+
+  VORMREGELS DIE HIER GELDEN
+   - Geen drie of vier identieke rechthoeken onder elkaar. Elk blok heeft een
+     andere compositie: full-bleed, split, twee gelijke kolommen, asymmetrische
+     lijst, donkere band, horizontale strook, split-accordeon, donkere band.
+   - Bij de vergelijking krijgen beide opties exact evenveel gewicht. Geen
+     accentrand, geen badge, geen "aanbevolen", geen afwijkende achtergrond
+     op de kolom die wij verkopen. Registerregels D25 en A45.
+   - Geen scoreschaal, geen plussen en minnen, geen vinkjes. Er wordt met
+     woorden gescoord. Overgenomen uit Stramien/30-vergelijkingspagina.html.
+   - Geen dingbats in de zichtbare tekst. De accentpijl en het chevron zijn
+     CSS ::before / ::after. De niet-oplost-markering is een inline SVG met
+     currentColor, want CSS-variabelen werken niet in SVG-presentatieattributen.
+   - Geen ankerbalk of chipsnavigatie. Registerregel A22/A44.
+   - Geen lege anker-href, elke link wijst naar een echte bestemming.
+
+  ===========================================================================
+  HOE WRAPPEN EERLIJK BLIJFT, EN WAAROM DAT MOET
+  ===========================================================================
+  "keuken wrappen" is met 14.800 per maand het grootste woord van de hele
+  categorie, plus keukenblad wrappen 1.900 en aanrechtblad wrappen 1.600.
+  Bron: sectie 20a. Wij verkopen het alternatief niet.
+   - NIET CLAIMEN: "keuken wrappen" (14.800). Dat gaat over de hele keuken
+     inclusief fronten. Andere klus, andere leverancier. De term staat daarom
+     niet in de title, niet in de h1 en niet als h2-kop.
+   - WEL BEANTWOORDEN: de vraag zelf, op deze pagina, in blok 2 en 3, met
+     wrappen positief en concreet beschreven. Vier redenen letterlijk uit
+     sectie 9: goedkoper, sneller, geen meetwerk, geen montage.
+   - Het volume op wrappen-termen telt NOOIT mee als gewonnen verkeer.
+     Bron: CONTENTWERKBOEK-WERKBLADEN.md W1 punt 7.
+   - Er staat geen claim over de LEVENSDUUR van folie op de pagina.
+     [te bevestigen] Er is geen bron voor de levensduur en de beperkingen van
+     keukenfolie die wij mogen citeren. Zonder die bron blijft het bij wat
+     mechanisch afleidbaar is: folie ligt op het oppervlak dat er nu is.
+     Bron van het gat: CONTENTWERKBOEK-WERKBLADEN.md W2 blok 4.
+
+  ===========================================================================
+  OPEN PUNTEN
+  ===========================================================================
+  [besluit nodig] EEN PAGINA OF TWEE. Dit stramien is gebouwd op optie A uit
+    CONTENTWERKBOEK-WERKBLADEN.md W1 punt 2: een pagina, primair op
+    "keukenblad vervangen" (1.000), met "aanrechtblad vervangen" (590)
+    volwaardig in kop, intro en FAQ. Volgt CRO-UX-SEO-PRINCIPES-2026.md
+    sectie 1 regel 7. Optie B (twee pagina's) laat dit stramien vallen.
+  [besluit nodig] VERHOUDING TOT W2. Het werkboek geeft de volledige
+    wrappen-vergelijking aan W2 (stramien 30) en laat W1 er kort naar
+    doorlinken. Dit stramien trekt de vergelijking naar blok 2 en 3, omdat
+    een renovatiepagina zonder die vergelijking een pitch is. Kies:
+     A. W2 vervalt, deze pagina is het antwoord. Dan moet de doorklik in
+        blok 8 eruit.
+     B. W2 blijft en gaat dieper. Dan is blok 3 hier de korte versie en moet
+        de doorklik blijven. Nu gebouwd als B.
+    Zonder besluit staan twee pagina's op dezelfde intentie, en dat is
+    precies wat regel 7 verbiedt.
+  [besluit nodig] URL EN REDIRECT. CanDo-hout-paginaplan.xlsx (27-07-2026)
+    voert /nl-nl/hout/panelen/werkbladen/aanrechtblad-vervangen. Dit stramien
+    gebruikt /nl-nl/hout/werkbladen/keukenblad-vervangen/, want het kind hoort
+    onder de hub /nl-nl/hout/werkbladen en het primaire keyword verandert.
+    Dat is een URL-wijziging, dus een redirectregel in DEZELFDE ronde in
+    CanDo-hout-redirects-en-inventaris.xlsx tab 01, met de kinderen erbij,
+    naar de precieze vervanger.
+  [besluit nodig] HREFLANG NAAR PAGINA'S DIE NOG NIET BESTAAN. De norm eist
+    drie hreflang plus x-default. De be-nl- en be-fr-varianten van deze
+    pagina bestaan nog niet, en be-fr heeft geen rij in het paginaplan
+    (W10). Een hreflang naar een 404 is schadelijker dan een ontbrekende
+    rij. Regel voor de CMS-implementatie: emit alleen de regels die
+    resolven. De regels staan hier volledig omdat dit de VORM is.
+  [besluit nodig] PRIMAIRE CTA BOVEN DE VOUW. Het werkboek zet als primaire
+    CTA "Stel je hout samen". CRO sectie 2 wil die boven de vouw. Dit
+    stramien zet in de hero bewust de KEUZE als enige knop, en de
+    retailer-uitvouw pas in blok 6 en 8, op het moment dat de route gekozen
+    is. Reden: de bezoeker op "keukenblad vervangen" kan nog voor folie
+    kiezen, en een verkoopknop boven een eerlijke vergelijking maakt de
+    vergelijking ongeloofwaardig. Dit wijkt af van het werkboek en vraagt
+    dus een expliciete go.
+  [besluit nodig] BEELD. Er is BEWUST maar een foto op deze pagina, de hero.
+    Reden, uit KENNIS/WERKBLADEN.md sectie 22c: er is geen procesbeeld
+    (zagen, frezen, uitsparing, randafwerking), geen meetbeeld, en geen
+    beeld van opbouw tegenover vlakinbouw naast elkaar. Dat zijn precies de
+    blokken 4, 5 en 6. Volgens registerregel A5 en A48 bouw je dan geen
+    beeldvlak: geen zichtbare placeholder, wel een besluitpunt. Er bestaat
+    ook geen beeld van een gewrapt blad, en dat gaan wij ook niet maken.
+    Zodra het procesbeeld er is, komt het in blok 4 en 6.
+    De hero gebruikt CanDo_Werkblad_Otranto_Moon_Totaal
+    (c7c0878e-109c-41a4-8d05-27c0b74078ab). Dat beeld is elders al in
+    gebruik. Bij de uitwerking een UNIEK, ongebruikt en zo recent mogelijk
+    Bynder-beeld kiezen en de asset-id registreren in tab 06. Regel uit
+    Deli Home/CLAUDE.md.
+
+  ⛔ WEGGEHAALD OP 11-09-2026, BESLUIT ZOE, VERBODENLIJST B1
+    "De illustraties die worden gemaakt, dat doen wij niet. Wij hebben
+    alleen afbeeldingen met CanDo of onze eigen gemaakte illustraties.
+    Behalve die van de doorbuig bij massieve panelen en timmerpanelen."
+    Uit dit bestand zijn TWEE tekeningen verwijderd, allebei in blok 2:
+
+    1 Doorsnede van een gewrapt blad. Een dunne folielaag bovenop het
+      bestaande blad, met de bestaande kern daaronder en de labels
+      "folie, een dunne laag" en "het blad dat er nu ligt, ongewijzigd".
+    2 Doorsnede van een nieuw werkblad. Een toplaag op een kern met een
+      afgewerkte rechte voorrand, en de labels "toplaag, het uiterlijk en
+      de bescherming" en "kern, de dikte en de stevigheid".
+
+    WAT ER MET HET BLOK GEBEURDE: het was tekst links en de twee
+    doorsnedes rechts. Het is nu een kolom lopende tekst van maximaal
+    820 px breed. Geen half lege kolom en geen leeg beeldvlak (B3). De
+    kernzin "er is geen winnaar" staat er nog onder, ongewijzigd.
+    WAT ER MET DE TEKST GEBEURDE: de twee onderschriften en de vier
+    labels in de tekeningen droegen feiten die nergens anders stonden.
+    Die zijn in de twee alinea's opgenomen: dat de folielaag volgt wat
+    eronder zit en dat een deuk of bolling voelbaar blijft, en dat een
+    nieuw blad een toplaag op een kern is met elk hun eigen functie.
+    [besluit nodig] WELK BEELD HIER NODIG IS: twee close-ups van de kopse
+    kant van een blad, als paar geschoten, zelfde licht en zelfde hoek.
+    Links een gewrapt blad waarop de folielaag als aparte dunne laag te
+    zien is. Rechts een nieuw blad waarop de toplaag en de kern te
+    onderscheiden zijn en de voorrand afgewerkt is. Beide bestaan niet in
+    Bynder. Van een gewrapt blad hebben wij geen beeld en wij maken het
+    ook niet zelf, dus het linkerbeeld is een echte open vraag. Zie
+    05-BESLUITEN/FOTOBRIEF-AFWERKING.md sectie 5.
+  [besluit nodig] DE ONDERKASTEN. Blok 4 punt 4 gaat over de staat van de
+    onderkasten. Dat is het enige item op deze pagina zonder bronregel in
+    KENNIS/WERKBLADEN.md. Het is praktische voorkennis over de keuken van
+    de bezoeker, geen productfeit, en het staat er op verzoek omdat het de
+    vraag is die mensen overslaan. Bevestigen of laten vallen.
+  [te bevestigen] STOPCONTACT IN HET BLAD. "inbouw stopcontact keukenblad"
+    doet 170 per maand (sectie 20a). Onze eigen catalogus noemt een
+    uitsparing voor een stopcontact niet. Het FAQ-antwoord zegt daarom wat
+    wij wel weten en claimt niets. Het werkboek verwijst voor dit antwoord
+    naar de GAMMA-formulering; die tekst staat niet in onze bronbestanden.
+
+  ===========================================================================
+  VERBODEN OP DIT PAGINATYPE
+  ===========================================================================
+   - Geen bedrag, ook niet bij het blok dat "keukenblad vervangen kosten"
+     (260) bedient. Geen vanaf-prijs: Startingrate is 0 op alle 243
+     werkbladrijen. Bron: sectie A3 en 20c punt 4.
+   - Geen levertijdclaim voor Advance en Signature. Die staan niet in de
+     m2m-feed. Alleen de klanttekst Deliverymessage per retailer, letterlijk,
+     nooit een eigen omrekening van Delivery Time. Bron: sectie 18 en 17.
+   - Geen zaagmaat- of afmetingclaim voor Advance en Signature, om dezelfde
+     reden. De maten op deze pagina horen bij de lijn die bij Gamma en
+     Karwei ligt.
+   - Geen prijzen, geen reviewblok, geen sterren, geen Trustpilot-merkscore.
+     Er is geen actief reviewplatform. Bron: CRO sectie 1 regel 9.
+   - Geen massief hout en geen massief eiken, ook niet in een decornaam die
+     zo leest. Bron: sectie 1 decornaam-valstrik en 20c punten 1 en 2.
+   - Geen montagebelofte. Er is geen montagedienst en geen montage-instructie
+     in onze bronnen. Nergens meer beloven dan "je plaatst het zelf, het
+     precisiewerk is gedaan". Bron: sectie 15d en 6.
+   - Geen benchmark tegen een retailer. De retailer is het kanaal.
+   - Geen FAB-retailers in de serie-route. In de retailer-uitvouw staan voor
+     NL alleen de DEK-retailers Gamma en Karwei. Praxis voert de FAB
+     no-name-lijn, daar ligt een ander product. Bron: sectie B4 en
+     CONTENTWERKBOEK-WERKBLADEN.md sectie 8. bouwmaat wordt niet genoemd
+     zolang PM niet bevestigt of het een echt kanaal is.
+
+  SCHEMA
+   Article + FAQPage + BreadcrumbList, conform SCHEMA-EN-GEO-NORM.md sectie 3
+   (renovatiepagina P6), met BreadcrumbList erbij omdat die op elke pagina
+   staat. GEEN aggregateRating, Review, Offer of Product.
+   Er staat geen enkel getal in het schema dat niet zichtbaar op de pagina
+   staat. De zoekvolumes uit dit commentaar staan dus NIET in het schema en
+   ook niet in de zichtbare tekst: dat zijn interne stuurgetallen.
+
+  MEETPUNT
+   Primair: uitgaande retailerklik vanaf de retailer-uitvouw, uitgesplitst
+   naar retailer en productgroep. CONTENTARCHITECTUUR-HOUT.md R1 laat
+   configurator-start als primair meetpunt vervallen, dus de data-attributen
+   hieronder voeren retailer-klik.
+   Secundair: staalaanvraag, en de interne doorklik uit blok 8.
+   Nooit op verkeer verantwoord. Een click-out is geen verkoop.
+
+  AFHANKELIJKHEID
+   Blok 8 linkt naar W2 (wrappen of vervangen) en W3 (welk werkblad past).
+   Beide bestaan nog niet. Een pagina mag nooit linken naar iets dat nog
+   niet bestaat: die twee links gaan er pas in als het kind live is.
+  ===========================================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keukenblad vervangen zonder nieuwe keuken | CanDo</title>
+<meta name="description" content="Je keukenblad of aanrechtblad vervangen terwijl de kasten blijven staan. Lees wanneer wrappen slimmer is, wat je vooraf moet weten en waar het misgaat.">
+<link rel="canonical" href="https://www.cando.eu/nl-nl/hout/werkbladen/keukenblad-vervangen/">
+<link rel="alternate" hreflang="nl-NL" href="https://www.cando.eu/nl-nl/hout/werkbladen/keukenblad-vervangen/">
+<link rel="alternate" hreflang="nl-BE" href="https://www.cando.eu/be-nl/hout/werkbladen/keukenblad-vervangen/">
+<link rel="alternate" hreflang="fr-BE" href="https://www.cando.eu/be-fr/bois/plans-de-travail/remplacer-plan-de-travail/">
+<link rel="alternate" hreflang="x-default" href="https://www.cando.eu/nl-nl/hout/werkbladen/keukenblad-vervangen/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Keukenblad vervangen zonder nieuwe keuken">
+<meta property="og:description" content="Je keukenblad of aanrechtblad vervangen terwijl de kasten blijven staan. Lees wanneer wrappen slimmer is, wat je vooraf moet weten en waar het misgaat.">
+<meta property="og:image" content="https://delihome.getbynder.com/asset/c7c0878e-109c-41a4-8d05-27c0b74078ab/medium-JPG/CanDo_Werkblad_Otranto_Moon_Totaal.jpg">
+<meta property="og:url" content="https://www.cando.eu/nl-nl/hout/werkbladen/keukenblad-vervangen/">
+<meta property="og:locale" content="nl_NL">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{
+  --text:#20272b;
+  --muted:#666b70;
+  --accent:#F7901E;
+  --accent-dark:#d95f18;
+  --border:#e5ded4;
+  --bg-soft:#f7f2ea;
+  --bg-light:#fbfaf7;
+  --bg-warm:#f4eadc;
+  --white:#fff;
+  --dark:#211914;
+  --radius:8px;
+  --shadow-hover:0 12px 28px rgba(32,39,43,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+body{margin:0;background:#fff;color:var(--text);font-family:Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+.cando-ren{width:100%;overflow-x:clip;background:#fff;color:var(--text)}
+.cando-ren *,.cando-ren *::before,.cando-ren *::after{box-sizing:border-box}
+.cando-ren h1,.cando-ren h2,.cando-ren h3,.cando-ren .cando-cat-button,.cando-ren summary,.cando-ren .stap-nr,.cando-ren .punt-nr{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.cando-ren h1{margin:0 0 14px;font-size:54px;line-height:1;font-weight:700;color:#fff;letter-spacing:-.02em}
+.cando-ren h2{margin:0;font-size:30px;line-height:1.2;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.cando-ren h3{margin:0 0 7px;font-size:19px;line-height:1.3;font-weight:700;color:var(--text)}
+.cando-ren p{margin:0;font-size:16px;line-height:1.68;color:#414141}
+.cando-ren ul,.cando-ren ol{margin:0;padding:0}
+.cando-ren a{text-decoration:none;font-weight:700}
+.cando-ren :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.cando-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+.cando-section{position:relative;padding:58px 0}
+.cando-section--soft{background:var(--bg-soft)}
+.cando-section--light{background:var(--bg-light)}
+.cando-section--dark{background:var(--dark)}
+.cando-section-head{max-width:730px;margin-bottom:30px}
+.cando-section-head p{margin-top:10px;color:var(--muted)}
+.cando-eyebrow{display:block;margin:0 0 8px;color:var(--accent);font-size:11px;line-height:1.2;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+
+/* Canonieke CanDo buttonstijl */
+.cando-cat-button-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:22px}
+.cando-cat-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 24px;border-radius:999px;font-size:16px;line-height:1.2;font-weight:700;text-decoration:none;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+.cando-cat-button:active{transform:translateY(1px)}
+.cando-cat-button--primary{background:var(--accent);border:1px solid var(--accent);color:#fff!important}
+.cando-cat-button--primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff!important}
+.cando-cat-button--dark{background:transparent;border:1px solid rgba(255,255,255,.7);color:#fff!important}
+.cando-cat-button--dark:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* 1. Hero. Een foto, een boodschap, een knop, en die knop wijst naar de keuze. */
+.ren-hero{position:relative;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;background:#222}
+.ren-hero__image{position:absolute;inset:0;z-index:0;margin:0;background:#222}
+.ren-hero__image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.ren-hero__image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(32,39,43,.9) 0%,rgba(32,39,43,.68) 46%,rgba(32,39,43,.2) 100%)}
+.ren-hero__inner{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:104px 18px 62px}
+.ren-hero__content{max-width:600px}
+.ren-hero p{max-width:540px;color:#fff!important;font-size:16px;line-height:1.66;opacity:.97}
+.ren-hero p+p{margin-top:12px;opacity:.85}
+
+/* 2. Het verschil. Een kolom tekst, daarna de kernzin. */
+/* Blok 2 stond als tekst links en twee doorsnedetekeningen rechts. Die
+   tekeningen zijn eruit (verbodenlijst B1), dus dit is nu EEN kolom met
+   een leesbare regellengte. Geen half lege kolom, geen leeg beeldvlak (B3). */
+.verschil{max-width:820px}
+.verschil__copy p+p{margin-top:14px}
+.kernzin{margin:34px 0 0;padding:24px 28px;background:var(--dark);border-radius:var(--radius);color:#fff;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:20px;line-height:1.42;font-weight:700}
+.kernzin span{color:var(--accent)}
+
+/* 3. Wanneer wat past. Twee kolommen, exact gelijk gewicht. Geen accent op een van de twee. */
+.keuze-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+.keuze{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:30px 28px 28px}
+.keuze h3{font-size:22px;margin-bottom:14px}
+.keuze__lead{font-size:15px;line-height:1.6;color:var(--muted);margin-bottom:18px}
+.keuze ul{list-style:none;display:grid;gap:13px}
+.keuze li{position:relative;padding-left:19px;font-size:15px;line-height:1.58;color:#414141}
+.keuze li::before{content:"\203A";position:absolute;left:0;top:-1px;color:var(--accent);font-size:18px;font-weight:800}
+.keuze li b{color:var(--text)}
+.keuze__niet{margin-top:auto;padding-top:20px;margin-top:22px;border-top:1px solid var(--border)}
+.keuze__niet strong{display:block;margin-bottom:11px;font-size:14px;color:var(--text)}
+.niet-lijst{list-style:none;display:grid;gap:9px;margin:0;padding:0}
+.niet-lijst li{display:grid;grid-template-columns:17px 1fr;gap:10px;align-items:start;padding-left:0;font-size:14px;line-height:1.5;color:#414141}
+.niet-lijst li::before{content:none}
+.niet-ico{width:17px;height:17px;margin-top:2px;color:var(--accent-dark);flex:0 0 auto}
+.niet-ico circle,.niet-ico path{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}
+
+/* 4. Voor je beslist. Asymmetrische split met een genummerde redactionele lijst, geen kaarten. */
+.voor-split{display:grid;grid-template-columns:.68fr 1.32fr;gap:56px;align-items:start}
+.voor-intro p{margin-top:12px;color:var(--muted)}
+.punten{list-style:none;display:grid;gap:0}
+.punt{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:24px 0;border-top:1px solid var(--border)}
+.punt:first-child{border-top:0;padding-top:0}
+.punt:last-child{padding-bottom:0}
+.punt-nr{font-size:34px;line-height:1;font-weight:700;color:var(--accent)}
+.punt h3{font-size:20px;margin-bottom:8px}
+.punt p+p{margin-top:9px}
+.punt p{font-size:15px;line-height:1.62}
+
+/* 5. Wat er misgaat. Donkere preventieband. */
+.cando-section--dark h2,.cando-section--dark h3{color:#fff}
+.cando-section--dark .cando-section-head p{color:rgba(255,255,255,.78)}
+.mis-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 44px}
+.mis{display:grid;grid-template-columns:17px 1fr;gap:13px;align-items:start}
+.mis .niet-ico{color:var(--accent);margin-top:4px}
+.mis h3{font-size:18px;margin-bottom:6px}
+.mis p{font-size:15px;line-height:1.6;color:rgba(255,255,255,.8)}
+
+/* 6. Zo gaat het. Horizontale strook met hairlines, geen kaarten. */
+.stappen{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stappen li{padding:26px 26px 26px 0;margin-right:26px;border-right:1px solid var(--border)}
+.stappen li:last-child{border-right:0;margin-right:0;padding-right:0}
+.stap-nr{display:block;margin-bottom:9px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.stappen h3{font-size:18px;margin-bottom:6px}
+.stappen p{font-size:14px;line-height:1.56;color:var(--muted)}
+
+/* De retailer-uitvouw. Dit is de primaire actie, en hij opent de bouwmarkt. */
+.acties{display:flex;flex-wrap:wrap;align-items:flex-start;gap:14px;margin-top:30px}
+details.retailers{border:0;max-width:520px}
+details.retailers summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 24px;border-radius:999px;background:var(--accent);border:1px solid var(--accent);color:#fff;font-size:16px;font-weight:700;line-height:1.2;transition:background .2s ease,border-color .2s ease}
+details.retailers summary::-webkit-details-marker{display:none}
+details.retailers summary:hover{background:var(--accent-dark);border-color:var(--accent-dark)}
+details.retailers[open] summary{background:var(--accent-dark);border-color:var(--accent-dark)}
+.retailers__body{margin-top:14px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px 20px}
+.retailers__body p{font-size:14px;line-height:1.6;color:var(--muted)}
+.retailers__body ul{list-style:none;display:grid;gap:10px;margin-top:16px}
+.retailers__body li a{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:13px 16px;min-height:46px;border:1px solid var(--border);border-radius:var(--radius);color:var(--text)!important;font-size:15px;transition:border-color .2s ease,background .2s ease}
+.retailers__body li a:hover{border-color:var(--accent);background:#fffaf6}
+.retailers__body li a span{font-weight:400;font-size:13px;color:var(--muted);text-align:right}
+/* KNOPPEN. Overgenomen uit 04-VORM/_designsysteem/cando-base.css, niet zelf bedacht.
+   ⛔ Een primaire of secundaire actie is ALTIJD een pill-knop, nooit onderstreepte tekst.
+   Onderstreepte tekst met een pijl is een tertiaire inline verwijzing en niets anders. */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 26px;border-radius:var(--radius-pill,24px);font-size:16px;font-weight:700;line-height:1.2;text-decoration:none!important;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-secondary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+/* Op een donkere band: witte rand en witte tekst (designsysteem regel 1). */
+.slot .btn-secondary,.band-dark .btn-secondary{border-color:rgba(255,255,255,.55);color:#fff}
+.slot .btn-secondary:hover,.band-dark .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+
+/* 7. FAQ. Split, elke vraag een eigen details-item. */
+.faq-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:44px;align-items:start}
+.faq-intro p{margin-top:10px;color:var(--muted)}
+.faq-list{display:grid;gap:10px}
+details.faq-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+details.faq-item summary{list-style:none;cursor:pointer;padding:17px 54px 17px 18px;font-size:16px;font-weight:700;line-height:1.35;position:relative}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{content:"+";position:absolute;right:18px;top:15px;width:25px;height:25px;border:1px solid #b8b8b8;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6c6c6c;font-size:18px;line-height:1}
+details.faq-item[open]{border-color:#d8cdbf}
+details.faq-item[open] summary{color:var(--accent);background:#fffaf6}
+details.faq-item[open] summary::after{content:"\2212";background:var(--accent);border-color:var(--accent);color:#fff}
+.faq-answer{padding:0 18px 19px}
+.faq-answer p{font-size:14px;line-height:1.66;color:#414141}
+.faq-answer p+p{margin-top:9px}
+
+/* 8. Vervolg. Donkere editorial band, interne routes subtiel inline. */
+.slot{display:grid;grid-template-columns:1.06fr .94fr;gap:52px;align-items:center;background:var(--dark);border-radius:var(--radius);padding:46px 46px 44px}
+.slot h2{color:#fff;max-width:460px}
+.slot>div>p{margin-top:12px;color:rgba(255,255,255,.84);max-width:480px}
+.slot .acties{margin-top:26px}
+.routes-inline p{font-size:15px;line-height:1.72;color:rgba(255,255,255,.8)}
+.routes-inline a{color:#fff;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--accent)}
+.routes-inline a:hover{color:var(--accent)}
+
+/* 9. Verantwoording. */
+.verantwoording{border-top:1px solid var(--border);padding:26px 0 40px}
+.verantwoording p{font-size:13px;line-height:1.66;color:var(--muted);max-width:860px}
+.verantwoording p+p{margin-top:8px}
+
+@media(max-width:1020px){
+  .voor-split,.faq-layout,.slot{grid-template-columns:1fr}
+  .voor-split{gap:32px}
+  .slot{gap:32px;padding:36px 32px 34px}
+  .stappen{grid-template-columns:1fr 1fr}
+  .stappen li:nth-child(2){border-right:0;margin-right:0;padding-right:0}
+  .stappen li:nth-child(n+3){border-top:1px solid var(--border)}
+}
+@media(max-width:760px){
+  .cando-ren h1{font-size:36px}
+  .cando-ren h2{font-size:25px}
+  .cando-section{padding:44px 0}
+  .ren-hero{min-height:450px}
+  /* Op mobiel loopt de tekst over de volle breedte, dus moet de verdonkering
+     dat ook doen. Een horizontaal verloop laat rechts te veel foto door en
+     dat kost contrast op de plek waar de tekst staat. */
+  .ren-hero__image::after{background:linear-gradient(180deg,rgba(32,39,43,.46) 0%,rgba(32,39,43,.8) 40%,rgba(32,39,43,.93) 100%)}
+  .ren-hero__inner{padding:80px 16px 44px}
+  .ren-hero p{max-width:none;font-size:15px}
+  .cando-cat-button-row{flex-direction:column;align-items:stretch}
+  .cando-cat-button{width:100%}
+  .keuze-grid{grid-template-columns:1fr}
+  .keuze{padding:24px 20px 22px}
+  .keuze h3{font-size:20px}
+  .kernzin{font-size:17px;padding:20px}
+  .punt{grid-template-columns:42px 1fr;gap:14px;padding:20px 0}
+  .punt-nr{font-size:27px}
+  .punt h3{font-size:18px}
+  .mis-grid{grid-template-columns:1fr;gap:22px}
+  .stappen{grid-template-columns:1fr}
+  .stappen li{padding:20px 0;margin-right:0;border-right:0;border-top:1px solid var(--border)}
+  .stappen li:first-child{border-top:0;padding-top:0}
+  .stappen li:nth-child(2){border-top:1px solid var(--border)}
+  .acties{flex-direction:column;align-items:stretch}
+  details.retailers{max-width:none}
+  details.retailers summary{width:100%}
+  .retailers__body{padding:18px 16px 16px}
+  .retailers__body li a{flex-direction:column;gap:4px}
+  .retailers__body li a span{text-align:left}
+    .faq-layout{gap:24px}
+  .slot{padding:28px 20px 26px}
+  .verantwoording{padding:22px 0 34px}
+}
+.cando-skip{position:absolute;left:-9999px;top:0;z-index:99;padding:12px 20px;background:var(--accent);color:#fff;font-weight:700;border-radius:0 0 var(--radius) 0}
+.cando-skip:focus{left:0}
+</style>
+</head>
+<body>
+<a class="cando-skip" href="#contentarea">Naar de inhoud</a>
+
+<main class="cando-ren" id="contentarea">
+
+  <!-- 1. HERO. Het antwoord binnen de eerste 40 woorden, en in dezelfde
+       adem de eerlijke tegenhanger. Een knop, en die wijst naar de keuze.
+       Zie het besluitpunt over de primaire CTA in het kopcommentaar. -->
+  <section class="ren-hero" aria-labelledby="page-title">
+    <figure aria-hidden="true" class="ren-hero__image">
+      <img src="https://delihome.getbynder.com/asset/c7c0878e-109c-41a4-8d05-27c0b74078ab/medium-JPG/CanDo_Werkblad_Otranto_Moon_Totaal.jpg" alt="Keuken met een licht werkblad in steenlook en zwarte kastfronten" width="1600" height="900">
+    </figure>
+    <div class="ren-hero__inner">
+      <div class="ren-hero__content">
+        <span class="cando-eyebrow" style="color:#FDC689">Keuken opknappen</span>
+        <h1 id="page-title">Keukenblad of aanrechtblad vervangen</h1>
+        <p>Ja, je kunt je keukenblad vervangen terwijl de rest van je keuken blijft staan. Het nieuwe blad wordt op jouw maten gezaagd, met de uitsparingen voor kraan, spoelbak en kookplaat er al in. Je kasten blijven waar ze staan.</p>
+        <p>En het eerlijke tegenwoord: is je blad zelf nog heel en vlak, en wil je alleen een andere kleur, dan is folie vaak de slimmere ingreep. Hieronder staan beide routes naast elkaar, zonder winnaar.</p>
+        <div class="cando-cat-button-row">
+          <a class="cando-cat-button cando-cat-button--primary" href="#wanneer-wat">Bekijk welke route bij jou past</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. HET VERSCHIL. Eerst uitleggen waarom de twee ingrepen verschillen,
+       want dat maakt blok 3 leesbaar. Hier stonden twee doorsnedetekeningen
+       die lieten zien waar de laag zit. Die zijn eruit (B1) en wat ze
+       uitlegden staat nu in de lopende tekst. Zie WEGGEHAALD in het
+       kopcommentaar. -->
+  <section class="cando-section" id="verschil" aria-labelledby="verschil-title">
+    <div class="cando-wrap">
+      <div class="verschil">
+        <div class="verschil__copy">
+          <span class="cando-eyebrow">Het verschil</span>
+          <h2 id="verschil-title">Wat is het verschil tussen wrappen en een nieuw blad?</h2>
+          <p>Wrappen is folie op het blad dat er nu ligt. De folie is een dunne laag over het bestaande oppervlak, en die laag volgt wat eronder zit. Hij verandert de kleur en de tekening, en een deuk, een bolling of een opgezwollen rand blijft er voelbaar onder. Het blad zelf blijft hetzelfde blad.</p>
+          <p>Een nieuw keukenblad is een nieuw oppervlak op een nieuwe kern. De toplaag bepaalt het uiterlijk en de bescherming, de kern bepaalt de dikte en de stevigheid. Het wordt op jouw maten gezaagd, de uitsparingen voor kraan, spoelbak en kookplaat zitten er al in, en de voorrand is afgewerkt. Wat eronder zat, gaat eruit.</p>
+          <p>Dat ene verschil verklaart bijna alles wat hieronder staat. Gaat het om hoe je blad eruitziet, dan raken beide routes dat. Gaat het om wat je blad is, dan raakt folie dat niet.</p>
+        </div>
+      </div>
+      <p class="kernzin">Er is geen winnaar. <span>Er is jouw blad, en daar past de ene ingreep beter bij dan de andere.</span></p>
+    </div>
+  </section>
+
+  <!-- 3. WANNEER WAT PAST. DE KERN VAN DIT STRAMIEN.
+       Twee kolommen, exact gelijk gewicht: zelfde achtergrond, zelfde rand,
+       zelfde padding, zelfde aantal punten, geen badge en geen accentrand op
+       de kolom die wij verkopen (D25, A45).
+       Beide kolommen sluiten af met een eigen "wat dit niet oplost". Die
+       tweede lijst op ONZE kolom is wat deze pagina advies maakt in plaats
+       van een pitch. Nooit weglaten.
+       Er staat geen claim over de levensduur van folie, want daar is geen
+       bron voor. Zie het kopcommentaar. -->
+  <section class="cando-section cando-section--soft" id="wanneer-wat" aria-labelledby="wanneer-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">De twee routes</span>
+        <h2 id="wanneer-title">Wanneer is wrappen beter, en wanneer een nieuw blad?</h2>
+        <p>Het antwoord hangt aan een vraag: is je blad zelf nog goed? Is het antwoord ja en gaat het alleen om het uiterlijk, dan doet folie precies wat je wilt. Is het antwoord nee, of verandert er iets aan je opstelling, dan lost folie dat niet op.</p>
+      </div>
+      <div class="keuze-grid">
+
+        <div class="keuze">
+          <h3>Wrappen past bij jouw klus als</h3>
+          <p class="keuze__lead">Folie is de goedkoopste en de snelste van de twee. Er hoeft niets gemeten en niets besteld.</p>
+          <ul>
+            <li><b>Je blad is nog vlak, heel en droog</b> en je wilt alleen een andere kleur of tekening.</li>
+            <li><b>Je wilt het snel af hebben.</b> Geen wachttijd op maatwerk, geen leverdatum om rekening mee te houden.</li>
+            <li><b>Je durft niet op te meten.</b> Bij wrappen komt er geen maat aan te pas, dus de dure meetfout bestaat niet.</li>
+            <li><b>Alles blijft zitten waar het zit.</b> Je kraan, spoelbak en kookplaat blijven op hun plek en hoeven er niet uit.</li>
+          </ul>
+          <div class="keuze__niet">
+            <strong>Wat wrappen niet oplost</strong>
+            <ul class="niet-lijst">
+              <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Een blad dat is doorgezakt of opgezwollen. De laag volgt de vorm die er al is.</span></li>
+              <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Een nieuwe of grotere uitsparing voor een kraan, spoelbak of kookplaat.</span></li>
+              <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Een andere maat, een andere diepte of een extra stuk blad.</span></li>
+              <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Een overstap naar vlakinbouw, waarbij de spoelbakrand gelijk ligt met het blad.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="keuze">
+          <h3>Een nieuw blad past bij jouw klus als</h3>
+          <p class="keuze__lead">Je krijgt een nieuw oppervlak op jouw maat, met de uitsparingen er al in en de voorrand af.</p>
+          <ul>
+            <li><b>Het blad zelf is op.</b> Doorgezakt, opgezwollen rond de spoelbak, of de toplaag laat los.</li>
+            <li><b>Er moet een uitsparing bij</b> of er komt een andere spoelbak of kookplaat in. Een uitsparing is per definitie maatwerk.</li>
+            <li><b>Je gaat naar vlakinbouw.</b> Dat vraagt een uitsparing met exact de juiste maat en diepte, en dat is geen klus met een decoupeerzaag.</li>
+            <li><b>Je opstelling verandert.</b> Een hoek erbij, een langer blad, een diepere werkbank of een spatwand in hetzelfde decor.</li>
+          </ul>
+          <div class="keuze__niet">
+            <strong>Wat een nieuw blad niet oplost</strong>
+            <ul class="niet-lijst">
+              <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Onderkasten die scheef staan of niet meer waterpas zijn. Een nieuw blad maakt een oude kast niet recht.</span></li>
+              <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Een klus die dit weekend af moet. Op maat wordt gemaakt nadat je hebt besteld.</span></li>
+              <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Ruilen als je je vermeten hebt. Op maat gezaagd hout is voor jou gemaakt, dus ruilen kan meestal niet.</span></li>
+              <li><svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg><span>Fronten, grepen of kastdeuren. Wij leveren het blad, niet de rest van de keuken.</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. VOOR JE BESLIST. Vier dingen die je moet weten voordat de keuze valt.
+       Bewust geen vier kaarten: een asymmetrische split met een genummerde
+       redactionele lijst leest als advies, niet als een menu.
+       Punt 4 (onderkasten) is het enige item zonder bronregel in
+       KENNIS/WERKBLADEN.md. Zie het besluitpunt in het kopcommentaar.
+       Hier staat GEEN beeld: er is geen meetbeeld en geen beeld van opbouw
+       tegenover vlakinbouw. Geen placeholder, wel een besluitpunt. -->
+  <section class="cando-section" id="voor-je-beslist" aria-labelledby="voor-title">
+    <div class="cando-wrap">
+      <div class="voor-split">
+        <div class="voor-intro">
+          <span class="cando-eyebrow">Voor je beslist</span>
+          <h2 id="voor-title">Wat moet je weten voordat je kiest?</h2>
+          <p>Vier dingen bepalen of een nieuw blad past en wat het gaat kosten. Loop ze langs voordat je iets bestelt, ook als je uiteindelijk voor folie kiest.</p>
+        </div>
+        <ol class="punten">
+          <li class="punt">
+            <span class="punt-nr" aria-hidden="true">1</span>
+            <div>
+              <h3>Je maat, op meerdere punten gemeten</h3>
+              <p>Muren zijn zelden recht. Meet je blad links, in het midden en rechts, en houd de kleinste maat aan. Zit het blad in een nis tussen twee muren, dan is het smalste punt de maat.</p>
+              <p>Heb je een hoek of een L-opstelling, dan werk je met twee delen. Die worden zo gezaagd dat de naad netjes op de hoek valt, dus je hoeft zelf niet in verstek te zagen.</p>
+            </div>
+          </li>
+          <li class="punt">
+            <span class="punt-nr" aria-hidden="true">2</span>
+            <div>
+              <h3>Je spoelbak: opbouw of vlakinbouw</h3>
+              <p>Een opbouwspoelbak staat met zijn rand op het blad. Bij vlakinbouw ligt de rand gelijk met het blad, met een naad van maximaal een millimeter en zonder zichtbare kitrand.</p>
+              <p>Vlakinbouw vraagt een uitsparing met exact de juiste maat en diepte. Dat is precies het werk dat je laat voorbewerken, niet thuis doet. Weet je dit vooraf, dan hoef je later niets te forceren.</p>
+            </div>
+          </li>
+          <li class="punt">
+            <span class="punt-nr" aria-hidden="true">3</span>
+            <div>
+              <h3>Je kookplaat, en of die blijft</h3>
+              <p>De uitsparing voor je kookplaat gaat in dezelfde bestelling mee als het blad. Houd je je huidige kookplaat, houd dan de inbouwmaten bij de hand voordat je gaat samenstellen.</p>
+              <p>Wissel je hem, kies dan eerst de nieuwe kookplaat en pas daarna het blad. Andersom klopt de uitsparing niet, en een uitsparing die er eenmaal in zit gaat er niet meer uit.</p>
+            </div>
+          </li>
+          <li class="punt">
+            <span class="punt-nr" aria-hidden="true">4</span>
+            <div>
+              <h3>De staat van je onderkasten</h3>
+              <p>Dit is het punt dat het vaakst wordt overgeslagen. Staan je kasten nog waterpas en zijn de bodems droog, dan kan er gewoon een nieuw blad op en blijft de rest van je keuken staan.</p>
+              <p>Is er water in een kast gelopen, hangt een deur scheef of zakt een kastbodem door, dan los je dat niet op met een nieuw blad erbovenop. Repareer eerst wat eronder zit.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. WAT ER MISGAAT. Preventieblok, donkere band.
+       Alle vier de punten staan in de bronnen. Punt 4 is de bevestigde
+       UX-frictie uit besluit B-27: de samengestelde bestelling gaat niet mee
+       naar de site van de verkooppartner. Dat vertellen we hier, in plaats
+       van de bezoeker erin te laten lopen. -->
+  <section class="cando-section cando-section--dark" id="misgaat" aria-labelledby="mis-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Voorkomen is goedkoper</span>
+        <h2 id="mis-title">Waar gaat het mis bij het vervangen van een keukenblad?</h2>
+        <p>Vier dingen gaan het vaakst fout, en alle vier zijn ze te voorkomen voordat je bestelt. Een blad op maat is namelijk onomkeerbaar.</p>
+      </div>
+      <div class="mis-grid">
+        <div class="mis">
+          <svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg>
+          <div>
+            <h3>Een keer meten, in het midden</h3>
+            <p>Muren lopen bijna altijd. Meet op meerdere punten en houd de kleinste maat aan, anders past het blad aan een kant net niet.</p>
+          </div>
+        </div>
+        <div class="mis">
+          <svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg>
+          <div>
+            <h3>Een uitsparing vergeten</h3>
+            <p>Kraan, spoelbak en kookplaat gaan in dezelfde bestelling mee. Achteraf zelf zagen is het werk dat thuis het vaakst misgaat en het duurst is om fout te doen.</p>
+          </div>
+        </div>
+        <div class="mis">
+          <svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg>
+          <div>
+            <h3>Rekenen op ruilen</h3>
+            <p>Op maat gezaagd hout is speciaal voor jou gemaakt, dus ruilen kan meestal niet. Twijfel je over je maat, meet dan nog een keer of vraag eerst een staal aan.</p>
+          </div>
+        </div>
+        <div class="mis">
+          <svg class="niet-ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="6.5"/><path d="M3.9 12.1 12.1 3.9"/></svg>
+          <div>
+            <h3>Op twee plekken samenstellen</h3>
+            <p>Stel je je blad ergens anders samen en klik je daarna door naar de bouwmarkt, dan gaat die samenstelling niet mee. Stel hem meteen samen waar je hem ook afrekent.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. ZO GAAT HET. Vier stappen als horizontale strook.
+       Hier staat de eerste retailer-uitvouw: dit is het beslismoment.
+       In de uitvouw staan voor NL alleen de DEK-retailers, en per retailer
+       de klanttekst uit Deliverymessage, letterlijk. Nooit een eigen
+       omrekening en nooit een generieke levertijd. -->
+  <section class="cando-section cando-section--light" id="zo-werkt-het" aria-labelledby="stappen-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">In vier stappen</span>
+        <h2 id="stappen-title">Zo vervang je je keukenblad</h2>
+        <p>Je stelt je blad samen bij de bouwmarkt, daar reken je het ook af. Wat je krijgt is een blad dat past, met de uitsparingen er al in.</p>
+      </div>
+      <ol class="stappen">
+        <li>
+          <span class="stap-nr">Stap 1</span>
+          <h3>Kies je decor</h3>
+          <p>Twijfel je tussen twee kleuren of wil je de tekening in het echt zien, vraag dan eerst een gratis staal aan.</p>
+        </li>
+        <li>
+          <span class="stap-nr">Stap 2</span>
+          <h3>Meet je keuken op</h3>
+          <p>Lengte en diepte, op meerdere punten gemeten. Bij een nis geldt de kleinste maat, bij een hoek werk je met twee delen.</p>
+        </li>
+        <li>
+          <span class="stap-nr">Stap 3</span>
+          <h3>Geef je uitsparingen door</h3>
+          <p>Kraan, spoelbak en kookplaat, in dezelfde bestelling. Ook een spatwand in hetzelfde decor kies je hier.</p>
+        </li>
+        <li>
+          <span class="stap-nr">Stap 4</span>
+          <h3>Leg je blad erop</h3>
+          <p>De uitsparingen zitten erin en de voorrand is af. Je plaatst het zelf, het precisiewerk is al gedaan.</p>
+        </li>
+      </ol>
+
+      <div class="acties">
+        <details name="faq-renovatie" class="retailers">
+          <summary>Stel je blad samen</summary>
+          <div class="retailers__body">
+            <p>Kies je bouwmarkt en stel je blad daar samen. Je vult je maten in, geeft je uitsparingen door en rekent er meteen af.</p>
+            <ul>
+              <li><a href="https://www.gamma.nl/assortiment/werkbladen-op-maat/p/C23522852" target="_blank" rel="noopener" data-ga4-event="retailer-klik" data-retailer="gamma" data-productgroep="werkbladen">Gamma <span>Bezorgd binnen 3-4 weken</span></a></li>
+              <li><a href="https://www.karwei.nl/assortiment/werkbladen-op-maat/p/C63841868" target="_blank" rel="noopener" data-ga4-event="retailer-klik" data-retailer="karwei" data-productgroep="werkbladen">Karwei <span>Bezorgd binnen 3-4 weken</span></a></li>
+            </ul>
+          </div>
+        </details>
+        <a class="btn btn-secondary" href="https://www.cando.eu/nl-nl/hout/hout-op-maat/werkbladen-op-maat/stalenservice-werkbladen" data-ga4-event="staalaanvraag">Vraag eerst een gratis staal aan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. VEELGESTELDE VRAGEN. Zeven vragen, elk antwoord minimaal vier zinnen.
+       De koppen zijn echte vragen, zoals mensen ze stellen (GEO-regel 2).
+       De kostenvraag bedient "keukenblad vervangen kosten" (260) zonder een
+       enkel bedrag: geen prijs, geen vanaf-prijs.
+       Deze zeven vragen en antwoorden voeden het FAQPage-schema letterlijk. -->
+  <section class="cando-section" id="faq" aria-labelledby="faq-title">
+    <div class="cando-wrap">
+      <div class="faq-layout">
+        <div class="faq-intro">
+          <span class="cando-eyebrow">Veelgestelde vragen</span>
+          <h2 id="faq-title">Vragen over je blad vervangen</h2>
+          <p>De vragen die mensen stellen voordat ze bestellen, met het eerlijke antwoord. Ook als dat antwoord is dat wij iets niet doen.</p>
+        </div>
+        <div class="faq-list">
+
+          <details name="faq-renovatie" class="faq-item">
+            <summary>Kun je alleen je keukenblad vervangen en de keuken laten staan?</summary>
+            <div class="faq-answer">
+              <p>Ja. Het blad is los te vervangen, de onderkasten blijven staan. Het nieuwe blad wordt op jouw maten gezaagd, dus het past op de opstelling die er nu is. De uitsparingen voor je kraan, spoelbak en kookplaat gaan in dezelfde bestelling mee, zodat alles op de plek komt waar het nu al zit. Voorwaarde is wel dat je onderkasten zelf nog goed en waterpas zijn.</p>
+            </div>
+          </details>
+
+          <details name="faq-renovatie" class="faq-item">
+            <summary>Past een nieuw aanrechtblad op mijn bestaande kasten?</summary>
+            <div class="faq-answer">
+              <p>Dat past, omdat het blad op jouw maten wordt gemaakt in plaats van op een standaardmaat. Je geeft lengte en diepte door en het blad wordt tot op de millimeter nauwkeurig gezaagd. Heb je een hoek of een L-opstelling, dan werk je met twee delen die zo gezaagd worden dat de naad op de hoek valt. Meet wel eerst of je kasten nog waterpas staan, want een nieuw blad maakt een scheve kast niet recht.</p>
+            </div>
+          </details>
+
+          <details name="faq-renovatie" class="faq-item">
+            <summary>Hoe meet ik mijn keukenblad op?</summary>
+            <div class="faq-answer">
+              <p>Meet de lengte op meerdere punten, links, in het midden en rechts, want muren zijn zelden recht. Zit het blad in een nis tussen twee muren, dan is het smalste punt de maat die je aanhoudt. Meet daarna de diepte, van de muur tot de voorkant van je kasten, en tel op wat je aan overstek wilt. Noteer ook de plek en de maten van je kraan, spoelbak en kookplaat, want die uitsparingen geef je bij dezelfde bestelling door.</p>
+            </div>
+          </details>
+
+          <details name="faq-renovatie" class="faq-item">
+            <summary>Wat als ik me vermeten heb?</summary>
+            <div class="faq-answer">
+              <p>Op maat gezaagd hout is speciaal voor jou gemaakt, dus ruilen kan meestal niet. Dat is precies waarom het meten de belangrijkste stap is en niet de laatste. Meet daarom twee keer, op meerdere punten, en houd bij twijfel de kleinste maat aan: een blad dat een millimeter te krap is kun je nog passend krijgen, een blad dat te ruim is niet. Twijfel je over de opstelling, leg je maten dan eerst voor bij de bouwmarkt waar je bestelt.</p>
+            </div>
+          </details>
+
+          <details name="faq-renovatie" class="faq-item">
+            <summary>Kan er een uitsparing bij voor een stopcontact?</summary>
+            <div class="faq-answer">
+              <p>De uitsparingen die wij standaard meenemen zijn die voor je kraan, je spoelbak en je kookplaat. Een uitsparing voor een stopcontact in het blad staat niet in onze catalogus, dus dat kunnen wij niet toezeggen. Wil je een stopcontact in het blad, vraag dat dan na bij de bouwmarkt waar je bestelt, want het aanbod verschilt per winkel. Wij beloven liever niets dan iets wat er bij aflevering niet in blijkt te zitten.</p>
+            </div>
+          </details>
+
+          <details name="faq-renovatie" class="faq-item">
+            <summary>Wat kost het om een keukenblad te vervangen?</summary>
+            <div class="faq-answer">
+              <p>De prijs hangt af van drie dingen: je maat, de uitvoering die je kiest en het aantal uitsparingen dat erin moet. Een langer of dieper blad kost meer materiaal, en elke uitsparing is extra bewerking. Wij noemen daarom geen bedrag en geen vanaf-prijs, want die zou voor bijna niemand kloppen. Je ziet de prijs terwijl je je blad samenstelt bij de bouwmarkt, voordat je iets bestelt.</p>
+            </div>
+          </details>
+
+          <details name="faq-renovatie" class="faq-item">
+            <summary>Is wrappen goedkoper dan een nieuw blad?</summary>
+            <div class="faq-answer">
+              <p>Ja, folie is van de twee de goedkoopste en de snelste ingreep, en er komt geen meetwerk aan te pas. Wat je ervoor terugkrijgt is een ander uiterlijk, niet een ander blad. Is je blad doorgezakt, opgezwollen of moet er een uitsparing bij, dan lost folie dat niet op en betaal je later alsnog voor een nieuw blad. Is je blad nog vlak en heel en wil je alleen een andere kleur, dan is folie voor die klus de logische keuze.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. VERVOLG. Donkere editorial band. Een primaire actie, het staal als
+       ghost, en de interne routes subtiel inline in een lopende zin.
+       LET OP, AFHANKELIJKHEID: de twee inline links wijzen naar W2 en W3.
+       Die pagina's bestaan nog niet. Een pagina mag nooit linken naar iets
+       dat nog niet bestaat, dus deze alinea gaat pas live als het kind live
+       is. Zie het kopcommentaar. -->
+  <section class="cando-section" id="vervolg" aria-labelledby="slot-title">
+    <div class="cando-wrap">
+      <div class="slot">
+        <div>
+          <span class="cando-eyebrow">Klaar om te beginnen</span>
+          <h2 id="slot-title">Je maten zijn het halve werk</h2>
+          <p>Heb je je maten en weet je waar je kraan, spoelbak en kookplaat komen, dan is de rest samenstellen. Het zagen, het frezen en de randafwerking zijn dan al gedaan voordat je blad bij je thuis komt.</p>
+          <div class="acties">
+            <details name="faq-renovatie" class="retailers">
+              <summary>Stel je blad samen</summary>
+              <div class="retailers__body">
+                <p>Kies je bouwmarkt en stel je blad daar samen. Je vult je maten in, geeft je uitsparingen door en rekent er meteen af.</p>
+                <ul>
+                  <li><a href="https://www.gamma.nl/assortiment/werkbladen-op-maat/p/C23522852" target="_blank" rel="noopener" data-ga4-event="retailer-klik" data-retailer="gamma" data-productgroep="werkbladen">Gamma <span>Bezorgd binnen 3-4 weken</span></a></li>
+                  <li><a href="https://www.karwei.nl/assortiment/werkbladen-op-maat/p/C63841868" target="_blank" rel="noopener" data-ga4-event="retailer-klik" data-retailer="karwei" data-productgroep="werkbladen">Karwei <span>Bezorgd binnen 3-4 weken</span></a></li>
+                </ul>
+              </div>
+            </details>
+            <a class="btn btn-secondary" href="https://www.cando.eu/nl-nl/hout/hout-op-maat/werkbladen-op-maat/stalenservice-werkbladen" data-ga4-event="staalaanvraag">Vraag een gratis staal aan</a>
+          </div>
+        </div>
+        <div class="routes-inline">
+          <p>Twijfel je nog tussen folie en een nieuw blad, lees dan de volledige vergelijking van <a href="https://www.cando.eu/nl-nl/hout/werkbladen/wrappen-of-vervangen/" data-ga4-event="interne-doorklik">wrappen tegenover vervangen</a>. Weet je al dat het een nieuw blad wordt maar niet welke uitvoering, kijk dan bij <a href="https://www.cando.eu/nl-nl/hout/werkbladen/welk-werkblad/" data-ga4-event="interne-doorklik">welk werkblad bij jouw keuken past</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. VERANTWOORDING. Zichtbare peildatum, want GEO vraagt een citeerbare
+       datum bij de feiten.
+
+       ⛔ GECORRIGEERD 11-09 (Zoë). Hier stond ook dat de vraag in Belgie anders
+       ligt en dat het advies daar bij de maat begint. Dat is INTERNE
+       SEO-REDENERING en die hoort nooit op een klantpagina: een bezoeker die
+       zijn keukenblad wil vervangen heeft niets aan hoe Belgen zoeken, en het
+       legt onze contentstrategie publiek bloot.
+
+       De regel die hieruit volgt en die voor elk stramien geldt:
+       ZOEKVOLUME, MARKTVERSCHILLEN EN CONTENTSTRATEGIE STAAN IN HET
+       KOPCOMMENTAAR, NOOIT IN DE ZICHTBARE TEKST. Op de pagina staat alleen
+       wat de bezoeker aan zijn eigen klus heeft.
+
+       De marktnuance zelf blijft gelden en staat bovenaan dit commentaar:
+       renovatie 63.460/mnd tegenover op maat 17.440 in NL, in BE omgekeerd
+       (1.870 tegenover 3.920). Dit stramien is NL-eerst. -->
+  <section aria-labelledby="verantwoording-title">
+    <div class="cando-wrap">
+      <div class="verantwoording">
+        <h2 id="verantwoording-title" class="cando-eyebrow" style="font-size:11px">Over deze pagina</h2>
+        <p>Laatst bijgewerkt op 11 september 2026. De levertijden op deze pagina zijn de teksten van de bouwmarkten zelf en gelden voor de bladen die daar besteld worden. Wij noemen geen prijzen en geen vanaf-prijs, omdat je maat en je uitsparingen de prijs bepalen.</p>
+        <p>Wrappen doen wij zelf niet. Wij leveren het blad. Daarom staat op deze pagina ook wanneer wrappen de betere keuze is, ook als je dan niet bij ons uitkomt.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!--
+  JSON-LD, conform SCHEMA-EN-GEO-NORM.md sectie 3 (renovatiepagina P6) plus
+  BreadcrumbList, die op elke pagina staat.
+  GEEN aggregateRating, GEEN Review, GEEN Offer, GEEN Product.
+  Elk getal en elke datum hieronder staat ook zichtbaar op de pagina.
+  De FAQ-antwoorden zijn de zichtbare antwoorden uit blok 7.
+-->
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "https://www.cando.eu/nl-nl/hout/werkbladen/keukenblad-vervangen/#article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.cando.eu/nl-nl/hout/werkbladen/keukenblad-vervangen/"
+    },
+    "headline": "Keukenblad of aanrechtblad vervangen",
+    "description": "Je keukenblad of aanrechtblad vervangen terwijl de kasten blijven staan. Wanneer wrappen slimmer is, wat je vooraf moet weten en waar het misgaat.",
+    "inLanguage": "nl-NL",
+    "datePublished": "2026-09-11",
+    "dateModified": "2026-09-11",
+    "image": "https://delihome.getbynder.com/asset/c7c0878e-109c-41a4-8d05-27c0b74078ab/medium-JPG/CanDo_Werkblad_Otranto_Moon_Totaal.jpg",
+    "author": {
+      "@type": "Organization",
+      "name": "CanDo",
+      "url": "https://www.cando.eu/nl-nl/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CanDo",
+      "url": "https://www.cando.eu/nl-nl/"
+    },
+    "about": [
+      { "@type": "Thing", "name": "Keukenblad vervangen" },
+      { "@type": "Thing", "name": "Aanrechtblad vervangen" },
+      { "@type": "Thing", "name": "Keukenblad wrappen" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.cando.eu/nl-nl/hout/werkbladen/keukenblad-vervangen/#faq",
+    "inLanguage": "nl-NL",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Kun je alleen je keukenblad vervangen en de keuken laten staan?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Het blad is los te vervangen, de onderkasten blijven staan. Het nieuwe blad wordt op jouw maten gezaagd, dus het past op de opstelling die er nu is. De uitsparingen voor je kraan, spoelbak en kookplaat gaan in dezelfde bestelling mee, zodat alles op de plek komt waar het nu al zit. Voorwaarde is wel dat je onderkasten zelf nog goed en waterpas zijn."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Past een nieuw aanrechtblad op mijn bestaande kasten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dat past, omdat het blad op jouw maten wordt gemaakt in plaats van op een standaardmaat. Je geeft lengte en diepte door en het blad wordt tot op de millimeter nauwkeurig gezaagd. Heb je een hoek of een L-opstelling, dan werk je met twee delen die zo gezaagd worden dat de naad op de hoek valt. Meet wel eerst of je kasten nog waterpas staan, want een nieuw blad maakt een scheve kast niet recht."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe meet ik mijn keukenblad op?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Meet de lengte op meerdere punten, links, in het midden en rechts, want muren zijn zelden recht. Zit het blad in een nis tussen twee muren, dan is het smalste punt de maat die je aanhoudt. Meet daarna de diepte, van de muur tot de voorkant van je kasten, en tel op wat je aan overstek wilt. Noteer ook de plek en de maten van je kraan, spoelbak en kookplaat, want die uitsparingen geef je bij dezelfde bestelling door."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat als ik me vermeten heb?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Op maat gezaagd hout is speciaal voor jou gemaakt, dus ruilen kan meestal niet. Dat is precies waarom het meten de belangrijkste stap is en niet de laatste. Meet daarom twee keer, op meerdere punten, en houd bij twijfel de kleinste maat aan: een blad dat een millimeter te krap is kun je nog passend krijgen, een blad dat te ruim is niet. Twijfel je over de opstelling, leg je maten dan eerst voor bij de bouwmarkt waar je bestelt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan er een uitsparing bij voor een stopcontact?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "De uitsparingen die wij standaard meenemen zijn die voor je kraan, je spoelbak en je kookplaat. Een uitsparing voor een stopcontact in het blad staat niet in onze catalogus, dus dat kunnen wij niet toezeggen. Wil je een stopcontact in het blad, vraag dat dan na bij de bouwmarkt waar je bestelt, want het aanbod verschilt per winkel. Wij beloven liever niets dan iets wat er bij aflevering niet in blijkt te zitten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat kost het om een keukenblad te vervangen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "De prijs hangt af van drie dingen: je maat, de uitvoering die je kiest en het aantal uitsparingen dat erin moet. Een langer of dieper blad kost meer materiaal, en elke uitsparing is extra bewerking. Wij noemen daarom geen bedrag en geen vanaf-prijs, want die zou voor bijna niemand kloppen. Je ziet de prijs terwijl je je blad samenstelt bij de bouwmarkt, voordat je iets bestelt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is wrappen goedkoper dan een nieuw blad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, folie is van de twee de goedkoopste en de snelste ingreep, en er komt geen meetwerk aan te pas. Wat je ervoor terugkrijgt is een ander uiterlijk, niet een ander blad. Is je blad doorgezakt, opgezwollen of moet er een uitsparing bij, dan lost folie dat niet op en betaal je later alsnog voor een nieuw blad. Is je blad nog vlak en heel en wil je alleen een andere kleur, dan is folie voor die klus de logische keuze."
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://www.cando.eu/nl-nl/hout/werkbladen/keukenblad-vervangen/#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "CanDo", "item": "https://www.cando.eu/nl-nl/" },
+      { "@type": "ListItem", "position": 2, "name": "Hout", "item": "https://www.cando.eu/nl-nl/hout/" },
+      { "@type": "ListItem", "position": 3, "name": "Werkbladen", "item": "https://www.cando.eu/nl-nl/hout/werkbladen/" },
+      { "@type": "ListItem", "position": 4, "name": "Keukenblad vervangen", "item": "https://www.cando.eu/nl-nl/hout/werkbladen/keukenblad-vervangen/" }
+    ]
+  }
+]
+</script>
+
+</body>
+</html>

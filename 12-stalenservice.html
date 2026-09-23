@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  GATE 1F, STAP NUL: DE CATEGORIE. Verplicht sinds 11-09-2026 (Zoe).
+  ===========================================================================
+  Tak         : C, Meubelpanelen en werkbladen
+  Kennisbank  : KENNIS/MEUBELPANELEN.md
+  Niet van toepassing op deze tak: P1: de stalenservice bestaat hier juist wel
+
+  Draai de toets met de tak erbij, anders draait hij plat en kan hij goed
+  werk afkeuren:
+      python3 "CanDo SEO/_tools/gate1f-verbodenlijst.py" --tak C 12-stalenservice.html
+
+  Staat deze kop er niet, dan is de toets niet uitgevoerd, hoe schoon de
+  uitslag ook oogt. Routeringstabel: 04-VORM/VERBODENLIJST.md sectie 0.
+  ===========================================================================
+-->
+<html lang="nl">
+<head>
+<!--
+  ===========================================================================
+  STRAMIEN 12: STALENSERVICE (aanvraagpagina, dedicated lead gate)
+  Herbouwd 11-09-2026. VORM-referentie: 27-materiaalpagina-houtsoort.html.
+  Norm: CanDo SEO/04-VORM/SCHEMA-EN-GEO-NORM.md (head, JSON-LD, GEO).
+  Principes: CanDo SEO/04-VORM/CRO-UX-SEO-PRINCIPES-2026.md (§1 en §7).
+  Toon: TOON-PER-PAGINATYPE.md §5 rij Staalservicepagina, register BEVESTIGEN
+        (zeker, concreet, kort, geen nieuwe twijfel zaaien).
+
+  ---------------------------------------------------------------------------
+  ⛔ SCOPE. VAN HOUT KUN JE GEEN STAAL AANVRAGEN
+  ---------------------------------------------------------------------------
+  KENNIS/HOUTSOORTEN.md §16, rij Stalenservice, letterlijk:
+    "Bevestigd door Zoe 11-09-2026: van hout kun je GEEN staal aanvragen. De
+     stalenservice bestaat alleen voor meubelpanelen, werkbladen en
+     vensterbanken (die laatste via de FAB-lijn). Niet voor massieve panelen,
+     niet voor welke houtsoort dan ook. Een staal-CTA mag dus nooit op een
+     houtsoort- of timmerpaneelpagina staan: dat is een belofte die het
+     assortiment niet waarmaakt. Wat hier wel geldt is fysieke validatie in de
+     winkel, en dat is iets anders dan een staal thuis."
+
+  ⛔ HARDE REGEL, GELDT BUITEN DEZE PAGINA:
+     EEN STAAL-CTA MAG NOOIT OP EEN HOUTSOORT- OF TIMMERPANEELPAGINA STAAN.
+  Ook niet op steigerhout en plaatmateriaal. Registerregel D30 (11-09-2026):
+    "een staal-CTA staat alleen op een pagina van meubelpanelen, werkbladen of
+     vensterbanken (FAB-lijn). Een staal-CTA linkt altijd naar de stalenservice
+     van de eigen categorie, nooit naar een op-maat-PLP en nooit naar een
+     andere categorie. De FAB-stalenlijst wordt niet gemengd met meubelpaneel-
+     of werkbladstalen."
+
+  ⛔ VIER MENGVERBODEN:
+   1 Een staal-CTA linkt altijd naar de stalenservice van de EIGEN categorie.
+     Nooit naar een op-maat-PLP en nooit naar een andere categorie.
+   2 De FAB-stalenlijst (27 decoren) is een aparte lijst. Nooit mengen met
+     meubelpaneel- of werkbladstalen.
+   3 Geen gemengd decoroverzicht over categorieen heen.
+   4 Nooit stalen van ADVANCE en SIGNATURE beloven. Let op: dat zijn
+     WERKBLAD-series van Intergamma, naast Essential, en geen meubelpaneel-
+     series. Dit verbod hoort dus op de WERKBLAD-instantie van dit stramien,
+     niet hier. Onderbouwing: de drie nieuwe series staan niet in de feed
+     (KENNIS/WERKBLADEN.md regel 174, nul hits over 160 kolommen) en de
+     sample service voor die series staat op "to be started". De staal-CTA
+     voor werkbladen wijst daarom naar de 25 bestaande Essential-decoren.
+
+  DEZE VORM BEDIENT DRIE INSTANTIES, elk op een eigen URL met een eigen
+  decorlijst. Dit bestand is uitgewerkt op de MEUBELPANELEN-instantie. Nooit
+  samenvoegen tot een generieke stalenpagina.
+  Live-URL's, geverifieerd in Sitemap CanDo NL:NL.rtf en KENNIS/HOUT.md
+  ("verzin nooit een staal-URL, gebruik deze"):
+    meubelpanelen  /nl-nl/meubelpanelen-op-maat/stalenservice
+                   /nl-nl/stalenservice-meubelpanelen-praxis  (retailervariant)
+                   /be-nl/meubelpanelen-op-maat/stalenservice
+    werkbladen     /nl-nl/hout/hout-op-maat/werkbladen-op-maat/stalenservice-werkbladen
+                   /nl-nl/stalenservice-werkbladen-praxis     (retailervariant)
+                   BE/NL en BE/FR staan NIET in de sitemap, beide open
+    vensterbanken  BESTAAT NIET, zie openstaand punt 3
+  De werkblad-instantie wisselt de canonical, de kruimel, de decorlijst en de
+  FAQ, en neemt de drie blokken en de drie verboden over uit
+  CONTENTWERKBOEK-WERKBLADEN.md W9.
+
+  ---------------------------------------------------------------------------
+  TERMINOLOGIE: "KLEURSTAAL", NIET "HOUTSTAAL"
+  ---------------------------------------------------------------------------
+  De live knoptekst in de feed is "Gratis kleurstaal aanvragen" en GAMMA zet
+  "Bestel gratis kleurstalen". Deze pagina gebruikt dus kleurstaal, zodat de
+  linktekst elders en de landingspagina hetzelfde beloven (information scent).
+  Blok 2 en FAQ 5 corrigeren de term meteen: een kleurstaal laat meer zien dan
+  kleur alleen, namelijk ook structuur en glansgraad.
+  ⚠️ Opruimpunt buiten deze pagina: de feed voert twee schrijfwijzen naast
+  elkaar, "Gratis kleurstaal aanvragen" en "Gratis kleurstalen aanvragen"
+  (KENNIS/MEUBELPANELEN.md regel 936). Kies er een.
+
+  ---------------------------------------------------------------------------
+  BESLUIT ZOE 11-09-2026: HET AANVRAAGFORMULIER IS EEN IFRAME
+  ---------------------------------------------------------------------------
+  Het formulier wordt NIET in deze pagina gebouwd. Blok 4 omlijst een iframe
+  dat de microsite laadt. Reden: de microsite is de bron van waarheid voor
+  welke decoren als staal leverbaar zijn en hoeveel je er mag kiezen. Dat in
+  HTML nabouwen levert twee versies op die uit elkaar lopen, en dus een pagina
+  die decoren belooft die niet meer in de feed staan. Precies het risico dat
+  mengverbod 4 beschrijft, en precies waarom discontinued decoren uit de
+  FAB-lijst gehaald moesten worden.
+
+  Wat een iframe NIET kan, en wat deze pagina daarom zelf draagt:
+   - waarom je bij een DECOR een fysiek staal nodig hebt (blok 2)
+   - wat je krijgt, hoeveel en hoe lang het duurt (blok 3)
+   - wat er NA het versturen gebeurt (blok 5)
+   - wat je met het staal DOET als het binnen is (blok 6)
+   - de vervolgstap (blok 8)
+  Alles in de iframe is invoer. Alles eromheen is betekenis.
+
+  Drie plekken delen EEN url-token, vervang ze in dezelfde ronde:
+   1 het iframe zelf            src="https://TE-BEVESTIGEN-FORMULIER-URL"
+   2 de zichtbare fallbacklink  href="https://TE-BEVESTIGEN-FORMULIER-URL"
+   3 availableChannel.serviceUrl in het Service-schema
+  Grep op TE-BEVESTIGEN vindt alle openstaande tokens in dit bestand.
+
+  ---------------------------------------------------------------------------
+  BINDENDE BLOKVOLGORDE
+  ---------------------------------------------------------------------------
+   1 Hero                 antwoord in de eerste 40 woorden, EEN knop naar het
+                          formulier, plus een feitenstrook (kosten, aantal,
+                          levertijd) zodat de verwachting voor de klik klopt
+   2 Waarom een staal     de propositie: een decor is een reproductie, en
+                          kleur, structuur en glansgraad overleven een scherm
+                          niet. Plus de grenzen, als ROUTE geformuleerd
+   3 Wat krijg je         wat er in de envelop zit, hoeveel, wanneer, gratis
+   4 Het formulier        HET IFRAME. Geen fallbacklink en geen noscript: het
+                          formulier laadt altijd (Zoë 11-09)
+   5 Na je aanvraag       de vervolgstap die in de oude pagina ONTBRAK:
+                          wat gebeurt er nu, wanneer, en waar let je op
+   6 Staal op tafel       hoe je beoordeelt. Dit blok maakt de pagina uniek,
+                          een iframe doet dit nooit
+   7 Veelgestelde vragen  acht items, gespiegeld in FAQPage
+   8 Vervolg              een echte stap VOORUIT
+
+  Blok 4 staat bewust NA de verwachtingsblokken 2 en 3 (registerregel A51:
+  wat je nodig hebt staat altijd voor wat je doet) en VOOR de blokken 5 en 6,
+  want dat is na-conversie-content. Daardoor hoeft geen enkele knop terug
+  omhoog te wijzen. Dat is geen detail: CRO-UX-SEO-PRINCIPES-2026 §8 noemt
+  precies deze stalenservicepagina als anti-patroon ("Eerst een staaltje
+  zien" onderaan, wijzend naar een blok bovenaan). Blok 8 wijst dus vooruit.
+  De hero-knop naar #aanvragen mag wel: registerregel A35 verbiedt een
+  ankerknop naar het blok dat er DIRECT onder staat, en hier zitten twee
+  volle blokken ertussen.
+
+  ---------------------------------------------------------------------------
+  MEETPUNT: DE AANVRAAG, NOOIT VERKEER
+  ---------------------------------------------------------------------------
+  Deze pagina is GEEN verkeerspagina en mag ook niet zo beoordeeld worden.
+  W9 zegt het zonder omhaal: geen primair keyword, niet claimen, geen enkele
+  term, de pagina wordt nooit op verkeer afgerekend.
+   - de keywordcategorie "Sample en staaltje aanvragen" telt 123 keywords met
+     samen 150 zoekopdrachten per maand, waarvan er 117 op NUL staan. De
+     losse term "hout samples" is 20 per maand, en een van de weinige termen
+     met volume (`sterk staaltje hout`, 20) is een Nederlandse uitdrukking en
+     dus ruis. [BRON: dossier timmerpanelen/18-SAMPLES-BESLISDOCUMENT.md §5.1]
+   - in de eigen Search Console staat NUL sample-query, terwijl er live
+     stalenpagina's zijn. Deze URL haalt 560 vertoningen met 1 klik op
+     positie 9,62, peildatum 03-08-2026. [BRON: KENNIS/MEUBELPANELEN.md]
+  MEETPUNT = de verzonden aanvraag in het formulier (GA4 server-side zachte
+  conversie `staalaanvraag`), plus de aanvraagratio van bezoekers die hier via
+  een productpagina, retailerlink of advertentie binnenkomen. Sessies, posities
+  en impressies op deze URL zijn ruis en horen niet in de rapportage.
+  ⚠️ NIET PUBLICEREN, ook niet in een rapportage: de rendementscijfers
+  (staal naar verkoop 22,9% meubelpanelen tegen circa 0% werkbladen, open
+  26 tot 29%) staan als `[besluit nodig]` in CONTENTWERKBOEK-WERKBLADEN §4.2,
+  omdat twee bronnen verschillende getallen geven voor dezelfde conversie en
+  de peildatum van de 22,9% nooit is vastgesteld. Ze staan hier alleen als
+  richting: het staal converteert goed maar wordt organisch niet gevonden.
+
+  ---------------------------------------------------------------------------
+  OPENSTAANDE PUNTEN, BLOKKEREND VOOR LIVE
+  ---------------------------------------------------------------------------
+  1 [te bevestigen: de URL van het formulier-iframe]
+    Bestaat nergens in de bronnen. Het oude stramien had src="about:blank".
+    Ophalen bij Sem Osenga (development microsites, STAKEHOLDERS §45).
+    Drie plekken, zie hierboven. Registerregel A5 is hier hard: zolang dit
+    token staat is de pagina een besluitpunt en geen deliverable.
+  2 [te bevestigen: aantal stalen per aanvraag en levertijd]
+    AANTAL: nergens vastgelegd voor meubelpanelen. Er ligt alleen een
+    voorstel van maximaal 3 per aanvraag uit het timmerpanelentraject, met
+    negen benchmarks die allemaal 3 hanteren en de framing "om verspilling te
+    beperken" (18-SAMPLES-BESLISDOCUMENT.md §4.6). Dat traject gaat niet door
+    en het getal geldt niet automatisch hier. Niet als feit publiceren.
+    LEVERTIJD: nergens vastgelegd, en deels bewust. Harde projectregel: nooit
+    een generieke levertijd, die hangt aan product en retailer. De
+    fulfilment-doorlooptijd is bovendien nog een open punt. Kan er geen getal
+    komen, dan blijft "de verwachte termijn zie je bij het aanvragen" staan en
+    verdwijnen de tokens, maar dan moet het formulier die termijn wel tonen.
+    AFMETING: ook onbekend. De enige harde maten in het dossier (100x100 mm
+    voor decor, 200x150 mm voor massief) komen uit een benchmark van negen
+    concurrenten, niet uit het eigen assortiment. Daarom staat er geen maat
+    op de pagina.
+  3 ⛔ BRONCONFLICT VENSTERBANKEN, blokkerend voor de derde instantie.
+    HOUTSOORTEN.md §16 (11-09) noemt vensterbanken via de FAB-lijn als derde
+    categorie. KENNIS/VENSTERBANKEN.md (peildatum 02-09) zegt op vier plekken
+    het omgekeerde, onder meer: "Er is geen stalenservice voor vensterbanken;
+    die bestaat alleen voor meubelpanelen en werkbladen." Er staat ook geen
+    enkele vensterbank-stalenservice-URL in NL, BE/NL of BE/FR. De 27 FAB-
+    stalen horen bij FAB-WERKBLADEN (Maxeda), niet bij vensterbanken.
+    Daarom noemt deze pagina vensterbanken NIET in de zichtbare tekst. Eerst
+    het conflict oplossen en een URL vaststellen, daarna pas de instantie.
+  4 De fr-BE-URL in de head is een token. De nl-BE-variant staat wel in de
+    BE/NL-sitemap en is daarmee bevestigd. Voor BE/FR bestaat er geen
+    meubelpaneel-staalpagina.
+  5 BEELD: ⛔ NOOIT op de pagina zetten dat een beeld een render of CGI is
+    (Zoë 11-09). Wij werken vrijwel uitsluitend met CGI; dat benoemen zaait
+    twijfel over elk beeld op de site. Assetherkomst hoort in tab 06.
+    Het gebruikte beeld is een render (Bynder-asset
+    Eiken-Natuur_Cam1_rev1, Product Group Furniture Panel, HTTP 200 en
+    visueel gecontroleerd 11-09, 1900x1425). Dat is expliciet benoemd, ook in
+    de zichtbare tekst, conform de placeholderregel. Er bestaat GEEN foto van
+    een echt stalenpakket: "staal" in Meta_data_beeld_cando_*.csv betekent
+    staal als metaal (tafelpoten), niet kleurstaal. Een foto van de envelop
+    met kleurstalen en een macro van een structuurdecor zijn shootverzoeken
+    en zouden blok 2 en blok 6 aanzienlijk sterker maken.
+  6 De bevestigingsmail in blok 5 (afzender, tekst, moment) afstemmen met de
+    microsite achter het iframe. Let op: de stalenservice voedt opt-ins in
+    Customer.io, dus beloof op deze pagina nooit dat er geen opvolging komt.
+  7 Het Search Console paginarapport voor de stalenservice-URL's over 16
+    maanden is nog nooit opgehaald (dossier timmerpanelen/00-LEESWIJZER).
+    Zonder dat rapport blijft "nul sample-queries" een meting met een gat.
+  8 De fontlink bevat een Magento-versienummer dat bij de volgende deploy
+    breekt. In de CMS-implementatie komt het font via het platform.
+  ===========================================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kleurstaal meubelpaneel aanvragen, gratis | CanDo</title>
+<meta name="description" content="Vraag gratis een kleurstaal van een meubelpaneel op maat aan. Zo zie en voel je decor, structuur en glans in je eigen licht, voordat je op maat laat zagen.">
+
+<link rel="canonical" href="https://www.cando.eu/nl-nl/meubelpanelen-op-maat/stalenservice">
+<link rel="alternate" hreflang="nl-NL" href="https://www.cando.eu/nl-nl/meubelpanelen-op-maat/stalenservice">
+<link rel="alternate" hreflang="nl-BE" href="https://www.cando.eu/be-nl/meubelpanelen-op-maat/stalenservice">
+<link rel="alternate" hreflang="fr-BE" href="https://www.cando.eu/be-fr/TE-BEVESTIGEN-FR-BE-SLUG">
+<link rel="alternate" hreflang="x-default" href="https://www.cando.eu/nl-nl/meubelpanelen-op-maat/stalenservice">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CanDo">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:title" content="Kleurstaal meubelpaneel aanvragen, gratis | CanDo">
+<meta property="og:description" content="Vraag gratis een kleurstaal van een meubelpaneel op maat aan. Zo zie en voel je decor, structuur en glans in je eigen licht, voordat je op maat laat zagen.">
+<meta property="og:image" content="https://delihome.getbynder.com/asset/8df6f07b-1c8c-47ec-be60-287df4255551/medium-JPG/Eiken-Natuur_Cam1_rev1.jpg">
+<meta property="og:image:alt" content="Bureaublad van een meubelpaneel in het decor Eiken Natuur, in schuin invallend daglicht">
+<meta property="og:url" content="https://www.cando.eu/nl-nl/meubelpanelen-op-maat/stalenservice">
+
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{
+  --text:#20272b;
+  --muted:#666b70;
+  --accent:#F7901E;
+  --accent-dark:#d95f18;
+  --border:#e5ded4;
+  --bg-soft:#f7f2ea;
+  --bg-light:#fbfaf7;
+  --bg-warm:#f4eadc;
+  --white:#fff;
+  --dark:#211914;
+  --radius:8px;
+  --shadow:0 8px 22px rgba(32,39,43,.045);
+  --shadow-hover:0 12px 28px rgba(32,39,43,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .cando-stalen *,.cando-stalen *::before,.cando-stalen *::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+body{margin:0;background:#fff;color:var(--text);font-family:Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+.cando-stalen{width:100%;overflow-x:clip;background:#fff;color:var(--text)}
+.cando-stalen *,.cando-stalen *::before,.cando-stalen *::after{box-sizing:border-box}
+.cando-stalen h1,.cando-stalen h2,.cando-stalen h3,.cando-stalen .cando-cat-button,.cando-stalen summary,.cando-stalen .frame__bar{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.cando-stalen h1{margin:0 0 14px;font-size:52px;line-height:1.02;font-weight:700;letter-spacing:-.02em;color:var(--text)}
+.cando-stalen h2{margin:0;font-size:30px;line-height:1.2;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.cando-stalen h3{margin:0 0 7px;font-size:19px;line-height:1.3;font-weight:700;color:var(--text)}
+.cando-stalen p{margin:0;font-size:16px;line-height:1.68;color:#414141}
+.cando-stalen ul,.cando-stalen ol{margin:0;padding:0}
+.cando-stalen a{text-decoration:none;font-weight:700}
+.cando-stalen :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+.cando-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+.cando-section{position:relative;padding:58px 0}
+.cando-section--soft{background:var(--bg-soft)}
+.cando-section--light{background:var(--bg-light)}
+.cando-section-head{max-width:760px;margin-bottom:28px}
+.cando-section-head p{margin-top:10px;color:var(--muted)}
+.cando-eyebrow{display:block;margin:0 0 8px;color:var(--accent);font-size:11px;line-height:1.2;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+
+/* Canonieke CanDo buttonstijl */
+.cando-cat-button-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:22px}
+.cando-cat-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 24px;border-radius:999px;font-size:16px;line-height:1.2;font-weight:700;text-decoration:none;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+.cando-cat-button:active{transform:translateY(1px)}
+.cando-cat-button--primary{background:var(--accent);border:1px solid var(--accent);color:#fff!important}
+.cando-cat-button--primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff!important}
+.cando-cat-button--secondary{background:var(--bg-soft);border:1px solid var(--border);color:var(--text)!important}
+.cando-cat-button--secondary:hover{background:#efe4d6;border-color:#efe4d6;color:var(--text)!important}
+.cando-cat-button--dark{background:transparent;border:1px solid rgba(255,255,255,.7);color:#fff!important}
+.cando-cat-button--dark:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+.crumbs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 20px;color:#8c8c8c;font-size:12px}
+.crumbs a{color:#8c8c8c;font-weight:400}
+.crumbs a:hover{color:var(--accent)}
+.crumbs span{color:#b5b5b5}
+
+/* 1. Hero, tekstueel. Antwoord staat in de eerste 40 woorden. */
+.hero{padding:46px 0 44px}
+.hero__inner{max-width:820px}
+.hero__lead{font-size:18px;line-height:1.62;color:#343a3e}
+.hero__sub{margin-top:14px;color:var(--muted);max-width:680px}
+.facts{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:30px 0 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.facts li{padding:18px 22px 18px 0;margin-right:22px;border-right:1px solid var(--border)}
+.facts li:last-child{border-right:0;margin-right:0;padding-right:0}
+.facts strong{display:block;margin-bottom:5px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:17px;line-height:1.25;color:var(--text)}
+.facts span{display:block;font-size:13px;line-height:1.5;color:var(--muted)}
+
+/* 2. Waarom, redactioneel met een routekolom ernaast */
+/* align-items:stretch, niet start. De routekaart is een omrande kaart naast een
+   tekstkolom: liet je hem op zijn eigen hoogte staan, dan ontstond er een gat
+   van ruim 200 px onder de kortste kolom (CRO-UX-SEO-PRINCIPES §1 regel 10).
+   Zelfde oplossing als .material-editorial in stramien 27. */
+.why{display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:stretch}
+.why__copy p+p{margin-top:14px}
+.why__copy .intro{font-size:17px;color:#343a3e}
+.clean-list{list-style:none;display:grid;gap:11px;margin-top:18px}
+.clean-list li{position:relative;padding-left:19px;font-size:15px;line-height:1.55;color:#414141}
+.clean-list li::before{content:"\203A";position:absolute;left:0;top:-1px;color:var(--accent);font-size:18px;font-weight:800}
+.clean-list strong{color:var(--text)}
+/* ⛔ Herzien 11-09 (Zoë): de oranje linkerbalk met halve radius was generieke
+   callout-styling, geen CanDo. Designsysteem: oranje is een accent voor knoppen,
+   links en kleine labels, niet voor vlakken of randen. Nu een rustig beige kader
+   met volle radius, zoals .cta. */
+.bound{background:var(--bg-soft,#faf6f1);border:1px solid var(--border);border-radius:var(--radius);padding:26px 28px;display:flex;flex-direction:column;justify-content:center}
+.bound dt::before{content:"";display:block;width:22px;height:2px;background:var(--accent);margin-bottom:9px}
+/* Voorbehoud bij de kleurstalen, letterlijk aangeleverd door Zoë 11-09. Klein en
+   rustig: het hoort bij de belofte, het mag hem niet overschreeuwen. */
+.voorbehoud{margin-top:16px;max-width:520px;font-size:12.5px;line-height:1.55;color:var(--muted,#5d5d5d)}
+.bound h3{margin-bottom:12px}
+.bound dl{margin:0}
+.bound dt{font-weight:700;font-size:15px;line-height:1.5;color:var(--text)}
+.bound dd{margin:4px 0 0;font-size:15px;line-height:1.6;color:#414141}
+.bound dd+dt{margin-top:16px}
+
+/* 3. Wat krijg je, drie kaarten */
+.deliver{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.deliver__card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow)}
+.deliver__card h3{font-size:18px}
+.deliver__card p{margin-top:6px;font-size:14px;line-height:1.6;color:var(--muted)}
+.deliver__mark{display:block;width:42px;height:42px;border-radius:12px;background:var(--bg-soft);color:var(--accent);font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:19px;line-height:42px;text-align:center;margin-bottom:14px}
+
+/* 4. Het aanvraagformulier, iframe */
+.frame{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);max-width:100%}
+.frame__bar{padding:15px 20px;border-bottom:1px solid var(--border);background:var(--bg-soft);font-weight:700;font-size:15px;color:var(--text)}
+/* Expliciete hoogte die meeschaalt met het scherm, met een bodem en een
+   plafond, zodat het formulier nooit in een kokertje eindigt en nooit
+   eindeloos doorloopt op een groot scherm. max-width houdt het iframe
+   binnen zijn kolom, zodat een brede microsite geen horizontale overflow
+   op de pagina zelf veroorzaakt. */
+.frame__embed{display:block;width:100%;max-width:100%;height:clamp(640px,88vh,960px);border:0;background:#fff}
+.frame__fallback{padding:18px 20px;border-top:1px solid var(--border);background:var(--bg-light)}
+.frame__fallback p{font-size:14px;line-height:1.65;color:#414141}
+.frame__fallback p+p{margin-top:8px}
+.frame__fallback a{color:var(--accent-dark);text-decoration:underline;text-underline-offset:3px}
+.frame__fallback a:hover{color:var(--accent)}
+.flag{display:inline-block;margin-top:10px;padding:3px 9px;border:1px dashed var(--accent);border-radius:4px;font-size:12px;font-weight:700;color:var(--accent-dark);background:#fff}
+
+/* 5. Na je aanvraag, tijdlijn */
+.after{background:var(--dark);color:#fff}
+.after h2,.after h3{color:#fff}
+.after .cando-section-head p{color:rgba(255,255,255,.78)}
+.timeline{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;counter-reset:t;border-top:1px solid rgba(255,255,255,.18)}
+.timeline li{counter-increment:t;position:relative;padding:26px 26px 26px 0;margin-right:26px;border-right:1px solid rgba(255,255,255,.18)}
+.timeline li:last-child{border-right:0;margin-right:0;padding-right:0}
+.timeline li::before{content:counter(t);display:flex;align-items:center;justify-content:center;width:34px;height:34px;margin-bottom:14px;border:1px solid rgba(255,255,255,.35);border-radius:10px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:15px;color:var(--accent)}
+.timeline h3{font-size:18px;margin-bottom:6px}
+.timeline p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.76)}
+.after__note{margin-top:30px;padding:22px 24px;border:1px solid rgba(255,255,255,.22);border-radius:var(--radius);background:rgba(255,255,255,.04);max-width:760px}
+.after__note p{font-size:15px;line-height:1.62;color:rgba(255,255,255,.85)}
+
+/* 6. Staal op tafel */
+.judge{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:start}
+.judge__intro p{margin-top:10px;color:var(--muted)}
+.steps{list-style:none;counter-reset:j;display:grid;gap:0}
+.steps li{counter-increment:j;position:relative;padding:20px 0 20px 58px;border-bottom:1px solid var(--border)}
+.steps li:first-child{padding-top:0}
+.steps li:first-child::before{top:0}
+.steps li:last-child{border-bottom:0;padding-bottom:0}
+.steps li::before{content:counter(j);position:absolute;left:0;top:20px;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid var(--border);border-radius:10px;background:#fff;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:15px;color:var(--accent)}
+.steps h3{font-size:17px;margin-bottom:5px}
+.steps p{font-size:15px;line-height:1.62}
+
+/* 7. FAQ */
+.faq-layout{display:grid;grid-template-columns:.74fr 1.26fr;gap:44px;align-items:start}
+.faq-intro p{margin-top:10px;color:var(--muted)}
+.faq-list{display:grid;gap:10px}
+details.faq-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+details.faq-item summary{list-style:none;cursor:pointer;padding:17px 54px 17px 18px;font-size:16px;font-weight:700;line-height:1.35;position:relative}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{content:"+";position:absolute;right:18px;top:15px;width:25px;height:25px;border:1px solid #b8b8b8;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6c6c6c;font-size:18px;line-height:1}
+details.faq-item[open]{border-color:#d8cdbf}
+details.faq-item[open] summary{color:var(--accent);background:#fffaf6}
+details.faq-item[open] summary::after{content:"\2212";background:var(--accent);border-color:var(--accent);color:#fff}
+.faq-answer{padding:0 18px 19px}
+.faq-answer p{font-size:14px;line-height:1.62;color:#414141}
+.faq-answer p+p{margin-top:9px}
+
+/* 8. Vervolg, altijd vooruit */
+.cando-cat-editorial{display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch;background:var(--dark);border-radius:var(--radius);overflow:hidden}
+.cando-cat-editorial__content{padding:42px 42px 40px;display:flex;flex-direction:column;justify-content:center}
+.cando-cat-editorial h2{color:#fff;max-width:470px}
+.cando-cat-editorial p{max-width:490px;margin-top:12px;color:rgba(255,255,255,.84)}
+.cando-cat-editorial__image{min-height:315px;background:#2a211c;overflow:hidden}
+.cando-cat-editorial__image img{width:100%;height:100%;min-height:315px;object-fit:cover;object-position:center}
+
+@media(max-width:1020px){
+  .why,.judge,.faq-layout,.cando-cat-editorial{grid-template-columns:1fr}
+  .why{gap:30px}
+  .judge{gap:26px}
+  .faq-layout{gap:28px}
+  .deliver{grid-template-columns:1fr}
+  .cando-cat-editorial__image,.cando-cat-editorial__image img{min-height:240px}
+}
+@media(max-width:760px){
+  .cando-stalen h1{font-size:36px}
+  .cando-stalen h2{font-size:26px}
+  .cando-section{padding:44px 0}
+  .hero{padding:32px 0 36px}
+  .hero__lead{font-size:17px}
+  .cando-cat-button-row{flex-direction:column;align-items:stretch}
+  .cando-cat-button{width:100%}
+  .facts{grid-template-columns:1fr}
+  .facts li{padding:16px 0;margin-right:0;border-right:0;border-top:1px solid var(--border)}
+  .facts li:first-child{border-top:0}
+  /* Op een telefoon is een formulier langer en is vh minder betrouwbaar.
+     Ruimere bodem, zodat er binnen het iframe zo min mogelijk gescrold wordt. */
+  .frame__embed{height:clamp(720px,108vh,1180px)}
+  .timeline{grid-template-columns:1fr}
+  .timeline li{padding:22px 0;margin-right:0;border-right:0;border-bottom:1px solid rgba(255,255,255,.18)}
+  .timeline li:last-child{border-bottom:0;padding-bottom:0}
+  .deliver__card{padding:22px 20px}
+  .bound{padding:20px}
+  .cando-cat-editorial__content{padding:30px 22px}
+  .cando-cat-editorial__image,.cando-cat-editorial__image img{min-height:210px}
+}
+
+.cando-skip{position:absolute;left:-9999px;top:0;z-index:99;padding:12px 20px;background:var(--accent);color:#fff;font-weight:700;border-radius:0 0 var(--radius) 0}
+.cando-skip:focus{left:0}
+</style>
+</head>
+<body>
+<a class="cando-skip" href="#contentarea">Naar de inhoud</a>
+
+<main class="cando-stalen" id="contentarea">
+
+  <!-- 1. HERO. Het antwoord staat in de eerste 40 woorden, daarna pas de opbouw. -->
+  <section class="cando-section hero" aria-labelledby="page-title">
+    <div class="cando-wrap">
+      <div class="hero__inner">
+        <nav class="crumbs" aria-label="Kruimelpad">
+          <a href="/nl-nl/">Home</a><span>&rsaquo;</span><a href="/nl-nl/meubelpanelen-op-maat/">Meubelpanelen op maat</a><span>&rsaquo;</span>Stalenservice
+        </nav>
+        <span class="cando-eyebrow">Stalenservice meubelpanelen</span>
+        <h1 id="page-title">Kleurstaal aanvragen</h1>
+        <p class="hero__lead">Een kleurstaal is een echt stukje meubelpaneel in het decor dat je overweegt. Je vraagt het gratis aan, wij sturen het op, en je beoordeelt kleur, structuur en glans thuis voordat je je paneel op maat laat zagen.</p>
+        <p class="hero__sub">Een meubelpaneel wordt op jouw maat gezaagd en afgewerkt. Het decor kies je dus een keer, en daarna ligt het vast. Met het staal in je hand maak je die keuze op wat je ziet en voelt, niet op een afbeelding.</p>
+
+        <ul class="facts">
+          <li>
+            <strong>Gratis, ook de verzending</strong>
+            <span>Je vraagt aan wat je wilt vergelijken. Er hangt geen bestelling aan vast.</span>
+          </li>
+          <li>
+            <strong>Vijf kleurstalen per aanvraag</strong>
+            <span>Genoeg om de decoren die je twijfelt naast elkaar te leggen.</span>
+          </li>
+          <li>
+            <strong>Binnen vijf werkdagen op de mat</strong>
+            <span>Wij streven ernaar je kleurstalen binnen vijf werkdagen te versturen.</span>
+          </li>
+        </ul>
+
+        <div class="cando-cat-button-row">
+          <a class="cando-cat-button cando-cat-button--primary" href="#aanvragen">Vraag je gratis kleurstaal aan</a>
+        </div>
+        <p class="voorbehoud">Deze kleurstalen kunnen iets afwijken van het echte meubelpaneel door o.a. de lichtinval, patroon, structuur en het verschil in materiaal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. WAAROM. De propositie voor een DECORPRODUCT: kleur, structuur en glans
+       overleven een scherm niet, en de decornaam kan een verkeerd beeld geven.
+       De grenzen staan als ROUTE geformuleerd, niet als waarschuwing (D39), en
+       de tweede route is de harde: voor massief hout bestaat er geen staal. -->
+  <section class="cando-section cando-section--soft" id="waarom" aria-labelledby="waarom-title">
+    <div class="cando-wrap">
+      <div class="why">
+        <div class="why__copy">
+          <span class="cando-eyebrow">Waarom een staal</span>
+          <h2 id="waarom-title">Waarom kun je een decor niet op je scherm kiezen?</h2>
+          <p class="intro">Omdat een decor een reproductie is. Je kijkt op je scherm naar een foto van een print van een materiaal, en bij elke stap gaat er iets verloren. Witbalans, schermkalibratie en de lamp boven je tafel verschuiven de kleur daarna nog een keer.</p>
+          <p>Er zijn twee eigenschappen die een scherm zelfs in theorie niet kan tonen. De eerste is structuur: bij een structuurdecor loopt het reliëf mee met de nerf, waardoor je het voelt onder je hand. De tweede is glansgraad, en die bepaalt hoe een kleur in een ruimte overkomt. Niet voor niets staan Helder Wit en Helder wit Softmat als twee aparte decoren in het assortiment: dezelfde kleur, ander gedrag in het licht.</p>
+          <p>Daar komt de naam nog bij. Veel decoren heten naar een houtsoort, maar het zijn houtlooks op gemelamineerde spaanplaat, geen massief hout. Een kleurstaal haalt dat misverstand in een seconde weg, en dat scheelt teleurstelling nadat je paneel al op maat is gezaagd.</p>
+
+          <ul class="clean-list">
+            <li><strong>Kleur in jouw licht.</strong> Hetzelfde decor oogt bij daglicht anders dan onder een warme lamp.</li>
+            <li><strong>Structuur om te voelen.</strong> Hoe uitgesproken het reliëf is, merk je pas met je hand erop.</li>
+            <li><strong>Glansgraad in de ruimte.</strong> Mat en softmat weerkaatsen anders, dus ze lezen anders.</li>
+            <li><strong>Samen beslissen.</strong> Een staal op de keukentafel is het middel waarmee twee mensen er samen uit komen.</li>
+          </ul>
+        </div>
+
+        <div class="bound">
+          <h3>Waar je een kleurstaal voor gebruikt, en wanneer je iets anders pakt</h3>
+          <dl>
+            <dt>Wil je weten hoe kleur, structuur en glans uitpakken?</dt>
+            <dd>Dan is de kleurstaal het juiste middel. Daar is hij voor gemaakt.</dd>
+
+            <dt>Wil je een massief houten paneel beoordelen?</dt>
+            <dd>Bekijk dat in de winkel. Van massieve panelen is er geen stalenservice, want elke plaat heeft zijn eigen nerf en noesten. In het schap zie en voel je precies het exemplaar dat je meeneemt.</dd>
+
+            <dt>Wil je maten, dikte en de afgewerkte rand bepalen?</dt>
+            <dd>Dat doe je bij het samenstellen van je paneel op maat, samen met de retailer.</dd>
+
+            <dt>Wil je een staal van een werkblad?</dt>
+            <dd>Werkbladen hebben een eigen stalenservice met een eigen decorlijst. Vraag ze daar aan, dan krijg je de decoren die bij dat product leverbaar zijn.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WAT KRIJG JE. De verwachting vastzetten voordat iemand het formulier in gaat.
+       Registerregel A51: wat je nodig hebt staat voor wat je doet.
+       Geen afmeting genoemd: die is nergens vastgelegd, zie openstaand punt 2. -->
+  <section class="cando-section" id="wat-krijg-je" aria-labelledby="krijgen-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Wat je krijgt</span>
+        <h2 id="krijgen-title">Wat zit er in de envelop?</h2>
+        <p>Geen brochure en geen kleurenprintje. Je krijgt het materiaal zelf, zodat je kunt kijken, voelen en vergelijken.</p>
+      </div>
+
+      <div class="deliver">
+        <div class="deliver__card">
+          <span class="deliver__mark" aria-hidden="true">1</span>
+          <h3>Een echt stukje meubelpaneel</h3>
+          <p>Met het decor en de structuur zoals ze op het paneel zitten. Wat je in handen hebt, is hetzelfde oppervlak als het paneel dat straks op maat gezaagd wordt.</p>
+        </div>
+        <div class="deliver__card">
+          <span class="deliver__mark" aria-hidden="true">2</span>
+          <h3>Meerdere decoren naast elkaar</h3>
+          <p>Een decor beoordeel je nooit los, altijd naast een ander. Hoeveel kleurstalen je per aanvraag mag kiezen staat in het formulier. [te bevestigen: aantal stalen per aanvraag]</p>
+        </div>
+        <div class="deliver__card">
+          <span class="deliver__mark" aria-hidden="true">3</span>
+          <h3>Per post naar je thuisadres</h3>
+          <p>Je aanvraag gaat direct door naar de verzending. De verwachte bezorgtermijn zie je bij het versturen. [te bevestigen: levertijd]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HET AANVRAAGFORMULIER. Dit is een IFRAME, besluit Zoe 11-09-2026.
+       De microsite is de bron van waarheid voor de decorlijst en de aantallen,
+       zodat er nooit een decor in de keuzelijst staat dat uit de feed is.
+       Vervang TE-BEVESTIGEN-FORMULIER-URL op drie plekken, zie kopcommentaar. -->
+  <section class="cando-section cando-section--light" id="aanvragen" aria-labelledby="aanvragen-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Aanvragen</span>
+        <h2 id="aanvragen-title">Vraag je gratis kleurstaal aan</h2>
+        <p>Kies je decoren en vul je adres in. Je aanvraag loopt via het formulier hieronder, dat laat zien welke decoren voor meubelpanelen op dit moment als staal leverbaar zijn.</p>
+      </div>
+
+      <div class="frame">
+        <div class="frame__bar">Aanvraagformulier stalenservice meubelpanelen</div>
+
+        <iframe
+          class="frame__embed"
+          title="Aanvraagformulier stalenservice meubelpanelen: kies je kleurstalen en vul je adresgegevens in"
+          src="https://TE-BEVESTIGEN-FORMULIER-URL"
+          loading="lazy"
+          height="880"
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+        <div class="frame__fallback">
+          <span class="flag">[te bevestigen: de URL van het formulier-iframe]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. NA JE AANVRAAG. Dit blok ontbrak volledig in de oude pagina.
+       Wat gebeurt er nu, wanneer, en waar let je op. -->
+  <section class="cando-section after" id="na-je-aanvraag" aria-labelledby="na-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Na het versturen</span>
+        <h2 id="na-title">Wat gebeurt er nadat je de aanvraag verstuurt?</h2>
+        <p>Zodat je weet waar je aan toe bent en niet hoeft te gokken of je aanvraag is aangekomen.</p>
+      </div>
+
+      <ol class="timeline">
+        <li>
+          <h3>Je krijgt een bevestiging</h3>
+          <p>Direct na het versturen ontvang je een e-mail met de kleurstalen die je hebt gekozen. Zie je die niet binnen een kwartier, kijk dan eerst in je spamfilter voordat je opnieuw aanvraagt.</p>
+        </li>
+        <li>
+          <h3>Wij sturen je stalen op</h3>
+          <p>Je aanvraag gaat naar de verzending en je stalen gaan per post naar het adres dat je hebt opgegeven. [te bevestigen: levertijd]</p>
+        </li>
+        <li>
+          <h3>Je beoordeelt thuis</h3>
+          <p>Als de envelop binnen is, ben jij aan zet. Hieronder staat waar je op let zodra je de stalen op tafel legt.</p>
+        </li>
+      </ol>
+
+      <div class="after__note">
+        <p>Wil je een ander decor, of klopt er iets niet aan je aanvraag? Vraag opnieuw aan met het formulier hierboven. Er zit geen bestelling aan vast, dus er valt niets te annuleren.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. STAAL OP TAFEL. Het blok dat deze pagina uniek maakt.
+       Een iframe legt nooit uit hoe je beoordeelt. -->
+  <section class="cando-section" id="beoordelen" aria-labelledby="beoordelen-title">
+    <div class="cando-wrap">
+      <div class="judge">
+        <div class="judge__intro">
+          <span class="cando-eyebrow">De stalen zijn binnen</span>
+          <h2 id="beoordelen-title">Hoe beoordeel je een kleurstaal?</h2>
+          <p>Zes stappen die het verschil maken tussen een mooi kleurtje en een keuze waar je over een jaar nog blij mee bent.</p>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <h3>Leg het staal op de plek waar het paneel komt</h3>
+            <p>Niet op je bureau omdat dat toevallig handig is. Het licht en de ondergrond op de echte plek bepalen hoe het decor uitpakt.</p>
+          </li>
+          <li>
+            <h3>Kijk twee keer, bij daglicht en bij avondlicht</h3>
+            <p>Een decor dat overdag koel en licht oogt, kan onder een warme lamp geel worden. Beoordeel dus op beide momenten voordat je kiest.</p>
+          </li>
+          <li>
+            <h3>Kantel het staal in het licht en strijk erover</h3>
+            <p>Zo zie je de glansgraad en voel je het reliëf pas echt. Recht van boven lijken mat en softmat op elkaar, onder een hoek verschillen ze duidelijk.</p>
+          </li>
+          <li>
+            <h3>Leg het naast wat er al staat</h3>
+            <p>Je keukenfront, je vloer, je kastdeuren en je kozijnen. Een decor beoordeel je in verhouding tot de kleuren die al in de ruimte zitten, niet op zichzelf.</p>
+          </li>
+          <li>
+            <h3>Laat het een paar dagen liggen en beslis samen</h3>
+            <p>Een eerste indruk verandert nog. Laat de stalen liggen tot iedereen die meebeslist ze heeft gezien, want zo'n paneel ligt er straks jaren.</p>
+          </li>
+          <li>
+            <h3>Bewaar het staal tot je klaar bent</h3>
+            <p>Handig als je later iets wilt bijbestellen of er een tweede paneel bij wilt laten maken. Dan vergelijk je met het staal en niet met je geheugen.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ. Elke vraag is een eigen item en staat gespiegeld in FAQPage.
+       Registerregel D39: geen antwoord begint met "Nee", elke beperking is
+       geformuleerd als een route naar het middel dat wel werkt. -->
+  <section class="cando-section cando-section--soft" id="vragen" aria-labelledby="faq-title">
+    <div class="cando-wrap">
+      <div class="faq-layout">
+        <div class="faq-intro">
+          <span class="cando-eyebrow">Veelgestelde vragen</span>
+          <h2 id="faq-title">Vragen over de stalenservice</h2>
+          <p>Alleen vragen die over het aanvragen en beoordelen van kleurstalen voor meubelpanelen gaan.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Wat kost een kleurstaal?</summary>
+            <div class="faq-answer"><p>Niets. Het aanvragen en het opsturen van een kleurstaal zijn gratis, en er zit geen aankoopverplichting aan vast.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Hoeveel kleurstalen kan ik in een keer aanvragen?</summary>
+            <div class="faq-answer"><p>Hoeveel stalen je per aanvraag mag kiezen zie je in het aanvraagformulier zelf, omdat dat meebeweegt met wat er leverbaar is. [te bevestigen: aantal stalen per aanvraag]</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Hoe lang duurt het voordat mijn kleurstaal er is?</summary>
+            <div class="faq-answer"><p>De verwachte bezorgtermijn staat bij het versturen van je aanvraag en in de bevestigingsmail. [te bevestigen: levertijd]</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Van welke decoren kan ik een kleurstaal krijgen?</summary>
+            <div class="faq-answer"><p>In het aanvraagformulier staan de decoren voor meubelpanelen die op dit moment als staal beschikbaar zijn. Het formulier is daarin leidend, want de beschikbaarheid verandert.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Laat een kleurstaal alleen de kleur zien?</summary>
+            <div class="faq-answer"><p>Een kleurstaal laat meer zien dan kleur alleen. Je ziet ook de structuur, dus hoe voelbaar het reliëf is, en de glansgraad, dus hoe het decor het licht terugkaatst. Juist die twee kun je op een scherm niet beoordelen, en ze bepalen sterk hoe het paneel er straks in je ruimte uitziet.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Mijn decor heet eiken. Krijg ik dan eikenhout?</summary>
+            <div class="faq-answer"><p>Een decor met eiken in de naam is een eikenlook op gemelamineerde spaanplaat. Het is dus een nauwkeurige reproductie van eiken, geen massief eikenhout. Wil je echt massief hout, kijk dan bij de massieve panelen in de winkel. Wil je een eikenlook die er strak en gelijkmatig uitziet, dan is het decor precies wat je zoekt, en met de kleurstaal zie je meteen hoe overtuigend het is.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Kan ik een kleurstaal van een massief houten paneel aanvragen?</summary>
+            <div class="faq-answer"><p>Massieve panelen bekijk je in de winkel. Daar is bewust geen stalenservice voor: elke plaat massief hout heeft zijn eigen nerf en noesten, dus een stukje uit een andere plaat zou je op het verkeerde been zetten. In het schap zie en voel je precies het exemplaar dat je meeneemt.</p><p>Bij een decor ligt dat anders. Hetzelfde decor heeft over de hele serie dezelfde kleur en structuur, en daarom zegt een staal daar wel iets over het paneel dat je krijgt.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Ik wil ook een werkblad kiezen, zit dat erbij?</summary>
+            <div class="faq-answer"><p>Werkbladen hebben hun eigen stalenservice met een eigen decorlijst. Vraag je stalen daar aan, dan krijg je precies de decoren die voor een werkblad leverbaar zijn en vergelijk je geen appels met peren.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. VERVOLG. Altijd vooruit. Nooit terug naar #aanvragen, want daar is de
+       bezoeker al langsgekomen, zie CRO-UX-SEO-PRINCIPES-2026 §1 regel 2 en §8.
+       ⛔ REGEL (Zoë 11-09): NOOIT op de pagina zetten dat een beeld een render,
+       een 3D-visual of CGI is. Wij werken vrijwel uitsluitend met CGI; dat
+       benoemen zaait twijfel over elk beeld op de site zonder dat het de
+       bezoeker iets oplevert. De assetherkomst hoort in tab 06, niet in de
+       zichtbare tekst. -->
+  <section class="cando-section cando-section--light" aria-labelledby="vervolg-title">
+    <div class="cando-wrap">
+      <div class="cando-cat-editorial">
+        <div class="cando-cat-editorial__content">
+          <span class="cando-eyebrow">Verder kijken</span>
+          <h2 id="vervolg-title">Terwijl je op je stalen wacht</h2>
+          <p>Bekijk alvast wat er met een meubelpaneel op maat mogelijk is: welke diktes er zijn, hoe de rand wordt afgewerkt en welke maten je kunt opgeven. Dan hoef je straks alleen nog het decor te kiezen.</p>
+          <div class="cando-cat-button-row">
+            <a class="cando-cat-button cando-cat-button--primary" href="/nl-nl/meubelpanelen-op-maat/">Bekijk meubelpanelen op maat</a>
+            <a class="cando-cat-button cando-cat-button--dark" href="/nl-nl/zoek-uw-winkel/">Zoek een verkooppunt</a>
+          </div>
+        </div>
+        <div class="cando-cat-editorial__image">
+          <img loading="lazy" src="https://delihome.getbynder.com/asset/8df6f07b-1c8c-47ec-be60-287df4255551/medium-JPG/Eiken-Natuur_Cam1_rev1.jpg" alt="Bureaublad van een meubelpaneel in het decor Eiken Natuur, in schuin invallend daglicht" width="1900" height="1425">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.cando.eu/nl-nl/meubelpanelen-op-maat/stalenservice#service",
+      "name": "CanDo stalenservice meubelpanelen",
+      "serviceType": "Kleurstalen van meubelpanelen aanvragen",
+      "description": "Gratis kleurstalen van meubelpanelen op maat, per post thuisgestuurd, zodat je kleur, structuur en glansgraad in je eigen licht kunt beoordelen voordat je je paneel op maat laat zagen.",
+      "url": "https://www.cando.eu/nl-nl/meubelpanelen-op-maat/stalenservice",
+      "provider": {
+        "@type": "Organization",
+        "name": "CanDo",
+        "url": "https://www.cando.eu/"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Nederland" },
+        { "@type": "Country", "name": "Belgie" }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Doe-het-zelvers die een decor kiezen voor een meubelpaneel op maat"
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "name": "Aanvraagformulier stalenservice meubelpanelen",
+        "serviceUrl": "https://TE-BEVESTIGEN-FORMULIER-URL"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.cando.eu/nl-nl/meubelpanelen-op-maat/stalenservice#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wat kost een kleurstaal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Niets. Het aanvragen en het opsturen van een kleurstaal zijn gratis, en er zit geen aankoopverplichting aan vast."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoeveel kleurstalen kan ik in een keer aanvragen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hoeveel stalen je per aanvraag mag kiezen zie je in het aanvraagformulier zelf, omdat dat meebeweegt met wat er leverbaar is."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hoe lang duurt het voordat mijn kleurstaal er is?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De verwachte bezorgtermijn staat bij het versturen van je aanvraag en in de bevestigingsmail."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Van welke decoren kan ik een kleurstaal krijgen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In het aanvraagformulier staan de decoren voor meubelpanelen die op dit moment als staal beschikbaar zijn. Het formulier is daarin leidend, want de beschikbaarheid verandert."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Laat een kleurstaal alleen de kleur zien?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Een kleurstaal laat meer zien dan kleur alleen. Je ziet ook de structuur, dus hoe voelbaar het relief is, en de glansgraad, dus hoe het decor het licht terugkaatst. Juist die twee kun je op een scherm niet beoordelen, en ze bepalen sterk hoe het paneel er straks in je ruimte uitziet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mijn decor heet eiken. Krijg ik dan eikenhout?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Een decor met eiken in de naam is een eikenlook op gemelamineerde spaanplaat. Het is dus een nauwkeurige reproductie van eiken, geen massief eikenhout. Wil je echt massief hout, kijk dan bij de massieve panelen in de winkel. Wil je een eikenlook die er strak en gelijkmatig uitziet, dan is het decor precies wat je zoekt, en met de kleurstaal zie je meteen hoe overtuigend het is."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan ik een kleurstaal van een massief houten paneel aanvragen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Massieve panelen bekijk je in de winkel. Daar is bewust geen stalenservice voor: elke plaat massief hout heeft zijn eigen nerf en noesten, dus een stukje uit een andere plaat zou je op het verkeerde been zetten. In het schap zie en voel je precies het exemplaar dat je meeneemt. Bij een decor ligt dat anders. Hetzelfde decor heeft over de hele serie dezelfde kleur en structuur, en daarom zegt een staal daar wel iets over het paneel dat je krijgt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ik wil ook een werkblad kiezen, zit dat erbij?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Werkbladen hebben hun eigen stalenservice met een eigen decorlijst. Vraag je stalen daar aan, dan krijg je precies de decoren die voor een werkblad leverbaar zijn en vergelijk je geen appels met peren."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.cando.eu/nl-nl/meubelpanelen-op-maat/stalenservice#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cando.eu/nl-nl/" },
+        { "@type": "ListItem", "position": 2, "name": "Meubelpanelen op maat", "item": "https://www.cando.eu/nl-nl/meubelpanelen-op-maat/" },
+        { "@type": "ListItem", "position": 3, "name": "Stalenservice", "item": "https://www.cando.eu/nl-nl/meubelpanelen-op-maat/stalenservice" }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

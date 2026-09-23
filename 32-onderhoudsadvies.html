@@ -1,0 +1,804 @@
+<!-- consumes: LEVERTIJD-PER-RETAILER -->
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  GATE 1F, STAP NUL: DE CATEGORIE. Verplicht sinds 11-09-2026 (Zoe).
+  ===========================================================================
+  Tak         : D, Werkbladen
+  Kennisbank  : KENNIS/WERKBLADEN.md
+  Niet van toepassing op deze tak: P1: de stalenservice bestaat hier wel
+
+  Draai de toets met de tak erbij, anders draait hij plat en kan hij goed
+  werk afkeuren:
+      python3 "CanDo SEO/_tools/gate1f-verbodenlijst.py" --tak D 32-onderhoudsadvies.html
+
+  Staat deze kop er niet, dan is de toets niet uitgevoerd, hoe schoon de
+  uitslag ook oogt. Routeringstabel: 04-VORM/VERBODENLIJST.md sectie 0.
+  ===========================================================================
+-->
+<html lang="nl">
+<head>
+<!--
+  ===========================================================================
+  STRAMIEN 32: ONDERHOUDSADVIES (paginatype C6)
+  Gebouwd 11-09-2026. Dit bestand is de VORM voor elk onderhoudsadvies.
+  Uitgewerkt op het composiet werkblad, omdat daar het volume zit:
+  composiet aanrechtblad schoonmaken 590 - doffe vlekken composiet
+  aanrechtblad 320 - aanrechtblad repareren 210. Het cluster onderhoud en
+  vlekken is 16.480 per maand bij werkbladen, 4.260 bij timmerpanelen en
+  13.090 bij douglas.
+
+  DIT IS EEN FAMILIEPAGINA
+  EEN pagina met een tabel per materiaal en per vlektype. NIET losse
+  vlekpagina's. W11 tot W14 uit CONTENTWERKBOEK-WERKBLADEN.md vallen hier
+  samen: schoonmaken, doffe vlekken, repareren en de vlekkentabel.
+  Besluit Zoe 10-09-2026.
+
+  DE NEGEN BLOKKEN, VOLGORDE IS BINDEND
+   1 Hero                  full-bleed beeld, het antwoord in de eerste
+                           40 woorden, EEN knop naar de vlekkentabel
+   2 Dagelijks recept      dichte strook van drie stappen, geen kaarten
+   3 Vlekkentabel          de kern. Breed, scrollt in zijn eigen container
+   4 Doffe vlekken         de twee oorzaken in een omkaderd paneel van een
+                           kolom. Draagt het 320-keyword. Hier stond een
+                           SVG die glansverschil liet zien; die is eruit,
+                           zie BEELD hieronder
+   5 Structuur of glad     editorial met foto. Onderhoudsfeit EN
+                           aankoopargument, beide routes positief
+   6 Vijf gebruiksregels   donkere band, strook van vijf. Identiek in
+                           beide leveranciersadviezen
+   7 De eerlijke grens     wat wel en wat niet te repareren is, met de
+                           route erachteraan. Draagt het 210-keyword
+   8 Veelgestelde vragen   elke vraag een eigen details-item, minimaal
+                           vier zinnen antwoord (register D21)
+   9 Vervolg               rustige stap naar de werkbladen-overzichtspagina
+
+  RITME
+   Geen twee blokken onder elkaar met dezelfde compositie (register E4).
+   De volgorde is bewust: volvlaks beeld, dichte strook, brede tabel,
+   omkaderd paneel, editorial met foto, donkere band, twee kolommen,
+   accordeon, donker slot.
+   LET OP na het weghalen van de tekening in blok 4: dat blok was het
+   asymmetrische paneel in het ritme en is nu een paneel van een kolom.
+   Zodra er beeld is voor blok 4, staat het ritme weer zoals bedoeld.
+
+  WAT HIER NIET OP MAG
+   - GEEN merkproducten of artikelnummers uit de webshop van de
+     leverancier. Wij schrijven "een melaminespons" en "een intensieve
+     reiniger voor werkbladen". Harde regel, KENNIS/WERKBLADEN.md
+   - geen materiaalmerknamen van de leverancier (besluit Zoe 09-09-2026)
+   - geen prijzen, geen reviews, geen sterren
+   - geen verwijzing naar CanDo onderhoudsolie: die geldt voor massieve
+     panelen, niet voor deze drie werkbladseries (WERKBLADEN.md 15e)
+   - geen ankerbalk of chipsnavigatie (registerregel A22/A44)
+   - geen dingbats of vinkjes in de zichtbare tekst. De accentpijl als
+     CSS ::after mag, zoals in stramien 27
+   - geen tekst over de pagina zelf, alleen over de klus (register C1)
+
+  SCHEMA
+   HowTo met een HowToSection per vlektype, plus FAQPage en
+   BreadcrumbList. Geen aggregateRating, geen recensieblok, geen aanbod
+   met prijs, geen Product. Elk getal in het schema staat ook zichtbaar op
+   de pagina: de 5 minuten inwerktijd staat in de vlekkentabel.
+   De vier HowToSections volgen de groepering van de leverancier zelf:
+   vet/koffie/thee/rode wijn, kalk, inkt/verf/nicotine/viltstift,
+   hardnekkig. Die groepen apart trekken zou verschillen suggereren die de
+   bron niet maakt.
+
+  BEELD
+   Drie foto's uit Bynder, elk precies een keer, geen enkele eerder
+   gebruikt in de stramienen. Asset-id's registreren in tab 06 van
+   CanDo-hout-redirects-en-inventaris.xlsx:
+   2FF582C8-5B10-4DC8-9F49428858192F34  CanDo_Werkblad_Move_Totaal
+   16862518-24E7-48DB-BD1C5D0C961944DD  CanDo_Werkblad_Quiet Oak_Detail_Rand
+   0AC870DB-2DEC-465E-9511C176B34D7527  CanDo_Werkblad_Frame_Detail_Spoelbak
+
+  ⛔ WEGGEHAALD OP 11-09-2026, BESLUIT ZOE, VERBODENLIJST B1
+   "De illustraties die worden gemaakt, dat doen wij niet. Wij hebben
+   alleen afbeeldingen met CanDo of onze eigen gemaakte illustraties.
+   Behalve die van de doorbuig bij massieve panelen en timmerpanelen."
+   Uit dit bestand is EEN tekening verwijderd:
+
+   BLOK 4, DOFFE VLEKKEN. Een SVG van 300 bij 324 met twee bladen van
+   bovenaf: op het bovenste een klein vlakje dat lichter is dan de rest,
+   op het onderste een gelijkmatig behandeld vlak zonder zichtbaar
+   verschil.
+   WAT ER MET HET BLOK GEBEURDE: het was tekst links en tekening rechts,
+   het is nu een omkaderd paneel van een kolom. Geen half lege kolom en
+   geen leeg beeldvlak (B3).
+   WAT ER MET DE TEKST GEBEURDE: het onderschrift droeg het inzicht dat
+   een doffe plek opvalt door het VERSCHIL met het blad eromheen. Dat
+   stond niet in de lopende tekst en staat nu als afsluitende alinea in
+   het blok zelf.
+   [besluit nodig] WELK BEELD HIER NODIG IS: twee foto's als paar, zelfde
+   blad, zelfde licht, zelfde hoek. Links een composiet blad waarop een
+   klein vlakje intensief is behandeld en zichtbaar anders glanst. Rechts
+   hetzelfde blad waarop een ruimer vlak gelijkmatig is behandeld, zonder
+   zichtbare rand. Het glansverschil moet op de foto echt te zien zijn,
+   dus strijklicht. Bestaat niet in Bynder, gecontroleerd op
+   Meta_data_beeld_cando_1 tot en met 5. Zie
+   05-BESLUITEN/FOTOBRIEF-AFWERKING.md sectie 5.
+
+  OPENSTAANDE PUNTEN
+   [besluit nodig] URL van de familiepagina. Hier staat
+     /nl-nl/hout/werkbladen/onderhoud/. Het werkboek voert drie
+     concurrerende werkblad-takken op (/hout/werkbladen/,
+     /hout/hout-op-maat/werkbladen-op-maat/ en
+     /hout/panelen/werkbladen/). Zolang openstaande vraag 40 niet is
+     beslist, zijn de canonical en de vier hreflang-regels voorlopig.
+   [besluit nodig] Komt er een BE/FR-spoor. De hreflang-regel naar
+     /be-fr/bois/plans-de-travail/entretien/ staat er omdat de norm drie
+     hreflang plus x-default eist, maar die pagina bestaat nog niet.
+     Openstaande vraag 41. Niet live zetten voor dat besluit valt.
+   [besluit nodig] Er is GEEN beeld in Bynder van een vlek, van een
+     melaminespons of van iemand die een blad schoonmaakt. Gecontroleerd
+     op Meta_data_beeld_cando_1 tot en met 5. Daarom staat er bij blok 3,
+     4, 6 en 7 bewust geen foto en is er geen placeholder gezet. Wil Zoe
+     daar beeld, dan is dat een fotobrief, geen bestaande asset.
+   [besluit nodig] Eigen merkloze onderhoudskaart. De publieke adviezen
+     van de leverancier dragen hun merknamen en verwijzen naar hun
+     webshop, dus we kunnen er niet naartoe linken. Of we een eigen
+     versie maken of er een opvragen bij Denise staat nog open.
+   [te bevestigen] Het aantal decoren met een structuuroppervlak. De feed
+     kent HPL Hout Structuur, maar het aantal is niet bevestigd, dus staat
+     er bewust geen getal in blok 5.
+  ===========================================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Composiet aanrechtblad schoonmaken | CanDo</title>
+<meta name="description" content="Composiet aanrechtblad schoonmaken doe je met een sopje, naspoelen en nadrogen. Bekijk per vlektype wat werkt op composiet en op HPL, en wat blijft zitten.">
+<link rel="canonical" href="https://www.cando.eu/nl-nl/hout/werkbladen/onderhoud/">
+<link rel="alternate" hreflang="nl-NL" href="https://www.cando.eu/nl-nl/hout/werkbladen/onderhoud/">
+<link rel="alternate" hreflang="nl-BE" href="https://www.cando.eu/be-nl/hout/werkbladen/onderhoud/">
+<link rel="alternate" hreflang="fr-BE" href="https://www.cando.eu/be-fr/bois/plans-de-travail/entretien/">
+<link rel="alternate" hreflang="x-default" href="https://www.cando.eu/nl-nl/hout/werkbladen/onderhoud/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Composiet aanrechtblad schoonmaken | CanDo">
+<meta property="og:description" content="Composiet aanrechtblad schoonmaken doe je met een sopje, naspoelen en nadrogen. Bekijk per vlektype wat werkt op composiet en op HPL, en wat blijft zitten.">
+<meta property="og:image" content="https://delihome.getbynder.com/asset/2ff582c8-5b10-4dc8-9f49-428858192f34/medium-JPG/CanDo_Werkblad_Move_Totaal.jpg">
+<meta property="og:url" content="https://www.cando.eu/nl-nl/hout/werkbladen/onderhoud/">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{
+  --text:#20272b;
+  --muted:#666b70;
+  --accent:#F7901E;
+  --accent-dark:#d95f18;
+  --border:#e5ded4;
+  --bg-soft:#f7f2ea;
+  --bg-light:#fbfaf7;
+  --bg-warm:#f4eadc;
+  --white:#fff;
+  --dark:#211914;
+  --radius:8px;
+  --shadow-hover:0 12px 28px rgba(32,39,43,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+body{margin:0;background:#fff;color:var(--text);font-family:Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+.cando-onderhoud{width:100%;overflow-x:clip;background:#fff;color:var(--text)}
+.cando-onderhoud *,.cando-onderhoud *::before,.cando-onderhoud *::after{box-sizing:border-box}
+.cando-onderhoud h1,.cando-onderhoud h2,.cando-onderhoud h3,.cando-onderhoud .cando-cat-button,.cando-onderhoud summary,.cando-onderhoud th{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.cando-onderhoud h1{margin:0 0 14px;font-size:52px;line-height:1.02;font-weight:700;color:#fff;letter-spacing:-.02em}
+.cando-onderhoud h2{margin:0;font-size:30px;line-height:1.2;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.cando-onderhoud h3{margin:0 0 7px;font-size:19px;line-height:1.3;font-weight:700;color:var(--text)}
+.cando-onderhoud p{margin:0;font-size:16px;line-height:1.68;color:#414141}
+.cando-onderhoud ul,.cando-onderhoud ol{margin:0;padding:0}
+.cando-onderhoud a{text-decoration:none;font-weight:700}
+.cando-onderhoud :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.cando-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+.cando-wrap--narrow{max-width:940px}
+.cando-section{position:relative;padding:58px 0}
+.cando-section--soft{background:var(--bg-soft)}
+.cando-section--light{background:var(--bg-light)}
+.cando-section-head{max-width:730px;margin-bottom:28px}
+.cando-section-head p{margin-top:10px;color:var(--muted)}
+.cando-eyebrow{display:block;margin:0 0 8px;color:var(--accent);font-size:11px;line-height:1.2;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.lede{font-size:17px;color:#343a3e}
+
+/* Canonieke CanDo buttonstijl, ongewijzigd overgenomen uit stramien 27 */
+.cando-cat-button-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:22px}
+.cando-cat-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 24px;border-radius:999px;font-size:16px;line-height:1.2;font-weight:700;text-decoration:none;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+.cando-cat-button:active{transform:translateY(1px)}
+.cando-cat-button--primary{background:var(--accent);border:1px solid var(--accent);color:#fff!important}
+.cando-cat-button--primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff!important}
+.cando-cat-button--secondary{background:var(--bg-soft);border:1px solid var(--border);color:var(--text)!important}
+.cando-cat-button--secondary:hover{background:#efe4d6;border-color:#efe4d6;color:var(--text)!important}
+.cando-cat-button--dark{background:transparent;border:1px solid rgba(255,255,255,.7);color:#fff!important}
+.cando-cat-button--dark:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* 1. Hero, volvlaks beeld met het antwoord erover */
+.cando-cat-hero{position:relative;min-height:480px;display:flex;align-items:flex-end;overflow:hidden;background:#222}
+.cando-cat-hero__image{position:absolute;inset:0;z-index:0;margin:0;background:#222}
+.cando-cat-hero__image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cando-cat-hero__image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(32,39,43,.88) 0%,rgba(32,39,43,.66) 48%,rgba(32,39,43,.2) 100%)}
+.cando-cat-hero__inner{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:98px 18px 58px}
+.cando-cat-hero__content{max-width:600px}
+.cando-cat-hero p{max-width:540px;color:#fff!important;font-size:17px;line-height:1.6;opacity:.96}
+.cando-cat-hero .cando-cat-button-row{margin-top:26px}
+
+/* 2. Dagelijks recept, dichte strook met grote cijfers */
+.recipe{display:grid;grid-template-columns:.78fr 1.22fr;gap:44px;align-items:start}
+.recipe__intro p{margin-top:10px;color:var(--muted)}
+.recipe__steps{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid var(--accent)}
+.recipe__steps li{padding:20px 22px 20px 0;margin-right:22px;border-right:1px solid var(--border)}
+.recipe__steps li:last-child{border-right:0;margin-right:0;padding-right:0}
+.recipe__steps b{display:block;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:30px;line-height:1;color:var(--accent);margin-bottom:9px;letter-spacing:-.02em}
+.recipe__steps strong{display:block;font-size:15px;margin-bottom:5px;color:var(--text)}
+.recipe__steps span{display:block;font-size:14px;line-height:1.55;color:#414141}
+.recipe__note{margin-top:26px;padding-top:18px;border-top:1px solid var(--border);font-size:15px;color:var(--muted)}
+
+/* 3. Vlekkentabel, breed en scrollend binnen de eigen container */
+.table-intro{max-width:760px;margin:0 0 14px;font-size:15px;line-height:1.6;color:var(--muted)}
+.table-scroll{position:relative;border:1px solid var(--border);border-radius:var(--radius);background:#fff;overflow:hidden}
+.table-scroll__inner{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table-scroll__inner:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+/* Randverloop als scroll-aanwijzing. Alleen daar waar de tabel breder is dan
+   de container, en nooit klikbaar. */
+.table-scroll::after{content:"";position:absolute;top:0;right:0;width:34px;height:100%;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.92));opacity:0}
+@media(max-width:1060px){.table-scroll::after{opacity:1}}
+.stain-table{width:100%;min-width:720px;border-collapse:collapse;font-size:15px}
+.stain-table th,.stain-table td{text-align:left;vertical-align:top;padding:17px 22px;border-bottom:1px solid var(--border)}
+.stain-table thead th{background:var(--bg-soft);font-size:15px;font-weight:700;line-height:1.35;color:var(--text);border-bottom:1px solid #e0d6c8}
+.stain-table thead th span{display:block;margin-top:3px;font-family:Arial,sans-serif;font-size:13px;font-weight:400;color:var(--muted)}
+.stain-table tbody tr:last-child th,.stain-table tbody tr:last-child td{border-bottom:0}
+.stain-table tbody th{width:25%;font-size:16px;font-weight:700;line-height:1.3}
+.stain-table tbody th span{display:block;margin-top:4px;font-family:Arial,sans-serif;font-size:13px;font-weight:400;line-height:1.45;color:var(--muted)}
+.stain-table td{width:37.5%;line-height:1.6;color:#414141}
+.stain-table td.is-lead{background:#fffaf6}
+.stain-table tbody tr:nth-child(even) td.is-lead{background:#fdf6f0}
+.table-hint{margin-top:16px;font-size:15px;line-height:1.6;color:var(--muted)}
+.table-hint strong{color:var(--text)}
+
+/* 4. Doffe vlekken, asymmetrisch paneel met een tekening ernaast */
+/* Blok 4 stond als tekst links en tekening rechts. De tekening is eruit
+   (verbodenlijst B1), dus dit is nu EEN kolom. Geen half lege kolom en
+   geen leeg beeldvlak (B3). */
+.dull{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff}
+.dull__copy{padding:40px 40px 36px;max-width:900px}
+.dull__copy .lede{margin-bottom:20px}
+.dull__slot{margin-top:22px;padding-top:18px;border-top:1px solid var(--border);font-size:15px;line-height:1.65;color:var(--muted)}
+.cause-list{list-style:none;display:grid;gap:18px;margin-top:22px;padding-top:20px;border-top:1px solid var(--border)}
+.cause-list h3{font-size:17px;margin-bottom:5px}
+.cause-list p{font-size:15px;line-height:1.6}
+
+/* 5. Structuur of glad, editorial met foto rechts */
+.split{display:grid;grid-template-columns:1.06fr .94fr;align-items:stretch;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff}
+.split__copy{padding:42px 42px 38px;display:flex;flex-direction:column;justify-content:center}
+.split__copy p+p{margin-top:14px}
+.split__media{min-height:440px;background:var(--bg-warm);overflow:hidden}
+.split__media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.choice-columns{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:30px;padding-top:26px;border-top:1px solid var(--border)}
+.choice-columns h3{font-size:17px;margin-bottom:8px}
+.choice-columns p{font-size:15px;line-height:1.6}
+
+/* 6. Vijf gebruiksregels, donkere band */
+.rules-band{position:relative;background:var(--dark);color:#fff;overflow:hidden}
+.rules-band::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(247,144,30,.11),transparent 46%);pointer-events:none}
+.rules-band .cando-wrap{position:relative;z-index:1}
+.rules-band h2{color:#fff}
+.rules-band .cando-section-head p{color:rgba(255,255,255,.78)}
+.rule-strip{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2)}
+.rule-strip li{padding:20px 18px 20px 0;margin-right:18px;border-right:1px solid rgba(255,255,255,.2)}
+.rule-strip li:last-child{border-right:0;margin-right:0}
+.rule-strip strong{display:block;margin-bottom:5px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:16px;color:#fff}
+.rule-strip span{font-size:13px;line-height:1.5;color:rgba(255,255,255,.74)}
+
+/* 7. De eerlijke grens, twee kolommen plus een route */
+.limit{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff}
+.limit__col{padding:34px 34px 32px}
+.limit__col+.limit__col{border-left:1px solid var(--border);background:var(--bg-light)}
+.limit__col h3{font-size:18px;margin-bottom:14px}
+.clean-list{list-style:none;display:grid;gap:11px}
+.clean-list li{position:relative;padding-left:19px;font-size:15px;line-height:1.55;color:#414141}
+.clean-list li::before{content:"\203A";position:absolute;left:0;top:-1px;color:var(--accent);font-size:18px;font-weight:800}
+.clean-list strong{color:var(--text)}
+.route{margin-top:20px;padding:30px 34px 32px;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);background:var(--bg-soft)}
+.route h3{font-size:20px;margin-bottom:9px}
+.route p{max-width:760px}
+.route .cando-cat-button-row{margin-top:20px}
+
+/* 8. FAQ, ieder vraagstuk een eigen accordeonitem */
+.faq-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:44px;align-items:start}
+.faq-intro p{margin-top:10px;color:var(--muted)}
+.faq-list{display:grid;gap:10px}
+details.faq-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+details.faq-item summary{list-style:none;cursor:pointer;padding:17px 54px 17px 18px;font-size:16px;font-weight:700;line-height:1.35;position:relative}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{content:"+";position:absolute;right:18px;top:15px;width:25px;height:25px;border:1px solid #b8b8b8;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6c6c6c;font-size:18px;line-height:1}
+details.faq-item[open]{border-color:#d8cdbf}
+details.faq-item[open] summary{color:var(--accent);background:#fffaf6}
+details.faq-item[open] summary::after{content:"\2212";background:var(--accent);border-color:var(--accent);color:#fff}
+.faq-answer{padding:0 18px 19px}
+.faq-answer p{font-size:15px;line-height:1.62;color:#414141}
+.faq-answer p+p{margin-top:10px}
+.faq-answer a{color:var(--text);text-decoration:underline;text-underline-offset:3px;font-weight:700}
+
+/* 9. Rustig slot */
+.closing{display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch;background:var(--dark);border-radius:var(--radius);overflow:hidden}
+.closing__content{padding:42px 42px 40px;display:flex;flex-direction:column;justify-content:center}
+.closing h2{color:#fff;max-width:470px}
+.closing p{max-width:490px;margin-top:12px;color:rgba(255,255,255,.84)}
+.closing__image{min-height:320px;background:#2a211c;overflow:hidden}
+.closing__image img{width:100%;height:100%;min-height:320px;object-fit:cover;object-position:center}
+
+@media(max-width:1020px){
+  .recipe,.split,.limit,.faq-layout,.closing{grid-template-columns:1fr}
+  .recipe{gap:28px}
+  .split__media{min-height:340px;order:2}
+  .limit__col+.limit__col{border-left:0;border-top:1px solid var(--border)}
+  .rule-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rule-strip li:nth-child(2n){border-right:0;margin-right:0}
+  .rule-strip li:nth-child(n+3){border-top:1px solid rgba(255,255,255,.2)}
+  .faq-layout{gap:28px}
+  .closing__image,.closing__image img{min-height:240px}
+}
+@media(max-width:760px){
+  .cando-onderhoud h1{font-size:36px}
+  .cando-onderhoud h2{font-size:25px}
+  .cando-section{padding:44px 0}
+  .cando-cat-hero{min-height:420px}
+  .cando-cat-hero__inner{padding:80px 16px 40px}
+  .cando-cat-hero p{font-size:16px}
+  .cando-cat-button-row{flex-direction:column;align-items:stretch}
+  .cando-cat-button{width:100%}
+  .recipe__steps{grid-template-columns:1fr}
+  .recipe__steps li{padding:16px 0;margin-right:0;border-right:0;border-bottom:1px solid var(--border)}
+  .recipe__steps li:last-child{border-bottom:0;padding-bottom:0}
+  .recipe__steps b{font-size:26px}
+  .stain-table caption{padding:16px 18px 0}
+  .stain-table th,.stain-table td{padding:15px 18px}
+  .dull__copy{padding:30px 20px 28px}
+  .split__copy{padding:30px 20px 28px}
+  .split__media{min-height:250px}
+  .choice-columns{grid-template-columns:1fr;gap:24px;margin-top:24px;padding-top:22px}
+  .rule-strip{grid-template-columns:1fr}
+  .rule-strip li{margin-right:0;border-right:0;border-top:1px solid rgba(255,255,255,.2)}
+  .rule-strip li:first-child{border-top:0}
+  .limit__col{padding:28px 20px 26px}
+  .route{padding:26px 20px 28px}
+  .closing__content{padding:30px 22px}
+  .closing__image,.closing__image img{min-height:210px}
+}
+.cando-skip{position:absolute;left:-9999px;top:0;z-index:99;padding:12px 20px;background:var(--accent);color:#fff;font-weight:700;border-radius:0 0 var(--radius) 0}
+.cando-skip:focus{left:0}
+</style>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.cando.eu/nl-nl/"},
+      {"@type":"ListItem","position":2,"name":"Hout","item":"https://www.cando.eu/nl-nl/hout/"},
+      {"@type":"ListItem","position":3,"name":"Werkbladen","item":"https://www.cando.eu/nl-nl/hout/werkbladen/"},
+      {"@type":"ListItem","position":4,"name":"Onderhoud en vlekken","item":"https://www.cando.eu/nl-nl/hout/werkbladen/onderhoud/"}
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Composiet aanrechtblad schoonmaken",
+    "description": "Een composiet werkblad maak je schoon met een keukendoekje en een schoon sopje van afwasmiddel, naspoelen met lauwwarm water en droogmaken met een schone theedoek of keukenpapier. Per vlektype staat hieronder wat werkt op massief composiet en wat op een HPL-toplaag.",
+    "inLanguage": "nl-NL",
+    "image": "https://delihome.getbynder.com/asset/2ff582c8-5b10-4dc8-9f49-428858192f34/medium-JPG/CanDo_Werkblad_Move_Totaal.jpg",
+    "supply": [
+      {"@type":"HowToSupply","name":"Afwasmiddel"},
+      {"@type":"HowToSupply","name":"Een intensieve reiniger voor werkbladen"},
+      {"@type":"HowToSupply","name":"Schoonmaakazijn, alleen op een HPL-toplaag"},
+      {"@type":"HowToSupply","name":"Wasbenzine of terpentine"}
+    ],
+    "tool": [
+      {"@type":"HowToTool","name":"Een melaminespons"},
+      {"@type":"HowToTool","name":"Een keukendoekje"},
+      {"@type":"HowToTool","name":"Een schone droge theedoek of keukenpapier"}
+    ],
+    "step": [
+      {
+        "@type": "HowToSection",
+        "name": "Dagelijks schoonmaken",
+        "url": "https://www.cando.eu/nl-nl/hout/werkbladen/onderhoud/#dagelijks",
+        "itemListElement": [
+          {"@type":"HowToStep","name":"Sopje","text":"Neem het blad af met een keukendoekje en een schoon sopje van afwasmiddel."},
+          {"@type":"HowToStep","name":"Naspoelen","text":"Spoel altijd na met lauwwarm water, zodat er geen zeep- en waterresten achterblijven."},
+          {"@type":"HowToStep","name":"Nadrogen","text":"Maak het blad droog met een schone droge theedoek of met keukenpapier."}
+        ]
+      },
+      {
+        "@type": "HowToSection",
+        "name": "Vet, koffie, thee en rode wijn",
+        "url": "https://www.cando.eu/nl-nl/hout/werkbladen/onderhoud/#vlekken",
+        "itemListElement": [
+          {"@type":"HowToStep","name":"Massief composiet","text":"Laat een intensieve reiniger voor werkbladen of een sopje inweken en ga er daarna overheen met een melaminespons. Spoel na met lauwwarm water en maak het blad droog."},
+          {"@type":"HowToStep","name":"HPL-toplaag","text":"Laat een sopje inweken tot het vuil reageert. Maak een melaminespons licht vochtig, knijp hem uit en wrijf voldoende. Spoel na en maak droog."}
+        ]
+      },
+      {
+        "@type": "HowToSection",
+        "name": "Kalk, de doffe witte of bruine vlekken",
+        "url": "https://www.cando.eu/nl-nl/hout/werkbladen/onderhoud/#doffe-vlekken",
+        "itemListElement": [
+          {"@type":"HowToStep","name":"Massief composiet","text":"Gebruik een intensieve reiniger voor werkbladen met een melaminespons. Blijft de kalk zitten, gebruik dan een sanitairreiniger."},
+          {"@type":"HowToStep","name":"HPL-toplaag","text":"Laat schoonmaakazijn inwerken en ga er daarna overheen met een melaminespons. Laat schoonmaakazijn nooit in contact komen met marmer of hardsteen ernaast."}
+        ]
+      },
+      {
+        "@type": "HowToSection",
+        "name": "Inkt, verf, nicotine en viltstift",
+        "url": "https://www.cando.eu/nl-nl/hout/werkbladen/onderhoud/#vlekken",
+        "itemListElement": [
+          {"@type":"HowToStep","name":"Massief composiet","text":"Breng een intensieve reiniger onverdund aan, laat die 5 minuten inwerken en ga er daarna overheen met een melaminespons. Is dat niet genoeg, gebruik dan wasbenzine of terpentine."},
+          {"@type":"HowToStep","name":"HPL-toplaag","text":"Behandel de vlek direct met wasbenzine of terpentine."}
+        ]
+      },
+      {
+        "@type": "HowToSection",
+        "name": "Hardnekkig vuil dat blijft zitten",
+        "url": "https://www.cando.eu/nl-nl/hout/werkbladen/onderhoud/#vlekken",
+        "itemListElement": [
+          {"@type":"HowToStep","name":"Massief composiet","text":"Gebruik een melaminespons met een intensieve reiniger en laat die een paar minuten inwerken."},
+          {"@type":"HowToStep","name":"HPL-toplaag","text":"Gebruik een melaminespons in een sopje en herhaal het proces. Dit is geen dagelijks onderhoud."}
+        ]
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "nl-NL",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Mag ik schuurmiddel of een schuurspons op mijn werkblad gebruiken?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nee. Harde schuurmiddelen zoals staalwol, schuurpapier of een diamantspons beschadigen het oppervlak van een werkblad permanent. Een melaminespons is iets anders: die gebruik je licht vochtig en uitgeknepen, en die staat juist in het onderhoudsadvies. Schuren of polijsten is ook geen oplossing voor een doffe plek, want dat geeft blijvende glansverschillen. Werk bij een hardnekkige vlek dus met inweken en herhalen, niet met meer kracht."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is schoonmaakazijn veilig op een composiet aanrechtblad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Het onderhoudsadvies voor massief composiet noemt schoonmaakazijn niet. Voor kalk op composiet staat er een intensieve reiniger voor werkbladen met een melaminespons, en bij hardnekkige kalk een sanitairreiniger. Voor een blad met een HPL-toplaag is schoonmaakazijn juist wel het aangewezen middel bij kalk. Laat schoonmaakazijn in beide gevallen nooit in contact komen met marmer of hardsteen ernaast, bijvoorbeeld een stenen vensterbank of achterwand."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Moet ik een werkblad periodiek oliën, impregneren of verzegelen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nee, en dat is bewust. Een blad met een HPL-toplaag heeft geen olie, was of andere periodieke behandeling nodig. Een massief composiet blad hoef je niet te impregneren of te verzegelen, omdat het materiaal niet poreus is en kern en oppervlak hetzelfde zijn. Onderhoudsolie hoort bij een massief houten paneel, dat is een ander product met ander onderhoud."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Waarom moet ik naspoelen en nadrogen na een gewoon sopje?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Naspoelen en nadrogen zijn geen cosmetische stappen. Het naspoelen met lauwwarm water neemt het resterende vuil en de zeepresten mee die anders op het blad achterblijven. Het nadrogen met een schone droge theedoek of keukenpapier haalt de waterresten weg voordat ze kunnen opdrogen. Juist opgedroogde vloeistof is de oorzaak van een groot deel van de vlekken die daarna moeilijk weggaan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat doe ik met een vlek die ik pas dagen later ontdek?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Behandel de vlek als hardnekkig vuil en gun het middel de tijd. Op massief composiet gebruik je een melaminespons met een intensieve reiniger en laat je die een paar minuten inwerken. Op een HPL-toplaag gebruik je een melaminespons in een sopje en herhaal je het proces zo vaak als nodig. Dit is geen dagelijks onderhoud, dus doe het gericht op de plek zelf en spoel daarna goed na."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Geldt dit onderhoudsadvies ook voor een massief houten blad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nee. Dit advies gaat over werkbladen met een HPL-toplaag en over massief composiet van gerecycled glas. Een massief houten paneel is een ander product met een open, onbehandeld oppervlak dat wel een afwerking en periodiek onderhoud vraagt. Gebruik voor zo'n paneel het advies bij de massieve panelen en niet deze vlekkentabel."
+        }
+      }
+    ]
+  }
+]
+</script>
+</head>
+<body>
+<a class="cando-skip" href="#contentarea">Naar de inhoud</a>
+
+<main class="cando-onderhoud" id="contentarea">
+
+  <!-- 1. Hero. Het antwoord staat in de eerste 40 woorden, vóór de opbouw. -->
+  <section class="cando-cat-hero" aria-labelledby="page-title">
+    <figure aria-hidden="true" class="cando-cat-hero__image">
+      <img src="https://delihome.getbynder.com/asset/2ff582c8-5b10-4dc8-9f49-428858192f34/medium-JPG/CanDo_Werkblad_Move_Totaal.jpg" alt="Keuken met een doorlopend werkblad langs het aanrecht" width="1600" height="900">
+    </figure>
+    <div class="cando-cat-hero__inner">
+      <div class="cando-cat-hero__content">
+        <span class="cando-eyebrow" style="color:#FDC689">Onderhoud werkbladen</span>
+        <h1 id="page-title">Composiet aanrechtblad schoonmaken</h1>
+        <p>Een composiet werkblad maak je schoon met een keukendoekje en een schoon sopje van afwasmiddel. Spoel daarna na met lauwwarm water en maak het blad droog met een schone theedoek of keukenpapier. Meer niet.</p>
+        <div class="cando-cat-button-row">
+          <a class="cando-cat-button cando-cat-button--primary" href="#vlekken">Zoek jouw vlek op</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Dagelijks recept. Dichte strook, bewust geen kaartenrij. -->
+  <section class="cando-section" id="dagelijks" aria-labelledby="dagelijks-title">
+    <div class="cando-wrap">
+      <div class="recipe">
+        <div class="recipe__intro">
+          <span class="cando-eyebrow">Dagelijks</span>
+          <h2 id="dagelijks-title">Hoe maak je een werkblad dagelijks schoon?</h2>
+          <p>Het dagelijkse onderhoud is voor een massief composiet blad en voor een blad met een HPL-toplaag precies hetzelfde. Drie stappen, en geen enkele daarvan is over te slaan.</p>
+        </div>
+        <div>
+          <ol class="recipe__steps">
+            <li>
+              <b>01</b>
+              <strong>Sopje</strong>
+              <span>Een keukendoekje met een schoon sopje van afwasmiddel.</span>
+            </li>
+            <li>
+              <b>02</b>
+              <strong>Naspoelen</strong>
+              <span>Altijd naspoelen met lauwwarm water, over het hele vlak.</span>
+            </li>
+            <li>
+              <b>03</b>
+              <strong>Nadrogen</strong>
+              <span>Droogmaken met een schone droge theedoek of keukenpapier.</span>
+            </li>
+          </ol>
+          <p class="recipe__note">Naspoelen en nadrogen zijn geen cosmetische stappen. Het naspoelen neemt het resterende vuil en de zeepresten mee, en het nadrogen haalt de waterresten weg voordat ze kunnen opdrogen. Opgedroogde vloeistof is de oorzaak van een groot deel van de vlekken die daarna moeilijk weggaan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. De vlekkentabel. De kern van de familiepagina. -->
+  <section class="cando-section cando-section--soft" id="vlekken" aria-labelledby="vlekken-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Per vlektype</span>
+        <h2 id="vlekken-title">Welke vlek vraagt welke aanpak?</h2>
+        <p>Een massief composiet blad en een blad met een HPL-toplaag hebben niet hetzelfde oppervlak, en dus ook niet altijd hetzelfde middel. Zoek in de linkerkolom je vlek op en lees daarnaast wat er voor jouw blad geldt.</p>
+      </div>
+
+      <p class="table-intro" id="vlekken-toelichting">Vlekken per type en per materiaal, uit de onderhoudsadviezen van de leverancier. Spoel na elke behandeling na met lauwwarm water en maak het blad droog.</p>
+
+      <div class="table-scroll">
+        <div class="table-scroll__inner" tabindex="0" role="region" aria-labelledby="vlekken-title">
+          <table class="stain-table" aria-describedby="vlekken-toelichting">
+            <thead>
+              <tr>
+                <th scope="col">Vlektype</th>
+                <th scope="col">Massief composiet<span>Signature, gerecycled glas</span></th>
+                <th scope="col">HPL-toplaag<span>Essential en Advance</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Vet, koffie, thee en rode wijn<span>Glimmende of bruine vlekken</span></th>
+                <td class="is-lead">Laat een intensieve reiniger voor werkbladen of een sopje inweken en ga er daarna overheen met een melaminespons.</td>
+                <td>Laat een sopje inweken tot het vuil reageert. Maak een melaminespons licht vochtig, knijp hem uit en wrijf voldoende.</td>
+              </tr>
+              <tr>
+                <th scope="row">Kalk<span>Doffe witte of bruine vlekken</span></th>
+                <td class="is-lead">Een intensieve reiniger voor werkbladen met een melaminespons. Blijft de kalk zitten, gebruik dan een sanitairreiniger.</td>
+                <td>Laat schoonmaakazijn inwerken en ga er daarna overheen met een melaminespons.</td>
+              </tr>
+              <tr>
+                <th scope="row">Inkt, verf, nicotine en viltstift</th>
+                <td class="is-lead">Breng een intensieve reiniger onverdund aan, laat die 5 minuten inwerken en ga er daarna overheen met een melaminespons. Is dat niet genoeg, gebruik dan wasbenzine of terpentine.</td>
+                <td>Behandel de vlek direct met wasbenzine of terpentine.</td>
+              </tr>
+              <tr>
+                <th scope="row">Hardnekkig vuil<span>Wat na de eerste ronde blijft zitten</span></th>
+                <td class="is-lead">Een melaminespons met een intensieve reiniger, een paar minuten laten inwerken.</td>
+                <td>Een melaminespons in een sopje, en het proces herhalen. Dit is geen dagelijks onderhoud.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="table-hint"><strong>Twee dingen die altijd gelden.</strong> Een melaminespons gebruik je licht vochtig en uitgeknepen, nooit kletsnat. En gebruik nooit staalwol, schuurpapier of een diamantspons: die beschadigen het oppervlak permanent. Werkt schoonmaakazijn op je HPL-blad, houd het dan weg bij marmer of hardsteen ernaast, zoals een stenen vensterbank of achterwand.</p>
+    </div>
+  </section>
+
+  <!-- 4. Doffe vlekken. Omkaderd paneel, niet nog een kaartenrij. Hier stond een
+       tekening rechts; die is eruit (B1). Zie WEGGEHAALD in het kopcommentaar. -->
+  <section class="cando-section" id="doffe-vlekken" aria-labelledby="doffe-title">
+    <div class="cando-wrap">
+      <div class="dull">
+        <div class="dull__copy">
+          <span class="cando-eyebrow">Doffe plekken</span>
+          <h2 id="doffe-title">Waar komen doffe vlekken op een composiet aanrechtblad vandaan?</h2>
+          <p class="lede">Doffe vlekken op een composiet aanrechtblad hebben bijna altijd een van twee oorzaken: kalkaanslag uit het leidingwater, of glansverschil doordat één klein vlakje intensiever behandeld is dan de rest van het blad.</p>
+          <ul class="cause-list">
+            <li>
+              <h3>Kalkaanslag</h3>
+              <p>Kalk laat doffe witte of bruine plekken achter, vaak rond de spoelbak en de kraan. Behandel die plek met een intensieve reiniger voor werkbladen en een melaminespons, en pak hardnekkige kalk aan met een sanitairreiniger. Spoel daarna na met lauwwarm water en maak het blad droog, want vloeistof die opdroogt is precies wat je wilt voorkomen.</p>
+            </li>
+            <li>
+              <h3>Glansverschil na een intensieve behandeling</h3>
+              <p>Behandel je op een massief composiet blad een klein vlakje intensief, dan kan daar glansverschil ontstaan. De plek is dan schoon, maar hij glanst anders dan het blad eromheen. Werk daarom altijd over een ruimer oppervlak en met gelijke druk, zodat het verschil niet op één plek blijft staan.</p>
+            </li>
+          </ul>
+          <p class="dull__slot">Bij allebei de oorzaken werkt hetzelfde principe: een doffe plek valt op door het verschil met het blad eromheen, niet door de plek zelf. Behandel je een ruimer vlak gelijkmatig, dan is er geen rand meer om het verschil aan af te lezen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Structuur of glad. Onderhoudsfeit en aankoopargument in één blok, beide routes positief. -->
+  <section class="cando-section cando-section--light" id="structuur" aria-labelledby="structuur-title">
+    <div class="cando-wrap">
+      <div class="split">
+        <div class="split__copy">
+          <span class="cando-eyebrow">Decor en onderhoud</span>
+          <h2 id="structuur-title">Vraagt een structuurdecor meer onderhoud dan een glad decor?</h2>
+          <p class="lede">Ja. Bij een structuuroppervlak blijft meer vuil achter in de groeven van het decor. Een structuurdecor vraagt daarom intensiever onderhoud dan een glad decor: goed naspoelen met schoon water en daarna droogwrijven.</p>
+          <p>Dat verschil is klein in tijd en groot in effect, en het is precies het soort ding dat je liever vóór je bestelling weet dan erna. Allebei de routes zijn goed, ze vragen alleen iets anders van je.</p>
+
+          <div class="choice-columns">
+            <div>
+              <h3>Kies een structuurdecor als</h3>
+              <p>je de houtnerf wilt zien én voelen. Het decor krijgt daarmee diepte die een glad oppervlak niet heeft. Reken op iets langer naspoelen en droogwrijven, vooral op de plekken waar je snijdt en kookt.</p>
+            </div>
+            <div>
+              <h3>Kies een glad decor als</h3>
+              <p>je het blad in één haal wilt kunnen afnemen. Het vuil blijft nergens in hangen, dus het dagelijkse sopje is genoeg. Bij massief composiet gaat die keuze niet over structuur maar over Polished of Velvet: op de matte uitvoering vallen vingerafdrukken, waterdruppels en strepen minder op.</p>
+            </div>
+          </div>
+        </div>
+        <div class="split__media">
+          <img loading="lazy" src="https://delihome.getbynder.com/asset/16862518-24e7-48db-bd1c-5d0c961944dd/medium-JPG/CanDo_Werkblad_Quiet-Oak_Detail_Rand.jpg" alt="Detail van de rand van een werkblad met een houtdecor met zichtbare nerf" width="900" height="675">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. De vijf gebruiksregels. Donkere band, koud leesbaar, staat los van de rest. -->
+  <section class="cando-section rules-band" id="gebruiksregels" aria-labelledby="regels-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Vijf regels</span>
+        <h2 id="regels-title">Welke vijf regels houden een werkblad goed?</h2>
+        <p>Deze vijf regels staan in beide onderhoudsadviezen, en ze gelden voor een massief composiet blad en een blad met een HPL-toplaag hetzelfde. Ze voorkomen het grootste deel van de vlekken uit de tabel hierboven.</p>
+      </div>
+      <ul class="rule-strip" aria-label="Vijf gebruiksregels voor werkbladen">
+        <li><strong>Niets laten opdrogen</strong><span>Laat vloeistoffen nooit opdrogen op het blad en laat vet of voedingsmiddelen niet onnodig lang liggen.</span></li>
+        <li><strong>Altijd een onderzetter</strong><span>Een hete pan kan een brandplek geven, ook op massief composiet.</span></li>
+        <li><strong>Altijd een snijplank</strong><span>Snijd nooit direct op het blad, hoe hard het oppervlak ook aanvoelt.</span></li>
+        <li><strong>Geen agressieve reinigers</strong><span>Geen verfafbijt, geen kwast-, metaal- of ovenreiniger, geen chloor en geen gootsteenontstopper.</span></li>
+        <li><strong>Schoon water, dan droog</strong><span>Reinig met schoon water en maak het blad daarna droog.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. De eerlijke grens. Eerst wat wel, dan wat niet, dan de route. -->
+  <section class="cando-section" id="repareren" aria-labelledby="repareren-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">De grens</span>
+        <h2 id="repareren-title">Wat is er aan een beschadigd aanrechtblad te repareren?</h2>
+        <p>Een vlek haal je er bijna altijd uit. Schade in de toplaag niet. Een snijspoor, een brandplek of een kras van staalwol blijft zitten, en dat is bij deze bladen ook niet bij te werken. Beter dat je dat nu weet dan na een middag schuren.</p>
+      </div>
+
+      <div class="limit">
+        <div class="limit__col">
+          <h3>Dit krijg je eruit</h3>
+          <ul class="clean-list">
+            <li><strong>Vet, koffie, thee en rode wijn.</strong> Inweken en daarna een melaminespons.</li>
+            <li><strong>Kalk en de doffe plekken die daarbij horen.</strong> Een intensieve reiniger, en bij hardnekkige kalk een sanitairreiniger.</li>
+            <li><strong>Inkt, verf, nicotine en viltstift.</strong> Een intensieve reiniger of wasbenzine of terpentine.</li>
+            <li><strong>Glansverschil na een plaatselijke behandeling.</strong> Behandel een ruimer vlak met gelijke druk, dan valt het verschil weg.</li>
+            <li><strong>Vuil dat is opgedroogd.</strong> Herhaal het proces en geef het middel de tijd.</li>
+          </ul>
+        </div>
+        <div class="limit__col">
+          <h3>Dit blijft zitten</h3>
+          <ul class="clean-list">
+            <li><strong>Een snijspoor.</strong> Snijden gaat door de toplaag heen, en die komt niet terug.</li>
+            <li><strong>Een brandplek van een hete pan.</strong> Ook bij massief composiet kunnen langdurig hoge temperaturen het materiaal aantasten.</li>
+            <li><strong>Een kras van staalwol, schuurpapier of een diamantspons.</strong> Die beschadigen het oppervlak permanent.</li>
+            <li><strong>Stootschade aan de rand.</strong> Bij een massief composiet blad zijn de randen daar gevoeliger voor.</li>
+            <li><strong>Wat je met schuren of polijsten probeert te herstellen.</strong> De toplaag mag nooit geschuurd of gepolijst worden, want dat geeft blijvende glansverschillen.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="route">
+        <h3>En als de schade er eenmaal is?</h3>
+        <p>Dan vervang je het blad, niet de keuken. Een nieuw blad wordt op maat gezaagd voor je bestaande onderkasten, met de uitsparingen voor je kraan, kookplaat en spoelbak er al in. Het zagen en frezen is daarmee al gedaan, dus wat er voor jou overblijft is tillen, plaatsen, afkitten en aansluiten. Dat doe je met zijn tweeën in een halve dag.</p>
+        <div class="cando-cat-button-row">
+          <a class="cando-cat-button cando-cat-button--primary" href="/nl-nl/hout/hout-op-maat/werkbladen-op-maat/">Bekijk werkbladen op maat</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ. Elke vraag een eigen item, minimaal vier zinnen antwoord. -->
+  <section class="cando-section cando-section--soft" id="vragen" aria-labelledby="faq-title">
+    <div class="cando-wrap">
+      <div class="faq-layout">
+        <div class="faq-intro">
+          <span class="cando-eyebrow">Veelgestelde vragen</span>
+          <h2 id="faq-title">Nog iets over onderhoud weten?</h2>
+          <p>Alleen vragen die echt over het schoonmaken en verzorgen van een werkblad gaan. Over maten, series en op maat bestellen lees je verder op de overzichtspagina.</p>
+        </div>
+        <div class="faq-list">
+          <details name="faq-onderhoud" class="faq-item">
+            <summary>Mag ik schuurmiddel of een schuurspons op mijn werkblad gebruiken?</summary>
+            <div class="faq-answer">
+              <p>Nee. Harde schuurmiddelen zoals staalwol, schuurpapier of een diamantspons beschadigen het oppervlak van een werkblad permanent. Een melaminespons is iets anders: die gebruik je licht vochtig en uitgeknepen, en die staat juist in het onderhoudsadvies. Schuren of polijsten is ook geen oplossing voor een doffe plek, want dat geeft blijvende glansverschillen. Werk bij een hardnekkige vlek dus met inweken en herhalen, niet met meer kracht.</p>
+            </div>
+          </details>
+          <details name="faq-onderhoud" class="faq-item">
+            <summary>Is schoonmaakazijn veilig op een composiet aanrechtblad?</summary>
+            <div class="faq-answer">
+              <p>Het onderhoudsadvies voor massief composiet noemt schoonmaakazijn niet. Voor kalk op composiet staat er een intensieve reiniger voor werkbladen met een melaminespons, en bij hardnekkige kalk een sanitairreiniger. Voor een blad met een HPL-toplaag is schoonmaakazijn juist wel het aangewezen middel bij kalk. Laat schoonmaakazijn in beide gevallen nooit in contact komen met marmer of hardsteen ernaast, bijvoorbeeld een stenen vensterbank of achterwand.</p>
+            </div>
+          </details>
+          <details name="faq-onderhoud" class="faq-item">
+            <summary>Moet ik een werkblad periodiek oliën, impregneren of verzegelen?</summary>
+            <div class="faq-answer">
+              <p>Nee, en dat is bewust. Een blad met een HPL-toplaag heeft geen olie, was of andere periodieke behandeling nodig. Een massief composiet blad hoef je niet te impregneren of te verzegelen, omdat het materiaal niet poreus is en kern en oppervlak hetzelfde zijn. Onderhoudsolie hoort bij een <a href="/nl-nl/hout/panelen/massieve-panelen/">massief houten paneel</a>, dat is een ander product met ander onderhoud.</p>
+            </div>
+          </details>
+          <details name="faq-onderhoud" class="faq-item">
+            <summary>Waarom moet ik naspoelen en nadrogen na een gewoon sopje?</summary>
+            <div class="faq-answer">
+              <p>Naspoelen en nadrogen zijn geen cosmetische stappen. Het naspoelen met lauwwarm water neemt het resterende vuil en de zeepresten mee die anders op het blad achterblijven. Het nadrogen met een schone droge theedoek of keukenpapier haalt de waterresten weg voordat ze kunnen opdrogen. Juist opgedroogde vloeistof is de oorzaak van een groot deel van de vlekken die daarna moeilijk weggaan.</p>
+            </div>
+          </details>
+          <details name="faq-onderhoud" class="faq-item">
+            <summary>Wat doe ik met een vlek die ik pas dagen later ontdek?</summary>
+            <div class="faq-answer">
+              <p>Behandel de vlek als hardnekkig vuil en gun het middel de tijd. Op massief composiet gebruik je een melaminespons met een intensieve reiniger en laat je die een paar minuten inwerken. Op een HPL-toplaag gebruik je een melaminespons in een sopje en herhaal je het proces zo vaak als nodig. Dit is geen dagelijks onderhoud, dus doe het gericht op de plek zelf en spoel daarna goed na.</p>
+            </div>
+          </details>
+          <details name="faq-onderhoud" class="faq-item">
+            <summary>Geldt dit onderhoudsadvies ook voor een massief houten blad?</summary>
+            <div class="faq-answer">
+              <p>Nee. Dit advies gaat over werkbladen met een HPL-toplaag en over massief composiet van gerecycled glas. Een massief houten paneel is een ander product met een open, onbehandeld oppervlak dat wel een afwerking en periodiek onderhoud vraagt. Gebruik voor zo'n paneel het advies bij de <a href="/nl-nl/hout/panelen/massieve-panelen/">massieve panelen</a> en niet deze vlekkentabel.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Rustig slot. Eén stap verder, geen tweede hub. -->
+  <section class="cando-section" aria-labelledby="vervolg-title">
+    <div class="cando-wrap">
+      <div class="closing">
+        <div class="closing__content">
+          <span class="cando-eyebrow">Welk blad heb jij?</span>
+          <h2 id="vervolg-title">Weet je niet zeker waar je blad van gemaakt is?</h2>
+          <p>Het onderhoud verschilt tussen een HPL-toplaag en massief composiet, en dat verschil zie je niet altijd aan de bovenkant. Op de overzichtspagina van werkbladen staat per serie waar het blad uit is opgebouwd, zodat je weet welke kolom van de tabel voor jou geldt.</p>
+          <div class="cando-cat-button-row">
+            <a class="cando-cat-button cando-cat-button--primary" href="/nl-nl/hout/werkbladen/">Bekijk alle werkbladen</a>
+            <a class="cando-cat-button cando-cat-button--dark" href="/nl-nl/zoek-uw-winkel/">Zoek een verkooppunt</a>
+          </div>
+        </div>
+        <div class="closing__image">
+          <img loading="lazy" src="https://delihome.getbynder.com/asset/0ac870db-2dec-465e-9511-c176b34d7527/medium-JPG/CanDo_Werkblad_Frame_Detail_Spoelbak.jpg" alt="Werkblad met een vlak ingebouwde spoelbak en kraan" width="900" height="675">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

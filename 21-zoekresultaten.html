@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>Zoeken | CanDo</title>
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--border:#e5ddd3;--soft:#f7f2ea;--soft2:#fbfaf7;--radius:8px;--shadow:0 18px 40px rgba(18,27,33,.14)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}.page{overflow-x:hidden;min-height:100vh}
+.btn,.ov-name,.ov-head,.sb-all,.searchbar b{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+/* Faux zoekbalk-zone (zoals in de header) met de overlay eronder */
+.searchbar{position:relative;z-index:30;background:#fff;border-bottom:1px solid var(--border);padding:16px 0}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 18px}
+.sb-inner{max-width:none}
+.search{display:flex;align-items:center;gap:11px;background:#fff;border:1.5px solid var(--accent);border-radius:999px;padding:0 18px;min-height:52px;box-shadow:0 4px 14px rgba(247,144,30,.1)}
+.search svg{flex:none;color:var(--accent)}
+.search input{border:0;outline:0;flex:1;font-size:16px;background:transparent}
+.search .clear{border:0;background:var(--soft);color:var(--muted);width:26px;height:26px;border-radius:50%;font-size:15px;cursor:pointer;flex:none}
+/* Overlay-paneel dat uit de balk klapt */
+.overlay{position:absolute;z-index:31;top:calc(100% - 8px);left:50%;transform:translateX(-50%);width:min(1084px,calc(100% - 36px));background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.ov-group{padding:6px 0}
+.ov-group+.ov-group{border-top:1px solid var(--border)}
+.ov-head{display:flex;align-items:center;justify-content:space-between;padding:12px 18px 6px;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.ov-head span{color:#a9a29a;font-weight:700}
+.ov-row{display:flex;align-items:center;gap:13px;padding:9px 18px;text-decoration:none;color:var(--text)}
+.ov-row:hover{background:var(--soft2)}
+.ov-thumb{flex:0 0 auto;width:44px;height:44px;border-radius:7px;overflow:hidden;background:var(--soft);border:1px solid var(--border)}
+.ov-thumb img{width:100%;height:100%;object-fit:cover}
+.ov-b{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.ov-name{font-size:15px;font-weight:700;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ov-row:hover .ov-name{color:var(--accent-dark)}
+.ov-sub{font-size:12px;color:var(--muted)}
+.ov-arrow{flex:0 0 auto;color:#c9c2b8;font-size:18px}
+.ov-row:hover .ov-arrow{color:var(--accent)}
+.sb-all{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px;background:var(--soft);color:var(--accent-dark);font-weight:700;font-size:14px;text-decoration:none;border-top:1px solid var(--border)}
+.sb-all:hover{background:#f0e6d8}
+/* Gedimde pagina erachter */
+.backdrop{position:fixed;inset:0;z-index:20;background:rgba(18,27,33,.28)}
+.hint{position:relative;z-index:10;max-width:1120px;margin:0 auto;padding:26px 18px;color:#9aa0a0;font-size:13px}
+@media(min-width:760px){.overlay{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}.ov-group{padding:10px 0}.ov-group+.ov-group{border-top:0;border-left:1px solid var(--border)}.sb-all{grid-column:1 / -1}}
+@media(max-width:520px){.overlay{width:calc(100% - 24px)}.wrap{padding:0 12px}}
+</style>
+</head>
+<body>
+<!-- ZOEKEN (noindex). Compacte suggesties-overlay die uit de zoekbalk klapt: producten, inspiratie en hulp & advies. Geen prijzen. Geen header/footer. -->
+<main class="page">
+  <div class="searchbar">
+    <div class="wrap">
+      <div class="sb-inner">
+        <div class="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <input type="search" value="lattenwand" aria-label="Zoeken" autofocus>
+          <button class="clear" aria-label="Wissen">✕</button>
+        </div>
+      </div>
+    </div>
+    <!-- Overlay met suggesties -->
+    <div class="overlay" role="listbox" aria-label="Zoeksuggesties">
+      <div class="ov-group">
+        <div class="ov-head">Producten <span>18</span></div>
+        <a class="ov-row" href="/wand-plafond/lattenwand/"><span class="ov-thumb"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Akoestische wandpanelen in copper oak achter een zithoek" loading="lazy"></span><span class="ov-b"><span class="ov-name">Decowall Acoustic natuur eiken 260x30cm</span><span class="ov-sub">Wand &amp; plafond · lattenwand</span></span><span class="ov-arrow">›</span></a>
+        <a class="ov-row" href="/wand-plafond/lattenwand/"><span class="ov-thumb"><img src="https://www.cando.eu/media/.renditions/wysiwyg/small_JPG-CanDo_Decowall_acoustic-Blend_Natuur_eiken_Woonkamer_1_Close-up_1_1.jpg" alt="Close-up van akoestische wandpanelen in natuur eiken" loading="lazy"></span><span class="ov-b"><span class="ov-name">Decowall Essential natuur eiken 260x30cm</span><span class="ov-sub">Wand &amp; plafond · lattenwand</span></span><span class="ov-arrow">›</span></a>
+        <a class="ov-row" href="/wand-plafond/lattenwand/"><span class="ov-thumb"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Witte vilten wandpanelen met golfpatroon bij een zithoek" loading="lazy"></span><span class="ov-b"><span class="ov-name">Decowall Acoustic Tile natuur eiken 50x50cm</span><span class="ov-sub">Wand &amp; plafond · lattenwand</span></span><span class="ov-arrow">›</span></a>
+      </div>
+      <div class="ov-group">
+        <div class="ov-head">Inspiratie <span>4</span></div>
+        <a class="ov-row" href="/inspiratie/lattenwand/"><span class="ov-thumb"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Witte vilten wandpanelen met golfpatroon bij een zithoek" loading="lazy"></span><span class="ov-b"><span class="ov-name">Warmte met een lattenwand</span><span class="ov-sub">Project · van een klant thuis</span></span><span class="ov-arrow">›</span></a>
+        <a class="ov-row" href="/inspiratie/lattenwand/"><span class="ov-thumb"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Akoestische wandpanelen in copper oak achter een zithoek" loading="lazy"></span><span class="ov-b"><span class="ov-name">Een lattenwand in de woonkamer</span><span class="ov-sub">Inspiratie · sfeer &amp; akoestiek</span></span><span class="ov-arrow">›</span></a>
+      </div>
+      <div class="ov-group">
+        <div class="ov-head">Hulp &amp; advies <span>2</span></div>
+        <a class="ov-row" href="/hulp-en-advies/lattenwand-monteren/"><span class="ov-thumb"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Witte vilten wandpanelen met golfpatroon bij een zithoek" loading="lazy"></span><span class="ov-b"><span class="ov-name">Een lattenwand monteren, stap voor stap</span><span class="ov-sub">Gids · 6 min lezen</span></span><span class="ov-arrow">›</span></a>
+        <a class="ov-row" href="/keuzehulp/lattenwand/"><span class="ov-thumb"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Akoestische wandpanelen in copper oak achter een zithoek" loading="lazy"></span><span class="ov-b"><span class="ov-name">Welke lattenwand past bij jou?</span><span class="ov-sub">Keuzehulp · lattenwand</span></span><span class="ov-arrow">›</span></a>
+      </div>
+      <a class="sb-all" href="/zoeken/?q=lattenwand">Alle 24 resultaten voor "lattenwand" bekijken →</a>
+    </div>
+  </div>
+  <div class="hint">De zoeksuggesties verschijnen terwijl je typt. Kies een suggestie of bekijk alle resultaten.</div>
+  <div class="backdrop"></div>
+</main>
+</body>
+</html>

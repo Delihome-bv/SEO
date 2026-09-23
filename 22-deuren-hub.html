@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deuren van CanDo, voor binnen en buiten | CanDo</title>
+<meta name="description" content="CanDo heeft binnendeuren en buitendeuren in elke woonstijl. Kies je deur, maak 'm compleet met beslag en kozijn, of laat 'm plaatsen met de CanDo services.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--beige:#FDC689;--dark:#121b21;--border:#e5ddd3;--soft:#f7f2ea;--soft2:#fbfaf7;--radius:8px;--shadow:0 10px 24px rgba(18,27,33,.05)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}.page{overflow-x:hidden}
+h1,h2,h3,.btn,.eyebrow{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 18px}
+section{padding:40px 0}.soft{background:var(--soft)}.measure{max-width:720px}
+h1{margin:0 0 12px;font-size:36px;line-height:1.05;letter-spacing:-.025em}
+h2{margin:0 0 12px;font-size:28px;letter-spacing:-.02em}h3{margin:0 0 8px;font-size:19px}
+p{margin:0;color:#414141;font-size:16px;line-height:1.72}p+p{margin-top:14px}
+.eyebrow{display:block;margin:0 0 12px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.crumbs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px;color:#8c8c8c;font-size:12px}
+.crumbs a{color:#8c8c8c}.crumbs a:hover{color:var(--accent)}.crumbs span{color:#b5b5b5}
+.head{max-width:720px;margin-bottom:26px}.head p{margin-top:10px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;border:1.5px solid transparent;cursor:pointer;transition:.18s ease}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(247,144,30,.15)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-secondary{background:var(--soft);border-color:var(--border);color:var(--text)}
+.btn-secondary:hover{background:#efe3d3}
+.btn-tertiary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-tertiary:hover{border-color:var(--accent);color:var(--accent)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+/* Hero */
+.hero{position:relative;min-height:52vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
+.hero__bg{position:absolute;inset:0}.hero__bg img{width:100%;height:100%;object-fit:cover;opacity:.6}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,27,33,.9),rgba(18,27,33,.42))}
+.hero__b{position:relative;z-index:2;padding:70px 22px 46px;max-width:1120px;margin:0 auto;width:100%}
+.hero h1{color:#fff;max-width:640px}.hero .eyebrow{color:var(--beige)}.hero p{color:#e9e9e7;max-width:560px}
+.hero .btn-tertiary{border-color:rgba(255,255,255,.6);color:#fff}
+.hero .btn-tertiary:hover{border-color:var(--beige);color:var(--beige)}
+/* Router-tegels Binnen/Buiten */
+.routes{display:grid;gap:18px;grid-template-columns:1fr}
+.route{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:280px;border-radius:var(--radius);overflow:hidden;color:#fff;text-decoration:none;box-shadow:var(--shadow)}
+.route img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.route:hover img{transform:scale(1.05)}
+.route::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,27,33,0) 30%,rgba(18,27,33,.55) 60%,rgba(18,27,33,.92) 100%)}
+.route__b{position:relative;z-index:2;padding:26px}
+.route h3{color:#fff;font-size:24px;margin-bottom:6px}
+.route h3::after{content:" →";color:var(--beige)}
+.route p{color:#ececeb;font-size:14px;line-height:1.55;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+/* Content twee-koloms */
+.twocol{display:grid;gap:24px;grid-template-columns:1fr}
+.twocol h2{font-size:22px}
+/* Service-tegels */
+.svc{display:grid;gap:16px;grid-template-columns:1fr}
+.svctile{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:210px;border-radius:var(--radius);overflow:hidden;color:#fff;text-decoration:none;box-shadow:var(--shadow)}
+.svctile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.svctile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,27,33,.15) 20%,rgba(18,27,33,.88) 100%)}
+.svctile__b{position:relative;z-index:2;padding:22px}
+.svctile .lbl{display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--beige);margin-bottom:6px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.svctile h3{color:#fff;font-size:19px;margin:0}
+.svctile h3::after{content:" →";color:var(--beige)}
+/* Brochure-band */
+.broch{display:grid;gap:0;grid-template-columns:1fr;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.broch__img{min-height:220px;background:var(--soft2)}.broch__img img{width:100%;height:100%;object-fit:cover}
+.broch__b{padding:28px}
+.checks{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:11px}
+.checks li{position:relative;padding-left:30px;font-size:15px;color:#3d3d3d}
+.checks li::before{content:"✓";position:absolute;left:0;top:-1px;width:21px;height:21px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+/* FAQ */
+.faq details{border:1px solid var(--border);border-radius:var(--radius);background:#fff;margin-bottom:12px;box-shadow:var(--shadow)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 52px 18px 20px;position:relative;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--accent);font-weight:400}
+.faq details[open] summary::after{content:"\2212"}
+.faq .a{padding:0 20px 20px}.faq .a p{font-size:15px}
+.faq .a a{color:var(--accent-dark);font-weight:700}
+@media(min-width:820px){section{padding:56px 0}h1{font-size:46px}.hero{min-height:58vh}.hero__b{padding:104px 24px 58px}.routes{grid-template-columns:1fr 1fr}.twocol{grid-template-columns:1fr 1fr}.svc{grid-template-columns:1fr 1fr}.broch{grid-template-columns:1fr 380px}.broch__img{order:2}}
+@media(max-width:520px){.btn{width:100%}}
+</style>
+</head>
+<body>
+<!-- DEUREN CATEGORIE-HUB (GOUD). Omgezet uit de live deuren-hub. Geen globale header/footer (Magento). -->
+<main class="page">
+  <section class="hero">
+    <div class="hero__bg"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Schuifdeurkast op maat met omlijste eiken deuren"></div>
+    <div class="hero__b">
+      <nav class="crumbs" aria-label="Kruimelpad" style="color:#d8dbda"><a href="/" style="color:#d8dbda">Home</a><span style="color:#9aa0a0">›</span>Deuren</nav>
+      <span class="eyebrow">Deuren</span>
+      <h1>Een deur die past bij jouw huis en stijl</h1>
+      <p>Binnendeuren en buitendeuren in elke woonstijl. Kies jouw deur, maak 'm compleet met beslag en kozijn, en laat 'm desgewenst plaatsen door een CanDo vakman.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="/deuren/binnendeuren/">Bekijk binnendeuren</a><a class="btn btn-tertiary" href="/deuren/buitendeuren/">Bekijk buitendeuren</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head measure">
+        <p>De sfeer van jouw huis en jouw persoonlijke stijl bepalen mede de keuze voor een binnendeur of buitendeur. CanDo heeft deuren in verschillende stijlen waarmee je volop kunt variëren en combineren. Maak je deur compleet met bijbehorend deurbeslag, kozijnen en lijstwerk, en bekijk het assortiment online of bij een CanDo verkooppunt bij jou in de buurt.</p>
+      </div>
+      <div class="routes">
+        <a class="route" href="/deuren/binnendeuren/"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Binnendeuren" loading="lazy"><div class="route__b"><h3>Binnendeuren</h3><p>Kies een binnendeur die bij de stijl van jouw interieur past. Ga jij voor landelijk, industrieel, klassiek of modern?</p></div></a>
+        <a class="route" href="/deuren/buitendeuren/"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="Buitendeuren" loading="lazy"><div class="route__b"><h3>Buitendeuren</h3><p>Voordeuren en achterdeuren die perfect bij de architectuur van jouw huis passen. Creëer een gastvrije en stijlvolle entree.</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="twocol">
+        <div>
+          <span class="eyebrow">Alles voor jouw deur</span>
+          <h2>CanDo heeft alles voor jouw deur</h2>
+          <p>Nieuwe deur uitkiezen? Bepaal dan eerst jouw woonstijl. Ons deurenassortiment bestaat uit modellen in elke woonstijl. Een statige voordeur of een industriële schuifdeur? Bij CanDo vind je alles voor jouw deur. Maak je deur compleet met bijpassend deurbeslag en zorg voor een goede tochtwering.</p>
+        </div>
+        <div>
+          <span class="eyebrow">Stijl, comfort en gemak</span>
+          <h2>Precies de deur die je voor ogen hebt</h2>
+          <p>De deuren in ons assortiment kenmerken zich door stijl, comfort en gemak. Met diverse series en modellen met subtiele verschillen vind je bij CanDo altijd een deur die er precies uitziet zoals jij wenst. Met bijpassend deurbeslag maak je jouw deur helemaal veilig en af. Bij buitendeuren kies je uit een Traditioneel of Comfort buitendeur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head measure">
+        <span class="eyebrow">De service van CanDo</span>
+        <h2>Zelf plaatsen, of laten doen</h2>
+        <p>De deuren en toebehoren van CanDo zijn ontwikkeld om zelf te monteren. Zelfs met weinig technische kennis is het plaatsen van een binnendeur of buitendeur goed te doen. Liever niet zelf inmeten, aflakken of monteren? Ga dan voor één van de CanDo deuren services.</p>
+      </div>
+      <div class="svc">
+        <a class="svctile" href="/deuren/services/"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Services voor jouw deur" loading="lazy"><div class="svctile__b"><span class="lbl">Services voor jouw deur</span><h3>Laat het glas monteren of je deur aflakken in een kleur naar keuze</h3></div></a>
+        <a class="svctile" href="/deuren/all-inclusive-voordeuren/"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="All Inclusive service voordeuren" loading="lazy"><div class="svctile__b"><span class="lbl">All Inclusive voordeuren</span><h3>Inmeten, monteren en aflakken door een CanDo vakman</h3></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="broch">
+        <div class="broch__b">
+          <span class="eyebrow">Brochure</span>
+          <h2 style="font-size:24px">Binnendeuren brochure downloaden</h2>
+          <p>Nog aan het oriënteren of behoefte aan inspiratie? Bekijk de CanDo binnendeuren brochure en laat ons je helpen bij het samenstellen van de perfecte binnendeur.</p>
+          <ul class="checks">
+            <li>80 pagina's vol inspiratie</li>
+            <li>Met bijpassend hang- en sluitwerk, kozijnen en tochtwering</li>
+            <li>Meer informatie over onze series en bijpassende services</li>
+          </ul>
+          <div class="btn-row"><a class="btn btn-primary" href="/brochure/">Gratis brochure aanvragen</a></div>
+        </div>
+        <div class="broch__img"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="CanDo binnendeuren brochure"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Veelgestelde vragen</span><h2>Meer weten over onze deuren?</h2></div>
+      <div class="faq">
+        <details open>
+          <summary>Kan ik een deur op maat laten maken?</summary>
+          <div class="a"><p>We leveren diverse standaardmaten voor onze binnendeuren en buitendeuren, en het grootste deel is in te korten. Voor buitendeuren bieden we de CanDo All Inclusive service aan: we meten de deur digitaal bij jou in en zorgen voor een perfecte pasvorm. Na het op maat maken nemen we ook het afhangen voor onze rekening.</p></div>
+        </details>
+        <details>
+          <summary>Worden de deuren met of zonder glas geleverd?</summary>
+          <div class="a"><p>Een deel van ons assortiment wordt met voorgemonteerd glas geleverd. Wordt het glas los meegeleverd? Maak dan gebruik van de <a href="/deuren/services/">CanDo glasmontage</a> en laat het glas door ons in je deur monteren.</p></div>
+        </details>
+        <details>
+          <summary>Waar vind ik de deuren van CanDo?</summary>
+          <div class="a"><p>CanDo deuren koop je bij verschillende verkooppunten in het land. <a href="/verkooppunten/">Zoek een winkel bij jou in de buurt.</a> Wil je een bepaald model bekijken of meer weten? De medewerkers helpen je graag verder bij het vinden van de perfecte deur voor jouw huis.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

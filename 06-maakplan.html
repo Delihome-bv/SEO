@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maakplan | CanDo</title>
+<meta content="Stramien voor een maakplan: wat je nodig hebt, het stappenplan, varianten en waar je het hout haalt." name="description"/>
+<link href="https://www.cando.eu/static/version1777902755/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css" rel="stylesheet"/>
+<style>
+:root{
+  --text:#20272b; --muted:#6c6c6c; --accent:#F7901E; --accent-dark:#d95f18;
+  --border:#e5ded4; --bg-soft:#f7f2ea; --bg-light:#fbfaf7; --dark:#211914;
+  --radius:8px; --shadow:0 8px 22px rgba(32,39,43,.045); --shadow-hover:0 12px 28px rgba(32,39,43,.07);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#fff;color:var(--text);-webkit-font-smoothing:antialiased;}
+.cando-mp{width:100%;max-width:100%;margin:0;overflow-x:hidden;background:#fff;color:var(--text);}
+.cando-mp *,.cando-mp *::before,.cando-mp *::after{box-sizing:border-box;}
+.cando-mp,.cando-mp p,.cando-mp li,.cando-mp span,.cando-mp div,.cando-mp h3,.cando-mp h4{font-family:Arial, sans-serif;}
+.cando-mp h1,.cando-mp h2,.cando-mp-button,.cando-mp-step__title{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;}
+.cando-mp a{color:inherit;font-weight:700;text-decoration:none;}
+.cando-mp a:hover{color:var(--accent);}
+.cando-mp-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px;}
+.cando-mp-section{position:relative;padding:52px 0;}
+.cando-mp-section--soft{position:relative;z-index:0;}
+.cando-mp-section--soft::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:var(--bg-soft);z-index:-1;}
+.cando-mp h1{margin:0 0 14px;font-size:52px;line-height:1.0;font-weight:700;color:#fff;letter-spacing:-.02em;}
+.cando-mp h2{margin:0 0 18px;font-size:30px;line-height:1.22;font-weight:700;letter-spacing:-.01em;scroll-margin-top:90px;}
+.cando-mp h3{margin:0 0 6px;font-size:18px;line-height:1.35;font-weight:700;}
+.cando-mp p{margin:0 0 14px;font-size:16px;line-height:1.68;color:#414141;}
+.cando-mp p:last-child{margin-bottom:0;}
+.cando-mp-eyebrow{display:block;margin:0 0 8px;color:var(--accent);font-size:11px;line-height:1.2;font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
+.cando-mp-measure{max-width:660px;}
+
+.cando-mp-button-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:22px;}
+.cando-mp-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 24px;border-radius:999px;font-size:16px;line-height:1.2;font-weight:700;text-decoration:none;transition:background .2s ease,border-color .2s ease,color .2s ease;}
+.cando-mp-button--primary{background:var(--accent);border:1px solid var(--accent);color:#fff!important;}
+.cando-mp-button--primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff!important;}
+.cando-mp-button--secondary{background:var(--bg-soft);border:1px solid var(--border);color:var(--text)!important;}
+.cando-mp-button--secondary:hover{background:#efe4d6;border-color:#efe4d6;}
+
+/* HERO: beeld over de volle breedte, tekst eroverheen. Zelfde model als de categoriehub. */
+.cando-mp-hero{position:relative;min-height:420px;display:flex;align-items:flex-end;overflow:hidden;background:#222;}
+.cando-mp-hero__image{position:absolute;inset:0;z-index:0;margin:0;background:#222;}
+.cando-mp-hero__image img{width:100%;height:100%;object-fit:cover;object-position:center;}
+.cando-mp-hero__image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(32,39,43,.80) 0%,rgba(32,39,43,.52) 44%,rgba(247,144,30,.18) 100%);}
+.cando-mp-hero__inner{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:96px 18px 58px;}
+.cando-mp-hero__content{max-width:560px;}
+.cando-mp-hero p{max-width:470px;color:#fff!important;opacity:.96;font-size:16px;}
+/* Feiten over de klus zelf, niet over het product. Dit is het enige signaal in de hero. */
+.cando-mp-hero__facts{display:flex;flex-wrap:wrap;gap:9px 22px;margin-top:20px;}
+.cando-mp-hero__facts span{display:inline-flex;align-items:center;gap:8px;color:#fff;font-size:13px;font-weight:700;opacity:.95;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;}
+.cando-mp-hero__facts span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);}
+
+/* DIT HEB JE NODIG: twee kolommen, hout links (linkt door), gereedschap rechts */
+.cando-mp-needs{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;}
+.cando-mp-needs__col{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow);}
+.cando-mp-needs__col--soft{background:var(--bg-soft);box-shadow:none;}
+.cando-mp-needs h3{margin-bottom:14px;font-size:17px;}
+.cando-mp-list{list-style:none;margin:0;padding:0;display:grid;gap:11px;}
+.cando-mp-list li{position:relative;padding-left:20px;font-size:15px;line-height:1.5;color:#414141;}
+.cando-mp-list li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--accent);}
+.cando-mp-list a{color:var(--text);text-decoration:underline;text-underline-offset:3px;}
+.cando-mp-list a:hover{color:var(--accent);}
+/* Specificiteit: .cando-mp p (0,1,1) won anders van .cando-mp-note (0,1,0) en zette de marge op 0.
+   Daardoor zat de streep te dicht op de lijst erboven. Nu met .cando-mp p.cando-mp-note. */
+.cando-mp p.cando-mp-note{margin-top:26px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;line-height:1.6;color:var(--muted);}
+
+/* STAPPENPLAN: genummerd, beeld per stap optioneel */
+.cando-mp-steps{display:grid;gap:14px;}
+.cando-mp-step{display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:start;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px 24px 24px 20px;box-shadow:var(--shadow);}
+.cando-mp-step__num{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:999px;background:var(--bg-soft);border:1px solid var(--border);font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:22px;font-weight:700;color:var(--accent);}
+.cando-mp-step__title{display:block;margin:0 0 7px;font-size:19px;font-weight:700;line-height:1.3;}
+.cando-mp-step p{font-size:15px;}
+/* De valkuil hoort bij de stap waar hij optreedt, niet in een apart blok onderaan */
+.cando-mp-step__watch{display:block;margin-top:12px;padding:12px 14px;background:var(--bg-soft);border-radius:var(--radius);font-size:14px;line-height:1.55;color:#414141;}
+.cando-mp-step__watch strong{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;}
+
+/* VIDEO, optioneel blok. Alleen als er een video IS. Nooit een lege speler. */
+.cando-mp-video{display:grid;grid-template-columns:1.15fr .85fr;gap:0;background:var(--dark);border-radius:var(--radius);overflow:hidden;}
+.cando-mp-video__player{position:relative;aspect-ratio:16/9;background:#000;}
+.cando-mp-video__player img{width:100%;height:100%;object-fit:cover;opacity:.72;}
+.cando-mp-video__play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border:0;background:transparent;cursor:pointer;}
+.cando-mp-video__play::before{content:"";width:66px;height:66px;border-radius:999px;background:var(--accent);box-shadow:0 6px 20px rgba(0,0,0,.3);}
+.cando-mp-video__play::after{content:"";position:absolute;width:0;height:0;border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;transform:translateX(3px);}
+.cando-mp-video__copy{padding:34px 32px;display:flex;flex-direction:column;justify-content:center;}
+.cando-mp-video__copy h2{color:#fff;font-size:26px;}
+.cando-mp-video__copy p{color:rgba(255,255,255,.86);}
+
+/* HANDLEIDING, optioneel. Leadgate: e-mailadres in ruil voor de bouwtekening. */
+/* Beeld RECHTS, want het videoblok erboven heeft het beeld links. Regel 17: nooit twee keer dezelfde opbouw. */
+.cando-mp-guide{display:grid;grid-template-columns:1.15fr .85fr;gap:0;align-items:stretch;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.cando-mp-guide__image{min-height:280px;order:2;}
+.cando-mp-guide__copy{order:1;}
+.cando-mp-guide__image img{width:100%;height:100%;object-fit:cover;}
+.cando-mp-guide__copy{padding:34px 32px;display:flex;flex-direction:column;justify-content:center;}
+.cando-mp-guide__form{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.cando-mp-guide__form input{flex:1 1 240px;min-height:46px;padding:12px 16px;border:1px solid var(--border);border-radius:999px;font-family:Arial,sans-serif;font-size:15px;}
+.cando-mp-guide__form input:focus{outline:2px solid var(--accent);outline-offset:1px;}
+.cando-mp-guide__small{margin-top:12px;font-size:13px;line-height:1.5;color:var(--muted);}
+
+/* VARIANTEN: brede band, beeld boven, tekst eronder */
+.cando-mp-variants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+.cando-mp-variant{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .2s ease,box-shadow .2s ease;}
+.cando-mp-variant:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
+.cando-mp-variant__img{height:180px;overflow:hidden;border-bottom:1px solid var(--border);}
+.cando-mp-variant__img img{width:100%;height:100%;object-fit:cover;}
+.cando-mp-variant__body{padding:18px;}
+.cando-mp-variant p{font-size:14px;line-height:1.5;color:var(--muted);}
+
+/* MATERIAALUITLEG: split, beeld links om te wisselen met de blokken erboven */
+.cando-mp-material{display:grid;grid-template-columns:.95fr 1.05fr;gap:0;align-items:stretch;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.cando-mp-material__image{min-height:320px;order:1;}
+.cando-mp-material__image img{width:100%;height:100%;object-fit:cover;}
+.cando-mp-material__copy{order:2;padding:36px 34px;display:flex;flex-direction:column;justify-content:center;}
+
+/* WAAR HAAL JE HET: een knop, retailerkeuze vouwt eronder uit. Geen JavaScript nodig. */
+.cando-mp-retail{margin-top:22px;}
+.cando-mp-retail summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 24px;border-radius:999px;background:var(--accent);border:1px solid var(--accent);color:#fff;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:16px;font-weight:700;}
+.cando-mp-retail summary::-webkit-details-marker{display:none;}
+.cando-mp-retail summary:hover{background:var(--accent-dark);border-color:var(--accent-dark);}
+.cando-mp-retail__list{margin:12px 0 0;padding:16px;list-style:none;display:grid;gap:10px;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);max-width:420px;}
+.cando-mp-retail__list a{display:block;font-size:15px;}
+
+/* VERWANTE PROJECTEN */
+.cando-mp-related{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+.cando-mp-related__card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s ease,box-shadow .2s ease;}
+.cando-mp-related__card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);}
+.cando-mp-related__img{height:160px;overflow:hidden;border-bottom:1px solid var(--border);}
+.cando-mp-related__img img{width:100%;height:100%;object-fit:cover;}
+.cando-mp-related__body{padding:14px 14px 16px;}
+.cando-mp-related h3{font-size:15px;margin-bottom:3px;}
+.cando-mp-related p{font-size:13px;line-height:1.45;color:var(--muted);}
+
+/* SLOT: vragen die de lezer voor zichzelf beantwoordt, geen CTA-banner */
+.cando-mp-close{display:grid;gap:11px;max-width:760px;}
+.cando-mp-close__q{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;}
+.cando-mp-close__q strong{display:block;margin-bottom:5px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:16px;}
+.cando-mp-close__q p{font-size:14px;line-height:1.6;color:var(--muted);margin:0;}
+.cando-mp-close__q a{color:var(--text);text-decoration:underline;text-underline-offset:3px;}
+
+@media(max-width:1020px){
+  .cando-mp-needs,.cando-mp-material,.cando-mp-video,.cando-mp-guide{grid-template-columns:1fr;}
+  .cando-mp-material__image{order:1;min-height:240px;}
+  .cando-mp-material__copy{order:2;}
+  /* Op mobiel eerst wat je moet doen: het formulier boven het sfeerbeeld. */
+  .cando-mp-guide__image{order:2;min-height:220px;}
+  .cando-mp-guide__copy{order:1;}
+  .cando-mp-variants{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .cando-mp-related{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:760px){
+  .cando-mp h1{font-size:36px;}
+  .cando-mp h2{font-size:25px;}
+  .cando-mp-hero{min-height:400px;}
+  .cando-mp-hero__inner{padding:78px 16px 38px;}
+  .cando-mp-section{padding:40px 0;}
+  .cando-mp-button-row{flex-direction:column;align-items:stretch;}
+  .cando-mp-button{width:100%;}
+  .cando-mp-step{grid-template-columns:1fr;gap:14px;padding:20px;}
+  .cando-mp-step__num{width:44px;height:44px;font-size:19px;}
+  .cando-mp-variants,.cando-mp-related{grid-template-columns:1fr;}
+  .cando-mp-needs__col{padding:22px 18px;}
+  .cando-mp-material__copy,.cando-mp-video__copy,.cando-mp-guide__copy{padding:26px 20px;}
+  .cando-mp-video__copy h2{font-size:23px;}
+  .cando-mp-guide__form input,.cando-mp-guide__form .cando-mp-button{flex:1 1 100%;width:100%;}
+}
+</style>
+</head>
+<body>
+<!-- MAAKPLAN, stramien. Geen header/footer, Magento rendert H1 en kruimelpad zelf op de live pagina.
+     Beelden zijn placeholders, vervangen door Bynder-assets bij het bouwen.
+     Blokvolgorde is bindend: hero, dit heb je nodig, stappenplan, (video), (handleiding), varianten, materiaal, verwante projecten, slot.
+
+     ⛔ MAATWERK-CTA ALLEEN BIJ EEN OP-MAAT-PRODUCT.
+     Dit voorbeeld is een steigerhouten bank. Steigerhout kan NIET op maat via de configurator,
+     dus hier staat geen "Stel je maten samen"-knop en geen link naar hout op maat.
+     Bouw je een maakplan waarvan het hout WEL op maat kan (plaatmateriaal, werkblad, meubelpaneel,
+     tafelblad), dan zet je in "Dit heb je nodig" onder het hout wel de knop naar
+     /nl-nl/hout/hout-op-maat/configureren/ met de tekst "Stel je maten samen".
+     Welke producten op maat kunnen: zie UITWERKPLAN-HOUT.md regel 15e en de op-maat-lijst van Zoë. -->
+<main class="cando-mp" id="contentarea">
+
+<!-- 1. HERO. Beeld over de volle breedte, tekst eroverheen. Geen tweekolomsblok. -->
+<section aria-labelledby="mp-title" class="cando-mp-hero">
+<figure aria-hidden="true" class="cando-mp-hero__image"><img alt="Steigerhouten bank op een terras" src="https://placehold.co/1600x700/e7e0d8/5d5d5d?text=Bynder-asset"/></figure>
+<div class="cando-mp-hero__inner">
+<div class="cando-mp-hero__content">
+<h1 id="mp-title">Een steigerhouten bank maak je zelf</h1>
+<p>Een bank die precies past op jouw terras, in de maat die jij wilt. Je hebt er geen ervaring voor nodig, wel een middag tijd en een paar planken die op maat gezaagd zijn.</p>
+<div class="cando-mp-hero__facts"><span>Een middag werk</span><span>Voor beginners</span><span>Hout op maat gezaagd</span></div>
+</div>
+</div>
+</section>
+
+<!-- 2. DIT HEB JE NODIG. Hout links en het linkt door naar het product, gereedschap rechts. -->
+<section aria-labelledby="mp-nodig" class="cando-mp-section">
+<div class="cando-mp-wrap">
+<h2 id="mp-nodig">Dit heb je nodig</h2>
+<div class="cando-mp-needs">
+<div class="cando-mp-needs__col">
+<h3>Het hout</h3>
+<ul class="cando-mp-list">
+<li>Vier planken voor de zitting, <a href="/nl-nl/hout/steigerhout/onbehandeld/">onbehandeld steigerhout</a></li>
+<li>Twee planken voor de poten, dezelfde dikte</li>
+<li>Twee planken voor de rugleuning</li>
+<li>Een <a href="/nl-nl/hout/steigerhout/steigerbuizen-en-verbinders/">verbinder</a> per hoek</li>
+</ul>
+<!-- LET OP: steigerhout kan NIET op maat via de configurator (EAN-product, geen m2m).
+     Daarom hier GEEN configurator-knop. De maatwerk-CTA staat alleen op een maakplan
+     waarvan het hout wel op maat besteld kan worden, bijvoorbeeld een plaatmateriaal-project.
+     Zie UITWERKPLAN-HOUT.md regel 15e. -->
+<p class="cando-mp-note">Steigerhout koop je in vaste lengtes, die zaag je zelf op maat. Meet dus goed op voor je naar de winkel gaat, dan koop je precies genoeg.</p>
+</div>
+<div class="cando-mp-needs__col cando-mp-needs__col--soft">
+<h3>Gereedschap</h3>
+<ul class="cando-mp-list">
+<li>Accuboormachine met bitjes</li>
+<li>Schuurpapier, korrel 120</li>
+<li>Rolmaat en potlood</li>
+<li>Waterpas</li>
+</ul>
+<p class="cando-mp-note">Heb je geen accuboormachine, dan leen je die vaak bij de bouwmarkt. Voor deze klus heb je verder geen speciaal gereedschap nodig.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3. STAPPENPLAN. De valkuil staat bij de stap waar hij optreedt, niet in een apart blok onderaan. -->
+<section aria-labelledby="mp-stappen" class="cando-mp-section cando-mp-section--soft">
+<div class="cando-mp-wrap">
+<div class="cando-mp-measure">
+<h2 id="mp-stappen">Zo maak je hem, in vier stappen</h2>
+<p>Werk van onder naar boven: eerst het onderstel, dan de zitting, dan de leuning. Zo staat hij tussendoor altijd stabiel.</p>
+</div>
+<div class="cando-mp-steps" style="margin-top:26px">
+
+<div class="cando-mp-step">
+<span class="cando-mp-step__num">1</span>
+<div>
+<span class="cando-mp-step__title">Schuur de planken voor je begint</span>
+<p>Steigerhout is ruw als het binnenkomt. Schuur alle vlakken die je straks aanraakt, en let vooral op de kopse kanten want daar zitten de splinters. Doe dit nu het hout nog los ligt, want straks kom je er niet meer bij.</p>
+</div>
+</div>
+
+<div class="cando-mp-step">
+<span class="cando-mp-step__num">2</span>
+<div>
+<span class="cando-mp-step__title">Zet het onderstel in elkaar</span>
+<p>Leg de twee pootplanken op de grond en verbind ze met de dwarsbalken. Controleer met de waterpas of het vlak ligt voor je vastschroeft.</p>
+<!-- OPTIONEEL, alleen bij de stap die echt lastig is: verwijs naar de video. Niet als geruststelling achteraf,
+     maar gekoppeld aan de handeling. Weglaten bij een klus die geen video heeft. -->
+<span class="cando-mp-step__watch"><strong>Let op:</strong> boor altijd voor. Steigerhout splijt makkelijk als je een schroef er direct indraait, zeker dicht bij het uiteinde van een plank. In de <a href="#video">video</a> zie je hoe diep je voorboort.</span>
+</div>
+</div>
+
+<div class="cando-mp-step">
+<span class="cando-mp-step__num">3</span>
+<div>
+<span class="cando-mp-step__title">Leg de zitting erop</span>
+<p>Leg de zittingplanken naast elkaar op het onderstel. Houd een paar millimeter ruimte tussen de planken, zodat regenwater weg kan en het hout kan werken. Schroef ze van boven vast, twee schroeven per kruising.</p>
+</div>
+</div>
+
+<div class="cando-mp-step">
+<span class="cando-mp-step__num">4</span>
+<div>
+<span class="cando-mp-step__title">Werk hem af</span>
+<p>Schuur de randen nog een keer na en haal het stof eraf. Zet je de bank buiten, behandel hem dan met olie of beits, anders vergrijst het hout in een seizoen. Binnen kun je hem onbehandeld laten.</p>
+<span class="cando-mp-step__watch"><strong>Zelf doen:</strong> de afwerking zit niet bij het hout. Dat is een aparte stap en die bepaalt hoe lang je bank mooi blijft.</span>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- 3b. VIDEO. OPTIONEEL BLOK: alleen opnemen als de video bestaat. Nooit een lege speler of "video volgt".
+     Bij een klus voor beginners kan dit blok weg. Bij een lastigere klus is dit het blok dat de drempel verlaagt. -->
+<section aria-labelledby="mp-video-title" class="cando-mp-section" id="video">
+<div class="cando-mp-wrap">
+<div class="cando-mp-video">
+<div class="cando-mp-video__player">
+<img alt="Stilbeeld uit de video" loading="lazy" src="https://placehold.co/960x540/2b2b2b/8a8a8a?text=Video"/>
+<button aria-label="Video afspelen" class="cando-mp-video__play" type="button"></button>
+</div>
+<div class="cando-mp-video__copy">
+<h2 id="mp-video-title">Liever even meekijken?</h2>
+<p>In zes minuten zie je de hele bank ontstaan, inclusief het voorboren en het uitlijnen van de zitting. Handig als je het liever een keer ziet voor je zelf begint.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3c. HANDLEIDING. OPTIONEEL BLOK, leadgate: bouwtekening in ruil voor een e-mailadres.
+     Alleen opnemen als de bouwtekening echt bestaat. Zonder bestand geen blok. -->
+<section aria-labelledby="mp-guide-title" class="cando-mp-section">
+<div class="cando-mp-wrap">
+<div class="cando-mp-guide">
+<div class="cando-mp-guide__image"><img alt="De bouwtekening op papier" loading="lazy" src="https://placehold.co/700x560/e7e0d8/5d5d5d?text=Bynder-asset"/></div>
+<div class="cando-mp-guide__copy">
+<span class="cando-mp-eyebrow">Bouwtekening</span>
+<h2 id="mp-guide-title">De maten op papier, mee de schuur in</h2>
+<p>Alle onderdelen met hun maten, de volgorde van monteren en een lijst met wat je nodig hebt. Print hem uit of houd hem op je telefoon bij de hand.</p>
+<form class="cando-mp-guide__form">
+<input aria-label="E-mailadres" placeholder="Je e-mailadres" type="email"/>
+<button class="cando-mp-button cando-mp-button--primary" type="submit">Stuur de bouwtekening</button>
+</form>
+<p class="cando-mp-guide__small">Je krijgt de bouwtekening meteen in je mail. Verder sturen we je alleen iets als je daar zelf om vraagt.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 4. VARIANTEN. Grid van drie, ander ritme dan de blokken erboven. -->
+<section aria-labelledby="mp-varianten" class="cando-mp-section">
+<div class="cando-mp-wrap">
+<div class="cando-mp-measure">
+<h2 id="mp-varianten">Dezelfde bank, andere uitvoering</h2>
+<p>Met dezelfde stappen maak je een heel andere bank. Het verschil zit in de maat en de afwerking.</p>
+</div>
+<div class="cando-mp-variants" style="margin-top:24px">
+<div class="cando-mp-variant">
+<div class="cando-mp-variant__img"><img alt="Bank zonder rugleuning" loading="lazy" src="https://placehold.co/700x500/e7e0d8/5d5d5d?text=Bynder-asset"/></div>
+<div class="cando-mp-variant__body"><h3>Zonder rugleuning</h3><p>Laat stap vier weg en je hebt een tuinbank die je van twee kanten gebruikt.</p></div>
+</div>
+<div class="cando-mp-variant">
+<div class="cando-mp-variant__img"><img alt="Bank in een kleur" loading="lazy" src="https://placehold.co/700x500/e7e0d8/5d5d5d?text=Bynder-asset"/></div>
+<div class="cando-mp-variant__body"><h3>In een kleur</h3><p>Met <a href="/nl-nl/hout/steigerhout/gekleurd/">gekleurd steigerhout</a> sla je het beitsen over.</p></div>
+</div>
+<div class="cando-mp-variant">
+<div class="cando-mp-variant__img"><img alt="Bank met opbergruimte" loading="lazy" src="https://placehold.co/700x500/e7e0d8/5d5d5d?text=Bynder-asset"/></div>
+<div class="cando-mp-variant__body"><h3>Met opbergruimte</h3><p>Maak de zitting scharnierend en je bergt je kussens erin op.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5. MATERIAALUITLEG. Split met beeld LINKS, want de blokken hierboven waren grids. -->
+<section aria-labelledby="mp-materiaal" class="cando-mp-section cando-mp-section--soft">
+<div class="cando-mp-wrap">
+<div class="cando-mp-material">
+<div class="cando-mp-material__image"><img alt="Nerf en structuur van steigerhout" loading="lazy" src="https://placehold.co/800x700/e7e0d8/5d5d5d?text=Bynder-asset"/></div>
+<div class="cando-mp-material__copy">
+<span class="cando-mp-eyebrow">Over het hout</span>
+<h2 id="mp-materiaal">Waarom steigerhout hier goed werkt</h2>
+<p>Steigerhout is stevig en het mag er gebruikt uitzien. Een kras of een knoest hoort erbij, dus je hoeft niet bang te zijn dat je iets verpest. Dat maakt het geschikt als dit je eerste klus is.</p>
+<p>Het hout werkt wel: het zet uit en krimpt met het weer. Daarom laat je ruimte tussen de planken. Buiten vergrijst onbehandeld steigerhout binnen een seizoen naar zilvergrijs. Vind je dat mooi, dan laat je het zo. Wil je de warme kleur houden, dan behandel je het.</p>
+<div class="cando-mp-retail">
+<details>
+<summary>Waar haal je het hout</summary>
+<ul class="cando-mp-retail__list">
+<li><a href="/nl-nl/zoek-uw-winkel/hout">Zoek een winkel bij jou in de buurt</a></li>
+<li><a href="https://www.gamma.nl" rel="noopener" target="_blank">Gamma</a></li>
+<li><a href="https://www.karwei.nl" rel="noopener" target="_blank">Karwei</a></li>
+<li><a href="https://www.praxis.nl" rel="noopener" target="_blank">Praxis</a></li>
+</ul>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 6. VERWANTE PROJECTEN. Vier kaarten. -->
+<section aria-labelledby="mp-verwant" class="cando-mp-section">
+<div class="cando-mp-wrap">
+<h2 id="mp-verwant">Hier beginnen anderen mee</h2>
+<div class="cando-mp-related" style="margin-top:22px">
+<a class="cando-mp-related__card" href="/nl-nl/hout/doe-het-zelf/steigerhouten-tafel/"><div class="cando-mp-related__img"><img alt="Steigerhouten tafel" loading="lazy" src="https://placehold.co/600x480/e7e0d8/5d5d5d?text=Bynder-asset"/></div><div class="cando-mp-related__body"><h3>Steigerhouten tafel</h3><p>Dezelfde techniek, andere maat.</p></div></a>
+<a class="cando-mp-related__card" href="/nl-nl/hout/doe-het-zelf/steigerhouten-plantenbak/"><div class="cando-mp-related__img"><img alt="Plantenbak van steigerhout" loading="lazy" src="https://placehold.co/600x480/e7e0d8/5d5d5d?text=Bynder-asset"/></div><div class="cando-mp-related__body"><h3>Plantenbak</h3><p>Klaar in een uur, met restplanken.</p></div></a>
+<a class="cando-mp-related__card" href="/nl-nl/hout/doe-het-zelf/steigerhouten-kast/"><div class="cando-mp-related__img"><img alt="Kast van steigerhout" loading="lazy" src="https://placehold.co/600x480/e7e0d8/5d5d5d?text=Bynder-asset"/></div><div class="cando-mp-related__body"><h3>Kast</h3><p>Een stap groter, zelfde principe.</p></div></a>
+<a class="cando-mp-related__card" href="/nl-nl/hout/doe-het-zelf/"><div class="cando-mp-related__img"><img alt="Alle maakplannen" loading="lazy" src="https://placehold.co/600x480/e7e0d8/5d5d5d?text=Bynder-asset"/></div><div class="cando-mp-related__body"><h3>Alle maakplannen</h3><p>Bekijk waar je nog meer mee kunt.</p></div></a>
+</div>
+</div>
+</section>
+
+<!-- 7. SLOT. Vragen die de lezer voor zichzelf beantwoordt, geen CTA-banner. -->
+<section aria-labelledby="mp-slot" class="cando-mp-section cando-mp-section--soft">
+<div class="cando-mp-wrap">
+<div class="cando-mp-measure">
+<h2 id="mp-slot">Voor je begint</h2>
+<p>Drie dingen om even bij stil te staan, dan loopt de klus straks soepel.</p>
+</div>
+<div class="cando-mp-close" style="margin-top:18px">
+<div class="cando-mp-close__q"><strong>Weet je al welke maat je wilt?</strong><p>Meet de plek op waar de bank komt te staan, en houd aan beide kanten wat ruimte over. Steigerhout koop je in vaste lengtes, dus reken uit hoeveel planken je nodig hebt en zaag ze thuis op maat.</p></div>
+<div class="cando-mp-close__q"><strong>Blijft hij buiten staan?</strong><p>Dan bepaal je nu al of je hem wilt behandelen. Dat is makkelijker als de planken nog los liggen dan wanneer de bank in elkaar staat.</p></div>
+<div class="cando-mp-close__q"><strong>Twijfel je over de houtsoort?</strong><p>Steigerhout is niet de enige optie voor buiten. Kijk bij <a href="/nl-nl/hout/">alle houtsoorten</a> wat er nog meer kan.</p></div>
+</div>
+</div>
+</section>
+
+</main>
+</body>
+</html>

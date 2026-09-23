@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Over CanDo, voor de doe-het-zelver | CanDo</title>
+<meta name="description" content="CanDo maakt het makkelijk om zelf te klussen. Betrouwbaar, kostenvriendelijk en met heldere uitleg. Ontdek waar CanDo voor staat.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--beige:#FDC689;--dark:#121b21;--border:#e5ddd3;--soft:#f7f2ea;--soft2:#fbfaf7;--radius:8px;--shadow:0 10px 24px rgba(18,27,33,.05)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}.page{overflow-x:hidden}
+h1,h2,h3,.btn,.eyebrow,.tag{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 18px}
+section{padding:40px 0}.soft{background:var(--soft)}.measure{max-width:720px}
+h1{margin:0 0 12px;font-size:36px;line-height:1.05;letter-spacing:-.025em}
+h2{margin:0 0 12px;font-size:28px;letter-spacing:-.02em}h3{margin:0 0 8px;font-size:19px}
+p{margin:0;color:#414141;font-size:16px;line-height:1.72}p+p{margin-top:14px}
+.eyebrow{display:block;margin:0 0 12px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.crumbs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px;color:#8c8c8c;font-size:12px}
+.crumbs a{color:#8c8c8c}.crumbs a:hover{color:var(--accent)}.crumbs span{color:#b5b5b5}
+.head{max-width:720px;margin-bottom:26px}.head p{margin-top:10px;color:var(--muted)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 28px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;border:1.5px solid transparent;cursor:pointer;transition:.18s ease}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(247,144,30,.15)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-tertiary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-tertiary:hover{border-color:var(--accent);color:var(--accent)}
+.hero{position:relative;min-height:54vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
+.hero__bg{position:absolute;inset:0}.hero__bg img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,27,33,.86),rgba(18,27,33,.4))}
+.hero__b{position:relative;z-index:2;padding:70px 22px 48px;max-width:1080px;margin:0 auto;width:100%}
+.hero h1{color:#fff;max-width:700px}.hero .eyebrow{color:var(--beige)}.hero p{color:#e9e9e7;max-width:560px}
+.vals{display:grid;gap:16px;grid-template-columns:1fr}
+.val{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.val p{font-size:14px;color:var(--muted);margin-top:6px}
+.worlds{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+.world{position:relative;display:block;border-radius:var(--radius);overflow:hidden;min-height:150px;color:#fff;box-shadow:var(--shadow);text-decoration:none}
+.world img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.world:hover img{transform:scale(1.06)}
+.world::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,27,33,0) 40%,rgba(18,27,33,.8) 100%)}
+.world span{position:absolute;left:16px;bottom:14px;z-index:2;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:16px}
+.world span::after{content:" →";color:var(--beige)}
+.story{display:grid;gap:26px;align-items:center;grid-template-columns:1fr}
+.story__media{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}
+.story__media img{width:100%;height:100%;object-fit:cover;min-height:280px}
+.story p+p{margin-top:14px}
+.innov{display:grid;gap:14px;grid-template-columns:1fr;margin-top:28px}
+.icard{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.icard h3{font-size:16px;margin-bottom:5px}.icard p{font-size:14px;color:var(--muted)}
+.cta{background:var(--dark);border-radius:var(--radius);padding:40px 28px;text-align:center;position:relative;overflow:hidden}
+.cta h2{color:#fff}.cta p{color:#d7dad9;max-width:520px;margin:0 auto}.cta .btn-row{justify-content:center}
+.cta .btn-tertiary{border-color:rgba(255,255,255,.5);color:#fff}.cta .btn-tertiary:hover{border-color:var(--beige);color:var(--beige)}
+.tag{color:var(--beige);font-weight:800;letter-spacing:.02em}
+@media(min-width:820px){section{padding:56px 0}h1{font-size:48px}.hero{min-height:60vh}.hero__b{padding:110px 24px 60px}.vals{grid-template-columns:repeat(3,1fr)}.worlds{grid-template-columns:repeat(4,1fr)}.story{grid-template-columns:1.05fr .95fr}.innov{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:520px){.btn{width:100%}}
+</style>
+</head>
+<body>
+<!-- OVER CANDO / MERKPAGINA. Geen header/footer. -->
+<main class="page">
+  <section class="hero">
+    <div class="hero__bg"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="Loft-interieur met houten afwerking"></div>
+    <div class="hero__b">
+      <nav class="crumbs" aria-label="Kruimelpad" style="color:#d8dbda"><a href="/" style="color:#d8dbda">Home</a><span style="color:#9aa0a0">›</span>Over CanDo</nav>
+      <span class="eyebrow">Over CanDo</span>
+      <h1>Wij maken het makkelijk om zelf te klussen</h1>
+      <p>CanDo is voor de doe-het-zelver die het netjes wil afmaken. Wij maken het, jij plaatst het, en we leggen uit hoe. You CanDo it.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="story">
+        <div>
+          <span class="eyebrow">Wie is CanDo</span>
+          <h2>Altijd bezig om het jou makkelijker te maken</h2>
+          <p>CanDo is er voor iedereen die zelf aan de slag wil in en om het huis. Van een plank op maat tot een complete lattenwand: wij zorgen dat je het zelf kunt, met producten die kloppen en uitleg die je begrijpt. Geen ingewikkeld gedoe, gewoon een mooi eindresultaat waar je trots op bent.</p>
+          <p>En we staan nooit stil. De manier waarop mensen wonen en klussen verandert continu, en wij ontwikkelen mee. We volgen de nieuwste woontrends op de voet en vertalen ze naar producten die je gewoon zelf plaatst. Zo maken we wat vandaag mooi en slim is, morgen bereikbaar voor de doe-het-zelver.</p>
+        </div>
+        <div class="story__media"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Zelf aan de slag met CanDo" loading="lazy"></div>
+      </div>
+      <div class="innov">
+        <div class="icard"><h3>Continu in ontwikkeling</h3><p>We blijven producten verbeteren en toevoegen, zodat je altijd een oplossing vindt die past.</p></div>
+        <div class="icard"><h3>Trends binnen handbereik</h3><p>De nieuwste woonstijlen vertaald naar producten die je zelf kunt plaatsen.</p></div>
+        <div class="icard"><h3>Gemaakt om zelf te doen</h3><p>Slim doordacht en met heldere uitleg, zodat het klussen soepel verloopt.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="head measure">
+        <span class="eyebrow">Waar we voor staan</span>
+        <h2>Betrouwbaar, down to earth en altijd met uitleg</h2>
+        <p>Wij geloven dat je zelf meer kunt dan je denkt. Daarom maken we producten die een klus lang meegaan, tegen een eerlijke prijs, en leggen we in gewone taal uit hoe je ze plaatst.</p>
+      </div>
+      <div class="vals">
+        <div class="val"><h3>Betrouwbaar</h3><p>Kwaliteit die een klus lang meegaat, geen wegwerpwerk.</p></div>
+        <div class="val"><h3>Kostenvriendelijk</h3><p>Geen budgetmerk, wel scherp geprijsd. Je betaalt voor wat klopt.</p></div>
+        <div class="val"><h3>Wij leggen uit</h3><p>Heldere uitleg, ook voor je eerste keer. Jan, Piet en Suus weten waar, hoe en wat.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Voor elke klus</span><h2>Onze categorieën</h2><p>Van hout op maat tot horren en traprenovatie. Voor elke klus in en om het huis vind je bij CanDo een oplossing die past.</p></div>
+      <div class="worlds">
+        <a class="world" href="/hout/"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Hout" loading="lazy"><span>Hout</span></a>
+        <a class="world" href="/vloeren/"><img src="https://delihome.getbynder.com/asset/0ff12430-aca4-4bed-a95b-7d3f6e056449/medium-JPG/CanDo_Laminaat-Noten_Wit-stootbord_Hoofdbeeld.jpg" alt="Vloeren" loading="lazy"><span>Vloeren</span></a>
+        <a class="world" href="/kasten/"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Kasten" loading="lazy"><span>Kasten</span></a>
+        <a class="world" href="/wand-plafond/"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Wand en plafond" loading="lazy"><span>Wand &amp; plafond</span></a>
+        <a class="world" href="/wand-plafond/lattenwand/"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Lattenwand" loading="lazy"><span>Lattenwand</span></a>
+        <a class="world" href="/traprenovatie/"><img src="https://delihome.getbynder.com/asset/0ff12430-aca4-4bed-a95b-7d3f6e056449/medium-JPG/CanDo_Laminaat-Noten_Wit-stootbord_Hoofdbeeld.jpg" alt="Traprenovatie" loading="lazy"><span>Traprenovatie</span></a>
+        <a class="world" href="/horren/"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="Horren" loading="lazy"><span>Horren</span></a>
+        <a class="world" href="/deuren/"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Deuren" loading="lazy"><span>Deuren</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <span class="tag">You CanDo it</span>
+        <h2 style="margin-top:10px">Klaar om zelf aan de slag te gaan?</h2>
+        <p>Bekijk alle categorieën of doe eerst wat inspiratie op. Wij zorgen dat je zelf verder kunt.</p>
+        <div class="btn-row"><a class="btn btn-primary" href="/categorieen/">Bekijk alle categorieën</a><a class="btn btn-tertiary" href="/inspiratie/">Doe inspiratie op</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

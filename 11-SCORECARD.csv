@@ -1,0 +1,14 @@
+criterion;max_points;full_score_if;score
+Routing/orchestration;10;Build + source QA + localization auto-routed from one prompt;
+Shared context;7;Brand audience product truth content workbook and locale rules reused;
+Source governance;12;Correct house owns facts and conflicts explicitly resolved;
+Product factuality;12;No forbidden or unsupported claims in any locale;
+Web delta-check;7;Source and local current search context checked;
+SEO/GEO execution;8;Intent answer-first metadata FAQ and local search language;
+Stramien fidelity;7;Same approved structure retained without old factual copy;
+Locale link governance;8;NL BE-NL and BE-FR links come from correct sitemap/live validation;
+Commercial localization;12;BE-NL and BE-FR read as native commercial copy not literal translation;
+Three-pass refinement;5;Fact fluency and SEO/link refinement applied before output;
+QA gates;7;Source QA plus locale QA with controlled repair where needed;
+Traceability;3;Capabilities sources conflicts and unresolved items visible;
+Setup/maintenance burden;2;Manual admin licensing and duplication burden captured;

@@ -1,0 +1,21 @@
+platform;item;EXPECTED;ACTUAL;PASS/PARTIAL/FAIL;WORKAROUND;IT_EFFORT;NOTES
+;Central task recognised;;;;;;
+;NL build skill applied automatically;;;;;;
+;Source QA applied automatically;;;;;;
+;Commercial localization skill applied automatically;;;;;;
+;NL product/source conflicts handled;;;;;;
+;BE-NL native commercial language;;;;;;
+;BE-FR native commercial French;;;;;;
+;Three refinement passes executed functionally;;;;;;
+;NL sitemap used;;;;;;
+;BE-NL sitemap used;;;;;;
+;BE-FR sitemap used;;;;;;
+;No NL URLs leaked into BE versions;;;;;;
+;Local search terminology checked;;;;;;
+;Product facts unchanged across locales;;;;;;
+;CTA/routes localized;;;;;;
+;Complete HTML per market;;;;;;
+;Metadata/FAQ per market;;;;;;
+;Localization QA summary;;;;;;
+;Manual intervention;;;;;;
+;Admin/licence/setup dependency;;;;;;

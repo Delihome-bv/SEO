@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CanDo, voor elke klus in en om je huis</title>
+<meta name="description" content="Deuren, hout, vloeren, kasten, traprenovatie, lattenwand en meer. Op maat of standaard, met heldere uitleg. Verkrijgbaar door heel Nederland.">
+<link rel="preload" as="style" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+/* ==== CanDo tokens ==== */
+:root{
+  --text:#2f2f2f; --muted:#6c6c6c; --accent:#F7901E; --accent-dark:#d95f18;
+  --beige:#FDC689; --ink:#121B21; --footer-grey:#7A7F83;
+  --border:#e6e6e6; --line:#e7e2da; --bg-soft:#f7f5f1; --bg-warm:#fbfaf7; --white:#fff;
+  --radius:14px; --radius-sm:10px; --pill:999px;
+  --shadow:0 14px 34px rgba(18,27,33,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.cando-page{width:100%;overflow-x:hidden}
+h1,h2,h3,h4,.btn,.eyebrow,.nav a,.badge,.kh__chip,.brand{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+h1{margin:0 0 18px;font-size:clamp(40px,5.6vw,68px);line-height:1.03;letter-spacing:-.03em;font-weight:800;color:var(--text)}
+h2{margin:0 0 14px;font-size:clamp(28px,3.3vw,42px);line-height:1.12;letter-spacing:-.02em;font-weight:800;color:var(--text)}
+h3{margin:0 0 9px;font-size:21px;line-height:1.28;font-weight:800;color:var(--text)}
+p{margin:0 0 17px;font-size:17px;line-height:1.72;color:#414141}
+.lead{font-size:clamp(18px,2.1vw,21px);line-height:1.6;color:#3d3d3d;max-width:660px}
+.eyebrow{display:inline-block;margin:0 0 14px;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.small{font-size:14px;color:var(--muted)}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 22px}
+.section{padding:74px 0}
+.head{max-width:720px;margin:0 0 40px}
+.head p{margin:0}
+
+/* ==== Buttons ==== */
+.actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:14px 30px;border-radius:var(--pill);font-size:16px;font-weight:800;line-height:1.1;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .18s,border-color .18s,color .18s,transform .18s,box-shadow .18s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(247,144,30,.15)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff;box-shadow:0 6px 16px rgba(247,144,30,.22)}
+.btn-secondary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-secondary:hover{border-color:var(--ink);color:var(--ink);background:rgba(18,27,33,.04)}
+.btn-arrow::after{content:"→";font-size:18px;transition:transform .18s}
+.btn-arrow:hover::after{transform:translateX(3px)}
+.on-dark .btn-secondary{border-color:rgba(255,255,255,.75);color:#fff}
+.on-dark .btn-secondary:hover{border-color:#fff;color:#fff;background:rgba(255,255,255,.08)}
+
+/* ==== Header: bovenste balk + menu header ==== */
+.topbar{background:var(--ink);color:#cfd2d1;font-size:13px}
+.topbar__row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0}
+.topbar__note{display:inline-flex;align-items:center;gap:9px}
+.topbar__note::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--beige)}
+.topbar__links{display:flex;align-items:center;gap:18px}
+.topbar__links a{color:#cfd2d1;text-decoration:none}
+.topbar__links a:hover{color:#fff}
+.topbar__flag{border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:3px 8px;font-size:12px}
+@media(max-width:680px){.topbar__note{display:none}}
+
+.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.header__bar{display:flex;align-items:center;gap:22px;height:72px}
+/* Vervang de .brand-tekstbox door het echte logo: <img src="CanDo_Logo_RGB_liggend.png" alt="CanDo" height="38"> */
+.brand{display:inline-flex;align-items:center;background:var(--accent);color:var(--ink);font-weight:800;font-size:23px;letter-spacing:-.01em;padding:9px 13px;border-radius:8px;text-decoration:none;line-height:1;white-space:nowrap}
+.brand sup{font-size:9px;margin-left:1px}
+.nav{display:none;align-items:center;gap:22px;margin:0 auto}
+.nav a{color:var(--ink);font-size:15px;font-weight:700;text-decoration:none;position:relative;white-space:nowrap}
+.nav a:hover{color:var(--accent)}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-25px;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:center;transition:transform .2s}
+.nav a:hover::after{transform:scaleX(1)}
+.header__actions{display:flex;align-items:center;gap:12px}
+.header__search{display:none;background:none;border:0;cursor:pointer;color:var(--ink);padding:6px}
+.burger{display:inline-flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2px;background:var(--ink);border-radius:2px}
+@media(min-width:1080px){.nav{display:flex}.header__search{display:inline-flex}.burger{display:none}}
+
+/* ==== Hero ==== */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;display:flex;flex-direction:column;justify-content:center;min-height:74vh}
+.hero__bg{position:absolute;inset:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover;opacity:.66}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,27,33,.92) 0%,rgba(18,27,33,.72) 42%,rgba(18,27,33,.22) 80%,rgba(18,27,33,.05) 100%)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(18,27,33,.30) 0%,rgba(18,27,33,0) 26%,rgba(18,27,33,0) 62%,rgba(18,27,33,.45) 100%)}
+.hero .wrap{position:relative;z-index:2;padding:92px 22px}
+.hero h1{color:#fff;max-width:840px}
+.hero .lead{color:#e7e7e4;max-width:620px}
+.hero__eyebrow{display:inline-block;margin-bottom:16px;font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--beige);font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+
+/* ==== USP-strip ==== */
+.uspbar{border-bottom:1px solid var(--line);background:#fff}
+.uspbar__row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 34px;padding:20px 0}
+.uspitem{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:700;color:var(--ink);font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.uspitem::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+
+/* ==== Categorieen (breed in beeld) ==== */
+.cats{display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+.cat{position:relative;display:block;border-radius:var(--radius);overflow:hidden;text-decoration:none;color:#fff;min-height:170px;box-shadow:0 10px 24px rgba(18,27,33,.06);transition:transform .22s,box-shadow .22s}
+.cat:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.cat:hover img{transform:scale(1.06)}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,27,33,0) 40%,rgba(18,27,33,.8) 100%)}
+.cat__label{position:relative;z-index:2;height:100%;display:flex;align-items:flex-end;padding:18px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:800;font-size:19px;color:#fff}
+.cat__label::after{content:"→";margin-left:8px;color:var(--beige);transition:transform .2s}
+.cat:hover .cat__label::after{transform:translateX(3px)}
+@media(min-width:720px){.cats{grid-template-columns:repeat(4,1fr)}.cat{min-height:230px}.cat--wide{grid-column:span 2}}
+.cats-more{margin-top:26px;display:flex;justify-content:center}
+
+/* ==== Uitgelicht op maat (split, dynamiek) ==== */
+.spot{display:grid;grid-template-columns:1fr;align-items:stretch;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.spot__media{position:relative;min-height:300px}
+.spot__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.spot__body{padding:40px 34px}
+.spot__body h2{font-size:clamp(26px,3vw,38px)}
+.checks{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:12px}
+.checks li{position:relative;padding-left:32px;font-size:16px;color:#3d3d3d}
+.checks li::before{content:"✓";position:absolute;left:0;top:-1px;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+@media(min-width:900px){.spot{grid-template-columns:.98fr 1.02fr}.spot--flip .spot__media{order:2}.spot__body{padding:56px 48px}}
+
+/* ==== Uitgelicht (editorial kaarten met badge) ==== */
+.feat{display:grid;gap:24px;grid-template-columns:1fr}
+.fcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:var(--text);transition:border-color .2s,box-shadow .2s,transform .2s}
+.fcard:hover{border-color:var(--accent);box-shadow:var(--shadow);transform:translateY(-3px)}
+.fcard__img{position:relative;height:230px;overflow:hidden}
+.fcard__img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.fcard:hover .fcard__img img{transform:scale(1.05)}
+.badge{position:absolute;left:16px;bottom:16px;background:var(--beige);color:var(--ink);font-weight:800;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:6px 13px;border-radius:var(--pill)}
+.fcard__body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+.fcard__body p{font-size:15px;color:var(--muted);margin:0 0 20px}
+.fcard__cta{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;min-height:46px;padding:11px 22px;border:1.5px solid var(--text);border-radius:var(--pill);font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:800;font-size:15px;color:var(--ink);transition:border-color .2s,color .2s}
+.fcard:hover .fcard__cta{border-color:var(--accent);color:var(--accent)}
+@media(min-width:820px){.feat{grid-template-columns:repeat(3,1fr)}}
+
+/* ==== Inspiratieband ==== */
+.inspo{position:relative;overflow:hidden}
+.inspo__bg{position:absolute;inset:0}
+.inspo__bg img{width:100%;height:100%;object-fit:cover}
+.inspo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,27,33,.88),rgba(18,27,33,.35))}
+.inspo .wrap{position:relative;z-index:2;padding:84px 22px}
+.inspo h2,.inspo p{color:#fff}
+.inspo .lead{color:#ececeb}
+.inspo .eyebrow{color:var(--beige)}
+
+/* ==== Waar wil je heen (funnel-instappen) ==== */
+.kh{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:46px 34px;text-align:center}
+.kh h2{margin-bottom:8px}
+.kh p{max-width:560px;margin:0 auto}
+.kh__chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:24px 0 8px}
+.kh__chip{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border:1px solid var(--line);border-radius:var(--pill);background:#fff;color:var(--ink);text-decoration:none;font-weight:700;font-size:15px;transition:border-color .2s,transform .2s}
+.kh__chip::before{content:"›";color:var(--accent);font-weight:800;font-size:17px}
+.kh__chip:hover{border-color:var(--accent);transform:translateY(-2px)}
+
+/* ==== Footer ==== */
+.footer{background:var(--ink);color:#c7cac9}
+.footer a{color:#c7cac9;text-decoration:none}
+.footer a:hover{color:#fff}
+.footer__top{display:grid;gap:34px;grid-template-columns:1fr;padding:60px 0 40px}
+.footer__intro .brand{margin-bottom:16px}
+.footer__intro p{color:#9aa0a0;font-size:15px;max-width:320px}
+.footer__news{margin-top:18px;display:flex;gap:10px;max-width:340px}
+.footer__news input{flex:1;min-height:46px;padding:10px 14px;border:1px solid rgba(255,255,255,.2);border-radius:var(--pill);background:rgba(255,255,255,.06);color:#fff;font-size:14px}
+.footer__news input::placeholder{color:#8a908f}
+.footer__news button{min-height:46px;padding:10px 20px;border:0;border-radius:var(--pill);background:var(--accent);color:#fff;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:800;font-size:14px;cursor:pointer}
+.footer__cols{display:grid;gap:30px;grid-template-columns:1fr 1fr}
+.footer h4{color:#fff;font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 16px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:11px;font-size:15px}
+.footer__bottom{border-top:1px solid rgba(255,255,255,.12);padding:20px 0;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-size:14px;color:#8a908f}
+.footer__bottom .tag{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:800;color:var(--beige)}
+.footer__legal{display:flex;flex-wrap:wrap;gap:18px}
+@media(min-width:760px){.footer__top{grid-template-columns:1.2fr 2fr}.footer__cols{grid-template-columns:repeat(3,1fr)}}
+
+/* ==== Mobile sticky ==== */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;gap:10px;padding:10px 14px;background:rgba(255,255,255,.97);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(18,27,33,.08)}
+.sticky .btn{flex:1;min-height:48px;padding:12px 14px;font-size:15px}
+@media(min-width:980px){.sticky{display:none}}
+body{padding-bottom:72px}
+@media(min-width:980px){body{padding-bottom:0}}
+</style>
+</head>
+
+<body>
+<div class="cando-page">
+
+<!-- ============ HEADER (alleen homepage): bovenste balk + menu header ============ -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar__row">
+      <span class="topbar__note">Van doe-het-zelf tot op maat, verkrijgbaar door heel Nederland</span>
+      <div class="topbar__links">
+        <a href="/hulp-en-advies/">Hulp &amp; Advies</a>
+        <a href="/verkooppunten/">Winkels</a>
+        <span class="topbar__flag">NL</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap">
+    <div class="header__bar">
+      <a class="brand" href="/" aria-label="CanDo home">CanDo<sup>®</sup></a>
+      <nav class="nav" aria-label="Hoofdmenu">
+        <a href="/deuren/">Deuren</a>
+        <a href="/hout/">Hout</a>
+        <a href="/horren/">Horren</a>
+        <a href="/kasten/">Kasten</a>
+        <a href="/traprenovatie/">Traprenovatie</a>
+        <a href="/vloeren/">Vloeren</a>
+        <a href="/lattenwand/">Lattenwand</a>
+        <a href="/wand-plafond/">Wand &amp; plafond</a>
+        <a href="/inspiratie/">Inspiratie</a>
+      </nav>
+      <div class="header__actions">
+        <button class="header__search" aria-label="Zoeken"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg></button>
+        <a class="btn btn-primary" href="/hulp-en-advies/" style="min-height:44px;padding:11px 22px">Hulp &amp; advies</a>
+        <button class="burger" aria-label="Menu openen"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero on-dark">
+  <div class="hero__bg"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="Loft-interieur met houten afwerking" fetchpriority="high"></div>
+  <div class="wrap">
+    <span class="hero__eyebrow">Welkom bij CanDo</span>
+    <h1>Voor elke klus in en om je huis</h1>
+    <p class="lead">Van deuren en trappen tot vloeren, kasten en wandpanelen. Op maat of standaard, met heldere uitleg en advies dat klopt. Kies je categorie en ga aan de slag.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#categorieen">Bekijk het assortiment</a>
+      <a class="btn btn-secondary" href="/hulp-en-advies/">Hulp &amp; advies</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ USP-STRIP ============ -->
+<div class="uspbar">
+  <div class="wrap">
+    <div class="uspbar__row">
+      <span class="uspitem">Eenvoudig zelf te monteren</span>
+      <span class="uspitem">Voor elke woonstijl en ruimte</span>
+      <span class="uspitem">Van doe-het-zelf tot op maat</span>
+      <span class="uspitem">Verkrijgbaar door heel Nederland</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CATEGORIEEN (breed in beeld) ============ -->
+<section class="section" id="categorieen">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Ontdek CanDo</span>
+      <h2>Waar wil je mee aan de slag?</h2>
+      <p class="lead">Kies je categorie en ga direct de goede kant op. Nog niet zeker? Bekijk alle categorieën of doe inspiratie op.</p>
+    </div>
+    <!-- Een paar hoofdcategorieen uitgelicht; beelden zijn placeholders, per categorie te vervangen -->
+    <div class="cats">
+      <a class="cat" href="/hout/"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Hout" loading="lazy"><span class="cat__label">Hout</span></a>
+      <a class="cat" href="/vloeren/"><img src="https://delihome.getbynder.com/asset/0ff12430-aca4-4bed-a95b-7d3f6e056449/medium-JPG/CanDo_Laminaat-Noten_Wit-stootbord_Hoofdbeeld.jpg" alt="Vloeren" loading="lazy"><span class="cat__label">Vloeren</span></a>
+      <a class="cat" href="/kasten/"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Kasten" loading="lazy"><span class="cat__label">Kasten</span></a>
+      <a class="cat" href="/wand-plafond/"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Wand en plafond" loading="lazy"><span class="cat__label">Wand &amp; plafond</span></a>
+    </div>
+    <div class="cats-more"><a class="btn btn-secondary" href="/categorieen/">Bekijk alle categorieën</a></div>
+  </div>
+</section>
+
+<!-- ============ UITGELICHT OP MAAT (split, dynamiek) ============ -->
+<section class="section" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="spot spot--flip">
+      <div class="spot__media"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Op maat gemaakt, tot op de millimeter"></div>
+      <div class="spot__body">
+        <span class="eyebrow">Op maat</span>
+        <h2>Precies passend, tot op de mm</h2>
+        <p>Veel van wat je bij CanDo vindt, maak je op maat. Van een werkblad of meubelpaneel tot een kast of een trap. Je stelt het online samen, ziet meteen de prijs, en wij zorgen dat het klopt tot op de millimeter. Geen offerte en geen belafspraak nodig.</p>
+        <ul class="checks">
+          <li>Online samengesteld, direct je prijs in beeld</li>
+          <li>Tot op de mm gezaagd of gemaakt</li>
+          <li>Gratis staal om de kleur thuis te bekijken</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn-primary" href="/hout-op-maat-laten-zagen/">Ontdek op maat</a>
+          <a class="btn btn-secondary" href="/inspiratie/">Bekijk inspiratie</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UITGELICHT (editorial, meerdere categorieen) ============ -->
+<section class="section" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Uitgelicht</span>
+      <h2>Nieuw en veelgekozen</h2>
+      <p class="lead">Een greep uit wat er nu speelt, verspreid over onze categorieën.</p>
+    </div>
+    <div class="feat">
+      <a class="fcard" href="/traprenovatie/trapverlichting/">
+        <div class="fcard__img"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="Stijlvolle LED-trapverlichting" loading="lazy"><span class="badge">Nieuw</span></div>
+        <div class="fcard__body"><h3>Stijlvolle LED-trapverlichting</h3><p>Maak van je trap een blikvanger. Bestel bij een trap op maat nu ook trapverlichting, verkrijgbaar in aluminium en zwart.</p><span class="fcard__cta">Bekijk trapverlichting</span></div>
+      </a>
+      <a class="fcard" href="/kasten/kast-op-maat/">
+        <div class="fcard__img"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Een kast die perfect in jouw ruimte past" loading="lazy"><span class="badge">Op maat</span></div>
+        <div class="fcard__body"><h3>Een kast die perfect in jouw ruimte past</h3><p>Stel jouw kast volledig op maat. Kies je type kast, je gewenste indeling, de afmetingen en de kleuren.</p><span class="fcard__cta">Bekijk kasten op maat</span></div>
+      </a>
+      <a class="fcard" href="/wand-plafond/decowall/">
+        <div class="fcard__img"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Viltpanelen in unieke designs" loading="lazy"><span class="badge">Nieuw</span></div>
+        <div class="fcard__body"><h3>Viltpanelen in unieke designs</h3><p>Van organische vormen tot moderne patronen. Ontdek de Decowall Felt Pattern collectie en geef je interieur meer karakter.</p><span class="fcard__cta">Bekijk viltpanelen</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSPIRATIEBAND ============ -->
+<section class="inspo">
+  <div class="inspo__bg"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Woonkamer met CanDo panelen" loading="lazy"></div>
+  <div class="wrap on-dark">
+    <span class="eyebrow">Inspiratie</span>
+    <h2>Zie wat je zelf kunt maken</h2>
+    <p class="lead">Van een lattenwand tot een vloer of een nieuwe trap. Doe ideeën op en ontdek welke klus bij jou past.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/inspiratie/">Bekijk inspiratie</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WAAR WIL JE HEEN (funnel-instappen; keuzehulp is categorie-specifiek en zit in de categorie zelf) ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="kh">
+      <span class="eyebrow">Waar begin je?</span>
+      <h2>Wat past bij jouw klus?</h2>
+      <p>Kies waar je mee bezig bent, dan wijzen we je meteen de goede kant op:</p>
+      <div class="kh__chips">
+        <a class="kh__chip" href="/hout-op-maat-laten-zagen/">Ik wil iets op maat</a>
+        <a class="kh__chip" href="/hout/">Ik ga zelf iets bouwen</a>
+        <a class="kh__chip" href="/inspiratie/">Ik wil een ruimte opknappen</a>
+        <a class="kh__chip" href="/hulp-en-advies/">Ik zoek advies</a>
+      </div>
+      <div class="actions" style="justify-content:center">
+        <a class="btn btn-primary" href="/categorieen/">Bekijk alle categorieën</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER (alleen homepage) ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__intro">
+        <a class="brand" href="/">CanDo<sup>®</sup></a>
+        <p>Voor elke klus in en om je huis. Op maat of standaard, met heldere uitleg en advies dat klopt.</p>
+        <form class="footer__news" onsubmit="return false"><input type="email" placeholder="Je e-mailadres" aria-label="E-mailadres"><button type="submit">Aanmelden</button></form>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <h4>Categorieën</h4>
+          <ul>
+            <li><a href="/deuren/">Deuren</a></li>
+            <li><a href="/hout/">Hout</a></li>
+            <li><a href="/vloeren/">Vloeren</a></li>
+            <li><a href="/kasten/">Kasten</a></li>
+            <li><a href="/traprenovatie/">Traprenovatie</a></li>
+            <li><a href="/wand-plafond/">Wand &amp; plafond</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Hulp &amp; advies</h4>
+          <ul>
+            <li><a href="/inspiratie/">Inspiratie</a></li>
+            <li><a href="/hulp-en-advies/">Klusgidsen</a></li>
+            <li><a href="/inspiratie/">Inspiratie</a></li>
+            <li><a href="/staal-aanvragen/">Staal aanvragen</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>CanDo</h4>
+          <ul>
+            <li><a href="/verkooppunten/">Winkels</a></li>
+            <li><a href="/klantenservice/">Klantenservice</a></li>
+            <li><a href="/klantenservice/veelgestelde-vragen/">Veelgestelde vragen</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© CanDo, onderdeel van Deli Home</span>
+      <span class="tag">You CanDo it</span>
+      <div class="footer__legal">
+        <a href="/privacy/">Privacy</a>
+        <a href="/cookies/">Cookies</a>
+        <a href="/voorwaarden/">Voorwaarden</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOBILE STICKY ============ -->
+<div class="sticky">
+  <a class="btn btn-primary" href="#categorieen">Categorieën</a>
+  <a class="btn btn-secondary" href="/inspiratie/">Inspiratie</a>
+</div>
+
+</div>
+</body>
+</html>

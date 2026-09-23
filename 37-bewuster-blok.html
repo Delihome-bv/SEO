@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  GATE 1F, STAP NUL: DE CATEGORIE. Verplicht sinds 11-09-2026 (Zoe).
+  ===========================================================================
+  Tak         : -, Merkblok, geen productgroep
+  Kennisbank  : geen kennisbank
+  Niet van toepassing op deze tak: de productregels P1 t/m P8 gelden niet
+
+  Draai de toets met de tak erbij, anders draait hij plat en kan hij goed
+  werk afkeuren:
+      python3 "CanDo SEO/_tools/gate1f-verbodenlijst.py" --tak - 37-bewuster-blok.html
+
+  Staat deze kop er niet, dan is de toets niet uitgevoerd, hoe schoon de
+  uitslag ook oogt. Routeringstabel: 04-VORM/VERBODENLIJST.md sectie 0.
+  ===========================================================================
+-->
+<html lang="nl">
+<head>
+<!--
+  ===========================================================================
+  STRAMIEN 37: HET BEWUSTER-BLOK. TWEE VARIANTEN IN EEN BESTAND
+  ===========================================================================
+  Opgesteld 11-09-2026. Dit bestand is de VORM van een BLOK, niet van een
+  pagina. Het bevat twee varianten van hetzelfde blok, onder elkaar, elk met
+  een eigen scheiding en label.
+
+  Bron van de opdracht en van de copy:
+  CanDo SEO/05-BESLUITEN/BESLUIT-DUURZAAMHEID-EN-B-CORP.md (besluit Zoe,
+  11-09-2026). Variant A is paragraaf 3, variant B is paragraaf 4.
+  Vorm-referentie: Stramien/27-materiaalpagina-houtsoort.html.
+  Knoppen en kleuren: 04-VORM/_designsysteem/cando-designsysteem.md en
+  cando-base.css. Register: 01-WERKWIJZE/FEEDBACK-REGISTER.md D30 tot D39.
+
+  ===========================================================================
+  WAAR ELKE VARIANT LANDT
+  ===========================================================================
+  VARIANT A, het homepage-blok "Bewuster kiezen voor je huis"
+    Pagina: https://www.cando.eu/nl-nl/ (homepage)
+    Rol:    wat CanDo concreet doet. Een blok, drie korte onderdelen, een
+            knop naar Over CanDo. Besluit paragraaf 2, laag 1.
+    Plek:   het vervangt de huidige losse B Corp-tegel naast "Producten op
+            maat" en "Verantwoord hout". Die drie tegels worden dit
+            ene blok. Besluit paragraaf 1.
+
+  VARIANT B, de Over CanDo-sectie "We denken ook na over wat we gebruiken"
+    Pagina: https://www.cando.eu/nl-nl/over-cando/
+    Rol:    hoe dat bij het merk hoort. Besluit paragraaf 2, laag 2.
+    Plek:   NA het merkverhaal en de merkwaarden ("Waar we voor staan:
+            Betrouwbaar, Kostenvriendelijk, Wij leggen uit") en VOOR
+            "Onze categorieen". De volledige pagina wordt dan:
+              1 Hero: Wij maken het makkelijk om zelf te klussen
+              2 Wie is CanDo? Altijd bezig om het jou makkelijker te maken
+              3 Waar we voor staan
+              4 We denken ook na over wat we gebruiken   (dit blok, nieuw)
+              5 Onze categorieen
+              6 You CanDo it
+            Bron: besluit paragraaf 4.
+
+  ===========================================================================
+  BINDENDE BLOKVOLGORDE PER VARIANT
+  ===========================================================================
+  VARIANT A, vijf onderdelen, volgorde bindend
+    A1 Kop        "Bewuster kiezen voor je huis"
+    A2 Intro      een alinea, maximaal 760 px breed
+    A3 Kaart 1    Verantwoord hout, PRODUCTGERICHT, met echt beeld
+    A4 Kaart 2    Op maat waar het kan, PRODUCTGERICHT, met echt beeld
+    A5 Bewijsvlak Onderdeel van een B Corp, RUSTIG VLAK met logo en korte
+                  tekst. Geen beeld, geen kaartvorm, volle breedte onder
+                  de twee productkaarten.
+    A6 Knop       "Lees meer over CanDo", pill, primair, naar Over CanDo
+    Mobiele stapelvolgorde: A1, A2, A3, A4, A5, A6. Het bewijsvlak blijft
+    ook op mobiel NA de twee productkaarten en VOOR de knop.
+
+  VARIANT B, vijf onderdelen, volgorde bindend
+    B1 Kop        "We denken ook na over wat we gebruiken"
+    B2 Intro      een alinea, maximaal 760 px breed
+    B3 Onderdeel 1 Verantwoord hout, tekst, geen beeld
+    B4 Onderdeel 2 Op maat gemaakt, tekst, geen beeld
+                  B3 en B4 staan als twee gelijke kolommen binnen een
+                  omkaderde strook, met een haarlijn ertussen. Dat is
+                  dichter op elkaar dan op de homepage, want de bezoeker
+                  is hier al in het merkverhaal. Ontleend aan
+                  .material-columns uit stramien 27.
+    B5 Bewijsvlak CanDo is onderdeel van een B Corp, rustig vlak met logo,
+                  volle breedte onder B3 en B4, plus de tekstlink
+                  "Meer over B Corp"
+    Mobiele stapelvolgorde: B1, B2, B3, B4, B5.
+
+  ===========================================================================
+  DE KERN VAN DIT STRAMIEN, LETTERLIJK VAN ZOE, 11-09-2026
+  ===========================================================================
+  "Visueel zou ik die drie kaarten ook niet allemaal hetzelfde laten voelen.
+   De eerste twee mogen echt productgericht zijn met mooi beeld. Bij B Corp
+   zou ik eerder een rustiger vlak gebruiken met logo en korte tekst. Dan
+   voelt het automatisch als bewijs in plaats van als derde productvoordeel."
+
+  Hoe dat hier is opgelost, in zes verschillen die je kunt naslaan:
+    1 Andere plek in het raster. Kaart 1 en 2 staan naast elkaar in een rij
+      van twee. Het B Corp-vlak staat NIET in die rij, maar eronder, over de
+      volle breedte. Er is dus geen derde gelijke rechthoek.
+    2 Andere drager. Kaart 1 en 2 zijn wit met een rand en een foto.
+      Het B Corp-vlak is zand (bg-soft), zonder rand en zonder foto.
+    3 Andere interne compositie. De kaarten zijn verticaal: beeld boven,
+      tekst onder. Het bewijsvlak is horizontaal: merk links, uitspraak
+      rechts, met een haarlijn ertussen.
+    4 Ander beeldregister. De kaarten dragen fotografie van het product.
+      Het bewijsvlak draagt alleen het B Corp-logo, als merkteken.
+    5 Andere typografische toon. De kaartkoppen zijn 21 px, de kop van het
+      bewijsvlak 18 px met rustiger tekstkleur. Het claimt minder ruimte.
+    6 Geen productaffordance. De kaarten zijn geen link, het bewijsvlak
+      is geen link, en geen van beide heeft een pijl of hover-lift. Er is
+      precies EEN klikbare actie in variant A: de knop.
+  Dit is bewust het doorbroken "drie gelijke rechthoeken"-antipatroon uit
+  frontend-visual-design. Bouw dit blok nooit als drie identieke kaarten.
+
+  ===========================================================================
+  COPY
+  ===========================================================================
+  De copy in beide varianten is GOEDGEKEURD door Zoe op 11-09-2026 en is
+  hier WOORD VOOR WOORD overgenomen uit het besluit, paragraaf 3 en 4.
+  Niets herschreven, niets toegevoegd, niets weggelaten. Er staat geen enkel
+  woord zichtbaar op de pagina dat niet in het besluit staat, met als enige
+  uitzondering de alt-teksten, die niet zichtbaar zijn en wettelijk nodig.
+  Wie iets aan deze copy wil veranderen, wijzigt eerst het besluit.
+
+  ===========================================================================
+  HET ONDERSCHEID DAT ZUIVER MOET BLIJVEN
+  ===========================================================================
+  DELI HOME IS DE B CORP. CANDO IS ER ONDERDEEL VAN.
+  Nooit "CanDo is een B Corp". Altijd "CanDo is onderdeel van Deli Home, een
+  Certified B Corporation". Dat onderscheid staat in beide varianten in de
+  zichtbare tekst en mag bij vertaling naar be-nl en be-fr niet sneuvelen.
+
+  ===========================================================================
+  SCHEMA
+  ===========================================================================
+  Dit bestand voert GEEN paginabrede JSON-LD. Dit zijn blokken, geen
+  pagina's, en twee varianten in een bestand zouden twee keer hetzelfde
+  paginaschema opleveren. Het schema hoort bij de ONTVANGENDE pagina:
+    homepage    WebSite + Organization
+    Over CanDo  AboutPage + Organization
+  Op beide pagina's staat daarnaast BreadcrumbList, want die staat op elke
+  pagina. Bron: 04-VORM/SCHEMA-EN-GEO-NORM.md paragraaf 3.
+  De drie schemaverboden gelden onverkort: geen aggregateRating, geen Review,
+  geen Offer met price, geen Product op een contentpagina.
+  De head hieronder bevat alleen een title en een meta description voor de
+  preview van DIT stramienbestand. Die reizen niet mee naar de pagina.
+  Geen canonical, geen hreflang en geen og-tags in dit bestand: die horen bij
+  de ontvangende pagina en zouden hier naar een niet bestaande url wijzen.
+
+  GEO-aantekening: de intro van beide varianten beantwoordt de kop binnen de
+  eerste 40 woorden en elk onderdeel staat op zichzelf, zonder "dat" of
+  "daarom" dat terugverwijst. Dat maakt elk onderdeel los citeerbaar.
+  Bron: SCHEMA-EN-GEO-NORM.md paragraaf 5.
+
+  ===========================================================================
+  VERBODEN IN DIT BLOK
+  ===========================================================================
+  - Geen absolute of vergelijkende milieuclaim. Niet "duurzaamste", niet
+    "meest milieuvriendelijke", niet "100 procent duurzaam", niet klimaat-
+    of CO2-neutraal. De geschrapte claim "het duurzaamste bouwmateriaal dat
+    er is" komt hier NIET terug, in geen enkele vorm.
+    Bron: FEEDBACK-REGISTER.md D39 en CRO-UX-SEO-PRINCIPES-2026.md
+    paragraaf 1 regel 9b.
+  - Geen drie identieke kaarten. Zie de kern hierboven.
+  - Geen onderstreepte tekst met een pijl als knop. Een primaire of
+    secundaire actie is ALTIJD een pill-knop, .btn plus .btn-primary of
+    .btn-secondary uit cando-base.css. De tekstlink "Meer over B Corp" in
+    variant B is bewust WEL een tekstlink: dat is een tertiaire inline
+    verwijzing en dat is hier de bedoeling. Bron: D37 en designsysteem 13b.
+  - Geen oranje balk of oranje rand als omlijsting van het bewijsvlak. Het
+    component .panel uit cando-base.css heeft border-left 4px oranje: dat
+    patroon is hier NIET gebruikt. Oranje blijft beperkt tot de knop en de
+    tekstlink. Bron: designsysteem regel 5, 6 en 13b.
+  - Nooit in de zichtbare tekst zetten dat een beeld een render of CGI is.
+    Bron: D38.
+  - Geen staal-CTA. Er wordt in dit blok geen staal aangeboden.
+    Bron: D36.
+  - Geen prijs, geen review, geen sterren, geen levertijd.
+  - Geen href="#". Beide externe verwijzingen gaan naar een bestaande,
+    geverifieerde url.
+  - Geen emoji, dingbat, vinkje of pijl in de zichtbare tekst. Er zit
+    daarom ook geen ::after-pijl op de kaarten of op de tekstlink.
+  - Geen em-streep in de copy.
+
+  ===========================================================================
+  LINKS, GEVERIFIEERD 11-09-2026
+  ===========================================================================
+    https://www.cando.eu/nl-nl/over-cando/   HTTP 200
+    https://www.cando.eu/nl-nl/b-corp/       HTTP 200
+  Beide bestaan live, dus de afhankelijkheidsregel (nooit linken naar iets
+  dat nog niet bestaat) is gehaald. Bij de be-nl- en be-fr-uitrol eerst
+  opnieuw controleren: https://www.cando.eu/be-nl/over-cando bestaat wel in
+  de sitemap, de Franstalige tegenhangers zijn niet bevestigd.
+
+  ===========================================================================
+  BEELD
+  ===========================================================================
+  Twee foto's, elk precies een keer. Beide zijn op 11-09-2026 gecontroleerd
+  op HTTP 200 en visueel bekeken, en geen van beide wordt elders in
+  cando-stramienen gebruikt.
+    Kaart 1  024f337b-b723-4e8e-a262-acf92aa1d127
+             CanDo_Tafelblad Eiken doorlopend lamel 30mm_detail1
+             massief eiken blad van dichtbij, nerf en gezaagde rand zichtbaar
+    Kaart 2  61f0f91b-25d7-4128-831f-f31589ecb71f
+             Cando_Meubelpaneel-op-maat_wandplank_in_nis_Eiken_Natuur_Structuur
+             planken op maat, passend in een nis, jaartal 2026
+  URL-regel: Asset id uit Meta_data_beeld_cando_*.csv naar kleine letters,
+  koppelteken na 20 tekens, spaties in de bestandsnaam worden koppeltekens,
+  extensie wordt .jpg:
+  https://delihome.getbynder.com/asset/{uuid}/medium-JPG/{Bestandsnaam}.jpg
+  Bij het live zetten de twee asset-id's registreren in
+  CanDo-hout-redirects-en-inventaris.xlsx tab 06, zodat dubbelgebruik
+  onmogelijk wordt. Regel uit Deli Home/CLAUDE.md.
+  Het B Corp-logo is geen beeldbank-asset maar een merkteken:
+  https://www.cando.eu/media/wysiwyg/B-Corp-Logo-Black-CMYK.png (740 x 1080).
+
+  Dit bestand bevat bewust GEEN SVG. Reden: CSS-variabelen werken niet in
+  SVG-presentatieattributen, en elk vlak hier is met echte CSS op te lossen.
+  Wie later toch een SVG toevoegt, zet de kleur als letterlijke hexwaarde.
+
+  ===========================================================================
+  OPEN PUNTEN
+  ===========================================================================
+  [besluit nodig] "100% GECERTIFICEERD HOUT" ALS KAARTKOP IN VARIANT A.
+    De copy is goedgekeurd en staat er daarom letterlijk, maar het bezwaar
+    hoort vastgelegd. De kop claimt 100 procent, de tekst eronder claimt
+    iets anders en zwakkers: "Het hout dat CanDo gebruikt is FSC of PEFC
+    gecertificeerd". Dat is precies de mismatch die het besluit zelf
+    signaleert in paragraaf 6, waar de live B Corp-pagina "uitsluitend" naast
+    "is gecertificeerd" zet en het besluit dat als probleem benoemt. Een
+    absolute kwantor zonder bewijsstuk op de pagina is bovendien het patroon
+    achter D39 en CRO regel 9b, ook al gaat die regel formeel over
+    milieuclaims en niet over certificeringsclaims. Twee routes:
+      A. De 100 procent is hard aantoonbaar voor het hele houtassortiment.
+         Dan blijft de kop staan en hoort het bewijsstuk in KENNIS/HOUT.md.
+      B. De 100 procent is niet voor het hele assortiment hard te maken.
+         Dan wordt de kop gelijkgetrokken met de tekst eronder, net zoals
+         variant B dat al doet met "Verantwoord hout".
+    ⛔ BESLOTEN door Zoë op 11-09-2026: ROUTE B. De 100 procent is niet voor
+    het hele assortiment hard te maken, dus de kop is gelijkgetrokken met de
+    tekst eronder en luidt nu "Verantwoord hout", net als in variant B. De
+    kop en de zin eronder zeggen daarmee hetzelfde.
+  [besluit nodig] DE URL VAN DE KNOP IN VARIANT A. De knop wijst nu naar
+    https://www.cando.eu/nl-nl/over-cando/, conform het besluit ("naar Over
+    CanDo"). Zodra de Over CanDo-pagina de nieuwe sectie voert, is een anker
+    naar die sectie waarschijnlijk beter dan de paginatop, omdat de bezoeker
+    op de homepage al op dit onderwerp klikt. Bevestigen of de knop naar de
+    paginatop of naar #wat-we-gebruiken gaat.
+  [besluit nodig] BE-NL EN BE-FR. Dit stramien is nl-NL. Beide varianten
+    moeten vertaald worden voordat ze op de Belgische sites landen, en de
+    Franstalige url van de B Corp-pagina is niet bevestigd. Zolang die er
+    niet is, gaat de tekstlink in de be-fr-variant er niet in.
+  [te bevestigen] MERKTEKENGEBRUIK. "B Corp" met een trademarkteken en
+    "Certified B Corporation" met een trademarkteken staan zo in de
+    goedgekeurde copy. B Lab voert eigen gebruiksrichtlijnen voor de naam en
+    het logo, onder meer over minimale logomaat en vrije ruimte. Laten
+    toetsen door merk en legal bij Deli Home voordat dit live gaat. Het logo
+    staat hier op 84 px breed in variant A en 66 px in variant B.
+  [te bevestigen] LOGOPAD. Het logo wordt nu geladen uit
+    /media/wysiwyg/, een wysiwyg-uploadpad. Voor een blok dat op twee
+    sjablonen terugkomt is een stabiel mediapad netter. Bevestigen met de
+    product owner van Spheremall.
+
+  ===========================================================================
+  TOEGANKELIJKHEID EN TECHNIEK
+  ===========================================================================
+  - lang="nl" op html. Elke variant is een section met aria-labelledby.
+  - :focus-visible met een zichtbare oranje outline, offset 3 px.
+  - prefers-reduced-motion schakelt smooth scroll en alle transities uit.
+  - Elke foto heeft width en height voor CLS, plus loading="lazy": geen van
+    beide blokken is het LCP-beeld van zijn pagina.
+  - Er is geen skiplink in dit bestand. Dat is paginachrome en hoort bij de
+    ontvangende pagina, niet bij een blok.
+  - De tekstlink in variant B staat in donkere tekst met onderstreping en
+    wordt pas op hover oranje. Reden staat bij .cando-blok .textlink in de
+    CSS: oranje tekst op zand of wit haalt de contrasteis van 4,5:1 niet.
+  - Geverifieerd op 1360 en 390 px: geen horizontale overflow, en de mobiele
+    stapelvolgorde is zoals hierboven vastgelegd.
+  - De donkere balken tussen de varianten zijn STRAMIENCHROME. Ze horen niet
+    bij het blok en gaan niet mee naar de pagina.
+  - Afronding staat op --radius 8px, gelijk aan de stramienenfamilie 27, 31,
+    32 en 33. Het designsysteem spreekt zichzelf hier tegen: regel 4 noemt
+    12px voor kaarten, regel 12 noemt 8px voor beeld. Dit bestand volgt de
+    vorm-referentie. Niet stilzwijgend naar 12px trekken zonder die
+    tegenspraak eerst in het designsysteem op te lossen.
+  - De knop is 16px vet wit op CanDo-oranje. Dat is de voorgeschreven
+    huisstijl (designsysteem regel 1) en staat zo in elk stramien. Hier niet
+    afwijken, wel weten dat dit een merkbesluit is en geen contrastkeuze.
+  ===========================================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stramien 37, het bewuster-blok in twee varianten | CanDo</title>
+<meta name="description" content="Vorm van het duurzaamheidsblok in twee varianten: het homepage-blok Bewuster kiezen voor je huis en de Over CanDo-sectie We denken ook na over wat we gebruiken.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{
+  --text:#20272b;
+  --muted:#666b70;
+  --accent:#F7901E;
+  --accent-dark:#d95f18;
+  --border:#e5ded4;
+  --bg-soft:#f7f2ea;
+  --bg-light:#fbfaf7;
+  --bg-warm:#f4eadc;
+  --white:#fff;
+  --dark:#211914;
+  --radius:8px;
+  --radius-pill:24px;
+  --shadow:0 8px 22px rgba(32,39,43,.045);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--text);font-family:Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+
+/* ---------------------------------------------------------------
+   STRAMIENCHROME. Bewust NIET in de CanDo-huisstijl, zodat niemand
+   dit voor blokinhoud aanziet. Gaat niet mee naar de pagina.
+   --------------------------------------------------------------- */
+.stramien-bar{background:#243447;color:#fff;padding:16px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+.stramien-bar__inner{width:100%;max-width:1180px;margin:0 auto}
+.stramien-bar b{display:block;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.stramien-bar span{display:block;margin-top:6px;font-size:12.5px;line-height:1.55;color:rgba(255,255,255,.82)}
+
+/* ---------------------------------------------------------------
+   GEDEELDE BLOKBASIS
+   --------------------------------------------------------------- */
+.cando-blok{width:100%;overflow-x:clip;background:#fff;color:var(--text)}
+.cando-blok *,.cando-blok *::before,.cando-blok *::after{box-sizing:border-box}
+.cando-blok h2,.cando-blok h3,.cando-blok .btn{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.cando-blok h2{margin:0;font-size:30px;line-height:1.2;font-weight:700;letter-spacing:-.01em;color:var(--text)}
+.cando-blok h3{margin:0 0 8px;font-size:19px;line-height:1.3;font-weight:700;color:var(--text)}
+.cando-blok p{margin:0;font-size:16px;line-height:1.68;color:#414141}
+.cando-blok a{color:inherit}
+.cando-blok :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+.section{padding:58px 0}
+.section--light{background:var(--bg-light)}
+.section-head{max-width:760px;margin-bottom:30px}
+.section-head p{margin-top:12px;font-size:17px;line-height:1.66}
+
+/* Knoppen. Letterlijk het patroon uit 04-VORM/_designsysteem/cando-base.css.
+   D37: een primaire of secundaire actie is ALTIJD deze pill. */
+.btn-row{display:flex;flex-direction:column;align-items:stretch;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:48px;padding:12px 26px;border:1px solid transparent;border-radius:var(--radius-pill);font-size:16px;font-weight:700;line-height:1.2;text-decoration:none!important;cursor:pointer;transition:background .18s ease,border-color .18s ease,color .18s ease}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff!important}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff!important}
+.btn-secondary{background:transparent;border-color:var(--text);color:var(--text)!important}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)!important}
+
+/* Tertiaire inline verwijzing. Nadrukkelijk GEEN knop, en zonder pijl.
+   Twee dingen bewust zo:
+   1 De selector is .cando-blok .textlink en niet .textlink. Anders wint
+     .cando-blok a (0,1,1) van .textlink (0,1,0) en verliest de link zijn
+     kleur. Dezelfde specificiteitsval staat gedocumenteerd in stramien 27
+     bij .route-heading.
+   2 De rusttoestand is donkere tekst, niet oranje. Oranje op zand haalt
+     ongeveer 2,2:1 en oranje op wit ongeveer 2,5:1, allebei onder de eis
+     van 4,5:1 uit het designsysteem. Donker op zand haalt ruim 13:1. De
+     onderstreping draagt hier de linkherkenning, de kleur hoeft dat niet. */
+.cando-blok .textlink{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;font-size:15px;font-weight:700;color:var(--text);text-decoration:underline;text-underline-offset:3px}
+.cando-blok .textlink:hover{color:var(--accent-dark)}
+
+/* ---------------------------------------------------------------
+   VARIANT A. Twee productkaarten naast elkaar, daaronder het
+   B Corp-bewijsvlak over de volle breedte. Geen derde kaart.
+   --------------------------------------------------------------- */
+.product-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.product-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.product-card__image{height:270px;background:var(--bg-warm);border-bottom:1px solid var(--border);overflow:hidden}
+.product-card__image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.product-card__body{padding:24px 26px 28px}
+.product-card h3{font-size:21px;margin-bottom:9px}
+.product-card p{font-size:15px;line-height:1.62}
+
+/* Het bewijsvlak. Zand, geen rand, geen foto, merk links en uitspraak
+   rechts. Ander register dan de kaarten hierboven. */
+.proof-band{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;gap:34px;margin-top:18px;padding:30px 34px;background:var(--bg-soft);border-radius:var(--radius)}
+.proof-band__mark{display:flex;align-items:center;justify-content:center;padding-right:34px;border-right:1px solid #e2d7c7}
+.proof-band__mark img{width:84px;height:auto}
+.proof-band__copy{max-width:740px}
+.proof-band h3{font-size:18px;margin-bottom:9px}
+.proof-band p{font-size:15px;line-height:1.62;color:#4a5054}
+
+/* ---------------------------------------------------------------
+   VARIANT B. Dichter op elkaar: twee tekstkolommen in een strook,
+   daaronder hetzelfde bewijsvlak in een lichtere uitvoering.
+   --------------------------------------------------------------- */
+.pair{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pair__item{padding:30px 44px 32px 0}
+.pair__item + .pair__item{padding:30px 0 32px 44px;border-left:1px solid var(--border)}
+.pair__item h3{font-size:20px;margin-bottom:10px}
+.pair__item p{font-size:16px;line-height:1.66}
+
+.proof-inset{display:grid;grid-template-columns:118px minmax(0,1fr);align-items:start;gap:28px;margin-top:26px;padding:26px 30px 22px;background:var(--bg-soft);border-radius:var(--radius)}
+.proof-inset__mark{display:flex;align-items:flex-start;justify-content:center;padding-right:28px;border-right:1px solid #e2d7c7}
+.proof-inset__mark img{width:66px;height:auto}
+.proof-inset__copy{max-width:740px}
+.proof-inset h3{font-size:18px;margin-bottom:9px}
+.proof-inset p{font-size:15px;line-height:1.62;color:#4a5054}
+
+/* ---------------------------------------------------------------
+   RESPONSIEF
+   --------------------------------------------------------------- */
+@media(min-width:700px){
+  .btn-row{flex-direction:row;align-items:center}
+  .btn{width:auto}
+}
+@media(max-width:1020px){
+  .product-card__image{height:230px}
+  .proof-band{grid-template-columns:1fr;gap:22px;padding:28px 26px}
+  .proof-band__mark{justify-content:flex-start;padding-right:0;padding-bottom:22px;border-right:0;border-bottom:1px solid #e2d7c7}
+  .proof-inset{grid-template-columns:1fr;gap:20px;padding:24px 24px 20px}
+  .proof-inset__mark{justify-content:flex-start;padding-right:0;padding-bottom:20px;border-right:0;border-bottom:1px solid #e2d7c7}
+  .pair__item{padding:26px 30px 28px 0}
+  .pair__item + .pair__item{padding:26px 0 28px 30px}
+}
+@media(max-width:760px){
+  .section{padding:44px 0}
+  .cando-blok h2{font-size:26px}
+  .section-head{margin-bottom:24px}
+  .section-head p{font-size:16px}
+  .product-row{grid-template-columns:1fr;gap:16px}
+  .product-card__image{height:210px}
+  .product-card__body{padding:22px 20px 24px}
+  .product-card h3{font-size:19px}
+  .proof-band{margin-top:16px;padding:24px 20px}
+  .proof-band__mark img{width:72px}
+  .pair{grid-template-columns:1fr}
+  .pair__item{padding:24px 0 26px}
+  .pair__item + .pair__item{padding:24px 0 26px;border-left:0;border-top:1px solid var(--border)}
+  .pair__item h3{font-size:19px}
+  .pair__item p{font-size:15px}
+  .proof-inset{margin-top:22px;padding:22px 20px 18px}
+  .stramien-bar{padding:14px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ======================================================================
+     STRAMIENCHROME. Hoort niet bij het blok.
+     ====================================================================== -->
+<div class="stramien-bar">
+  <div class="stramien-bar__inner">
+    <b>Variant A, het homepage-blok</b>
+    <span>Landt op www.cando.eu/nl-nl/. Vervangt de drie losse tegels, waaronder de huidige B Corp-tegel. Volgorde: kop, intro, twee productkaarten, B Corp-bewijsvlak, knop naar Over CanDo. Copy uit BESLUIT-DUURZAAMHEID-EN-B-CORP.md paragraaf 3.</span>
+  </div>
+</div>
+
+<!-- ======================================================================
+     VARIANT A. Bewuster kiezen voor je huis.
+     Kaart 1 en 2 zijn productgericht met beeld. Het B Corp-vlak staat
+     bewust buiten die rij: rustiger, zand, alleen logo en korte tekst.
+     ====================================================================== -->
+<section class="cando-blok section section--light" id="blok-bewuster-homepage" aria-labelledby="blok-bewuster-homepage-title">
+  <div class="wrap">
+
+    <div class="section-head">
+      <h2 id="blok-bewuster-homepage-title">Bewuster kiezen voor je huis</h2>
+      <p>Bij CanDo kijken we niet alleen naar hoe een product eruitziet en hoe makkelijk je ermee kunt klussen. We kijken ook naar de materialen die we gebruiken en hoe we daar zo bewust mogelijk mee omgaan.</p>
+    </div>
+
+    <!-- A3 en A4: de twee productgerichte kaarten, met echt beeld. -->
+    <div class="product-row">
+
+      <article class="product-card">
+        <div class="product-card__image">
+          <img loading="lazy" src="https://delihome.getbynder.com/asset/024f337b-b723-4e8e-a262-acf92aa1d127/medium-JPG/CanDo_Tafelblad-Eiken-doorlopend-lamel-30mm_detail1.jpg" alt="Massief eiken blad van dichtbij, met zichtbare nerf en de massieve gezaagde rand" width="1900" height="1229">
+        </div>
+        <div class="product-card__body">
+          <h3>Verantwoord hout</h3>
+          <p>Het hout dat CanDo gebruikt is FSC&reg;- of PEFC-gecertificeerd. Zo kiezen we voor hout uit verantwoord beheerde bronnen.</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-card__image">
+          <img loading="lazy" src="https://delihome.getbynder.com/asset/61f0f91b-25d7-4128-831f-f31589ecb71f/medium-JPG/Cando_Meubelpaneel-op-maat_wandplank_in_nis_Eiken_Natuur_Structuur.jpg" alt="Wandplanken op maat gemaakt, precies passend in een nis in de woonkamer" width="1900" height="1900">
+        </div>
+        <div class="product-card__body">
+          <h3>Op maat waar het kan</h3>
+          <p>Veel CanDo-producten worden gemaakt voor jouw ruimte. Dat betekent minder aanpassen tijdens de montage en slimmer gebruik van materiaal.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- A5: het bewijsvlak. Geen kaart, geen foto, geen rand, ander
+         register. Volle breedte onder de twee kaarten. -->
+    <div class="proof-band">
+      <div class="proof-band__mark">
+        <img loading="lazy" src="https://www.cando.eu/media/wysiwyg/B-Corp-Logo-Black-CMYK.png" alt="Logo Certified B Corporation" width="740" height="1080">
+      </div>
+      <div class="proof-band__copy">
+        <h3>Onderdeel van een B Corp&trade;</h3>
+        <p>CanDo is onderdeel van Deli Home, een Certified B Corporation&trade;. Deli Home wordt daarbij beoordeeld op de impact van haar bedrijfsvoering op onder andere mens en milieu.</p>
+      </div>
+    </div>
+
+    <!-- A6: de enige klikbare actie in dit blok. -->
+    <div class="btn-row">
+      <a class="btn btn-primary" href="https://www.cando.eu/nl-nl/over-cando/">Lees meer over CanDo</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================================================================
+     STRAMIENCHROME. Hoort niet bij het blok.
+     ====================================================================== -->
+<div class="stramien-bar">
+  <div class="stramien-bar__inner">
+    <b>Variant B, de Over CanDo-sectie</b>
+    <span>Landt op www.cando.eu/nl-nl/over-cando/, NA de merkwaarden "Waar we voor staan" en VOOR "Onze categorieen". Volgorde: kop, intro, twee onderdelen in een strook, B Corp-bewijsvlak met de tekstlink. Copy uit BESLUIT-DUURZAAMHEID-EN-B-CORP.md paragraaf 4.</span>
+  </div>
+</div>
+
+<!-- ======================================================================
+     VARIANT B. We denken ook na over wat we gebruiken.
+     Dichter op elkaar dan op de homepage, want de bezoeker zit hier al
+     in het merkverhaal. Geen fotografie: alleen tekst plus het merkteken.
+     B Corp is ook hier het bewijs, niet het derde voordeel.
+     ====================================================================== -->
+<section class="cando-blok section" id="blok-wat-we-gebruiken" aria-labelledby="blok-wat-we-gebruiken-title">
+  <div class="wrap">
+
+    <div class="section-head">
+      <h2 id="blok-wat-we-gebruiken-title">We denken ook na over wat we gebruiken</h2>
+      <p>Een mooi eindresultaat begint niet alleen bij kleur, stijl of gemak. Ook de materialen die we gebruiken spelen een rol. Daarom kiezen we waar mogelijk voor gecertificeerde grondstoffen, maken we veel producten op maat en blijven we zoeken naar manieren om slimmer met materiaal om te gaan.</p>
+    </div>
+
+    <!-- B3 en B4: twee gelijke kolommen binnen een strook, haarlijn ertussen. -->
+    <div class="pair">
+      <div class="pair__item">
+        <h3>Verantwoord hout</h3>
+        <p>Het hout dat CanDo gebruikt is FSC&reg;- of PEFC-gecertificeerd. Daarmee kiezen we voor hout uit verantwoord beheerde bronnen.</p>
+      </div>
+      <div class="pair__item">
+        <h3>Op maat gemaakt</h3>
+        <p>Van kasten en trappen tot werkbladen en hout. Veel CanDo-producten kun je precies passend laten maken. Zo hoef je tijdens het klussen minder aan te passen en krijg je een oplossing die past bij jouw ruimte.</p>
+      </div>
+    </div>
+
+    <!-- B5: het bewijsvlak, lichter dan in variant A, met de tekstlink. -->
+    <div class="proof-inset">
+      <div class="proof-inset__mark">
+        <img loading="lazy" src="https://www.cando.eu/media/wysiwyg/B-Corp-Logo-Black-CMYK.png" alt="Logo Certified B Corporation" width="740" height="1080">
+      </div>
+      <div class="proof-inset__copy">
+        <h3>CanDo is onderdeel van een B Corp&trade;</h3>
+        <p>CanDo is onderdeel van Deli Home. Deli Home is een Certified B Corporation&trade;. Dat betekent dat het bedrijf niet alleen wordt beoordeeld op financi&euml;le resultaten, maar ook op de impact van de bedrijfsvoering op onder andere medewerkers, maatschappij, milieu en klanten.</p>
+        <a class="textlink" href="https://www.cando.eu/nl-nl/b-corp/">Meer over B Corp</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

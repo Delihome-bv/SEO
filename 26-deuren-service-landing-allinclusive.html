@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CanDo All Inclusive voordeuren, inmeten, monteren en aflakken | CanDo</title>
+<meta name="description" content="Een nieuwe voordeur zonder zelf te klussen. CanDo meet in, maakt op maat, lakt af en hangt de deur af. Bekijk wat het kost, hoe het werkt en vraag All Inclusive aan.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--beige:#FDC689;--dark:#121b21;--border:#e5ddd3;--soft:#f7f2ea;--soft2:#fbfaf7;--radius:8px;--shadow:0 10px 24px rgba(18,27,33,.05)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}.page{overflow-x:hidden}
+h1,h2,h3,.btn,.eyebrow,.num,.price{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 18px}
+section{padding:40px 0}.soft{background:var(--soft)}.measure{max-width:720px}
+h1{margin:0 0 12px;font-size:34px;line-height:1.06;letter-spacing:-.025em}
+h2{margin:0 0 12px;font-size:27px;letter-spacing:-.02em}h3{margin:0 0 8px;font-size:18px}
+p{margin:0;color:#414141;font-size:16px;line-height:1.72}p+p{margin-top:12px}
+.eyebrow{display:block;margin:0 0 10px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.crumbs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px;color:#8c8c8c;font-size:12px}
+.crumbs a{color:#8c8c8c}.crumbs a:hover{color:var(--accent)}.crumbs span{color:#b5b5b5}
+.head{max-width:720px;margin-bottom:24px}.head p{margin-top:10px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;border:1.5px solid transparent;cursor:pointer;transition:.18s ease}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(247,144,30,.15)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-tertiary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-tertiary:hover{border-color:var(--accent);color:var(--accent)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+/* Hero (GOUD-signatuur) */
+.hero{position:relative;min-height:50vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--dark)}
+.hero__bg{position:absolute;inset:0}.hero__bg img{width:100%;height:100%;object-fit:cover;opacity:.55}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,27,33,.9),rgba(18,27,33,.42))}
+.hero__b{position:relative;z-index:2;padding:70px 22px 46px;max-width:1120px;margin:0 auto;width:100%}
+.hero h1{color:#fff;max-width:640px}.hero .eyebrow{color:var(--beige)}.hero p{color:#e9e9e7;max-width:560px}
+.hero .btn-tertiary{border-color:rgba(255,255,255,.6);color:#fff}.hero .btn-tertiary:hover{border-color:var(--beige);color:var(--beige)}
+/* Bestaat uit: split */
+.split{display:grid;gap:26px;align-items:stretch;grid-template-columns:1fr}
+.split__media{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);min-height:340px}
+.split__media img{width:100%;height:100%;object-fit:cover;min-height:340px}
+.checks{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:11px}
+.checks li{position:relative;padding-left:30px;font-size:16px;color:#3d3d3d}
+.checks li::before{content:"✓";position:absolute;left:0;top:-1px;width:21px;height:21px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+/* Voordelen grid */
+.benefits{display:grid;gap:14px;grid-template-columns:1fr}
+.bcard{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.bcard h3{font-size:16px;position:relative;padding-left:26px}
+.bcard h3::before{content:"✓";position:absolute;left:0;top:1px;width:18px;height:18px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:Arial,sans-serif}
+.bcard p{font-size:14px;color:var(--muted);margin-top:6px}
+/* Wat kost het */
+.cost{display:grid;gap:26px;grid-template-columns:1fr;align-items:stretch}
+.cost__img{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);min-height:300px}
+.cost__img img{width:100%;height:100%;object-fit:cover;min-height:300px}
+.priceband{background:var(--soft);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin:14px 0 8px}
+.price{font-size:30px;font-weight:800}.price small{font-size:13px;color:var(--muted);font-weight:600;font-family:Arial,sans-serif}
+.costlist{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.costlist b{display:block;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:15px;margin-bottom:2px}
+.costlist span{font-size:14px;color:var(--muted);line-height:1.6}
+.opts{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:7px}
+.opts li{position:relative;padding-left:20px;font-size:14px;color:#3d3d3d}
+.opts li::before{content:"+";position:absolute;left:0;top:0;color:var(--accent);font-weight:800}
+/* Levertijd note */
+.note{background:#fff7ee;border:1px solid var(--beige);border-left:4px solid var(--accent);border-radius:var(--radius);padding:16px 18px;margin-top:14px}
+.note p{font-size:14px;color:#5a4a33}
+/* Stappen */
+.steps{display:grid;gap:14px;grid-template-columns:1fr}
+.step{display:flex;gap:16px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.step .num{flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:var(--soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px}
+.step h3{font-size:16px;margin:0 0 3px}.step p{font-size:14px;color:var(--muted)}
+/* Andere services (cross-sell, boom) */
+.addons{display:grid;gap:16px;grid-template-columns:1fr}
+.addon{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:180px;border-radius:var(--radius);overflow:hidden;color:#fff;text-decoration:none;box-shadow:var(--shadow)}
+.addon img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.addon:hover img{transform:scale(1.05)}
+.addon::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,27,33,.15) 25%,rgba(18,27,33,.9) 100%)}
+.addon__b{position:relative;z-index:2;padding:20px}
+.addon .lbl{display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--beige);margin-bottom:6px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.addon h3{color:#fff;font-size:18px;margin:0}.addon h3::after{content:" →";color:var(--beige)}
+/* Aanvraag-band */
+.cta{background:var(--dark);border-radius:var(--radius);padding:38px 28px;text-align:center;color:#fff}
+.cta h2{color:#fff}.cta p{color:#d7dad9;max-width:520px;margin:8px auto 0}.cta .btn{margin-top:20px}
+.cta .btn-primary{background:var(--accent);border-color:var(--accent)}
+@media(min-width:820px){section{padding:52px 0}h1{font-size:42px}.hero{min-height:56vh}.hero__b{padding:104px 24px 56px}.split{grid-template-columns:1.05fr .95fr}.benefits{grid-template-columns:1fr 1fr}.cost{grid-template-columns:360px 1fr}.steps{grid-template-columns:1fr 1fr}.addons{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.btn{width:100%}}
+</style>
+</head>
+<body>
+<!-- DEUREN SERVICE-LANDING (All Inclusive). Nieuw stramien met GOUD-hero. Knooppunt: linkt naar hub, buitendeuren, andere services, verkooppunten, aanvraag. Geen globale header/footer. -->
+<main class="page">
+  <section class="hero">
+    <div class="hero__bg"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Schuifdeurkast op maat met omlijste eiken deuren"></div>
+    <div class="hero__b">
+      <nav class="crumbs" aria-label="Kruimelpad" style="color:#d8dbda"><a href="/" style="color:#d8dbda">Home</a><span style="color:#9aa0a0">›</span><a href="/deuren/" style="color:#d8dbda">Deuren</a><span style="color:#9aa0a0">›</span><a href="/deuren/services/" style="color:#d8dbda">Services</a><span style="color:#9aa0a0">›</span>All Inclusive voordeuren</nav>
+      <span class="eyebrow">All Inclusive voordeuren</span>
+      <h1>Een nieuwe voordeur zonder zelf te klussen</h1>
+      <p>Wil je een isolerende voordeur die wij voor je inmeten, produceren en afhangen? Met CanDo kies je voor kwaliteit, vakmanschap en gemak. Wij nemen deze klus graag voor je uit handen.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="#aanvragen">Vraag All Inclusive aan</a><a class="btn btn-tertiary" href="#hoe">Hoe werkt het?</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="eyebrow">Wat je krijgt</span>
+          <h2>All Inclusive bestaat uit</h2>
+          <ul class="checks">
+            <li>Digitaal inmeten bij jou thuis</li>
+            <li>Op maat maken van de deur</li>
+            <li>Aflakken in Sikkens of RAL-kleur naar keuze</li>
+            <li>Montage van veiligheidsbeslag en hang- en sluitwerk</li>
+            <li>Afhangen van de voordeur bij jou thuis</li>
+            <li>Afvoeren van je oude deur</li>
+          </ul>
+        </div>
+        <div class="split__media"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="CanDo vakman meet de voordeur in"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="head measure"><span class="eyebrow">De voordelen op een rij</span><h2>Waarom kiezen voor All Inclusive</h2></div>
+      <div class="benefits">
+        <div class="bcard"><h3>Vakkundig en betrouwbaar</h3><p>De CanDo vakman meet je kozijn digitaal in en produceert je deur exact op maat. We hangen 'm perfect af, monteren het veiligheidspakket en nemen je oude deur mee.</p></div>
+        <div class="bcard"><h3>Lange levensduur</h3><p>Door de unieke gelaagde opbouw heeft de FSC-gecertificeerde Comfort voordeur een langere levensduur dan een traditionele voordeur, met zeer weinig onderhoud.</p></div>
+        <div class="bcard"><h3>Isolerend</h3><p>De unieke gelaagde opbouw met isolerende kern houdt de warmte binnen. Zo bespaar je flink op je energiekosten, ook dankzij het isolerende glas.</p></div>
+        <div class="bcard"><h3>Vormvast</h3><p>Comfort voordeuren krimpen of zwellen nauwelijks bij temperatuur- en vochtschommelingen, waardoor de deur nauwelijks klemt.</p></div>
+        <div class="bcard"><h3>Veilig</h3><p>Met een veiligheidspakket voorzien we je deur meteen van de juiste boringen voor SKG*** deurbeslag en driepuntsluiting. Scharnieren met dievenpen maken het compleet.</p></div>
+        <div class="bcard"><h3>Onderhoudsarm</h3><p>Doordat de deur nauwelijks werkt, ontstaan er minder scheurtjes in de laklaag en hoeft de deur minder vaak geschilderd te worden.</p></div>
+        <div class="bcard"><h3>Duurzaam</h3><p>Een Comfort voordeur staat voor duurzaamheid: een lange levensduur en FSC-gecertificeerd hout. Een milieuvriendelijke keuze.</p></div>
+        <div class="bcard"><h3>Compleet afgewerkt</h3><p>De deur wordt vakkundig afgelakt met professionele verf. Je kiest uit Sikkens of RAL-kleur en opties zoals een brievenbus of tochtvaldorpel.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head measure"><span class="eyebrow">Wat kost het?</span><h2>De prijs van All Inclusive</h2></div>
+      <div class="cost">
+        <div class="cost__img"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="CanDo Comfort voordeur"></div>
+        <div>
+          <div class="priceband"><div class="price">€ 979,- <small>ex. btw, servicekosten</small></div></div>
+          <p>De All Inclusive service bestaat uit inmeten, op maat maken, aflakken en afhangen van de nieuwe deur en het verwijderen van de oude deur. Dit is exclusief de kosten van de deur, glas en accessoires. De totaalprijs hangt af van een aantal zaken:</p>
+          <ul class="costlist">
+            <li><b>Deurmodel</b><span>Je kiest uit 13 verschillende CanDo Comfort deurmodellen, elk met verschillende glasopties.</span></li>
+            <li><b>Deurmaat</b><span>Afhankelijk van de maat van je kozijn. Bij het inmeten bepalen we welke deurmaat past, zodat we de exacte prijs kunnen bepalen. Je betaalt het gehele bedrag in de bouwmarkt bij het inleveren van de definitieve offerte.</span></li>
+            <li><b>Veiligheidspakket</b><span>Verkrijgbaar in verschillende kleuren en vormen.</span></li>
+          </ul>
+          <p style="margin-top:16px;font-family:ff-dax-pro,'Dax Pro',Arial,sans-serif;font-weight:700;font-size:15px">Mogelijke opties tegen meerprijs</p>
+          <ul class="opts">
+            <li>Tochtvaldorpel</li>
+            <li>Twee kleuren lakken (voor- en achterzijde verschillend)</li>
+            <li>Uitfrezing bestaand houten kozijn</li>
+            <li>Toeslag roosterdeur</li>
+            <li>Spionoog (alleen voor ML805 en ML820)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap measure">
+      <span class="eyebrow">Levertijd</span>
+      <h2>Wat is de levertijd?</h2>
+      <p>Na het versturen van de inmeetopdracht nemen we binnen twee tot vier weken contact met je op. Na de definitieve bestelling wordt de deur voor jou op maat gemaakt. Daarna nemen we weer contact op om de montageafspraak in te plannen.</p>
+      <div class="note"><p>Houd rekening met langere levertijden door de huidige drukte en aanvoerproblemen van materialen. We kunnen de genoemde levertijden op dit moment daarom niet garanderen. Bij maatwerk gelden extra lange levertijden.</p></div>
+      <div class="btn-row"><a class="btn btn-primary" href="#aanvragen">All Inclusive aanvragen</a></div>
+    </div>
+  </section>
+
+  <section id="hoe">
+    <div class="wrap">
+      <div class="head measure"><span class="eyebrow">Zo werkt het</span><h2>Hoe werkt All Inclusive?</h2></div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><div><h3>Aanvragen</h3><p>Vraag All Inclusive aan door het aanvraagformulier in te vullen.</p></div></div>
+        <div class="step"><div class="num">2</div><div><h3>Contact</h3><p>De CanDo vakman neemt na twee tot vier weken contact met je op voor een inmeetafspraak.</p></div></div>
+        <div class="step"><div class="num">3</div><div><h3>Inmeten</h3><p>We komen bij je thuis en meten je kozijn digitaal in. Samen maken we de offerte definitief.</p></div></div>
+        <div class="step"><div class="num">4</div><div><h3>Bestellen</h3><p>Lever de offerte in bij de bouwmarkt om je All Inclusive bestelling definitief te plaatsen.</p></div></div>
+        <div class="step"><div class="num">5</div><div><h3>Productie</h3><p>Is de deur klaar (circa negen weken), dan neemt de vakman contact op voor een montageafspraak.</p></div></div>
+        <div class="step"><div class="num">6</div><div><h3>Monteren</h3><p>We hangen je nieuwe voordeur af, werken 'm af met tochtprofielen en nemen de oude deur mee.</p></div></div>
+      </div>
+      <p style="margin-top:18px;color:var(--muted);font-size:14px">Houd je All Inclusive Comfort buitendeur goed en mooi met het juiste onderhoud. Lees er alles over in het document <a href="/deuren/garantie-en-onderhoud/" style="color:var(--accent-dark);font-weight:700">Garantie en onderhoud</a>.</p>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="head measure"><span class="eyebrow">Andere deuren services</span><h2>Liever alleen een deel laten doen?</h2><p>All Inclusive is voor voordeuren. Voor binnendeuren kun je losse services kiezen, of eerst zelf een buitendeur uitzoeken.</p></div>
+      <div class="addons">
+        <a class="addon" href="/deuren/services/"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Aflakservice en glasmontage" loading="lazy"><div class="addon__b"><span class="lbl">Losse services</span><h3>Aflakservice en glasmontage voor je binnendeur</h3></div></a>
+        <a class="addon" href="/deuren/buitendeuren/"><img src="https://delihome.getbynder.com/asset/053247ff-5ec3-4ec6-a7e3-b32f0d1a9cbf/medium-JPG/Sfeerbeelden-Loft-Basis.jpg" alt="Buitendeuren bekijken" loading="lazy"><div class="addon__b"><span class="lbl">Eerst kiezen</span><h3>Bekijk eerst onze buitendeuren</h3></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="aanvragen">
+    <div class="wrap">
+      <div class="cta">
+        <span class="eyebrow" style="color:var(--beige)">Klaar voor een nieuwe voordeur?</span>
+        <h2>Vraag CanDo All Inclusive aan</h2>
+        <p>Vul het formulier in en de CanDo vakman neemt contact met je op voor de inmeetafspraak. Liever eerst overleggen? <a href="/verkooppunten/" style="color:var(--beige);font-weight:700">Zoek een verkooppunt bij jou in de buurt.</a></p>
+        <a class="btn btn-primary" href="/deuren/all-inclusive-voordeuren/aanvragen/">Ga naar het aanvraagformulier</a>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

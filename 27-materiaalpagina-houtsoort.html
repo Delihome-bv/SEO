@@ -1,0 +1,645 @@
+<!-- consumes: HOUT-GEEN-STAAL, HOUT-E-MODULUS-ONBEKEND, LEVERTIJD-PER-RETAILER -->
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  GATE 1F, STAP NUL: DE CATEGORIE. Verplicht sinds 11-09-2026 (Zoe).
+  ===========================================================================
+  Tak         : B, Massieve panelen / timmerpanelen
+  Kennisbank  : KENNIS/HOUTSOORTEN.md
+  Niet van toepassing op deze tak: B1: de doorbuigvisual mag hier
+
+  Draai de toets met de tak erbij, anders draait hij plat en kan hij goed
+  werk afkeuren:
+      python3 "CanDo SEO/_tools/gate1f-verbodenlijst.py" --tak B 27-materiaalpagina-houtsoort.html
+
+  Staat deze kop er niet, dan is de toets niet uitgevoerd, hoe schoon de
+  uitslag ook oogt. Routeringstabel: 04-VORM/VERBODENLIJST.md sectie 0.
+  ===========================================================================
+-->
+<html lang="nl">
+<head>
+<!--
+  ===========================================================================
+  STRAMIEN 27: MATERIAALPAGINA PER HOUTSOORT
+  Vastgesteld door Zoe op 09-09-2026. Dit bestand is de VORM; de uitwerking
+  per houtsoort staat in Uitwerking/nl-nl-massief-paneel-{soort}.html.
+  Geldt voor: vuren, grenen, beuken, eiken, acacia, rubberhout.
+  Ellioti staat stil, zie CanDo SEO/BESLUIT-PANEELPAGINAS-EN-QR-URLS.md.
+
+  DE NEGEN BLOKKEN, VOLGORDE IS BINDEND
+   1 Hero                     full-bleed beeld, een korte definitie, EEN knop
+   2 Wat is {soort}hout       materiaalzone: editorial met beeld, plus binnen
+                              dezelfde zone "waarom kiezen" en "waar op letten"
+                              als twee gelijkwaardige kolommen
+   3 Wat kun je maken         drie beeldkaarten, op mobiel een horizontale rij
+   4 Dikte en draagkracht     18/28 zonder tabel, plus de doorbuigkeuzehulp
+   5 #aan-de-slag             QR-BESTEMMING. Vier gebruiksregels als strook,
+                              daarna vier visuele routes
+   6 Maakplannen              zes kaarten, elk met een EIGEN plan-URL
+   7 Klusadvies               zagen en verbinden + afwerken en onderhouden
+   8 Veelgestelde vragen      elke vraag een eigen details-item
+   9 Vervolg                  rustige stap naar de hub. Vergelijken van
+                              houtsoorten hoort op de HUB, niet hier
+
+  TWEE INGANGEN
+   1 website: start bovenaan, leert eerst het materiaal kennen
+   2 etiket-QR: landt op #aan-de-slag, slaat de keuze-informatie over
+     QR: .../{soort}/?utm_source=etiket&utm_medium=qr#aan-de-slag
+     Blok 5 is daarom KOUD LEESBAAR en draagt de gebruiksregels zelf.
+
+  WAT HIER NIET HOORT
+   - geen vergelijkingstabel met andere houtsoorten (dat is hubcontent)
+   - geen datasheet-tabellen voor simpele consumenteninformatie
+   - geen ankerbalk of chipsnavigatie (registerregel A22/A44)
+   - geen losse onderstreepte CTA naast een knop
+   - geen tekstlabels als vervanging van echte maakplannen
+   - geen inspiratieblok van alleen tekstlinks
+   - niet elke vraag in een eigen zichtbare sectie proppen
+
+  BEELD (bijgewerkt 09-09-2026, na de vondst van de beeldbank-metadata)
+   ALLES IS FOTO. Er staan GEEN illustraties meer op deze pagina (besluit Zoe
+   09-09): ook doorbuiging, klusadvies en het slot kregen een echte foto.
+   Elk beeld komt precies EEN keer voor per pagina.
+   Bron van de beeld-id's: Desktop/Marketingplan/Strategie mijn Scope/Beeld/Meta_data_beeld_cando_*.csv
+   URL-regel: Asset id uit de CSV -> kleine letters, hyphen na 20 tekens,
+   spaties in de bestandsnaam worden koppeltekens, extensie wordt .jpg:
+   https://delihome.getbynder.com/asset/{uuid}/medium-JPG/{Bestandsnaam}.jpg
+
+  MAAKPLANNEN: elke kaart wijst naar een BESTAANDE maakplan-URL onder
+   /nl-nl/hout/doe-het-zelf/. Nooit zes kaarten naar dezelfde overzichtspagina.
+
+  OPEN BESLUIT
+   De fontlink bevat een Magento-versienummer dat bij de volgende deploy breekt.
+   In de CMS-implementatie moet het font door het platform komen.
+  ===========================================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timmerpaneel vuren, inspiratie en klusadvies | CanDo</title>
+<meta name="description" content="Ontdek wat vurenhout is, waar je het voor gebruikt en waar je op let. Bekijk toepassingen, maakplannen en praktisch klusadvies voor vuren timmerpanelen.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{
+  --text:#20272b;
+  --muted:#666b70;
+  --accent:#F7901E;
+  --accent-dark:#d95f18;
+  --border:#e5ded4;
+  --bg-soft:#f7f2ea;
+  --bg-light:#fbfaf7;
+  --bg-warm:#f4eadc;
+  --white:#fff;
+  --dark:#211914;
+  --radius:8px;
+  --shadow:0 8px 22px rgba(32,39,43,.045);
+  --shadow-hover:0 12px 28px rgba(32,39,43,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#fff;color:var(--text);font-family:Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.cando-vuren{width:100%;overflow-x:clip;background:#fff;color:var(--text)}
+.cando-vuren *,.cando-vuren *::before,.cando-vuren *::after{box-sizing:border-box}
+.cando-vuren h1,.cando-vuren h2,.cando-vuren h3,.cando-vuren .cando-cat-button,.cando-vuren summary,.cando-vuren .plan-title{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.cando-vuren h1{margin:0 0 14px;font-size:56px;line-height:.98;font-weight:700;color:#fff;letter-spacing:-.02em}
+.cando-vuren h2{margin:0;font-size:30px;line-height:1.2;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.cando-vuren h3{margin:0 0 7px;font-size:19px;line-height:1.3;font-weight:700;color:var(--text)}
+.cando-vuren p{margin:0;font-size:16px;line-height:1.68;color:#414141}
+.cando-vuren ul{margin:0;padding:0}
+.cando-vuren a{text-decoration:none;font-weight:700}
+.cando-vuren :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.cando-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+.cando-section{position:relative;padding:58px 0}
+.cando-section--soft{background:var(--bg-soft)}
+.cando-section--light{background:var(--bg-light)}
+.cando-section-head{max-width:720px;margin-bottom:28px}
+.cando-section-head p{margin-top:10px;color:var(--muted)}
+.cando-eyebrow{display:block;margin:0 0 8px;color:var(--accent);font-size:11px;line-height:1.2;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+
+/* Canonieke CanDo buttonstijl */
+.cando-cat-button-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:22px}
+.cando-cat-button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 24px;border-radius:999px;font-size:16px;line-height:1.2;font-weight:700;text-decoration:none;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+.cando-cat-button:active{transform:translateY(1px)}
+.cando-cat-button--primary{background:var(--accent);border:1px solid var(--accent);color:#fff!important}
+.cando-cat-button--primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff!important}
+.cando-cat-button--secondary{background:var(--bg-soft);border:1px solid var(--border);color:var(--text)!important}
+.cando-cat-button--secondary:hover{background:#efe4d6;border-color:#efe4d6;color:var(--text)!important}
+.cando-cat-button--dark{background:transparent;border:1px solid rgba(255,255,255,.7);color:#fff!important}
+.cando-cat-button--dark:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* Canonieke hero, één duidelijke CTA */
+.cando-cat-hero{position:relative;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;background:#222}
+.cando-cat-hero__image{position:absolute;inset:0;z-index:0;margin:0;background:#222}
+.cando-cat-hero__image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cando-cat-hero__image::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(32,39,43,.86) 0%,rgba(32,39,43,.62) 45%,rgba(32,39,43,.18) 100%)}
+.cando-cat-hero__inner{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:104px 18px 62px}
+.cando-cat-hero__content{max-width:580px}
+.cando-cat-hero p{max-width:520px;color:#fff!important;font-size:16px;line-height:1.64;opacity:.96}
+.cando-cat-hero .cando-cat-button-row{margin-top:26px}
+
+/* Redactionele materiaalzone, ontleend aan editorial/split uit de stramienen */
+.material-editorial{display:grid;grid-template-columns:.96fr 1.04fr;align-items:stretch;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff}
+.material-editorial__media{min-height:430px;background:var(--bg-warm);overflow:hidden}
+.material-editorial__media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.material-editorial__copy{padding:44px 44px 40px;display:flex;flex-direction:column;justify-content:center}
+.material-editorial__copy p+p{margin-top:14px}
+.material-editorial__copy .intro{font-size:17px;color:#343a3e}
+.material-columns{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:38px;padding-top:32px;border-top:1px solid var(--border)}
+.material-columns h3{font-size:20px;margin-bottom:12px}
+.clean-list{list-style:none;display:grid;gap:11px}
+.clean-list li{position:relative;padding-left:19px;font-size:15px;line-height:1.55;color:#414141}
+.clean-list li::before{content:"›";position:absolute;left:0;top:-1px;color:var(--accent);font-size:18px;font-weight:800}
+.clean-list strong{color:var(--text)}
+
+/* Canonieke inspiration-card, alleen waar beeld echt de inhoud draagt */
+.cando-cat-grid{display:grid;gap:16px}
+.cando-cat-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cando-cat-inspiration-card{display:block;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:none;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.cando-cat-inspiration-card:hover{transform:translateY(-2px);border-color:#d8cdbf;box-shadow:var(--shadow-hover)}
+.cando-cat-inspiration-card__image{height:255px;border-bottom:1px solid var(--border);overflow:hidden;background:var(--bg-warm)}
+.cando-cat-inspiration-card__image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.cando-cat-inspiration-card__image svg{display:block;width:100%;height:100%}
+.cando-cat-inspiration-card__body{padding:18px 18px 20px}
+.cando-cat-inspiration-card h3{font-size:17px;margin-bottom:5px}
+.cando-cat-inspiration-card p{font-size:14px;line-height:1.5;color:var(--muted)}
+.card-cta{display:inline-flex;align-items:center;gap:7px;margin-top:13px;font-size:14px;color:var(--text)}
+.card-cta::after{content:"→";color:var(--accent);font-size:17px}
+
+/* Dikteblok, bewust geen tabel */
+.thickness-band{display:grid;grid-template-columns:.92fr 1.08fr;gap:42px;align-items:center;padding:38px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.thickness-copy p{margin-top:12px;color:var(--muted);max-width:520px}
+.thickness-visual{min-height:250px;border-radius:var(--radius);background:var(--bg-soft);overflow:hidden}
+.thickness-visual img{width:100%;height:100%;min-height:250px;object-fit:cover;object-position:center}
+
+.thickness-points{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px}
+.thickness-point{max-width:220px}
+.thickness-point strong{display:block;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:26px;line-height:1;color:var(--accent);margin-bottom:6px}
+.thickness-point span{font-size:14px;line-height:1.45;color:#414141}
+
+/* QR-ingang, duidelijke nieuwe fase zonder tweede hub te worden */
+.start-band{position:relative;background:var(--dark);color:#fff;overflow:hidden}
+.start-band::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(247,144,30,.10),transparent 45%);pointer-events:none}
+.start-band .cando-wrap{position:relative;z-index:1}
+.start-band h2{color:#fff}
+.start-band .cando-section-head p{color:rgba(255,255,255,.78)}
+.rule-strip{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);margin:0 0 34px}
+.rule-strip li{padding:18px 20px 18px 0;margin-right:20px;border-right:1px solid rgba(255,255,255,.18)}
+.rule-strip li:last-child{border-right:0;margin-right:0}
+.rule-strip strong{display:block;margin-bottom:4px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:15px;color:#fff}
+.rule-strip span{font-size:13px;line-height:1.45;color:rgba(255,255,255,.72)}
+/* .cando-vuren h3 (0,1,1) won het van .route-heading (0,1,0), waardoor deze kop
+   bijna zwart op bijna zwart stond. Specificiteit opgehoogd. */
+.start-band .route-heading{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:21px;font-weight:700;margin:0 0 16px;color:#fff}
+.action-routes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.action-route{display:grid;grid-template-columns:150px 1fr;min-height:150px;background:#fff;border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);overflow:hidden;color:var(--text);transition:transform .2s ease,border-color .2s ease}
+.action-route:hover{transform:translateY(-2px);border-color:var(--accent)}
+.action-route__visual{background:var(--bg-warm);min-height:150px;border-right:1px solid var(--border);overflow:hidden}
+.action-route__visual img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+.action-route__copy{padding:24px 24px 22px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.action-route__copy::after{content:"→";position:absolute;right:22px;top:23px;color:var(--accent);font-size:21px}
+.action-route h3{padding-right:30px;margin-bottom:6px}
+.action-route p{font-size:14px;line-height:1.5;color:var(--muted);max-width:360px}
+
+/* Maakplannen, echte individuele kaarten met visuele bouwtekeningen */
+.plan-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:24px}
+.plan-intro>div{max-width:720px}
+.plan-intro p{margin-top:10px;color:var(--muted)}
+.plan-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.plan-card{display:block;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.plan-card:hover{transform:translateY(-2px);border-color:#d8cdbf;box-shadow:var(--shadow-hover)}
+.plan-card__visual{height:205px;background:var(--bg-warm);border-bottom:1px solid var(--border);overflow:hidden}
+.plan-card__visual img{width:100%;height:100%;object-fit:cover;object-position:center}
+.plan-card__visual svg{width:100%;height:100%}
+.plan-card__body{padding:17px 18px 19px;position:relative}
+.plan-title{display:block;font-size:17px;font-weight:700;line-height:1.3;padding-right:30px}
+.plan-card__body::after{content:"→";position:absolute;right:18px;top:15px;color:var(--accent);font-size:20px}
+.plan-card__body p{margin-top:5px;font-size:13px;line-height:1.48;color:var(--muted)}
+
+/* Praktisch klusadvies, twee redactionele kolommen en één illustratie */
+.advice-editorial{display:grid;grid-template-columns:1fr .88fr;gap:0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.advice-editorial__copy{padding:42px 42px 40px}
+.advice-editorial__copy>p{margin-top:10px;color:var(--muted)}
+.advice-groups{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:28px;padding-top:26px;border-top:1px solid var(--border)}
+.advice-groups h3{font-size:18px;margin-bottom:10px}
+.advice-editorial__visual{background:var(--bg-soft);min-height:390px;overflow:hidden}
+.advice-editorial__visual img{width:100%;height:100%;min-height:390px;object-fit:cover;object-position:center}
+
+.advice-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:14px;font-size:14px;color:var(--text);text-decoration:underline!important;text-underline-offset:3px}
+.advice-link::after{content:"→";color:var(--accent);text-decoration:none}
+
+/* FAQ, ieder vraagstuk een eigen accordeonitem */
+.faq-layout{display:grid;grid-template-columns:.74fr 1.26fr;gap:44px;align-items:start}
+.faq-intro p{margin-top:10px;color:var(--muted)}
+.faq-list{display:grid;gap:10px}
+details.faq-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+details.faq-item summary{list-style:none;cursor:pointer;padding:17px 54px 17px 18px;font-size:16px;font-weight:700;line-height:1.35;position:relative}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{content:"+";position:absolute;right:18px;top:15px;width:25px;height:25px;border:1px solid #b8b8b8;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#6c6c6c;font-size:18px;line-height:1}
+details.faq-item[open]{border-color:#d8cdbf}
+details.faq-item[open] summary{color:var(--accent);background:#fffaf6}
+details.faq-item[open] summary::after{content:"−";background:var(--accent);border-color:var(--accent);color:#fff}
+.faq-answer{padding:0 18px 19px}
+.faq-answer p{font-size:14px;line-height:1.62;color:#414141}
+
+/* Rustig slot, vergelijking hoort op de hub */
+.cando-cat-editorial{display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:stretch;background:var(--dark);border-radius:var(--radius);overflow:hidden}
+.cando-cat-editorial__content{padding:42px 42px 40px;display:flex;flex-direction:column;justify-content:center}
+.cando-cat-editorial h2{color:#fff;max-width:470px}
+.cando-cat-editorial p{max-width:490px;margin-top:12px;color:rgba(255,255,255,.84)}
+.cando-cat-editorial__image{min-height:315px;background:#2a211c;overflow:hidden}
+.cando-cat-editorial__image img{width:100%;height:100%;min-height:315px;object-fit:cover;object-position:center}
+
+
+@media(max-width:1020px){
+  .material-editorial,.thickness-band,.advice-editorial,.faq-layout,.cando-cat-editorial{grid-template-columns:1fr}
+  .material-editorial__media{min-height:340px}
+  .material-editorial__copy{padding:34px 30px}
+  .action-route{grid-template-columns:125px 1fr}
+  .advice-editorial__visual,.advice-editorial__visual img{min-height:300px}
+  .faq-layout{gap:28px}
+  .cando-cat-editorial__image,.cando-cat-editorial__image img{min-height:240px}
+}
+@media(max-width:760px){
+  .cando-vuren h1{font-size:38px}
+  .cando-vuren h2{font-size:26px}
+  .cando-section{padding:44px 0}
+  .cando-cat-hero{min-height:430px}
+  .cando-cat-hero__inner{padding:82px 16px 42px}
+  .cando-cat-hero p{max-width:345px;font-size:15px}
+  .cando-cat-button-row{flex-direction:column;align-items:stretch}
+  .cando-cat-button{width:100%}
+  .material-editorial__media{min-height:260px}
+  .material-editorial__copy{padding:28px 20px 26px}
+  .material-columns{grid-template-columns:1fr;gap:28px;margin-top:28px;padding-top:24px}
+  .cando-cat-grid--3{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(265px,82vw);overflow-x:auto;scroll-snap-type:x mandatory;padding:0 18px 10px;margin:0 -18px;scroll-padding-left:18px}
+  .cando-cat-inspiration-card{scroll-snap-align:start}
+  .cando-cat-inspiration-card__image{height:210px}
+  .thickness-band{gap:24px;padding:30px 0}
+  .thickness-visual,.thickness-visual img{min-height:210px}
+  .rule-strip{grid-template-columns:1fr 1fr;margin-bottom:28px}
+  .rule-strip li{padding:15px 12px 15px 0;margin-right:12px}
+  .rule-strip li:nth-child(2){border-right:0;margin-right:0}
+  .rule-strip li:nth-child(n+3){border-top:1px solid rgba(255,255,255,.18)}
+  .action-routes{grid-template-columns:1fr}
+  .action-route{grid-template-columns:106px 1fr;min-height:126px}
+  .action-route__visual{min-height:126px}
+  .action-route__copy{padding:20px 18px}
+  .plan-intro{display:block}
+  .plan-intro .cando-cat-button-row{margin-top:18px}
+  .plan-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(258px,82vw);overflow-x:auto;scroll-snap-type:x mandatory;padding:0 18px 10px;margin:0 -18px;scroll-padding-left:18px}
+  .plan-card{scroll-snap-align:start}
+  .plan-card__visual{height:190px}
+  .advice-editorial__copy{padding:30px 20px 28px}
+  .advice-groups{grid-template-columns:1fr;gap:26px;margin-top:24px;padding-top:22px}
+  .advice-editorial__visual,.advice-editorial__visual img{min-height:250px}
+  .faq-layout{gap:24px}
+  .cando-cat-editorial__content{padding:30px 22px}
+  .cando-cat-editorial__image,.cando-cat-editorial__image img{min-height:210px}
+}
+@media(max-width:440px){
+  .rule-strip{grid-template-columns:1fr}
+  .rule-strip li{margin-right:0;border-right:0;border-top:1px solid rgba(255,255,255,.18)}
+  .rule-strip li:first-child{border-top:0}
+  .action-route{grid-template-columns:92px 1fr}
+  .action-route h3{font-size:17px}
+}
+.cando-skip{position:absolute;left:-9999px;top:0;z-index:99;padding:12px 20px;background:var(--accent);color:#fff;font-weight:700;border-radius:0 0 var(--radius) 0}
+.cando-skip:focus{left:0}
+</style>
+</head>
+<body>
+<a class="cando-skip" href="#contentarea">Naar de inhoud</a>
+
+<main class="cando-vuren" id="contentarea">
+
+  <!-- 1. Normale website-ingang. Eén boodschap, één CTA. -->
+  <section class="cando-cat-hero" aria-labelledby="page-title">
+    <figure aria-hidden="true" class="cando-cat-hero__image">
+      <img src="https://delihome.getbynder.com/asset/43ff36e6-92fc-49ec-a275-6dde6d5f65d0/medium-JPG/CanDo_MassPanelen_18mm_totaal2.jpg" alt="Woonkamer met wandplanken, dressoir en bijzettafels van massieve panelen" width="1600" height="900">
+    </figure>
+    <div class="cando-cat-hero__inner">
+      <div class="cando-cat-hero__content">
+        <span class="cando-eyebrow" style="color:#FDC689">Massief hout</span>
+        <h1 id="page-title">Timmerpaneel vuren</h1>
+        <p>Een timmerpaneel van vuren bestaat uit smalle latten massief hout die aan elkaar zijn verlijmd. Het hout is licht van kleur, makkelijk te bewerken en blijft zichtbaar tot in de gezaagde rand. Handig voor meubels en interieurprojecten die je zelf wilt maken en afwerken.</p>
+        <div class="cando-cat-button-row">
+          <a class="cando-cat-button cando-cat-button--primary" href="#maken">Bekijk wat je kunt maken</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Materiaal leren kennen. Geen tabel, geen losse kaarten. -->
+  <section class="cando-section" id="wat" aria-labelledby="wat-title">
+    <div class="cando-wrap">
+      <div class="material-editorial">
+        <div class="material-editorial__media">
+          <img loading="lazy" src="https://delihome.getbynder.com/asset/b59cb54c-26c3-465a-98b4-6c24bff74c21/medium-JPG/Tafelblad-Vuren-28mm.jpg" alt="Massief vuren paneel van 28 millimeter, met zichtbare nerf en noesten" width="900" height="675">
+        </div>
+        <div class="material-editorial__copy">
+          <span class="cando-eyebrow">Het materiaal</span>
+          <h2 id="wat-title">Wat is vurenhout?</h2>
+          <p class="intro">Vuren komt van de fijnspar. Het is een lichte houtsoort met een rustige nerf en zichtbare noesten. Juist die natuurlijke tekening zorgt ervoor dat ieder paneel net anders oogt.</p>
+          <p>Een timmerpaneel is geen brede plank uit één boom. Het bestaat uit smalle latten die naast elkaar zijn verlijmd. Daardoor blijft het paneel beter vlak en is ook de gezaagde rand gewoon massief hout, zonder decorlaag of kantenband.</p>
+
+          <div class="material-columns">
+            <div>
+              <h3>Waarom kiezen voor vuren?</h3>
+              <ul class="clean-list">
+                <li><strong>Licht en prettig te verwerken.</strong> Zagen, schuren en schroeven gaat relatief makkelijk.</li>
+                <li><strong>Zelf je uitstraling bepalen.</strong> Vuren is onbehandeld en kan worden geolied, geschilderd of op een andere passende manier worden afgewerkt.</li>
+                <li><strong>Fijn voor grote interieurprojecten.</strong> Denk aan wandplanken, een werkplek, kastwand of roomdivider.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Waar moet je op letten?</h3>
+              <ul class="clean-list">
+                <li><strong>Vuren is zacht.</strong> Voor oppervlakken die veel stoten en krassen krijgen, zoals een keukenwerkblad of eettafel, is een hardere houtsoort logischer.</li>
+                <li><strong>Gebruik het binnen en droog.</strong> Dit paneel is niet bedoeld voor buiten of vochtige ruimtes.</li>
+                <li><strong>Laat het hout eerst wennen.</strong> Leg het paneel vóór het zagen plat in de ruimte waar het komt en werk beide zijden gelijk af.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Toepassing en inspiratie samengebracht. -->
+  <section class="cando-section cando-section--soft" id="maken" aria-labelledby="maken-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Ideeën met vuren</span>
+        <h2 id="maken-title">Wat kun je maken van vuren?</h2>
+        <p>Vuren werkt vooral goed bij interieurprojecten die niet zwaar belast worden en die je zelf wilt afwerken. Zo zie je meteen waar het materiaal tot zijn recht komt.</p>
+      </div>
+      <div class="cando-cat-grid cando-cat-grid--3">
+        <a class="cando-cat-inspiration-card" href="/nl-nl/hout/inspiratie/">
+          <div class="cando-cat-inspiration-card__image">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/cf8d0704-bfa2-4c5f-b3c9-c401f6f86295/medium-JPG/CanDo_Timmerpanelen_Kastenwand.jpg" alt="Kastenwand van massieve panelen in een woonkamer" width="900" height="675">
+          </div>
+          <div class="cando-cat-inspiration-card__body">
+            <h3>Kastenwand of roomdivider</h3>
+            <p>Zelf de maat bepalen voor een nis, een schuine wand of een open vakkenkast.</p>
+            <span class="card-cta">Bekijk inspiratie</span>
+          </div>
+        </a>
+
+        <a class="cando-cat-inspiration-card" href="/nl-nl/hout/inspiratie/">
+          <div class="cando-cat-inspiration-card__image">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/58fdbce5-c242-46d6-b02c-57bd71c9482e/medium-JPG/CanDo_massPanelen_28mm_planken-in-nis.jpg" alt="Planken van massief paneel op maat gezaagd in een nis" width="900" height="675">
+          </div>
+          <div class="cando-cat-inspiration-card__body">
+            <h3>Planken in een nis</h3>
+            <p>De maat die je in de winkel niet vindt, en precies daarom maak je hem zelf.</p>
+            <span class="card-cta">Bekijk inspiratie</span>
+          </div>
+        </a>
+
+        <a class="cando-cat-inspiration-card" href="/nl-nl/hout/inspiratie/">
+          <div class="cando-cat-inspiration-card__image">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/5d75ace8-6c96-4629-8d90-d4c992237bfa/medium-JPG/CanDo_halmeubel_totaal-01.jpg" alt="Halmeubel met kapstok en zitbankje van massieve panelen" width="900" height="675">
+          </div>
+          <div class="cando-cat-inspiration-card__body">
+            <h3>Halmeubel en kapstok</h3>
+            <p>Een hal inrichten op maat, van kapstok tot zitbankje en schoenenkast.</p>
+            <span class="card-cta">Bekijk inspiratie</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Dikte en doorbuiging kort, zonder technische datasheet. -->
+  <section class="cando-section" id="dikte" aria-labelledby="dikte-title">
+    <div class="cando-wrap">
+      <div class="thickness-band">
+        <div class="thickness-copy">
+          <span class="cando-eyebrow">Dikte en draagkracht</span>
+          <h2 id="dikte-title">18 of 28 mm?</h2>
+          <p>De juiste dikte hangt af van wat je maakt, hoeveel gewicht erop komt en hoe ver het paneel vrij moet overspannen. Hoe langer de afstand tussen de steunpunten, hoe belangrijker een dikkere plaat of extra ondersteuning wordt.</p>
+          <div class="thickness-points">
+            <div class="thickness-point"><strong>18 mm</strong><span>Voor lichtere toepassingen en kortere overspanningen.</span></div>
+            <div class="thickness-point"><strong>28 mm</strong><span>Voor meer belasting, een steviger beeld of een grotere overspanning.</span></div>
+          </div>
+          <div class="cando-cat-button-row">
+            <a class="cando-cat-button cando-cat-button--secondary" href="/nl-nl/hout/keuzehulp/doorbuiging/">Check je draagkracht</a>
+          </div>
+        </div>
+        <div class="thickness-visual">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/77a08f50-8032-4420-8703-6a23daddb2de/medium-JPG/CanDo_Gebeitst-Eiken_Wandplank_detail.jpg" alt="Massief houten plank die op een metalen drager rust" width="900" height="675">
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. QR-bestemming. Kan zelfstandig gelezen worden. -->
+  <section class="cando-section start-band" id="aan-de-slag" aria-labelledby="start-title">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Maakplannen en klusadvies</span>
+        <h2 id="start-title">Aan de slag met je vuren paneel</h2>
+        <p>Heb je het paneel al in huis of scan je de QR in de winkel? Begin dan hier. Kies wat je wilt maken en pak alleen de uitleg die je voor jouw klus nodig hebt.</p>
+      </div>
+
+      <ul class="rule-strip" aria-label="Vier gebruiksregels voor vuren panelen">
+        <li><strong>Binnen en droog</strong><span>Gebruik het paneel in droge binnenruimtes.</span></li>
+        <li><strong>Beide zijden gelijk</strong><span>Werk voor- en achterkant op dezelfde manier af.</span></li>
+        <li><strong>48 uur laten wennen</strong><span>Leg het paneel plat in de ruimte waar het komt.</span></li>
+        <li><strong>Niet voor buiten</strong><span>De verlijming is niet bedoeld voor weersinvloeden.</span></li>
+      </ul>
+
+      <h3 class="route-heading">Waar wil je hulp bij?</h3>
+      <div class="action-routes">
+        <a class="action-route" href="#maakplannen">
+          <div class="action-route__visual">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/dfe65efa-107d-4afc-8930-dbf37b297117/medium-JPG/CanDo_MassPanelen_bureau_kubus_letterbak.jpg" alt="Bureau, kubus en letterbak van massieve panelen in een woonkamer" width="600" height="600">
+          </div>
+          <div class="action-route__copy"><h3>Maakplannen</h3><p>Kies een project en werk met een duidelijke materiaallijst en zaaglijst.</p></div>
+        </a>
+
+        <a class="action-route" href="#klusadvies">
+          <div class="action-route__visual">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/09353fca-7c53-4283-8718-03dc2f3bbca6/medium-JPG/CanDo_MassPaneel_18mm_grenen_detail1_pootjes.jpg" alt="Detail van een massief paneel op metalen pootjes" width="600" height="600">
+          </div>
+          <div class="action-route__copy"><h3>Zagen en verbinden</h3><p>Voorkom rafelen, boor slim voor en maak verbindingen die netjes uit het zicht blijven.</p></div>
+        </a>
+
+        <a class="action-route" href="#afwerken">
+          <div class="action-route__visual">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/2ee4d0a7-e44d-41eb-92b1-d081da482f4f/medium-JPG/CanDo_Letterbak-Praxis_-close-up.jpg" alt="Close-up van een afgewerkt massief paneel" width="600" height="600">
+          </div>
+          <div class="action-route__copy"><h3>Afwerken en onderhouden</h3><p>Lees wat olie, verf en beits met vuren doen en welke voorbereiding belangrijk is.</p></div>
+        </a>
+
+        <a class="action-route" href="/nl-nl/hout/keuzehulp/doorbuiging/">
+          <div class="action-route__visual">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/445cd50a-c49f-48f1-8797-13ff24553a3b/medium-JPG/CanDo_MassPanelen_Letterbak_solo.jpg" alt="Wandplank van massief paneel tussen twee steunpunten" width="600" height="600">
+          </div>
+          <div class="action-route__copy"><h3>Draagkracht checken</h3><p>Controleer of je dikte en steunpunten passen bij de belasting van jouw plank of blad.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Alle bestaande maakplannen als volwaardige visuele keuzes. -->
+  <section class="cando-section" id="maakplannen" aria-labelledby="maakplan-title">
+    <div class="cando-wrap">
+      <div class="plan-intro">
+        <div>
+          <span class="cando-eyebrow">Zelf maken</span>
+          <h2 id="maakplan-title">Kies een maakplan</h2>
+          <p>Projecten die goed werken met massieve panelen. In elk maakplan staan de opbouw, de materialen en de maten die je nodig hebt.</p>
+        </div>
+        <div class="cando-cat-button-row">
+          <a class="cando-cat-button cando-cat-button--secondary" href="/nl-nl/hout/doe-het-zelf/">Bekijk alle maakplannen</a>
+        </div>
+      </div>
+
+      <div class="plan-grid">
+        <a class="plan-card" href="/nl-nl/hout/doe-het-zelf/maak-zelf-jouw-thuiswerkplek" aria-label="Bekijk maakplan thuiswerkplek">
+          <div class="plan-card__visual">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/c38387eb-4edb-4543-846e-090e8fa521d8/medium-JPG/CanDo_MassPanelen_bureau_kubus.jpg" alt="Bureau met bovenkast en bijzetkubus van massieve panelen" width="900" height="600">
+          </div>
+          <div class="plan-card__body"><span class="plan-title">Thuiswerkplek</span><p>Een bureau met opbergruimte erboven, opgebouwd uit rechte panelen.</p></div>
+        </a>
+
+        <a class="plan-card" href="/nl-nl/hout/doe-het-zelf/opklapbaar-bureau" aria-label="Bekijk maakplan opklapbaar bureau">
+          <div class="plan-card__visual">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/e2d396cd-c13c-4eb5-a164-154df8287eea/medium-JPG/CanDo_Klap-buro+ophoger+letterbak.jpg" alt="Opklapbaar bureau met letterbak aan de wand" width="900" height="600">
+          </div>
+          <div class="plan-card__body"><span class="plan-title">Opklapbaar bureau</span><p>Werkplek als je hem nodig hebt, weg als je hem niet gebruikt.</p></div>
+        </a>
+
+        <a class="plan-card" href="/nl-nl/hout/doe-het-zelf/vakkenkast-project" aria-label="Bekijk maakplan vakkenkast">
+          <div class="plan-card__visual">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/cd2c914e-fbf9-4aba-a53d-f17334294e8c/medium-JPG/CanDo_MassPanelen_18mm_grenen_vakkenkast.jpg" alt="Open vakkenkast van massieve panelen als roomdivider" width="900" height="600">
+          </div>
+          <div class="plan-card__body"><span class="plan-title">Vakkenkast</span><p>Open vakken voor boeken en manden, ook te gebruiken als roomdivider.</p></div>
+        </a>
+
+        <a class="plan-card" href="/nl-nl/hout/doe-het-zelf/maak-jouw-wandplank" aria-label="Bekijk maakplan wandplank">
+          <div class="plan-card__visual">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/0e41d606-716f-4b4f-a8b7-ea306ed08e8a/medium-JPG/CanDo_MassPanelen_18mm_planken_dragers.jpg" alt="Wandplanken van massief paneel op zwarte dragers" width="900" height="600">
+          </div>
+          <div class="plan-card__body"><span class="plan-title">Wandplank</span><p>Het snelste project: zagen, afwerken en op dragers hangen.</p></div>
+        </a>
+
+        <a class="plan-card" href="/nl-nl/hout/doe-het-zelf/maak-jouw-eigen-kapstok" aria-label="Bekijk maakplan kapstok">
+          <div class="plan-card__visual">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/1e7d0db6-da7d-433b-ba20-f3463d98b3e8/medium-JPG/CanDo_halmeubel_Kapstok.jpg" alt="Kapstok van massief paneel in een hal" width="900" height="600">
+          </div>
+          <div class="plan-card__body"><span class="plan-title">Kapstok</span><p>Een kapstok op jouw maat, passend bij de breedte van je hal.</p></div>
+        </a>
+
+        <a class="plan-card" href="/nl-nl/hout/doe-het-zelf/maak-jouw-tv-meubel" aria-label="Bekijk maakplan tv-meubel">
+          <div class="plan-card__visual">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/a27135d7-02cc-4b12-919a-d24df217b955/medium-JPG/CanDo_MassPanelen_18mm_totaal.jpg" alt="Laag tv-meubel van massieve panelen in een woonkamer" width="900" height="600">
+          </div>
+          <div class="plan-card__body"><span class="plan-title">Tv-meubel</span><p>Een laag meubel dat precies onder je tv past, met open vakken.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Praktisch advies, alleen wat specifiek relevant is voor vuren. -->
+  <section class="cando-section cando-section--soft" id="klusadvies" aria-labelledby="klusadvies-title">
+    <div class="cando-wrap">
+      <div class="advice-editorial">
+        <div class="advice-editorial__copy">
+          <span class="cando-eyebrow">Klusadvies voor vuren</span>
+          <h2 id="klusadvies-title">Zo houd je de afwerking strak</h2>
+          <p>Vuren is makkelijk te bewerken, maar juist doordat het zacht is vraagt het om een rustige aanpak. Met een paar simpele regels voorkom je rafelige randen, splijten en vlekken in de afwerking.</p>
+
+          <div class="advice-groups">
+            <div>
+              <h3>Zagen en verbinden</h3>
+              <ul class="clean-list">
+                <li>Werk met een schoon, fijn vertand zaagblad en ondersteun het paneel goed.</li>
+                <li>Boor voor wanneer je dicht bij de rand schroeft, zodat het hout niet splijt.</li>
+                <li>Wil je geen schroeven in het zicht, gebruik dan de CanDo-schroefverbinder uit de maakplannen.</li>
+              </ul>
+            </div>
+            <div id="afwerken">
+              <h3>Afwerken en onderhouden</h3>
+              <ul class="clean-list">
+                <li><strong>Olie</strong> houdt de houttekening zichtbaar en is later plaatselijk bij te werken.</li>
+                <li><strong>Verf</strong> werkt goed, maar isoleer de noesten eerst met kwastenmiddel om harsdoorslag te beperken.</li>
+                <li><strong>Beits</strong> kan op vuren vlekkerig opnemen. Test daarom eerst op een reststuk.</li>
+              </ul>
+            </div>
+          </div>
+          <a class="advice-link" href="/nl-nl/hout/hulp-en-advies/">Bekijk meer hulp en advies</a>
+        </div>
+        <div class="advice-editorial__visual">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/417eaf11-73eb-4616-bf82-322d7caeee51/medium-JPG/CanDo_Gebeitst-Eiken_Bijzettafel-klusfoto_2.jpg" alt="Schroef voorboren in een massief houten paneel met een accuboormachine" width="900" height="675">
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ. Elke vraag is een eigen item. -->
+  <section class="cando-section" id="vragen" aria-labelledby="faq-title">
+    <div class="cando-wrap">
+      <div class="faq-layout">
+        <div class="faq-intro">
+          <span class="cando-eyebrow">Veelgestelde vragen</span>
+          <h2 id="faq-title">Nog iets over vuren weten?</h2>
+          <p>Alleen vragen die echt bij dit materiaal horen. Voor algemene verschillen tussen houtsoorten verwijzen we door naar de massieve-panelenhub.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Kan een vuren timmerpaneel naar buiten?</summary>
+            <div class="faq-answer"><p>Nee. Deze panelen zijn bedoeld voor droge binnenruimtes en de verlijming is niet gemaakt voor buitengebruik. Schilderen of lakken verandert die productgrens niet.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Moet ik vuren altijd behandelen?</summary>
+            <div class="faq-answer"><p>Niet iedere verborgen plank hoeft direct afgewerkt te worden, maar bij zichtwerk en oppervlakken die je aanraakt is een afwerking verstandig. Werk de voor- en achterkant gelijk af, zodat beide zijden vocht op dezelfde manier opnemen en afstaan.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Kan vuren kromtrekken?</summary>
+            <div class="faq-answer"><p>Van de massieve panelen werkt vuren weinig, dus de kans is klein. Gaat het toch mis, dan komt dat bijna altijd door twee dingen: het paneel is maar aan één kant afgewerkt, of het heeft niet kunnen wennen aan de ruimte voordat het werd vastgezet. Laat het paneel daarom eerst plat liggen in de ruimte waar het komt en werk voor- en achterkant op dezelfde manier af.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Kan ik vuren schilderen?</summary>
+            <div class="faq-answer"><p>Ja. Vuren is goed te schilderen, maar de noesten bevatten hars. Behandel die eerst met een passend kwastenmiddel en bouw daarna je verfsysteem op volgens de instructies van de gekozen verf.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Waarom kan beits vlekkerig worden op vuren?</summary>
+            <div class="faq-answer"><p>De zachte en hardere delen in de houtstructuur nemen beits niet altijd even sterk op. Daardoor kunnen donkere plekken of een omgekeerd nerfbeeld ontstaan. Test de kleur en opname daarom eerst op een reststuk.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Welke dikte vuren heb ik nodig?</summary>
+            <div class="faq-answer"><p>Dat hangt af van de belasting en de afstand tussen de steunpunten. Voor lichte, kortere toepassingen kan 18 mm passen. Bij meer gewicht of een grotere overspanning ligt 28 mm eerder voor de hand. Gebruik bij twijfel de doorbuigkeuzehulp.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Vergelijken gebeurt op de hub, niet op deze houtsoortpagina. -->
+  <section class="cando-section cando-section--light" aria-labelledby="vervolg-title">
+    <div class="cando-wrap">
+      <div class="cando-cat-editorial">
+        <div class="cando-cat-editorial__content">
+          <span class="cando-eyebrow">Nog aan het kiezen?</span>
+          <h2 id="vervolg-title">Twijfel je of vuren de juiste houtsoort is?</h2>
+          <p>Op de overzichtspagina van massieve panelen vergelijk je de houtsoorten op uitstraling, toepassing en aandachtspunten. Daar hoort de vergelijking thuis, niet midden op deze vurenpagina.</p>
+          <div class="cando-cat-button-row">
+            <a class="cando-cat-button cando-cat-button--primary" href="/nl-nl/hout/panelen/massieve-panelen/">Vergelijk massieve panelen</a>
+            <a class="cando-cat-button cando-cat-button--dark" href="/nl-nl/zoek-uw-winkel/">Zoek een verkooppunt</a>
+          </div>
+        </div>
+        <div class="cando-cat-editorial__image">
+            <img loading="lazy" src="https://delihome.getbynder.com/asset/f5230406-a1d4-4108-befd-885671825925/medium-JPG/CanDo_Massief-werkblad-26mm.jpg" alt="Massief houten blad in een woonkeuken" width="900" height="675">
+          </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

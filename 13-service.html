@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service: levering, retour en garantie | CanDo</title>
+<meta name="description" content="Alles over levering, ophalen, retour en garantie bij CanDo. Vind snel het antwoord op je servicevraag of neem contact op.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--dark:#121b21;--beige:#FDC689;--border:#e5ddd3;--soft:#f7f2ea;--soft2:#fbfaf7;--radius:8px;--shadow:0 10px 24px rgba(18,27,33,.05)}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}.page{overflow-x:hidden}
+h1,h2,h3,.btn,.eyebrow,.num,.big{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 18px}
+section{padding:38px 0}.soft{background:var(--soft)}.measure{max-width:640px}
+h1{margin:0 0 8px;font-size:34px;line-height:1.05;letter-spacing:-.02em}
+h2{margin:0 0 12px;font-size:26px;letter-spacing:-.02em}h3{margin:0 0 8px;font-size:19px}
+p{margin:0;color:#414141;font-size:16px;line-height:1.72}p+p{margin-top:14px}
+.eyebrow{display:block;margin:0 0 10px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.crumbs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px;color:#8c8c8c;font-size:12px}
+.crumbs a{color:#8c8c8c}.crumbs a:hover{color:var(--accent)}.crumbs span{color:#b5b5b5}
+.head{max-width:660px;margin-bottom:24px}.head p{margin-top:10px;color:var(--muted)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;border:1.5px solid transparent;transition:.18s ease;cursor:pointer}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(247,144,30,.15)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-tertiary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-tertiary:hover{border-color:var(--accent);color:var(--accent)}
+/* Overzicht */
+.jump{display:grid;gap:12px;grid-template-columns:1fr}
+.jcard{display:block;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-decoration:none;color:var(--text);box-shadow:var(--shadow);transition:border-color .2s ease,transform .2s ease}
+.jcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.jcard .num{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:var(--soft);color:var(--accent);font-weight:800;margin-bottom:12px}
+.jcard b{display:block;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-size:16px}
+.jcard b::after{content:" →";color:var(--accent)}
+/* Split met beeld */
+.split{display:grid;gap:24px;align-items:center}
+.split .media{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:220px}
+.split .media img{width:100%;height:100%;object-fit:cover}
+.highlight{display:inline-flex;flex-direction:column;background:var(--soft);border-radius:var(--radius);padding:16px 20px;margin-top:16px}
+.highlight .big{font-size:22px;color:var(--dark)}
+.highlight span{font-size:13px;color:var(--muted)}
+.note{border-left:4px solid var(--accent);background:#fff;border:1px solid var(--border);border-left-width:4px;border-radius:0 var(--radius) var(--radius) 0;padding:16px 18px;margin-top:16px}
+.note strong{display:block;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;margin-bottom:4px}.note p{font-size:14px;color:#444}
+/* Stappen (retour) */
+.steps{display:grid;gap:16px;grid-template-columns:1fr}
+.step{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.step .num{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:12px;background:var(--soft);color:var(--accent);font-weight:800;font-size:18px;margin-bottom:14px}
+.step p{font-size:14px;color:var(--muted);margin-top:5px}
+/* Garantie band */
+.gband{display:grid;gap:24px;align-items:center;background:var(--dark);border-radius:var(--radius);padding:32px 28px;color:#fff}
+.gband h2,.gband p{color:#fff}.gband p{color:#d7dad9}
+.gband .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:20px}
+.gband .card strong{display:block;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;margin-bottom:6px;color:var(--beige)}
+.gband .card p{font-size:14px;color:#d7dad9}
+/* FAQ */
+.faq-list{display:grid;gap:10px}
+details.faq{border:1px solid var(--border);border-radius:var(--radius);background:#fff;overflow:hidden}
+details.faq summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:700;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;display:flex;justify-content:space-between;gap:18px;min-height:54px;align-items:flex-start;line-height:1.35}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:22px;line-height:1.2;color:var(--accent);flex:0 0 auto;width:22px;text-align:center}
+details.faq[open]{border-color:var(--accent)}details.faq[open] summary::after{content:"\2212"}
+details.faq div{padding:0 18px 18px}details.faq div p{font-size:15px;color:#444}
+.cta{background:var(--soft);border:1px solid var(--border);border-radius:var(--radius);padding:30px 26px;text-align:center}
+.cta h2{margin-bottom:8px}.cta p{color:#4a4133;max-width:520px;margin:0 auto}.cta .btn-row{justify-content:center}
+@media(min-width:760px){section{padding:50px 0}h1{font-size:42px}h2{font-size:30px}.jump{grid-template-columns:repeat(4,1fr)}.split{grid-template-columns:1fr 1fr;gap:40px}.split--flip .media{order:2}.split .media{min-height:320px}.steps{grid-template-columns:repeat(3,1fr)}.gband{grid-template-columns:1.2fr .8fr;gap:34px}}
+@media(max-width:520px){.btn{width:100%}}
+</style>
+</head>
+<body>
+<!-- SERVICEPAGINA (thematisch, met dynamiek: cards, splits, stappen, band). Contact via knop. Geen header/footer. -->
+<main class="page">
+  <section>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>›</span><a href="/klantenservice/">Klantenservice</a><span>›</span>Service</nav>
+      <span class="eyebrow">Service</span>
+      <h1>Levering, retour en garantie</h1>
+      <p class="measure">Alles wat je moet weten nadat je hebt besteld. Vind snel het antwoord op je vraag, of neem contact op als je er niet uitkomt.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="#levering">Bekijk de service</a><a class="btn btn-tertiary" href="/contact/">Neem contact op</a></div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="jump">
+        <a class="jcard" href="#levering"><span class="num">1</span><b>Levering</b></a>
+        <a class="jcard" href="#ophalen"><span class="num">2</span><b>Ophalen</b></a>
+        <a class="jcard" href="#retour"><span class="num">3</span><b>Retour</b></a>
+        <a class="jcard" href="#garantie"><span class="num">4</span><b>Garantie</b></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEVERING: split met beeld + highlight -->
+  <section id="levering">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="eyebrow">Levering</span>
+          <h2>Wat is de levertijd?</h2>
+          <p>De levertijd hangt af van het product en of het op maat wordt gemaakt. Bij een standaardproduct gaat het meestal snel; bij maatwerk duurt het iets langer omdat we het speciaal voor jou maken.</p>
+          <div class="highlight"><span>Verwachte levertijd</span><span class="big">Zie je bij het bestellen</span></div>
+        </div>
+        <div class="media"><img src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg" alt="Levering"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPHALEN: split geflipt + note -->
+  <section class="soft" id="ophalen">
+    <div class="wrap">
+      <div class="split split--flip">
+        <div>
+          <span class="eyebrow">Ophalen</span>
+          <h2>Kan ik mijn bestelling ophalen?</h2>
+          <p>Ja, veel producten haal je op bij een bouwmarkt of dealer bij jou in de buurt. Bij het bestellen kies je het verkooppunt dat jou uitkomt. Je krijgt bericht zodra je bestelling klaarligt.</p>
+          <div class="note"><strong>Handig</strong><p>Op de <a href="/verkooppunten/" style="color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px">verkooppunten-pagina</a> zie je waar CanDo-producten verkrijgbaar zijn.</p></div>
+        </div>
+        <div class="media"><img src="https://delihome.getbynder.com/asset/9a1810d0-d539-453a-84fa-b4805377733d/medium-JPG/CanDo_Kast-op-maat_Schuifdeurkast_Omlijste-deuren_Berging_Eiken_Open.jpg" alt="Ophalen"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RETOUR: genummerde stappen -->
+  <section id="retour">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Retour</span><h2>Zo regel je een retour of een probleem</h2><p class="measure">Een op maat gemaakt product valt buiten het standaard herroepingsrecht. Klopt er iets niet, dan lossen we het samen op. Zo werkt het.</p></div>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><h3>Neem contact op</h3><p>Met je ordergegevens bij de hand, zodat we je snel kunnen helpen.</p></div>
+        <div class="step"><div class="num">2</div><h3>Beschrijf wat er niet klopt</h3><p>Voeg zo nodig een foto toe van het product of de verpakking.</p></div>
+        <div class="step"><div class="num">3</div><h3>Wij regelen de vervolgstap</h3><p>Je hoort van ons wat er kan, van vervangen tot een passende oplossing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIE: donkere band + card -->
+  <section id="garantie">
+    <div class="wrap">
+      <div class="gband">
+        <div>
+          <span class="eyebrow" style="color:var(--beige)">Garantie</span>
+          <h2>Hoelang heb ik garantie?</h2>
+          <p>Op onze producten zit de wettelijke garantie: je product moet doen wat je er normaal van mag verwachten. Twijfel je of iets onder garantie valt, neem dan contact op met je aankoopbewijs bij de hand.</p>
+        </div>
+        <div class="card"><strong>Schade bij ontvangst?</strong><p>Maak een foto van de schade en de verpakking en neem meteen contact op, dan handelen we het snel af.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Veelgestelde vragen</span><h2>Service, kort beantwoord</h2></div>
+      <div class="faq-list">
+        <details class="faq"><summary>Waar vind ik montage-informatie?</summary><div><p>Bij hulp en advies vind je per product stap-voor-stap montagegidsen en video's.</p></div></details>
+        <details class="faq"><summary>Kan ik mijn bestelling nog aanpassen?</summary><div><p>Neem zo snel mogelijk contact op. Zolang je bestelling nog niet in productie of onderweg is, kunnen we vaak nog iets wijzigen.</p></div></details>
+        <details class="faq"><summary>Hoe stel ik een productvraag?</summary><div><p>Stel je vraag via de contactpagina. We helpen je zo snel mogelijk verder.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <h2>Kom je er niet uit?</h2>
+        <p>Stel je vraag rechtstreeks aan ons, we helpen je graag verder.</p>
+        <div class="btn-row"><a class="btn btn-primary" href="/contact/">Neem contact op</a><a class="btn btn-tertiary" href="/klantenservice/veelgestelde-vragen/">Bekijk alle veelgestelde vragen</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

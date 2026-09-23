@@ -1,0 +1,1032 @@
+<!-- consumes: HOUT-E-MODULUS-ONBEKEND -->
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  GATE 1F, STAP NUL: DE CATEGORIE. Verplicht sinds 11-09-2026 (Zoe).
+  ===========================================================================
+  Tak         : B, Massieve panelen / timmerpanelen
+  Kennisbank  : KENNIS/HOUTSOORTEN.md
+  Niet van toepassing op deze tak: B1: de doorbuigvisual mag hier
+
+  Draai de toets met de tak erbij, anders draait hij plat en kan hij goed
+  werk afkeuren:
+      python3 "CanDo SEO/_tools/gate1f-verbodenlijst.py" --tak B 28-doorbuigcalculator.html
+
+  Staat deze kop er niet, dan is de toets niet uitgevoerd, hoe schoon de
+  uitslag ook oogt. Routeringstabel: 04-VORM/VERBODENLIJST.md sectie 0.
+  ===========================================================================
+-->
+<html lang="nl">
+<head>
+<!--
+  ===========================================================================
+  STRAMIEN 28: DE DOORBUIGCALCULATOR
+  Laag 7 van het fundament. Dit bestand is de VORM van de tool-pagina op
+  /nl-nl/hout/keuzehulp/doorbuiging/. Stramien 27 (materiaalpagina per
+  houtsoort) linkt hier vanuit blok 4 "Dikte en draagkracht" en vanuit de
+  routes in blok 5. Interactiepatroon overgenomen van stramien 10
+  (keuzehulp): stappen, voortgangsbalk, Vorige en Opnieuw.
+  Inhoud uit KENNIS/HOUTSOORTEN.md secties 15.4, 15.5, 23 en de MESSY MIDDLE
+  in de JOURNEY-LAAG.
+
+  DE ZEVEN BLOKKEN, VOLGORDE IS BINDEND
+   1 Hero                     rustige zandband, kruimelpad, EEN vraag als H1.
+                              Geen knop, geen beeld: de tool staat er direct
+                              onder en is zelf de primaire actie
+   2 De calculator            VIER vragen, voortgangsbalk, Vorige en Opnieuw.
+                              De uitkomst geeft ALTIJD drie acties in deze
+                              vaste volgorde: 1 tussensteun, 2 dikkere plaat,
+                              3 de maximale maat die wel kan. Daaronder de
+                              dragercheck, die nooit weggelaten wordt
+   3 Dikte tegenover soort    EEN kolom tekst in een kaart. Hier woont de
+                              hefboom: 18 naar 28 mm wint 56 procent, vuren
+                              naar beuken 14 procent. Er stond een
+                              staafvergelijk rechts; dat is eruit, zie BEELD
+   4 De dragergrens           donkere volle band met drie kerngetallen. Bij
+                              circa de helft van de projecten is de drager de
+                              echte grens, niet de plaat
+   5 De vuistregel            drie gelijke kaarten (16, 18, 28 mm) plus de
+                              harde 2,5-meterregel als afsluitende band
+   6 Veelgestelde vragen      details-items, elk antwoord minimaal vier zinnen
+   7 Vervolg                  twee echte routes vooruit met beeld: de
+                              massieve panelen en de maakplannen. Geen dead
+                              end en geen sprong terug omhoog
+
+  DE REKENLAAG, EXPLICIET ZODAT HIJ CONTROLEERBAAR IS
+   Fase 1 draait op de AFGERONDE VUISTREGEL uit HOUTSOORTEN.md 15.5, niet op
+   de berekende overspanningstabel. De vuistregel is bewust conservatiever
+   dan de tabel. Vier inputs, twee belastingniveaus uit EN 16121.
+
+   Banden in cm, vrije overspanning tussen twee steunpunten:
+     normaal (circa 100 kg/m2)   16 mm 55-65   18 mm 70-80   28 mm 100-115
+     zwaar   (circa 150 kg/m2)   16 mm 50-55   18 mm 60-70   28 mm  85-100
+   De BREEDTE van de band IS het houtsoorteffect. Zacht (vuren, grenen,
+   rubberhout) leest de ondergrens, midden (eiken, acacia) het midden, stijf
+   (beuken) de bovengrens. Zo verschijnt de houtsoort nooit als eigen getal
+   en zie je meteen dat een dikte de hele band optilt terwijl een soort je
+   alleen binnen de band verschuift.
+   Input "sier en decoratie" rekent bewust op de NORMALE band: een plank die
+   je vandaag licht vult, staat over twee jaar vol. Dat is de fout die het
+   vaakst achteraf opduikt.
+   Harde grens: vanaf 250 cm is het antwoord altijd nee, ongeacht dikte en
+   soort.
+
+  DIKTES IN FASE 1
+   Alleen 16, 18 en 28 mm. 26, 30 en 40 mm blijven eruit, want de vuistregel
+   dekt ze niet en "26 of 28 mm" staat nog open bij John den Braven.
+
+  ⛔ BLOKKADE, DE REDEN DAT DIT FASE 1 IS
+   De E-waarden per houtsoort zijn NIET BEVESTIGD. Ze staan als
+   [te bevestigen: John den Braven] in HOUTSOORTEN.md 24 en 25.1, en zijn
+   daar de zesde herhaling van dezelfde vraag. Alle berekende overspanningen
+   erven die status. Daarom:
+    - deze tool toont NOOIT een harde tabel per houtsoort met exacte
+      millimeters, en geeft nooit een getal per soort;
+    - de uitkomst is altijd een afgeronde maat met marge, in stappen van 5 cm;
+    - houtsoort is gegroepeerd in drie stijfheidsgroepen, en ook die
+      groepering rust op de onbevestigde waarden.
+   FASE 2, de echte calculator per soort en per dikte, kan pas gebouwd worden
+   als John den Braven de E-waarden en de dichtheden levert. Tot die tijd
+   niets exacter maken dan het hier staat, en geen getallen bijverzinnen.
+   Het voorbehoud staat HIER, niet in de consumentencopy. Op de pagina zelf
+   verklaren we de marge positief (hout werkt, belasting is nooit gelijkmatig
+   verdeeld, met marge bouw je goed), conform feedbackregister C7.
+
+  WAT HIER NIET HOORT
+   - geen tabel per houtsoort met exacte overspanningen in millimeters
+   - geen E-waarden, geen doorbuigformule en geen normklassen in beeld
+   - geen prijzen en geen bedragen (C2)
+   - geen reviewblok, geen sterren, geen Trustpilot-score (C3, harde regel 9)
+   - geen dingbats of Unicode-vinkjes als UI-element. De iconen die er nog
+     staan zijn SVG en zijn allemaal interface tot circa 26 px (chevron,
+     plus, pijl, de statusmarkering bij de uitkomst). De drie acties zijn
+     typografisch genummerd
+   - geen getekende illustratie, behalve de doorbuigvisual in de uitkomst.
+     Zie WEGGEHAALD onder BEELD
+   - geen header en geen footer, die rendert Magento
+   - geen tweede gevulde knop naast de primaire (harde regel 1)
+   - geen knop die terugspringt naar een blok hierboven (harde regel 2)
+   - geen ankerbalk of chipsnavigatie (registerregel A22/A44)
+
+  ROUTING
+   HEEN  vanaf stramien 27 blok 4 en blok 5, en vanaf de dikteband op elke
+         materiaalpagina per houtsoort
+   TERUG de uitkomst en blok 7 sturen naar twee bestaande bestemmingen:
+         /nl-nl/hout/panelen/massieve-panelen/  (kies je dikte)
+         /nl-nl/hout/doe-het-zelf/              (het maakplan)
+         Subtiel inline daarnaast: /nl-nl/hout/hulp-en-advies/
+   MEETPUNT: het afronden van de tool en de diktekeuze die eruit komt. De rol
+   is PREVENTIE plus CONVERSIE. Nooit op verkeer verantwoorden, het cluster
+   is circa 50 zoekopdrachten per maand over 36 keywords.
+
+  BEELD
+   EEN tekening, en dat is de doorbuigvisual in de uitkomst: een live
+   SVG-plank die meebuigt met je antwoord. Dat is de expliciete uitzondering
+   van Zoe op verbodenlijst B1 (11-09-2026). De hero heeft geen foto, want
+   de tool staat er direct onder en is zelf de primaire actie.
+   Foto's staan alleen in blok 7, uit Bynder:
+   https://delihome.getbynder.com/asset/{uuid}/medium-JPG/{Bestandsnaam}.jpg
+   Gebruikt: 0d3fe7f2-8228-4a8c-8b93-367d0583ef1b (wandplank in nis, 2026) en
+   8f6f76e4-ab03-4bf0-9d4c-d9d2030b0498 (gebeitst eiken wandplank). Beide
+   niet in gebruik op stramien 27. Registreren in tab 06 bij uitwerking.
+
+  ⛔ WEGGEHAALD OP 11-09-2026, BESLUIT ZOE, VERBODENLIJST B1
+   "De illustraties die worden gemaakt, dat doen wij niet. Wij hebben
+   alleen afbeeldingen met CanDo of onze eigen gemaakte illustraties.
+   Behalve die van de doorbuig bij massieve panelen en timmerpanelen."
+   Dit bestand telde zeven getekende onderdelen. EEN daarvan blijft, de
+   doorbuigvisual in de uitkomst, want dat is letterlijk de uitzondering.
+   De andere zes zijn eruit:
+
+   1 BLOK 2, STAP 1. Drie keuze-iconen van 32 px: een plank met een doosje
+     en een plant, een rijtje boeken, een opbergdoos.
+   2 BLOK 2, STAP 3. Drie keuze-iconen van 32 px die de plankdikte als
+     mini-doorsnede tonen, 16, 18 en 28 mm.
+   3 BLOK 2, STAP 4. Drie keuze-iconen van 32 px die de nerf van de drie
+     houtgroepen tonen.
+     WAT ER MET DE DRIE STAPPEN GEBEURDE: de keuzeknop is nu puur
+     typografisch, titel plus toelichting. Er is geen lege icoonkolom en
+     geen grijs vlak op de plek van het icoon. De teksten in de knoppen
+     zijn ONGEWIJZIGD; ze beschreven de keuze al volledig en verwezen
+     nergens naar het plaatje.
+   4 BLOK 3, HET STAAFVERGELIJK. Een SVG van 420 bij 260 met drie balken:
+     18 mm vuren als vertrekpunt, 18 mm beuken plus 14 procent, 28 mm
+     vuren plus 56 procent.
+     WAT ER MET HET BLOK GEBEURDE: de editorial split werd EEN kolom.
+     WAT ER MET DE TEKST GEBEURDE: de drie getallen stonden zowel in de
+     lopende tekst als in de balken. De vergelijking met het vertrekpunt
+     stond alleen in de tekening en staat nu als uitgelichte alinea onder
+     de tekst.
+   5 BLOK 5, DE 2,5-METERBAND. Een icoon van 52 px met twee steunen en een
+     doorbuigende plank ertussen.
+     BEOORDELING: dit toont doorbuigen, maar het is niet DE doorbuigvisual.
+     Het is een decoratief accent naast een tekstband, terwijl de
+     uitzondering over de uitlegvisual gaat. Daarom eruit. Wil Zoe hem
+     terug, dan is dat een besluit van een regel.
+     WAT ER MET HET BLOK GEBEURDE: de band is nu een tekstband over de
+     volle breedte met een accentrand links. De tekst is ongewijzigd.
+
+   WAT BLIJFT STAAN, EN WAAROM
+   - de doorbuigvisual in de uitkomst (dbc-draw), de uitzondering zelf;
+   - de interface-pictogrammen tot circa 26 px: het chevron in het
+     kruimelpad, de terugpijl, de herstartpijl, de plus in de FAQ, de
+     pijl in de vervolgkaarten;
+   - de drie statusmarkeringen van 24 px bij de uitkomst (ruim, krap,
+     niet). Dat zijn abstracte interface-tekens in een bevestiging en geen
+     afbeelding van iets, precies de uitzondering die de verbodenlijst
+     onder "wat wel mag als vormtaal" noemt.
+
+   [besluit nodig] WELK BEELD HIER NODIG IS. Strikt genomen geen: alle
+   weggehaalde tekeningen zeiden iets wat de tekst ook zegt, en de pagina
+   is nu leesbaar zonder. Wil Zoe blok 2 visueler maken, dan is dat een
+   CanDo-eigen icoonset voor de negen keuzes, geen losse tekening per
+   knop. Zie 05-BESLUITEN/FOTOBRIEF-AFWERKING.md sectie 5.
+
+  OPEN BESLUIT
+   De fontlink bevat een Magento-versienummer dat bij de volgende deploy
+   breekt. In de CMS-implementatie moet het font door het platform komen.
+  ===========================================================================
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doorbuigcalculator, zakt jouw plank door? | CanDo</title>
+<meta name="description" content="Check in vier vragen hoe ver jouw plank vrij mag overspannen. Zit je eroverheen, dan krijg je meteen drie oplossingen: een tussensteun, een dikkere plaat of de maat die wel kan.">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+:root{
+  --text:#20272b;
+  --muted:#666b70;
+  --accent:#F7901E;
+  --accent-dark:#d95f18;
+  --border:#e5ded4;
+  --bg-soft:#f7f2ea;
+  --bg-light:#fbfaf7;
+  --bg-warm:#f4eadc;
+  --dark:#211914;
+  --ok:#3f7d4e;
+  --warn:#b0691a;
+  --stop:#a8442a;
+  --radius:8px;
+  --shadow:0 8px 22px rgba(32,39,43,.045);
+  --shadow-hover:0 12px 28px rgba(32,39,43,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:#fff;color:var(--text);font-family:Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+.cando-doorbuig{width:100%;overflow-x:clip;background:#fff;color:var(--text)}
+.cando-doorbuig *,.cando-doorbuig *::before,.cando-doorbuig *::after{box-sizing:border-box}
+.cando-doorbuig h1,.cando-doorbuig h2,.cando-doorbuig h3,.cando-doorbuig .cando-cat-button,.cando-doorbuig summary,.cando-doorbuig .dbc-ctl,.cando-doorbuig .dbc-progress,.cando-doorbuig .dbc-choice__t,.cando-doorbuig .dbc-num,.cando-doorbuig .dbc-readout,.cando-doorbuig .rule-card strong,.cando-doorbuig .drager-point strong{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.cando-doorbuig h1{margin:0 0 12px;font-size:40px;line-height:1.02;font-weight:700;letter-spacing:-.02em}
+.cando-doorbuig h2{margin:0;font-size:28px;line-height:1.18;font-weight:700;letter-spacing:-.01em}
+.cando-doorbuig h3{margin:0 0 7px;font-size:19px;line-height:1.3;font-weight:700}
+.cando-doorbuig p{margin:0;font-size:16px;line-height:1.68;color:#414141}
+.cando-doorbuig ul{margin:0;padding:0;list-style:none}
+.cando-doorbuig a{text-decoration:none;font-weight:700}
+.cando-doorbuig :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.cando-wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 18px}
+.cando-section{position:relative;padding:52px 0}
+.cando-section--soft{background:var(--bg-soft)}
+.cando-section--light{background:var(--bg-light)}
+.cando-section-head{max-width:720px;margin-bottom:26px}
+.cando-section-head p{margin-top:10px;color:var(--muted)}
+.cando-eyebrow{display:block;margin:0 0 8px;color:var(--accent);font-size:11px;line-height:1.2;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.cando-crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:0 0 16px;color:#8c8c8c;font-size:12px}
+.cando-crumbs a{color:#8c8c8c;font-weight:400}
+.cando-crumbs a:hover{color:var(--accent)}
+.cando-crumbs svg{width:11px;height:11px;flex:0 0 auto;color:#c2bab0}
+
+/* Canonieke CanDo buttonstijl */
+.cando-cat-button-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:22px}
+.cando-cat-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:12px 24px;border-radius:999px;font-size:16px;line-height:1.2;font-weight:700;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease}
+.cando-cat-button:active{transform:translateY(1px)}
+.cando-cat-button--primary{background:var(--accent);border-color:var(--accent);color:#fff!important}
+.cando-cat-button--primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff!important}
+.cando-cat-button--secondary{background:var(--bg-soft);border-color:var(--border);color:var(--text)!important}
+.cando-cat-button--secondary:hover{background:#efe4d6;border-color:#efe4d6;color:var(--text)!important}
+.cando-cat-button[disabled]{opacity:.42;cursor:default;transform:none}
+.cando-cat-button svg{width:16px;height:16px;flex:0 0 auto}
+
+/* 1. HERO, rustige band. Geen beeld, de tool is de actie */
+.dbc-hero{background:var(--bg-soft);padding:44px 0 40px}
+.dbc-hero .lead{max-width:640px;margin-top:12px;font-size:17px;color:#414141}
+
+/* 2. DE CALCULATOR */
+.dbc{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-top:-34px;position:relative;z-index:2}
+.dbc-controls{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--border);background:var(--bg-light)}
+.dbc-ctl{display:inline-flex;align-items:center;gap:7px;min-height:44px;background:none;border:0;color:var(--muted);font-weight:700;font-size:14px;cursor:pointer;padding:6px 4px;border-radius:4px}
+.dbc-ctl svg{width:14px;height:14px;flex:0 0 auto}
+.dbc-ctl:hover{color:var(--accent)}
+.dbc-ctl[disabled]{opacity:.35;cursor:default}
+.dbc-ctl[disabled]:hover{color:var(--muted)}
+.dbc-bar{height:4px;background:var(--border)}
+.dbc-bar span{display:block;height:100%;width:25%;background:var(--accent);transition:width .3s ease}
+.dbc-body{padding:28px 22px 30px}
+.dbc-progress{margin:0 0 12px;color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+.dbc-step{display:none}
+.dbc-step.is-active{display:block}
+.dbc-step h2{font-size:24px;margin-bottom:6px}
+.dbc-step .sub{margin-bottom:20px;color:var(--muted);font-size:15px}
+
+.dbc-choices{display:grid;gap:12px;grid-template-columns:1fr}
+/* De keuzeknoppen hadden een getekend icoon van 32 px per stuk. Die zijn
+   eruit (verbodenlijst B1), dus de knop is nu puur typografisch: titel en
+   toelichting. Geen lege icoonkolom en geen beeldvlak dat op beeld wacht. */
+.dbc-choice{display:block;text-align:left;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:16px 16px 17px;cursor:pointer;transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease}
+.dbc-choice:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.dbc-choice[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.dbc-choice__t{display:block;font-size:16px;font-weight:700;color:var(--text);line-height:1.3}
+.dbc-choice__s{display:block;margin-top:4px;font-size:13.5px;line-height:1.5;color:var(--muted)}
+
+/* Stap 2, de maat */
+.dbc-measure{background:var(--bg-light);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px}
+.dbc-readout{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+.dbc-readout output{font-size:44px;line-height:1;font-weight:700;color:var(--text);font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.dbc-readout span{font-size:17px;font-weight:700;color:var(--muted)}
+.dbc-measure .hint{font-size:13.5px;color:var(--muted);margin-bottom:18px}
+.dbc-range{width:100%;accent-color:var(--accent);height:26px;cursor:pointer}
+.dbc-scale{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:2px}
+.dbc-exact{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:18px;font-size:14px;color:var(--muted)}
+.dbc-exact label{font-weight:700;color:var(--text)}
+.dbc-exact input{width:96px;min-height:44px;padding:8px 10px;font-size:16px;font-family:Arial,sans-serif;color:var(--text);border:1px solid var(--border);border-radius:6px;background:#fff}
+
+/* De uitkomst */
+.dbc-verdict{display:flex;gap:16px;align-items:flex-start;padding:20px;border-radius:var(--radius);border:1px solid var(--border);background:var(--bg-light);margin-bottom:22px}
+.dbc-verdict__ico{flex:0 0 auto;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--border)}
+.dbc-verdict__ico svg{width:24px;height:24px}
+.dbc-verdict h3{font-size:21px;margin-bottom:5px}
+.dbc-verdict p{font-size:15px;line-height:1.6}
+.dbc-verdict strong{color:var(--text)}
+.dbc-verdict--ruim{border-color:#cbdccf;background:#f4f9f5}
+.dbc-verdict--ruim .dbc-verdict__ico{color:var(--ok);border-color:#cbdccf}
+.dbc-verdict--krap{border-color:#ecd7b6;background:#fdf7ee}
+.dbc-verdict--krap .dbc-verdict__ico{color:var(--warn);border-color:#ecd7b6}
+.dbc-verdict--niet{border-color:#e6c6bb;background:#fdf4f1}
+.dbc-verdict--niet .dbc-verdict__ico{color:var(--stop);border-color:#e6c6bb}
+
+.dbc-draw{background:var(--bg-soft);border-radius:var(--radius);padding:22px 18px;margin-bottom:24px}
+.dbc-draw svg{width:100%;max-width:560px;height:auto;margin:0 auto;display:block}
+
+.dbc-actions{display:grid;gap:12px;margin-bottom:22px}
+.dbc-action{display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;padding:18px 18px 19px;border:1px solid var(--border);border-radius:var(--radius);background:#fff}
+.dbc-action--lead{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.dbc-num{flex:0 0 auto;width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;font-size:17px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+.dbc-action h3{font-size:17px;margin-bottom:5px}
+.dbc-action p{font-size:14.5px;line-height:1.6;color:#414141}
+.dbc-action .outcome{display:block;margin-top:9px;font-size:14px;font-weight:700;color:var(--accent-dark)}
+
+.dbc-drager{border-top:1px solid var(--border);padding-top:20px;margin-bottom:8px}
+.dbc-drager h3{font-size:17px}
+.dbc-drager p{font-size:14.5px;line-height:1.62;color:#414141;margin-top:6px}
+.dbc-note{margin-top:14px;font-size:13.5px;line-height:1.6;color:var(--muted)}
+.dbc-fallback{margin-top:22px;padding-top:18px;border-top:1px solid var(--border);font-size:14px;line-height:1.65;color:var(--muted)}
+.dbc-fallback a{color:var(--accent-dark);text-decoration:underline;text-underline-offset:3px}
+
+/* 3. HEFBOOM. Stond als editorial split met een staafvergelijk rechts. Dat
+   staafvergelijk is eruit (verbodenlijst B1), dus dit is nu EEN kolom met
+   een leesbare regellengte. De drie getallen staan nu in de tekst. Geen
+   half lege kolom en geen leeg beeldvlak (B3). */
+.lever{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff}
+.lever__copy{padding:40px 42px 38px;max-width:860px}
+.lever__copy h2{margin-bottom:14px}
+.lever__copy p+p{margin-top:13px}
+.lever__copy .kicker{font-size:17px;color:#343a3e}
+.lever__slot{margin-top:20px;padding:16px 18px;background:var(--bg-soft);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0}
+
+/* 4. DRAGERGRENS, donkere volle band */
+.drager-band{position:relative;background:var(--dark);color:#fff;overflow:hidden}
+.drager-band::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(247,144,30,.12),transparent 48%);pointer-events:none}
+.drager-band .cando-wrap{position:relative;z-index:1}
+.drager-band h2{color:#fff}
+.drager-band p{color:rgba(255,255,255,.8)}
+.drager-band .cando-section-head p{color:rgba(255,255,255,.8)}
+.drager-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18);margin-top:30px}
+.drager-point{padding:22px 22px 22px 0;margin-right:22px;border-right:1px solid rgba(255,255,255,.18)}
+.drager-point:last-child{border-right:0;margin-right:0}
+.drager-point strong{display:block;font-size:30px;line-height:1;color:var(--accent);margin-bottom:8px}
+.drager-point span{display:block;font-size:14px;line-height:1.5;color:rgba(255,255,255,.78)}
+
+/* 5. VUISTREGEL, drie gelijke kaarten plus afsluitende band */
+.rule-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.rule-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px 22px 26px}
+.rule-card strong{display:block;font-size:32px;line-height:1;color:var(--accent);margin-bottom:4px}
+.rule-card .span{display:block;font-size:15px;font-weight:700;color:var(--text);margin-bottom:10px}
+.rule-card p{font-size:14.5px;line-height:1.6;color:#414141}
+/* De 2,5-meterband had links een getekend icoon van een doorbuigende plank
+   van 52 px. Dat is een tweede doorbuigtekening naast de tool en het is geen
+   interface-pictogram, dus hij is eruit (B1). De band is nu een tekstband
+   over de volle breedte. */
+.rule-hard{margin-top:16px;background:var(--bg-warm);border:1px solid var(--border);border-radius:var(--radius);border-left:3px solid var(--accent-dark);padding:22px 24px}
+.rule-hard p{font-size:16px;line-height:1.6;color:var(--text);max-width:860px}
+.rule-hard strong{font-weight:700}
+
+/* 6. FAQ */
+.faq-list{display:grid;gap:10px;max-width:860px}
+details.faq{border:1px solid var(--border);border-radius:var(--radius);background:#fff;overflow:hidden}
+details.faq summary{list-style:none;cursor:pointer;padding:17px 18px;font-weight:700;font-size:16.5px;display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:56px;line-height:1.35}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary svg{width:16px;height:16px;flex:0 0 auto;color:var(--accent);transition:transform .2s ease}
+details.faq[open]{border-color:var(--accent)}
+details.faq[open] summary svg{transform:rotate(45deg)}
+details.faq .faq-answer{padding:0 18px 20px}
+details.faq .faq-answer p{font-size:15px;line-height:1.7;color:#444}
+details.faq .faq-answer p+p{margin-top:10px}
+
+/* 7. VERVOLG */
+.next-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.next-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.next-card:hover{transform:translateY(-2px);border-color:#d8cdbf;box-shadow:var(--shadow-hover)}
+.next-card__image{height:230px;border-bottom:1px solid var(--border);overflow:hidden;background:var(--bg-warm)}
+.next-card__image img{width:100%;height:100%;object-fit:cover;object-position:center}
+.next-card__body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1 1 auto}
+.next-card p{font-size:14.5px;line-height:1.55;color:var(--muted)}
+.next-card .card-cta{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:14px;font-size:14.5px;font-weight:700;color:var(--text)}
+.next-card .card-cta svg{width:15px;height:15px;color:var(--accent)}
+.next-help{margin-top:20px;font-size:15px;line-height:1.7;color:var(--muted);max-width:760px}
+.next-help a{color:var(--accent-dark);text-decoration:underline;text-underline-offset:3px}
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+@media(min-width:760px){
+  .cando-doorbuig h1{font-size:52px}
+  .cando-doorbuig h2{font-size:30px}
+  .dbc-body{padding:34px 30px 36px}
+  .dbc-choices{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .dbc-actions{gap:14px}
+}
+@media(max-width:960px){
+  .lever__copy{padding:32px 26px 30px}
+  .drager-points{grid-template-columns:1fr;border-bottom:0}
+  .drager-point{padding:20px 0;margin-right:0;border-right:0;border-bottom:1px solid rgba(255,255,255,.18)}
+  .rule-grid{grid-template-columns:1fr}
+  .next-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .cando-doorbuig h1{font-size:34px}
+  .cando-doorbuig h2{font-size:25px}
+  .cando-section{padding:42px 0}
+  .dbc{margin-top:-26px}
+  .dbc-body{padding:24px 16px 26px}
+  .dbc-readout output{font-size:38px}
+  .dbc-action{grid-template-columns:32px 1fr;gap:12px;padding:16px}
+  .dbc-num{width:32px;height:32px;font-size:15px}
+  .next-card__image{height:190px}
+  .cando-cat-button{width:100%}
+}
+.cando-skip{position:absolute;left:-9999px;top:0;z-index:99;padding:12px 20px;background:var(--accent);color:#fff;font-weight:700;border-radius:0 0 var(--radius) 0}
+.cando-skip:focus{left:0}
+</style>
+</head>
+<body>
+<a class="cando-skip" href="#contentarea">Naar de inhoud</a>
+
+<!-- STRAMIEN 28, DOORBUIGCALCULATOR. Zeven blokken, volgorde bindend. Geen header en geen footer, die rendert Magento. -->
+<main class="cando-doorbuig" id="contentarea">
+
+  <!-- ================= 1. HERO ================= -->
+  <section class="dbc-hero">
+    <div class="cando-wrap">
+      <nav class="cando-crumbs" aria-label="Kruimelpad">
+        <a href="/nl-nl/">Home</a>
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2.5 8 6l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="/nl-nl/hout/">Hout</a>
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4.5 2.5 8 6l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span aria-current="page">Doorbuigcalculator</span>
+      </nav>
+      <span class="cando-eyebrow">Doorbuigcalculator</span>
+      <h1>Zakt jouw plank door?</h1>
+      <p class="lead">Vier korte vragen en je weet hoe ver jouw plank vrij mag overspannen. Zit je eroverheen, dan krijg je direct drie manieren om het op te lossen. Je hoeft niets te rekenen en niets te weten van hout.</p>
+    </div>
+  </section>
+
+  <!-- ================= 2. DE CALCULATOR ================= -->
+  <section class="cando-section" style="padding-top:0">
+    <div class="cando-wrap">
+      <div class="dbc" id="dbc">
+
+        <div class="dbc-controls">
+          <button type="button" class="dbc-ctl" id="dbc-prev" disabled>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3 5 8l5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Vorige
+          </button>
+          <button type="button" class="dbc-ctl" id="dbc-restart">
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13.2 6.6A5.4 5.4 0 1 0 13 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M13.6 2.6v4h-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Opnieuw beginnen
+          </button>
+        </div>
+
+        <div class="dbc-bar"><span id="dbc-fill"></span></div>
+
+        <div class="dbc-body">
+          <p class="dbc-progress" id="dbc-progress">Vraag 1 van 4</p>
+
+          <!-- STAP 1, wat komt erop -->
+          <div class="dbc-step is-active" data-step="1">
+            <h2>Wat komt er op de plank?</h2>
+            <p class="sub">Kies wat er straks echt op staat, niet wat er de eerste maand op staat.</p>
+            <div class="dbc-choices">
+              <button type="button" class="dbc-choice" data-key="belasting" data-value="sier" data-next="2" aria-pressed="false">
+                <span>
+                  <span class="dbc-choice__t">Sier en decoratie</span>
+                  <span class="dbc-choice__s">Lijstjes, een plant, wat spullen die er mooi uitzien.</span>
+                </span>
+              </button>
+              <button type="button" class="dbc-choice" data-key="belasting" data-value="boeken" data-next="2" aria-pressed="false">
+                <span>
+                  <span class="dbc-choice__t">Boeken en servies</span>
+                  <span class="dbc-choice__s">Een plank die vol staat. De meest voorkomende situatie.</span>
+                </span>
+              </button>
+              <button type="button" class="dbc-choice" data-key="belasting" data-value="zwaar" data-next="2" aria-pressed="false">
+                <span>
+                  <span class="dbc-choice__t">Echt zwaar</span>
+                  <span class="dbc-choice__s">Naslagwerken, platen, gereedschap of volle opbergdozen.</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STAP 2, de overspanning -->
+          <div class="dbc-step" data-step="2">
+            <h2>Hoe ver zit er tussen de steunpunten?</h2>
+            <p class="sub">De vrije afstand tussen twee steunpunten, dus niet de totale lengte van je plank.</p>
+            <div class="dbc-measure">
+              <p class="dbc-readout"><output id="dbc-out" for="dbc-range">80</output> <span>cm vrije overspanning</span></p>
+              <p class="hint">Sleep naar jouw maat, of typ hem hieronder in.</p>
+              <label class="sr-only" for="dbc-range">Vrije overspanning in centimeters</label>
+              <input type="range" class="dbc-range" id="dbc-range" min="20" max="300" step="5" value="80">
+              <div class="dbc-scale" aria-hidden="true"><span>20 cm</span><span>160 cm</span><span>300 cm</span></div>
+              <div class="dbc-exact">
+                <label for="dbc-number">Liever exact</label>
+                <input type="number" id="dbc-number" min="20" max="300" step="1" value="80" inputmode="numeric">
+                <span>cm</span>
+              </div>
+              <div class="cando-cat-button-row">
+                <button type="button" class="cando-cat-button cando-cat-button--primary" data-next="3">Ga naar de dikte</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STAP 3, de dikte -->
+          <div class="dbc-step" data-step="3">
+            <h2>Welke dikte heb je in gedachten?</h2>
+            <p class="sub">Weet je het nog niet? Kies 18 mm, dat is de dikte die je het vaakst tegenkomt.</p>
+            <div class="dbc-choices">
+              <button type="button" class="dbc-choice" data-key="dikte" data-value="16" data-next="4" aria-pressed="false">
+                <span>
+                  <span class="dbc-choice__t">16 mm</span>
+                  <span class="dbc-choice__s">Dun en licht, voor korte overspanningen.</span>
+                </span>
+              </button>
+              <button type="button" class="dbc-choice" data-key="dikte" data-value="18" data-next="4" aria-pressed="false">
+                <span>
+                  <span class="dbc-choice__t">18 mm</span>
+                  <span class="dbc-choice__s">De standaard. Om te tonen.</span>
+                </span>
+              </button>
+              <button type="button" class="dbc-choice" data-key="dikte" data-value="28" data-next="4" aria-pressed="false">
+                <span>
+                  <span class="dbc-choice__t">28 mm</span>
+                  <span class="dbc-choice__s">Fors en stevig. Om te dragen.</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- STAP 4, de houtsoort -->
+          <div class="dbc-step" data-step="4">
+            <h2>Welk hout wordt het?</h2>
+            <p class="sub">Kies gerust het hout dat je mooi vindt. Je ziet zo waarom deze vraag minder zwaar weegt dan je denkt.</p>
+            <div class="dbc-choices">
+              <button type="button" class="dbc-choice" data-key="soort" data-value="zacht" data-next="result" aria-pressed="false">
+                <span>
+                  <span class="dbc-choice__t">Vuren, grenen of rubberhout</span>
+                  <span class="dbc-choice__s">Licht van kleur en licht van gewicht.</span>
+                </span>
+              </button>
+              <button type="button" class="dbc-choice" data-key="soort" data-value="midden" data-next="result" aria-pressed="false">
+                <span>
+                  <span class="dbc-choice__t">Eiken of acacia</span>
+                  <span class="dbc-choice__s">Warmer van tint en een stuk zwaarder.</span>
+                </span>
+              </button>
+              <button type="button" class="dbc-choice" data-key="soort" data-value="stijf" data-next="result" aria-pressed="false">
+                <span>
+                  <span class="dbc-choice__t">Beuken</span>
+                  <span class="dbc-choice__s">Egaal, dicht en het stijfst van het rijtje.</span>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- UITKOMST -->
+          <div class="dbc-step" data-step="result">
+            <div class="dbc-verdict" id="dbc-verdict" role="status" aria-live="polite">
+              <span class="dbc-verdict__ico" id="dbc-verdict-ico"></span>
+              <div>
+                <h3 id="dbc-verdict-title">Jouw uitkomst</h3>
+                <p id="dbc-verdict-text"></p>
+              </div>
+            </div>
+
+            <div class="dbc-draw">
+              <svg id="dbc-draw" viewBox="0 0 560 190" role="img" aria-labelledby="dbc-draw-title">
+                <title id="dbc-draw-title">Tekening van jouw plank tussen twee steunpunten, met de doorbuiging die erbij hoort</title>
+                <rect x="46" y="82" width="26" height="72" rx="2" fill="#d9cfc0"/>
+                <rect x="488" y="82" width="26" height="72" rx="2" fill="#d9cfc0"/>
+                <path id="dbc-plank" d="" fill="#c98a3d"/>
+                <line x1="59" y1="170" x2="501" y2="170" stroke="#9b9187" stroke-width="1.4"/>
+                <line x1="59" y1="164" x2="59" y2="176" stroke="#9b9187" stroke-width="1.4"/>
+                <line x1="501" y1="164" x2="501" y2="176" stroke="#9b9187" stroke-width="1.4"/>
+                <rect x="238" y="158" width="84" height="24" rx="4" fill="#f7f2ea"/>
+                <text id="dbc-draw-span" x="280" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#20272b">80 cm</text>
+                <text id="dbc-draw-label" x="280" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666b70">Zo staat jouw plank ervoor</text>
+              </svg>
+            </div>
+
+            <h3 style="font-size:20px;margin-bottom:14px" id="dbc-actions-title">Wat je nu kunt doen</h3>
+            <div class="dbc-actions">
+              <div class="dbc-action" id="dbc-a1">
+                <span class="dbc-num" aria-hidden="true">1</span>
+                <div>
+                  <h3>Zet er een tussensteun onder</h3>
+                  <p id="dbc-a1-text"></p>
+                  <span class="outcome" id="dbc-a1-out"></span>
+                </div>
+              </div>
+              <div class="dbc-action" id="dbc-a2">
+                <span class="dbc-num" aria-hidden="true">2</span>
+                <div>
+                  <h3>Ga naar een dikkere plaat</h3>
+                  <p id="dbc-a2-text"></p>
+                  <span class="outcome" id="dbc-a2-out"></span>
+                </div>
+              </div>
+              <div class="dbc-action" id="dbc-a3">
+                <span class="dbc-num" aria-hidden="true">3</span>
+                <div>
+                  <h3>Of houd deze maat aan</h3>
+                  <p id="dbc-a3-text"></p>
+                  <span class="outcome" id="dbc-a3-out"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="dbc-drager">
+              <h3>Reken ook even je beslag na</h3>
+              <p>Bij ongeveer de helft van de projecten is niet de plaat de grens, maar wat eronder zit. Een blinde plankdrager houdt circa 25 kg. Drie dragers samen komen op ongeveer 75 kg, en een goed gemonteerde wandplank draagt in totaal 40 tot 50 kg, inclusief het gewicht van de plank zelf. Zit je daarboven, kies dan zwaardere dragers of een plank die op een kast of een zijwand rust.</p>
+              <p class="dbc-note">Komt er iets zwaars op een klein oppervlak, denk aan een monitor, een aquarium of iemand die er even op gaat zitten, houd de vrije overspanning dan onder 80 cm of zet een steun precies onder dat punt. De maten hierboven gaan uit van gewicht dat gelijkmatig over de plank verdeeld is.</p>
+            </div>
+
+            <div class="cando-cat-button-row">
+              <a class="cando-cat-button cando-cat-button--primary" href="/nl-nl/hout/panelen/massieve-panelen/">Bekijk de massieve panelen</a>
+              <a class="cando-cat-button cando-cat-button--secondary" href="/nl-nl/hout/doe-het-zelf/">Naar de maakplannen</a>
+            </div>
+
+            <p class="dbc-fallback">Twijfel je nog over de maat of over de manier van ophangen? Loop de vragen gerust nog een keer door met een andere dikte, of lees mee bij <a href="/nl-nl/hout/hulp-en-advies/">hulp en advies</a>.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. DE HEFBOOM ================= -->
+  <section class="cando-section cando-section--light">
+    <div class="cando-wrap">
+      <div class="lever">
+        <div class="lever__copy">
+          <span class="cando-eyebrow">Waar het echt in zit</span>
+          <h2>Wat helpt meer, een dikkere plaat of een harder hout?</h2>
+          <p class="kicker">Bijna iedereen stelt de houtsoortvraag. Zwaar hout voelt sterker, dus dat klinkt logisch. Alleen doet de dikte het werk.</p>
+          <p>Ga je van 18 naar 28 mm, dan wint je plank ongeveer 56 procent overspanning. Ga je van vuren naar beuken, dan is dat ongeveer 14 procent. Vier keer zoveel effect, en je houdt gewoon het hout dat je mooi vindt.</p>
+          <p>Dat komt doordat de dikte veel zwaarder meetelt dan het materiaal. Een paar millimeter erbij levert meer op dan een hele andere houtsoort. Kies dus eerst je maat en je dikte, en pas daarna je kleur en je nerf.</p>
+          <p class="lever__slot">Neem 18 mm vuren als vertrekpunt. Ga je naar beuken in dezelfde dikte, dan win je ongeveer 14 procent. Ga je naar 28 mm en houd je het vuren, dan win je ongeveer 56 procent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. DE DRAGERGRENS ================= -->
+  <section class="cando-section drager-band">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">De grens die je bijna nooit hoort</span>
+        <h2>Vaak is niet de plaat je grens, maar de drager</h2>
+        <p>Bij ongeveer de helft van de projecten begeeft het beslag het eerder dan het hout. Een plaat die ruimschoots sterk genoeg is, hangt dan aan dragers die het gewicht niet aankunnen. Reken daarom altijd twee keer: houdt de plaat het, en houdt het beslag het.</p>
+      </div>
+      <div class="drager-points">
+        <div class="drager-point">
+          <strong>25 kg</strong>
+          <span>Wat een blinde plankdrager ongeveer houdt bij een plankdiepte van 30 cm.</span>
+        </div>
+        <div class="drager-point">
+          <strong>40 tot 50 kg</strong>
+          <span>Wat een goed gemonteerde wandplank in totaal draagt, inclusief de plank zelf.</span>
+        </div>
+        <div class="drager-point">
+          <strong>80 cm</strong>
+          <span>De maat die je aanhoudt zodra er ergens een punt zwaar belast wordt.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. DE VUISTREGEL ================= -->
+  <section class="cando-section">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">De vuistregel</span>
+        <h2>Hoe ver haalt elke dikte ongeveer?</h2>
+        <p>Handig om te onthouden, voor als je in de winkel staat. Uitgangspunt is een plank die vol staat met boeken of servies, en die aan twee kanten steunt.</p>
+      </div>
+      <div class="rule-grid">
+        <div class="rule-card">
+          <strong>16 mm</strong>
+          <span class="span">Circa 55 tot 65 cm</span>
+          <p>De dunste plaat. Prima voor een rij paperbacks, wat lijstjes en een plant. Zet er een tussensteun onder zodra je verder wilt.</p>
+        </div>
+        <div class="rule-card">
+          <strong>18 mm</strong>
+          <span class="span">Circa 70 tot 80 cm</span>
+          <p>De dikte die je het vaakst tegenkomt, en precies daar gaat het mis. Achttien millimeter vuren haalt met boeken erop ongeveer 73 cm, en vrijwel elke boekenkast is breder dan dat.</p>
+        </div>
+        <div class="rule-card">
+          <strong>28 mm</strong>
+          <span class="span">Ruim een meter</span>
+          <p>De dikte die draagt in plaats van toont. Houd het simpel: 18 mm om te tonen, 28 mm om te dragen.</p>
+        </div>
+      </div>
+      <div class="rule-hard">
+        <p><strong>En 2,5 meter?</strong> Die haalt geen enkele dikte zonder tussensteun. Ook 28 mm niet en ook beuken niet. Wil je die breedte overbruggen, dan hoort er een steun in het midden.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. VEELGESTELDE VRAGEN ================= -->
+  <section class="cando-section cando-section--soft">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">Veelgestelde vragen</span>
+        <h2>Over doorbuigen en draagkracht</h2>
+      </div>
+      <div class="faq-list">
+
+        <details class="faq">
+          <summary>Waarom zakt mijn plank pas na een jaar door?
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Hout geeft langzaam mee onder gewicht dat er permanent op blijft staan. Boeken zijn zulk gewicht: die haal je er nooit meer af. Een plank die op dag een nog kaarsrecht oogt, staat na een paar jaar merkbaar lager, ongeveer anderhalf keer zo diep als bij de eerste meting.</p>
+            <p>Daarom rekent deze tool met een flinke marge en niet met de doorbuiging op dag een. Je bouwt hem dus meteen goed, en je ziet er over vijf jaar nog steeds niets van.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Hoeveel scheelt een tussensteun nu echt?
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Heel veel meer dan je verwacht. Een steun in het midden haalt ruwweg vierennegentig procent van de doorbuiging weg, en dat is verreweg de grootste hefboom die je hebt. Dat komt doordat de doorbuiging razendsnel oploopt met de afstand: twee keer zo ver overspannen geeft ongeveer zestien keer zoveel doorbuiging.</p>
+            <p>Andersom werkt dat net zo goed in jouw voordeel. Halveer je de vrije afstand, dan valt de doorbuiging vrijwel volledig weg. Een extra plankdrager of een schotje in het midden is bijna altijd de goedkoopste en snelste oplossing.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Geldt dit ook als er iets zwaars op een plek staat?
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Nee, dan gelden deze maten niet. De tool gaat uit van gewicht dat gelijkmatig over de plank verdeeld is, zoals een rij boeken of een kast vol servies. Zet je er iets zwaars op een klein oppervlak, dan komt alle druk op een punt terecht en buigt de plank veel sneller door.</p>
+            <p>Denk aan een monitor op een voet, een aquarium, een naaimachine of iemand die er even op gaat zitten. Houd in die gevallen de vrije overspanning onder 80 cm, of zet een steun precies onder de plek waar het gewicht komt. Dat scheelt meer dan een dikkere plaat.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Kan een plank die te ver overspant breken?
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>In een normale situatie niet. Een massief houten plank breekt niet, hij zakt door. De sterkte van het hout zit ruim boven wat een boekenplank ooit te verduren krijgt, met een veiligheidsmarge van een factor tien of meer.</p>
+            <p>Wat je dus tegenkomt is geen breuk maar een zichtbare doorzakking, en dat is precies waar mensen ontevreden van worden. De vraag is daarom nooit of het houdt, maar of het recht blijft. Op die vraag geeft deze tool antwoord.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>Waarom krijg ik een marge en niet een exact getal?
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <div class="faq-answer">
+            <p>Omdat een plank in een echt huis nooit precies volgens een sommetje leeft. Hout werkt mee met de warmte en de vochtigheid in je kamer, geen enkele plank staat perfect gelijkmatig vol, en de manier waarop je hem ophangt telt net zo goed mee. Een maat met marge is daarom bruikbaarder dan een maat op de millimeter.</p>
+            <p>De marge die je krijgt is bewust aan de veilige kant gekozen. Blijf je eronder, dan zit je goed, ook over een paar jaar. Wil je het voor jouw situatie helemaal zeker weten, loop dan even binnen bij een verkooppunt of lees mee bij hulp en advies.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. VERVOLG ================= -->
+  <section class="cando-section">
+    <div class="cando-wrap">
+      <div class="cando-section-head">
+        <span class="cando-eyebrow">En nu</span>
+        <h2>Zet je maat om in een plank</h2>
+        <p>Je weet nu welke dikte en welke overspanning bij jouw klus horen. Dit zijn de twee logische vervolgstappen.</p>
+      </div>
+      <div class="next-grid">
+        <a class="next-card" href="/nl-nl/hout/panelen/massieve-panelen/">
+          <div class="next-card__image">
+            <img src="https://delihome.getbynder.com/asset/0d3fe7f2-8228-4a8c-8b93-367d0583ef1b/medium-JPG/Cando_Meubelpaneel-op-maat_wandplank_in_nis_Kastanjebruin_Eiken.jpg" alt="Houten wandplank in een nis, gemonteerd tussen twee wanden" loading="lazy">
+          </div>
+          <div class="next-card__body">
+            <h3>Kies je paneel en je dikte</h3>
+            <p>Bekijk de massieve panelen per houtsoort en per dikte, met de maten die er in de winkel liggen.</p>
+            <span class="card-cta">Naar de massieve panelen
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </a>
+        <a class="next-card" href="/nl-nl/hout/doe-het-zelf/">
+          <div class="next-card__image">
+            <img src="https://delihome.getbynder.com/asset/8f6f76e4-ab03-4bf0-9d4c-d9d2030b0498/medium-JPG/CanDo_Gebeitst-Eiken_Wandplank_1.jpg" alt="Gebeitste eiken wandplank aan de muur met decoratie erop" loading="lazy">
+          </div>
+          <div class="next-card__body">
+            <h3>Bouw hem met een maakplan</h3>
+            <p>Stap voor stap, met een materiaallijst en de maten erbij. Van wandplank tot vakkenkast en bureau.</p>
+            <span class="card-cta">Naar de maakplannen
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+      <p class="next-help">Kom je er niet uit met de maat of met de ophanging? Dan helpen we je verder bij <a href="/nl-nl/hout/hulp-en-advies/">hulp en advies</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  var root = document.getElementById('dbc');
+  if(!root) return;
+
+  /* ------------------------------------------------------------------
+     REKENLAAG, FASE 1
+     Afgeronde vuistregel uit KENNIS/HOUTSOORTEN.md 15.5, bewust
+     conservatiever dan de berekende overspanningstabel. Twee
+     belastingniveaus uit EN 16121: circa 100 en circa 150 kg/m2.
+     De BREEDTE van de band is het houtsoorteffect (circa 14 procent van
+     de zachtste naar de stijfste soort). De houtsoort krijgt daardoor
+     nooit een eigen getal.
+     Geblokkeerd op de E-waarden per houtsoort (John den Braven). Niets
+     hier exacter maken tot die er zijn. Zie het kopcommentaar.
+  ------------------------------------------------------------------ */
+  var BANDS = {
+    normaal: { '16':[55,65], '18':[70,80], '28':[100,115] },
+    zwaar:   { '16':[50,55], '18':[60,70], '28':[85,100] }
+  };
+  var POSITIE = { zacht:0, midden:0.5, stijf:1 };
+  var NIVEAU  = { sier:'normaal', boeken:'normaal', zwaar:'zwaar' };
+  var SOORTNAAM = { zacht:'vuren, grenen of rubberhout', midden:'eiken of acacia', stijf:'beuken' };
+  var LASTNAAM  = { sier:'sier en decoratie', boeken:'boeken en servies', zwaar:'een zware belasting' };
+  var NOOIT = 250;
+
+  function afronden(v){ return Math.round(v/5)*5; }
+
+  function maxOverspanning(belasting, dikte, soort){
+    var band = BANDS[NIVEAU[belasting]][String(dikte)];
+    return afronden(band[0] + POSITIE[soort] * (band[1] - band[0]));
+  }
+
+  var antwoord = { belasting:null, overspanning:80, dikte:null, soort:null };
+
+  var steps    = root.querySelectorAll('.dbc-step');
+  var progress = document.getElementById('dbc-progress');
+  var fill     = document.getElementById('dbc-fill');
+  var prevBtn  = document.getElementById('dbc-prev');
+  var restart  = document.getElementById('dbc-restart');
+  var range    = document.getElementById('dbc-range');
+  var number   = document.getElementById('dbc-number');
+  var out      = document.getElementById('dbc-out');
+
+  var LABEL = {'1':'Vraag 1 van 4','2':'Vraag 2 van 4','3':'Vraag 3 van 4','4':'Vraag 4 van 4','result':'Jouw uitkomst'};
+  var BREEDTE = {'1':'25%','2':'50%','3':'75%','4':'100%','result':'100%'};
+  var historie = ['1'];
+
+  var ICOON = {
+    ruim:'<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    krap:'<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.6" r="1.15" fill="currentColor"/></svg>',
+    niet:'<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M8.4 12h7.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M8.4 15.4h7.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity=".45"/></svg>'
+  };
+
+  function toon(stap){
+    for(var i=0;i<steps.length;i++){
+      steps[i].classList.toggle('is-active', steps[i].getAttribute('data-step') === stap);
+    }
+    if(progress) progress.textContent = LABEL[stap] || '';
+    if(fill) fill.style.width = BREEDTE[stap] || '25%';
+    if(prevBtn) prevBtn.disabled = historie.length <= 1;
+    if(stap === 'result') bouwUitkomst();
+    var eersteKnop = root.querySelector('.dbc-step.is-active button, .dbc-step.is-active input, .dbc-step.is-active a');
+    if(eersteKnop && eersteKnop.focus) eersteKnop.focus({preventScroll:true});
+    if(root.scrollIntoView) root.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  function ga(stap){ historie.push(stap); toon(stap); }
+
+  /* Keuzeknoppen */
+  root.addEventListener('click', function(e){
+    var knop = e.target.closest('[data-next]');
+    if(!knop || !root.contains(knop)) return;
+    var key = knop.getAttribute('data-key');
+    if(key){
+      antwoord[key] = knop.getAttribute('data-value');
+      var groep = knop.parentNode.querySelectorAll('[data-key="'+key+'"]');
+      for(var i=0;i<groep.length;i++){ groep[i].setAttribute('aria-pressed', groep[i] === knop ? 'true' : 'false'); }
+    }
+    ga(knop.getAttribute('data-next'));
+  });
+
+  /* Maat, schuif en invoerveld houden elkaar bij */
+  function zetMaat(waarde, bron){
+    var v = parseInt(waarde, 10);
+    if(isNaN(v)) return;
+    if(v < 20) v = 20;
+    if(v > 300) v = 300;
+    antwoord.overspanning = v;
+    if(out) out.textContent = v;
+    if(bron !== 'range' && range) range.value = v;
+    if(bron !== 'number' && number) number.value = v;
+  }
+  if(range)  range.addEventListener('input',  function(){ zetMaat(range.value, 'range'); });
+  if(number){
+    number.addEventListener('input', function(){ zetMaat(number.value, 'number'); });
+    number.addEventListener('blur',  function(){ zetMaat(number.value, 'blur'); });
+  }
+
+  if(prevBtn) prevBtn.addEventListener('click', function(){
+    if(historie.length > 1){ historie.pop(); toon(historie[historie.length-1]); }
+  });
+  if(restart) restart.addEventListener('click', function(){
+    antwoord = { belasting:null, overspanning:80, dikte:null, soort:null };
+    zetMaat(80, 'reset');
+    var gekozen = root.querySelectorAll('[aria-pressed="true"]');
+    for(var i=0;i<gekozen.length;i++){ gekozen[i].setAttribute('aria-pressed','false'); }
+    historie = ['1'];
+    toon('1');
+  });
+
+  /* De plank tekenen, de doorbuiging volgt de verhouding maat tegen maximum */
+  function tekenPlank(verhouding, maat){
+    var pad   = document.getElementById('dbc-plank');
+    var maatT = document.getElementById('dbc-draw-span');
+    var labelT= document.getElementById('dbc-draw-label');
+    if(!pad) return;
+    var x1 = 46, x2 = 514, top = 82, dik = 15;
+    var zak = Math.max(0, Math.min(52, (verhouding - 0.55) * 46));
+    var ctrl = top + zak * 2;
+    var d = 'M'+x1+' '+top+' Q'+((x1+x2)/2)+' '+ctrl+' '+x2+' '+top+
+            ' L'+x2+' '+(top+dik)+' Q'+((x1+x2)/2)+' '+(ctrl+dik)+' '+x1+' '+(top+dik)+' Z';
+    pad.setAttribute('d', d);
+    pad.setAttribute('fill', verhouding > 1 ? '#b8763a' : '#c98a3d');
+    if(maatT)  maatT.textContent = maat + ' cm';
+    if(labelT) labelT.textContent = verhouding > 1 ? 'Zo zakt deze plank door' : 'Zo staat jouw plank ervoor';
+  }
+
+  function bouwUitkomst(){
+    if(!antwoord.belasting || !antwoord.dikte || !antwoord.soort) return;
+
+    var dikte = parseInt(antwoord.dikte, 10);
+    var maat  = antwoord.overspanning;
+    var max   = maxOverspanning(antwoord.belasting, dikte, antwoord.soort);
+    var teVer = maat >= NOOIT;
+    var oordeel = teVer ? 'niet' : (maat <= max - 10 ? 'ruim' : (maat <= max ? 'krap' : 'niet'));
+
+    var vak   = document.getElementById('dbc-verdict');
+    var ico   = document.getElementById('dbc-verdict-ico');
+    var titel = document.getElementById('dbc-verdict-title');
+    var tekst = document.getElementById('dbc-verdict-text');
+
+    vak.className = 'dbc-verdict dbc-verdict--' + oordeel;
+    ico.innerHTML = ICOON[oordeel];
+
+    var basis = 'Bij ' + LASTNAAM[antwoord.belasting] + ' op ' + dikte + ' mm ' + SOORTNAAM[antwoord.soort] +
+                ' houd je <strong>ongeveer ' + max + ' cm</strong> aan als vrije overspanning. Jij wilde ' + maat + ' cm overbruggen.';
+
+    if(oordeel === 'ruim'){
+      titel.textContent = 'Dit gaat goed';
+      tekst.innerHTML = basis + ' Je zit daar comfortabel onder, dus je plank blijft recht, ook over een paar jaar.';
+    } else if(oordeel === 'krap'){
+      titel.textContent = 'Het kan, maar het is krap';
+      tekst.innerHTML = basis + ' Daar zit je vlak tegenaan. Dat werkt, alleen houd je geen speling over als er later nog iets bij komt.';
+    } else if(teVer){
+      titel.textContent = 'Dit haalt geen enkele dikte';
+      tekst.innerHTML = 'Vanaf 2,5 meter vrije overspanning gaat het met geen enkele dikte en met geen enkele houtsoort goed, ook niet met 28 mm beuken. Hier hoort een steun in het midden. ' + basis;
+    } else {
+      titel.textContent = 'Zo gaat deze plank doorzakken';
+      tekst.innerHTML = basis + ' Dat is ' + (maat - max) + ' cm te ver, en dat ga je terugzien. Hieronder staan drie manieren om het op te lossen.';
+    }
+
+    tekenPlank(maat / max, maat);
+
+    var goedGenoeg = (oordeel === 'ruim');
+    document.getElementById('dbc-actions-title').textContent = goedGenoeg ? 'Handig om te weten' : 'Zo los je het op';
+
+    /* Actie 1, de tussensteun. Altijd eerst, want dit is de grootste hefboom. */
+    var vakken  = Math.max(2, Math.ceil(maat / max));
+    var perVak  = Math.round(maat / vakken);
+    var steunen = vakken - 1;
+    var a1 = document.getElementById('dbc-a1');
+    document.getElementById('dbc-a1-text').textContent =
+      'Een steun in het midden haalt ruwweg vierennegentig procent van de doorbuiging weg. Dat is verreweg de grootste winst die je kunt pakken, en meestal ook de goedkoopste. Denk aan een extra plankdrager, een schotje of een zijwand.';
+    document.getElementById('dbc-a1-out').textContent = (steunen === 1)
+      ? 'Met een steun in het midden zak je naar ' + perVak + ' cm per vak, en dat past binnen de ' + max + ' cm.'
+      : 'Met ' + steunen + ' steunen verdeel je je breedte in ' + vakken + ' vakken van ongeveer ' + perVak + ' cm, en dat past binnen de ' + max + ' cm.';
+    a1.className = 'dbc-action' + (goedGenoeg ? '' : ' dbc-action--lead');
+
+    /* Actie 2, de dikkere plaat. */
+    var a2t = document.getElementById('dbc-a2-text');
+    var a2o = document.getElementById('dbc-a2-out');
+    var a2  = document.getElementById('dbc-a2');
+    a2.className = 'dbc-action';
+    if(dikte < 28){
+      var dikker = (dikte === 16) ? 18 : 28;
+      var maxDikker = maxOverspanning(antwoord.belasting, dikker, antwoord.soort);
+      var max28 = maxOverspanning(antwoord.belasting, 28, antwoord.soort);
+      a2t.textContent = 'Dikte telt veel zwaarder mee dan houtsoort. Van 18 naar 28 mm wint je plank ongeveer 56 procent overspanning, van vuren naar beuken maar ongeveer 14 procent. Je houdt dus gewoon het hout dat je mooi vindt en gaat een slag dikker.';
+      var regel = (dikte === 16)
+        ? 'Met 18 mm kom je op ongeveer ' + maxDikker + ' cm, met 28 mm op ongeveer ' + max28 + ' cm.'
+        : 'Met 28 mm kom je op ongeveer ' + max28 + ' cm.';
+      if(!goedGenoeg){
+        if(dikte === 16 && maxDikker >= maat){
+          regel += ' Met 18 mm haal je jouw ' + maat + ' cm al.';
+        } else if(max28 >= maat){
+          regel += ' Met 28 mm haal je jouw ' + maat + ' cm in een keer.';
+        } else {
+          regel += ' Ook dat haalt jouw ' + maat + ' cm nog niet, dus zet er een steun bij.';
+        }
+      }
+      a2o.textContent = regel;
+    } else {
+      a2t.textContent = 'Je zit al op 28 mm, de dikste plaat waar deze vuistregel over gaat. Verder verdikken levert steeds minder op, en een andere houtsoort schuift de grens maar een handbreedte op. De tussensteun hierboven is dan echt de snellere weg.';
+      a2o.textContent = 'Dikker gaan is hier niet je beste zet, een steun in het midden wel.';
+    }
+
+    /* Actie 3, de maximale maat die wel kan. */
+    document.getElementById('dbc-a3-text').textContent = goedGenoeg
+      ? 'Wil je nog wat ruimte houden voor later, dan is dit de maat waar je bij deze dikte en dit hout tegenaan loopt. Blijf daaronder en je hebt er nooit omkijken naar.'
+      : 'Wil je alles houden zoals het is, dan is dit de breedte die wel kan. Deel je klus op in vakken die niet breder zijn dan deze maat, dan blijft alles recht.';
+    document.getElementById('dbc-a3-out').textContent =
+      'Bij ' + dikte + ' mm ' + SOORTNAAM[antwoord.soort] + ' is dat ongeveer ' + max + ' cm per vak.';
+  }
+
+  zetMaat(80, 'init');
+  toon('1');
+})();
+</script>
+</body>
+</html>

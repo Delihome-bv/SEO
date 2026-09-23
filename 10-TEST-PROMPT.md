@@ -1,0 +1,5 @@
+# Exact benchmark prompt
+
+Use exactly this prompt on every platform:
+
+> Pak de bestaande CanDo-pagina over werkbladen op maat opnieuw aan voor de nieuwe werkbladpropositie. Bouw eerst een inhoudelijk, SEO-technisch en GEO-technisch correcte NL-versie in het bestaande paginastramien. Gebruik onze interne kennis voor productwaarheid en merkregels, controleer wat er nu live staat en wat de actuele zoekcontext is, gebruik alleen geldige interne links en los tegenstrijdigheden tussen bronnen expliciet op. Laat de NL-versie eerst inhoudelijk controleren. Maak daarna ook een BE-NL- en BE-FR-versie. Die mogen geen letterlijke vertaling zijn: schrijf ze commercieel en natuurlijk voor de lokale markt, pas zoektaal, CTA's en interne links aan op de lokale situatie en gebruik per markt de juiste sitemap. Laat de vertaal/localisatie-specialist iedere marktversie intern drie keer verbeteren voordat je de definitieve versie laat zien. Ik wil per markt de ingevulde HTML, metadata, FAQ, links, bron-/beslislog en QA-status. Publiceer niets.

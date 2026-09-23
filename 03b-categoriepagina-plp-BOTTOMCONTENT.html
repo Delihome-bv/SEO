@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PLP bottomcontent, lattenwand | CanDo stramien</title>
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<!--
+  PLP BOTTOMCONTENT, blok 2 van 2.
+  Plek in Magento: categorie > Content > bottom content (onder de productlisting en paginering).
+  Start op H2, de H1 staat boven de listing en komt uit Magento.
+  Bij plaatsen naast het topblok hoeft de <style> maar één keer op de pagina te staan.
+-->
+<style>
+:root{--text:#222;--muted:#666b70;--accent:#F7901E;--accent-dark:#d95f18;--border:#e5ddd3;--soft:#f7f2ea;--dark:#121b21;--radius:8px;--shadow:0 10px 24px rgba(18,27,33,.05)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.cando-bottom{overflow-x:hidden}
+.cando-bottom h2,.cando-bottom h3,.cando-bottom .btn,.cando-bottom .eyebrow{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 18px}
+.cando-bottom section{padding:38px 0}
+.soft{background:var(--soft)}
+.measure{max-width:760px}
+h2{margin:0 0 12px;font-size:26px;line-height:1.12;letter-spacing:-.02em}
+h3{margin:0 0 8px;font-size:19px;line-height:1.2}
+p{margin:0;color:#414141;font-size:16px;line-height:1.72}
+p+p{margin-top:14px}
+.eyebrow{display:block;margin:0 0 10px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.head{max-width:760px;margin-bottom:22px}.head p{margin-top:10px;color:var(--muted)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:700;font-size:16px;line-height:1.15;border:1.5px solid transparent;transition:.18s ease;cursor:pointer}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(247,144,30,.15)}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff}
+.btn-tertiary{background:transparent;border-color:var(--text);color:var(--text)}
+.btn-tertiary:hover{border-color:var(--accent);color:var(--accent);background:rgba(247,144,30,.04)}
+
+/* Promo */
+.promo{display:grid;gap:16px;grid-template-columns:1fr}
+.pcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:border-color .2s ease,transform .2s ease}
+.pcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.pcard__img{height:150px;overflow:hidden;border-bottom:1px solid var(--border)}
+.pcard__img img{width:100%;height:100%;object-fit:cover}
+.pcard__b{padding:18px;display:flex;flex-direction:column;flex:1}
+.pcard__b p{font-size:14px;color:var(--muted);margin-top:6px}
+.pcard__cta{margin-top:auto;padding-top:12px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;font-weight:700;font-size:14px;color:var(--text)}
+.pcard__cta::after{content:" →";color:var(--accent)}
+
+/* Info-kaarten en split */
+.info{display:grid;gap:16px;grid-template-columns:1fr}
+.icard{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.icard p{font-size:14px;color:var(--muted);margin-top:6px}
+.split{display:grid;gap:22px;align-items:center}
+.split .media{height:260px;border-radius:var(--radius);overflow:hidden;background:#eee;box-shadow:var(--shadow)}
+.split .media img{width:100%;height:100%;object-fit:cover}
+
+/* FAQ */
+.faq-list{display:grid;gap:10px}
+details.faq{border:1px solid var(--border);border-radius:var(--radius);background:#fff;overflow:hidden}
+details.faq summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:700;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;display:flex;justify-content:space-between;gap:18px;min-height:54px;align-items:flex-start;line-height:1.35}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"+";font-size:22px;line-height:1.2;color:var(--accent);flex:0 0 auto;width:22px;text-align:center}
+details.faq[open]{border-color:var(--accent)}details.faq[open] summary::after{content:"\2212"}
+details.faq div{padding:0 18px 18px}details.faq div p{font-size:15px;color:#444;max-width:760px}
+
+/* CTA */
+.cta{background:var(--soft);border:1px solid var(--border);border-radius:var(--radius);padding:30px 26px;text-align:center}
+.cta h2{margin-bottom:8px}.cta p{color:#4a4133;max-width:520px;margin:0 auto}.cta .btn-row{justify-content:center}
+
+@media(min-width:820px){
+  .cando-bottom section{padding:50px 0}
+  h2{font-size:32px}
+  .promo{grid-template-columns:repeat(3,1fr)}
+  .info{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr 1fr;gap:40px}
+  .split--flip .media{order:2}
+  .split .media{height:340px}
+}
+@media(max-width:520px){.btn{width:100%}}
+</style>
+</head>
+<body>
+
+<!-- ===== PLP BOTTOMCONTENT, start ===== -->
+<div class="cando-bottom">
+
+  <section>
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Handig om te weten</span><h2>Zo kies en plaats je jouw lattenwand</h2></div>
+      <div class="promo">
+        <a class="pcard" href="/staal-aanvragen/?product=lattenwand"><div class="pcard__img"><img src="https://www.cando.eu/media/.renditions/wysiwyg/small_JPG-CanDo_Decowall_acoustic-Blend_Natuur_eiken_Woonkamer_1_Close-up_1_1.jpg" alt="Stalen" loading="lazy"></div><div class="pcard__b"><h3>Vind de perfecte match</h3><p>Vraag gratis stalen aan en ervaar de look &amp; feel van onze lattenwanden thuis.</p><span class="pcard__cta">Vraag gratis stalen aan</span></div></a>
+        <a class="pcard" href="/hulp-en-advies/lattenwand-monteren/"><div class="pcard__img"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Montage" loading="lazy"></div><div class="pcard__b"><h3>Monteer eenvoudig zelf</h3><p>Bekijk onze handige tips en stap-voor-stap uitleg om direct aan de slag te gaan.</p><span class="pcard__cta">Bekijk montagehulp</span></div></a>
+        <a class="pcard" href="/inspiratie/lattenwand/"><div class="pcard__img"><img src="https://delihome.getbynder.com/asset/cff51abd-70b1-4714-be52-b4d600e48261/medium-JPG/CanDo_Decowall_Acoustic_Advanced_copper_oak_zithoek_123140924_8711283493008.jpg" alt="Inspiratie" loading="lazy"></div><div class="pcard__b"><h3>Geef je interieur een upgrade</h3><p>Ontdek hoe je jouw interieur een upgrade geeft met een CanDo lattenwand.</p><span class="pcard__cta">Inspiratieblogs bekijken</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="meer">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Uitleg</span><h2>Wat is een lattenwand?</h2></div>
+      <p class="measure">Een lattenwand functioneert als decoratief wandpaneel en is een stijlvolle, veelzijdige toevoeging aan elk interieur. Deze wandbekleding bestaat uit houten latjes die verticaal of horizontaal geplaatst kunnen worden. Een muur met houten latjes voegt niet alleen een visueel element toe, maar kan ook functioneel zijn, bijvoorbeeld als subtiele ruimtescheiding, decoratief accent of voor betere akoestiek. Of je nu een modern loft, een Scandinavisch of een klassiek interieur hebt, een houten latjes wand past moeiteloos in elke setting en geeft je ruimte direct warmte en karakter.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Voor elke ruimte een eigen look</span><h2>Het Decowall-assortiment</h2></div>
+      <div class="info">
+        <div class="icard"><h3>Akoestische lattenwanden</h3><p>De Acoustic-lijn combineert houten latten met een vilten achterzijde voor een stijlvol uiterlijk én merkbaar betere akoestiek. Onder meer de rustige Acoustic Advanced, de speelse Acoustic Blend en de organische Acoustic Curve. Perfect voor woonkamers, kantoren en slaapkamers.</p></div>
+        <div class="icard"><h3>Roomdivider</h3><p>Creëer functionele afscheidingen zonder licht en ruimtelijkheid te verliezen. In rechte en schuine varianten, ideaal om een werkplek in de woonkamer te scheiden of een hal een stijlvolle entree te geven.</p></div>
+        <div class="icard"><h3>Decowall Acoustic Tile</h3><p>Geen hele wand nodig? Met Acoustic Tile geniet je toch van het akoestische effect en de warme uitstraling. Plaats de modulaire tegels horizontaal, verticaal of in creatieve patronen.</p></div>
+        <div class="icard"><h3>Decowall Outdoor</h3><p>Voor wie het buiten net zo mooi wil maken als binnen. Weerbestendige panelen voor balkons, terrassen en tuinafscheidingen, bestand tegen de elementen.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Kleur en formaat</span><h2>Verschillende afwerkingen, kleuren en formaten</h2></div>
+      <p class="measure">Van Scandinavisch licht eiken tot warm walnoot en industrieel zwart, met bijpassende viltkleuren. De panelen zijn er in standaardhoogte 260 cm en op maat tot 300 cm, met smalle, brede, ronde of ovale latten. Kies matte of glanzende oppervlakken en combineer hout- en vilttinten voor een ton-sur-ton effect of juist contrast.</p>
+      <!-- Hier stond een rij gekleurde stalen. Verwijderd 23-07-2026: die vlakjes linkten nergens naartoe en hingen niet aan een filter, dus decoratie in plaats van kleurkeuze. Terugzetten mag zodra elk staal doorklikt naar het gefilterde assortiment of de PDP. -->
+      <div class="btn-row"><a class="btn btn-primary" href="/staal-aanvragen/?product=lattenwand">Vraag gratis stalen aan</a></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="eyebrow">Montage is eenvoudig</span>
+          <h2>Doe het zelf of op maat geleverd</h2>
+          <p>Bij de DIY-panelen zaag je de lattenwand zelf op maat met een fijngetande zaag en bevestig je ze met montagekit of schroeven. Voor plafonds en grote oppervlakken adviseren we extra schroefbevestiging.</p>
+          <p>Wil je geen zaagwerk? Kies dan voor de op-maat-service: wij zagen de panelen exact op jouw maat, zodat je ze direct kunt monteren.</p>
+          <div class="btn-row">
+            <a class="btn btn-tertiary" href="/hulp-en-advies/lattenwand-monteren/">Decowall montage</a>
+            <a class="btn btn-tertiary" href="/hulp-en-advies/lattenwand-op-maat-monteren/">Op maat montage</a>
+          </div>
+        </div>
+        <div class="media"><img src="https://delihome.getbynder.com/asset/34199cbd-19fd-4208-9251-2ec8b460eca8/medium-JPG/CanDo_Decowall_Felt_Pattern_Wit_Wave_Zithoek_Klassiek_Sierlijst_123139804_8711283491738.jpg" alt="Lattenwand monteren"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="faq">
+    <div class="wrap">
+      <div class="head"><span class="eyebrow">Veelgestelde vragen</span><h2>Veelgestelde vragen over lattenwanden</h2></div>
+      <div class="faq-list">
+        <details class="faq"><summary>Zijn CanDo Decowall lattenwanden eenvoudig zelf te monteren?</summary><div><p>Ja. Met een fijngetande zaag zaag je de DIY-panelen zelf op maat en bevestig je ze met montagekit of schroeven. Met de stap-voor-stap instructies bereik je een strak resultaat.</p></div></details>
+        <details class="faq"><summary>Van welk materiaal zijn deze lattenwanden gemaakt?</summary><div><p>Houten latten op een achterpaneel, bij de akoestische varianten met een vilten achterzijde. In diverse houttinten en viltkleuren.</p></div></details>
+        <details class="faq"><summary>Welke afmetingen en kleuren zijn beschikbaar?</summary><div><p>Standaardhoogte 260 cm en op maat tot 300 cm, met smalle, brede, ronde of ovale latten. In houttinten van licht eiken tot walnoot en zwart, plus viltkleuren.</p></div></details>
+        <details class="faq"><summary>Waar kan ik CanDo Decowall lattenwanden kopen?</summary><div><p>Je vindt CanDo Decowall bij bouwmarkten en dealers door heel Nederland. Op de verkooppunten-pagina zie je waar je terecht kunt.</p></div></details>
+        <details class="faq"><summary>Hoe bevestig je een lattenwand?</summary><div><p>Met montagekit of schroeven op een vlakke ondergrond. Voor plafonds en grote oppervlakken adviseren we extra schroefbevestiging.</p></div></details>
+        <details class="faq"><summary>Is een lattenwand isolerend?</summary><div><p>De akoestische varianten met vilten achterzijde verbeteren merkbaar de akoestiek. Voor thermische isolatie is een lattenwand niet bedoeld.</p></div></details>
+        <details class="faq"><summary>Waar kan ik een lattenwand plaatsen?</summary><div><p>In vrijwel elke ruimte: woonkamer, slaapkamer, kantoor of hal. Met de Outdoor-lijn ook op een balkon, terras of als tuinafscheiding.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <h2>Klaar om jouw lattenwand te kiezen?</h2>
+        <p>Bekijk het assortiment of vraag eerst gratis stalen aan en ervaar de look &amp; feel thuis.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/staal-aanvragen/?product=lattenwand">Vraag gratis stalen aan</a>
+          <a class="btn btn-tertiary" href="/wand-plafond/lattenwand/">Bekijk alle lattenwanden</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- ===== PLP BOTTOMCONTENT, einde ===== -->
+
+</body>
+</html>

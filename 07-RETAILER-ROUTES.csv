@@ -1,0 +1,17 @@
+﻿locale,market,retailer_id,retailer_name,existing_worktops_in_feed,route_family,essential,advance,signature,cando_series_story_allowed,cta_route,delivery_rule,status,notes
+nl-NL,NL,gamma,GAMMA,yes,DEK_CANDO,CONFIRMED,OPEN,OPEN,yes,retailer_selector,Essential: 20 days. Advance/Signature: OPEN,CONFIRMED,Essential current line confirmed in feed. New series rollout not yet confirmed in benchmark.
+nl-NL,NL,karwei,Karwei,yes,DEK_CANDO,CONFIRMED,OPEN,OPEN,yes,retailer_selector,Essential: 20 days. Advance/Signature: OPEN,CONFIRMED,Essential current line confirmed in feed. New series rollout not yet confirmed in benchmark.
+nl-NL,NL,praxis,Praxis,yes,FAB_NO_NAME,no,no,no,no,none,Not applicable to CanDo three-series story,CONFIRMED,"Worktops exist, but FAB/no-name route. Do not route CanDo series content here."
+nl-NL,NL,bouwmaat,Bouwmaat,yes,DEK_CANDO_CURRENT,OPEN,OPEN,OPEN,no,none,Do not publish until channel status is confirmed,OPEN,"Feed contains 25 worktops, but bouwmaat is absent from FEED config. Do not mention on consumer page until confirmed."
+nl-NL,NL,hubo-nl,Hubo NL,no,NONE,no,no,no,no,none,n/a,CONFIRMED,No worktops in m2m feed.
+nl-NL,NL,hornbach,Hornbach NL,no,NONE,no,no,no,no,none,n/a,CONFIRMED,No worktops in m2m feed.
+nl-NL,NL,no-name,No-name NL,no,NONE,no,no,no,no,none,n/a,CONFIRMED,No worktops in m2m feed.
+nl-BE,BE,gamma-be,GAMMA BE,yes,DEK_CANDO,CONFIRMED,OPEN,OPEN,yes,retailer_selector,Essential: 20 days. Advance/Signature: OPEN,CONFIRMED,BE-NL route. Same retailer also serves BE-FR locale.
+fr-BE,BE,gamma-be,GAMMA BE,yes,DEK_CANDO,CONFIRMED,OPEN,OPEN,yes,retailer_selector,Essential: 20 days. Advance/Signature: OPEN,CONFIRMED,"BE-FR content uses same retailer route, localized copy and URLs."
+nl-BE,BE,brico,Brico,yes,FAB_NO_NAME,no,no,no,no,none,Not applicable to CanDo three-series story,CONFIRMED,"Worktops exist, but FAB/no-name route."
+fr-BE,BE,brico,Brico,yes,FAB_NO_NAME,no,no,no,no,none,Not applicable to CanDo three-series story,CONFIRMED,BE-FR content must not route CanDo series story here.
+nl-BE,BE,hubo-be,Hubo BE,yes,DEK_CANDO,CONFIRMED,OPEN,OPEN,yes,retailer_selector,Essential: 28 days. Advance/Signature: OPEN,CONFIRMED,BE-NL route.
+fr-BE,BE,hubo-be,Hubo BE,yes,DEK_CANDO,CONFIRMED,OPEN,OPEN,yes,retailer_selector,Essential: 28 days. Advance/Signature: OPEN,CONFIRMED,"BE-FR content uses same retailer route, localized copy and URLs."
+fr-FR,FR,forestea,Forestea,yes,DEK_CANDO_CURRENT,CONFIRMED,OPEN,OPEN,yes,outside_benchmark,Essential: 15 days. Advance/Signature: OPEN,OUT_OF_SCOPE,"France, not BE-FR. Never use for Belgian French."
+fr-FR,FR,entrepot,Entrepot,no,NONE,no,no,no,no,outside_benchmark,n/a,OUT_OF_SCOPE,"France, not BE-FR."
+multi,EU,candostart,CanDo Start,yes,FAB_NO_NAME,no,no,no,no,none,Not applicable to CanDo three-series story,CONFIRMED,FAB/no-name route in current knowledge. Do not use as CanDo three-series retailer route.
