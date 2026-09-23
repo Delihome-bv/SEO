@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CanDo Hout megamenu</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #121b21;
+      font-family: Arial, sans-serif;
+    }
+
+    .cando-hout-menu {
+      display: grid;
+      grid-template-columns:
+        minmax(190px, 3fr)
+        minmax(230px, 3fr)
+        minmax(165px, 2fr)
+        minmax(220px, 2fr)
+        minmax(320px, 4fr);
+      gap: 30px;
+      width: 100%;
+      padding: 34px 42px 42px;
+      background: #ffffff;
+      align-items: stretch;
+    }
+
+    .cando-hout-menu__column {
+      min-width: 0;
+    }
+
+    .cando-hout-menu__heading {
+      margin: 0 0 16px;
+      color: #686d72;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .cando-hout-menu__heading--secondary {
+      margin-top: 42px;
+    }
+
+    .cando-hout-menu__links {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .cando-hout-menu__links li {
+      margin: 0;
+      padding: 0;
+    }
+
+    .cando-hout-menu__links a {
+      color: #121b21;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.45;
+      text-decoration: none;
+    }
+
+    .cando-hout-menu__links a:hover,
+    .cando-hout-menu__links a:focus-visible {
+      color: #f7901e;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .cando-hout-menu__banner {
+      position: relative;
+      display: block;
+      min-height: 355px;
+      overflow: hidden;
+      background: #ddd7cf;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .cando-hout-menu__banner-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .cando-hout-menu__banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 38%,
+        rgba(0, 0, 0, 0.14) 60%,
+        rgba(0, 0, 0, 0.78) 100%
+      );
+    }
+
+    .cando-hout-menu__banner-content {
+      position: absolute;
+      z-index: 1;
+      right: 28px;
+      bottom: 34px;
+      left: 28px;
+    }
+
+    .cando-hout-menu__banner-title {
+      display: block;
+      color: #ffffff;
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .cando-hout-menu__banner-text {
+      display: block;
+      margin-top: 5px;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    @media (max-width: 992px) {
+      .cando-hout-menu {
+        display: block;
+        padding: 0 14px 20px;
+      }
+
+      .cando-hout-menu__heading {
+        margin: 0;
+        padding: 26px 16px 12px;
+        border-top: 1px solid #e8e8e8;
+        color: #71767a;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+
+      .cando-hout-menu__heading--secondary {
+        margin-top: 0;
+      }
+
+      .cando-hout-menu__links {
+        display: block;
+      }
+
+      .cando-hout-menu__links a {
+        display: block;
+        height: 58px;
+        padding: 0 16px;
+        border-top: 1px solid #e8e8e8;
+        color: #121b21;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 58px;
+      }
+
+      .cando-hout-menu__banner {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="cando-hout-menu" aria-label="Hout navigatie">
+    <section class="cando-hout-menu__column">
+      <h2 class="cando-hout-menu__heading">
+        Massief hout &amp; steigerhout
+      </h2>
+
+      <ul class="cando-hout-menu__links">
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/steigerhout/onbehandeld/">
+            Onbehandeld steigerhout
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/steigerhout/gekleurd/">
+            Gekleurd steigerhout
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/steigerhout/douglas-hout/">
+            Douglas hout
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/steigerhout/eikenhout/">
+            Eikenhout
+          </a>
+        </li>
+      </ul>
+
+      <h2 class="cando-hout-menu__heading cando-hout-menu__heading--secondary">
+        Panelen
+      </h2>
+
+      <ul class="cando-hout-menu__links">
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/panelen/meubelpanelen/">
+            Meubelpanelen
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/panelen/massieve-panelen/">
+            Massieve panelen
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="cando-hout-menu__column">
+      <h2 class="cando-hout-menu__heading">
+        Werkbladen &amp; vensterbanken
+      </h2>
+
+      <ul class="cando-hout-menu__links">
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/panelen/werkbladen/">
+            Werkbladen en aanrechtbladen
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/panelen/vensterbanken/">
+            Vensterbanken
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="cando-hout-menu__column">
+      <h2 class="cando-hout-menu__heading">
+        Hout op maat
+      </h2>
+
+      <ul class="cando-hout-menu__links">
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/hout-op-maat/configureren/">
+            Configureren
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/hout-op-maat/tafelblad-op-maat/">
+            Tafelblad op maat
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/hout-op-maat/houten-platen/">
+            Houten platen
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/hout-op-maat/werkbladen-op-maat/">
+            Werkbladen op maat
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="cando-hout-menu__column">
+      <h2 class="cando-hout-menu__heading">
+        Inspiratie &amp; advies
+      </h2>
+
+      <ul class="cando-hout-menu__links">
+        <li>
+          <a href="https://www.cando.eu/nl-nl/tafelblad-op-maat/keuzehulp/">
+            Tafelblad keuzehulp
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cando.eu/nl-nl/hout/doe-het-zelf/">
+            Klusprojecten &amp; maakplannen
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cando.eu/nl-nl/veelgestelde-vragen/hout/">
+            Veelgestelde vragen over hout
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <a
+      class="cando-hout-menu__banner"
+      href="https://www.cando.eu/nl-nl/hout/"
+      aria-label="Ontdek welk hout bij jouw klus past"
+    >
+      <img
+        class="cando-hout-menu__banner-image"
+        src="https://delihome.getbynder.com/asset/68a93ac5-eba9-47f5-85c4-fa2ae9040117/medium-JPG/CanDo_Meubelpanelen_4-1_Abrikoosroze.jpg"
+        alt="Werkplek met houten werkblad en wandplanken"
+      >
+
+      <span class="cando-hout-menu__banner-content">
+        <strong class="cando-hout-menu__banner-title">
+          Wat past bij jouw klus?
+        </strong>
+        <span class="cando-hout-menu__banner-text">
+          Standaard of op maat? Ontdek de mogelijkheden.
+        </span>
+      </span>
+    </a>
+  </nav>
+</body>
+</html>
