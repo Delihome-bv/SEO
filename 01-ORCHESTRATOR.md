@@ -2,13 +2,17 @@
 
 ## Phase 1 — PREPARE
 Classify brand, task, source market and requested target markets.
+Load `07-RETAILER-ROUTES.csv` before route or CTA decisions.
 
 Gate 0 requires:
 - owner page and page role;
 - product truth;
 - claims policy;
 - target-locale sitemap for each requested locale;
-- stramien.
+- stramien;
+- retailer route matrix exists;
+- at least one valid retailer route exists for the requested locale;
+- any OPEN rollout dependency is identified before BUILD.
 
 If a requested locale sitemap is missing, that locale is NOT READY.
 
@@ -18,19 +22,22 @@ Required:
 2. run exact search `werkbladen op maat`;
 3. inspect at least three relevant organic results if technically possible;
 4. validate NL links against `07-LINKS/sitemap-nl.csv` and live web;
-5. log date and URLs.
+5. verify proposed CTA destinations against BOTH the locale sitemap/live web and `07-RETAILER-ROUTES.csv`;
+6. log date and URLs.
+
+A valid URL is not enough if the retailer route is not valid for the CanDo series.
 
 ## Phase 3 — BUILD NL
-Use `skills/seo-page-build/SKILL.md`.
+Use `.claude/skills/seo-page-build/SKILL.md`.
 The stramien owns structure/layout. The content workbook owns page job. Product truth and claims own facts.
 
 ## Phase 4 — VALIDATE NL
-Use `skills/source-quality-qa/SKILL.md`.
+Use `.claude/skills/source-quality-qa/SKILL.md`.
 If QA returns NEEDS_FIX: correct once and run QA once more.
 Only an approved NL source version may be localized.
 
 ## Phase 5 — LOCALIZE
-For BE-NL and/or BE-FR invoke `skills/commercial-localization/SKILL.md`.
+For BE-NL and/or BE-FR invoke `.claude/skills/commercial-localization/SKILL.md`.
 The specialist uses approved meaning, not sentence-by-sentence translation, researches local search wording where needed, uses the local sitemap and performs three internal refinement passes.
 
 ## Phase 6 — LOCALE HANDOFF CHECK
