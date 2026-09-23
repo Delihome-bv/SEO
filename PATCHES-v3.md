@@ -1,3 +1,5 @@
+# Status: APPLIED on setup/copilot-agent-architecture
+
 # Patches for benchmark v3
 
 ## PATCH 1 — 00-ROOT.md
