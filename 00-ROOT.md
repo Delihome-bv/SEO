@@ -23,13 +23,13 @@ The central system must:
 
 ## Functional routing
 ### Source-market page build
-- use `skills/seo-page-build/SKILL.md`;
-- then `skills/source-quality-qa/SKILL.md`.
+- use `.claude/skills/seo-page-build/SKILL.md`;
+- then `.claude/skills/source-quality-qa/SKILL.md`.
 
 ### Localization / transcreation
 For BE-NL or BE-FR:
 - do not translate literally;
-- invoke `skills/commercial-localization/SKILL.md`;
+- invoke `.claude/skills/commercial-localization/SKILL.md`;
 - localize from approved meaning, product truth, page job, audience, local search context and local sitemap;
 - perform three internal refinement passes before producing localized output.
 
@@ -45,6 +45,7 @@ The user does not have to name any skill.
 | Page job | `06-CONTENT-WORKBOOK.md` |
 | Journey / links / measurement | `07-CONTENT-ARCHITECTURE.md` |
 | Locale URLs | `07-LINKS/sitemap-*.csv` |
+| Which retailer carries which worktop route / may receive the CanDo series story? | `07-RETAILER-ROUTES.csv` |
 | SEO/GEO | `08-SEO-GEO-RULES.md` |
 | Locale writing | `08-LOCALE-RULES.md` |
 | Form / layout | `05-STRAMIEN/stramien-landingspagina-v6.html` |
@@ -63,6 +64,10 @@ Never let a live page overwrite newer internal product truth.
 Never let localization create a new product fact.
 Never let an NL URL imply the BE equivalent exists.
 Never let old template copy create a product claim.
+Retailer availability and route eligibility are owned by `07-RETAILER-ROUTES.csv`.
+Product truth may not be used to infer retailer availability.
+A locale sitemap may prove a URL exists, but it does not prove that the retailer carries the CanDo three-series proposition.
+`OPEN` retailer rollout must remain unresolved.
 
 ## Status vocabulary
 - CONFIRMED: may be used as fact.
