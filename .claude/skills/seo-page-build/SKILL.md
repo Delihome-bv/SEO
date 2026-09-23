@@ -16,7 +16,7 @@ Read:
 - ../../../07-CONTENT-ARCHITECTURE.md
 - ../../../07-RETAILER-ROUTES.csv
 - ../../../08-SEO-GEO-RULES.md
-- ../../../stramien-landingspagina-v6.html
+- ../../../05-STRAMIEN/stramien-landingspagina-v6.html
 
 For locale links use ../../../07-LINKS/sitemap-*.csv. If a required sitemap is absent, mark that locale NOT READY instead of inventing URLs.
 
