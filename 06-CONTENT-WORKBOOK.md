@@ -30,6 +30,7 @@ One fact, one house.
 | Keyword/search-demand facts | `06A-KEYWORD-MAP-WERKBLADEN.md` |
 | Journey, link and measurement logic | `07-CONTENT-ARCHITECTURE.md` |
 | Locale URLs | `07-LINKS/sitemap-*.csv` + live validation |
+| Retailer route eligibility | `07-RETAILER-ROUTES.csv` |
 | Brand | `02-BRAND.md` |
 | Audience | `03-AUDIENCE.md` |
 | SEO/GEO rules | `08-SEO-GEO-RULES.md` |
@@ -271,6 +272,10 @@ Primary:
 
 NL working label:
 `Stel je werkblad samen`
+
+Retailer selection is governed by `07-RETAILER-ROUTES.csv`.
+Do not infer that every retailer selling a worktop carries Essential/Advance/Signature.
+If Advance/Signature retailer rollout is OPEN, the page may describe the series but must not present confirmed retailer availability for those series.
 
 The localized specialist is allowed to choose a different locally stronger commercial CTA if meaning and route stay the same.
 

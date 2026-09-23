@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Werkblad op maat laten zagen, tot op de mm | CanDo</title>
+<meta name="description" content="Werkblad op maat laten zagen bij CanDo. Stel online samen, zie meteen je prijs en laat tot op de mm zagen. Scherp geprijsd, klaar voor jouw klus.">
+<link rel="preload" as="style" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<link rel="stylesheet" href="https://www.cando.eu/static/version1781016365/frontend/WeProvide/Cando/nl_NL/css/fonts/dax-pro.css">
+<style>
+/* ============================================================
+   CanDo gedeelde basis-CSS (v6). Eén ruggengraat, geen stijlbreuk.
+   Bron: het vaste anker stramien-hulp-en-advies-artikel.html.
+   Elk v6-stramien plakt dit blok INLINE in <style> en voegt
+   alleen kleine pagina-specifieke regels toe. Niets aan deze
+   tokens of componenten wijzigen.
+   ============================================================ */
+:root{
+  --text:#2f2f2f; --muted:#6c6c6c; --accent:#F7901E; --accent-dark:#d95f18;
+  --border:#e6e6e6; --bg-soft:#f7f5f1; --bg-light:#f5f5f5; --bg-warm:#f3f3f3; --white:#fff;
+  --radius:12px; --radius-pill:24px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:Arial,sans-serif;color:var(--text);background:#fff;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+.cando-page{width:100%;overflow-x:hidden;}
+/* Dax voor koppen, knoppen, eyebrow, faq-vragen en labels. ff-dax-pro is de naam die cando.eu laadt. */
+.cando-page h1,.cando-page h2,.cando-page h3,.cando-page .btn,.cando-page .eyebrow,.cando-page .faq-question,.cando-page .tag{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;}
+
+/* Layout */
+.wrap{width:100%;max-width:980px;margin:0 auto;padding:0 18px;}
+.wrap--narrow{max-width:820px;}
+.section{padding:44px 0;}
+.section--soft{background:var(--bg-soft);}
+.section--light{background:var(--bg-light);}
+
+/* Typografie */
+.cando-page h1{margin:0 0 16px;font-size:32px;line-height:1.15;font-weight:700;color:var(--text);}
+.cando-page h2{margin:0 0 14px;font-size:26px;line-height:1.25;font-weight:700;color:var(--text);}
+.cando-page h3{margin:0 0 8px;font-size:21px;line-height:1.35;font-weight:700;color:var(--text);}
+.cando-page p{margin:0 0 19px;font-size:17px;line-height:1.72;color:#414141;}
+.cando-page .intro{margin:0 0 8px;max-width:760px;font-size:18px;line-height:1.65;color:#414141;}
+.cando-page .muted{color:var(--muted);}
+.eyebrow{display:inline-block;margin:0 0 12px;color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;}
+.cando-page a:not(.btn){color:inherit;}
+/* Interne links in de lopende tekst (binnen paragrafen) = oranje en onderstreept. Knoppen, breadcrumbs en kaarten houden hun eigen stijl. */
+.cando-page p a,.prose a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px;}
+.cando-page p a:hover,.prose a:hover{color:var(--accent-dark);}
+
+/* Breadcrumbs */
+.breadcrumbs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px;color:#9a9a9a;font-size:13px;}
+.breadcrumbs a{color:#9a9a9a;text-decoration:none;}
+.breadcrumbs a:hover{color:var(--accent);}
+.breadcrumbs span{color:#c2c2c2;}
+
+/* Knoppen, pill, primair tikdoel >= 48px */
+.btn-row{display:flex;flex-direction:column;align-items:stretch;gap:12px;margin-top:26px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 26px;border-radius:var(--radius-pill);font-size:16px;font-weight:700;line-height:1.2;text-decoration:none;cursor:pointer;width:100%;transition:background .18s,border-color .18s,color .18s;}
+.btn-primary{background:var(--accent);border:1px solid var(--accent);color:#fff;}
+.btn-primary:hover{background:var(--accent-dark);border-color:var(--accent-dark);color:#fff;}
+.btn-secondary{background:transparent;border:1px solid var(--text);color:var(--text);}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+/* Banden met oranje of donkere achtergrond: witte tekst, en geinverteerde knoppen.
+   Gebruik op een CTA-sectie: <section class="section band-accent"> of band-dark. */
+.band-accent{background:var(--accent);color:#fff;}
+.band-dark{background:var(--dark,#121b21);color:#fff;}
+.band-accent h1,.band-accent h2,.band-accent h3,.band-accent p,.band-accent .eyebrow,
+.band-dark h1,.band-dark h2,.band-dark h3,.band-dark p,.band-dark .eyebrow{color:#fff;}
+.band-accent .btn-primary,.band-dark .btn-primary{background:#fff;border-color:#fff;color:var(--accent);}
+.band-accent .btn-primary:hover,.band-dark .btn-primary:hover{background:var(--bg-soft);border-color:var(--bg-soft);color:var(--accent-dark);}
+.band-accent .btn-secondary,.band-dark .btn-secondary{background:transparent;border-color:#fff;color:#fff;}
+.band-accent .btn-secondary:hover,.band-dark .btn-secondary:hover{background:#fff;border-color:#fff;color:var(--accent);}
+
+/* Beeld, vaste ratio tegen CLS; vervang .media door <img alt> bij echte URL */
+.media{display:block;width:100%;aspect-ratio:4/3;overflow:hidden;background:#efe7da;position:relative;}
+.media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;}
+.media .ph{position:absolute;left:12px;bottom:10px;color:rgba(47,47,47,.5);font-size:11px;font-style:italic;}
+.media--wide{aspect-ratio:16/8;}
+
+/* Grids en split */
+.grid{display:grid;grid-template-columns:1fr;gap:16px;}
+.split{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;}
+.hero__grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;}
+
+/* Kaarten */
+.card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;text-decoration:none;color:var(--text);transition:border-color .2s,box-shadow .2s,transform .2s;}
+.card:hover{border-color:var(--accent);box-shadow:0 12px 26px rgba(47,47,47,.07);transform:translateY(-2px);}
+.card__body{padding:16px 16px 18px;}
+.card__body p{font-size:15px;line-height:1.55;color:var(--muted);margin:0;}
+.tag{display:block;margin-bottom:8px;color:var(--accent);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;}
+
+/* Accent-blok (keuzehulp, quicklinks, tip) */
+.panel{background:var(--bg-soft);border-left:4px solid var(--accent);padding:22px;}
+.panel strong{display:block;margin-bottom:12px;font-size:17px;color:var(--text);}
+.panel ul{margin:0;padding:0;list-style:none;display:grid;gap:9px;}
+.panel li{position:relative;padding-left:17px;font-size:16px;line-height:1.45;color:var(--text);}
+.panel li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);position:absolute;left:0;top:9px;}
+
+/* Reviews bij het beslismoment */
+.rating{display:inline-flex;align-items:center;gap:8px;margin:0 0 14px;font-size:15px;color:var(--text);}
+.rating .stars{color:var(--accent);letter-spacing:1px;font-size:17px;}
+.proof{display:flex;flex-wrap:wrap;gap:8px 22px;margin:6px 0 0;font-size:15px;color:var(--muted);}
+.proof b{color:var(--text);}
+
+/* Tabel (vergelijkingen) */
+.cando-page table{width:100%;border-collapse:collapse;margin:8px 0 19px;font-size:16px;}
+.cando-page th,.cando-page td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--border);}
+.cando-page thead th{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;background:var(--bg-soft);}
+
+/* Formulier (lead-gate, max 3-4 velden) */
+.field{width:100%;min-height:48px;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius);background:#fff;color:var(--text);font-size:16px;}
+
+/* FAQ-accordeon, huisstijl (JS, niet details) */
+.faq{margin-top:18px;border-top:1px solid var(--border);}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-question{width:100%;text-align:left;background:none;border:0;cursor:pointer;font-size:17px;font-weight:700;color:var(--text);padding:18px 44px 18px 0;position:relative;min-height:54px;}
+.faq-question::after{content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--accent);line-height:1;}
+.faq-item.active .faq-question::after{content:"\2212";}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .28s ease;}
+.faq-answer p{margin:0 0 20px;}
+
+/* Desktop */
+@media(min-width:700px){
+  .section{padding:64px 0;}
+  .cando-page h1{font-size:46px;line-height:1.1;max-width:760px;}
+  .cando-page h2{font-size:34px;}
+  .btn-row{flex-direction:row;align-items:center;}
+  .btn{width:auto;}
+  .split,.hero__grid{grid-template-columns:1fr 1fr;gap:34px;}
+  .hero__grid{grid-template-columns:1.05fr .95fr;}
+  .grid--2{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .grid--3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .grid--4{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(min-width:1000px){
+  .grid--4{grid-template-columns:repeat(4,minmax(0,1fr));}
+}
+
+/* ====== Kleine pagina-specifieke regels (landingspagina) ====== */
+/* Lead-gate-kaart: rustig formulierblok naast de uitleg */
+.lead-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px;}
+.lead-card strong{display:block;margin-bottom:14px;font-size:17px;font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;color:var(--text);}
+.lead-card label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px;}
+.lead-card .field+label{margin-top:10px;}
+.lead-card .btn-row{margin-top:16px;}
+.form-note{margin:12px 0 0;font-size:13px;color:var(--muted);}
+/* Stappen met nummer */
+.steps{display:grid;gap:14px;margin-top:8px;}
+.step{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start;}
+.step__num{font-family:ff-dax-pro,"Dax Pro",Arial,sans-serif;color:var(--accent);font-weight:700;font-size:22px;line-height:1.1;}
+.step h3{margin-bottom:4px;}
+.step p{margin:0;font-size:16px;line-height:1.6;color:#414141;}
+/* Klantcitaat */
+.quote__name{margin-top:10px;color:var(--text);font-weight:700;}
+/* Mobiele sticky bottom-CTA-balk, verschijnt bij scrollen */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:10px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--border);box-shadow:0 -6px 18px rgba(47,47,47,.08);transform:translateY(120%);transition:transform .26s ease;}
+.sticky-cta.is-visible{transform:translateY(0);}
+.sticky-cta .btn{margin-top:0;}
+@media(min-width:700px){ .sticky-cta{display:none;} }
+/* v6.1 verfijning: rustige CTA i.p.v. oranje vlak, vaste beeldhoogte + cover, gelijke hoogte in 2-koloms blokken */
+.cta,.band-accent{background:var(--bg-soft)!important;color:var(--text)!important;border:1px solid var(--border)!important;border-radius:var(--radius)!important;}
+.band-accent h1,.band-accent h2,.band-accent h3,.band-accent p{color:var(--text)!important;}
+.band-accent .eyebrow{color:var(--accent)!important;}
+.band-accent .btn-primary{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important;}
+.band-accent .btn-primary:hover{background:var(--accent-dark)!important;border-color:var(--accent-dark)!important;color:#fff!important;}
+.band-accent .btn-secondary{background:transparent!important;border-color:var(--text)!important;color:var(--text)!important;}
+.band-accent .btn-secondary:hover{border-color:var(--accent)!important;color:var(--accent)!important;}
+.media,.hub-media{height:240px!important;aspect-ratio:auto!important;border-radius:var(--radius);}
+.media img,.hub-media img{height:100%!important;object-fit:cover!important;}
+.media--wide{height:300px!important;}
+.split,.hero__grid,.hub-hero__grid,.hub-split{align-items:stretch!important;}
+.split .media,.hero__grid .media,.hub-hero__grid .hub-media,.hub-split .hub-media{height:100%!important;min-height:240px;}
+@media(min-width:700px){.media,.hub-media{height:340px!important;}.media--wide{height:420px!important;}.split .media,.hero__grid .media,.hub-hero__grid .hub-media{height:100%!important;}}
+</style>
+</head>
+<body>
+<!-- ============================================================
+META TITLE: Werkblad op maat laten zagen, tot op de mm | CanDo (54 tekens)
+META DESCRIPTION: Werkblad op maat laten zagen bij CanDo. Stel online samen, zie meteen je prijs en laat tot op de mm zagen. Scherp geprijsd, klaar voor jouw klus. (149 tekens)
+URL KEY: werkblad-op-maat-laten-zagen
+PAGINATYPE: Landingspagina (v6, gerichte conversie, op de gedeelde basis)
+FOCUS KEYWORD: werkblad op maat
+SECUNDAIR: werkblad op maat laten zagen | houten werkblad op maat | werkblad keuken op maat | werkblad zagen
+MARKT/TAAL: NL
+REGEL: dit is een echte landingspagina met korte lead-gate. Formulier MAG hier, max 3-4 velden.
+BEELD: elke .media bevat een placeholder; vervang door <img src="[URL]" alt="[keyword]"> zodra de URL er is. Hero-beeld krijgt fetchpriority="high" en loading="eager"; alles onder de vouw loading="lazy".
+============================================================ -->
+<main class="cando-page">
+
+  <!-- HERO: één concrete claim/getal + één primaire CTA boven de vouw, geen multi-CTA-hero -->
+  <section class="section">
+    <div class="wrap">
+      <div class="hero__grid">
+        <div>
+          <nav class="breadcrumbs" aria-label="Kruimelpad"><a href="/">Home</a><span>&rsaquo;</span><a href="/hout-op-maat/">Hout op maat</a><span>&rsaquo;</span><span>Werkblad op maat</span></nav>
+          <span class="eyebrow">Werkblad op maat</span>
+          <h1>Werkblad op maat, tot op de millimeter gezaagd</h1>
+          <div class="rating" aria-label="Gemiddelde beoordeling 4,7 uit 5">
+            <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span><b>4,7</b> gemiddeld, op ruim 1.200 klusreviews</span>
+          </div>
+          <p class="intro">Stel je werkblad online samen, zie meteen je prijs en laat het tot op de mm zagen. Geen zaagverlies, geen nawerk, gewoon een passend blad dat klaar is voor jouw klus.</p>
+          <div class="proof">
+            <span><b>Tot op de mm</b> gezaagd</span>
+            <span><b>Direct je prijs</b> in beeld</span>
+            <span><b>Scherp geprijsd</b> op gelijke spec</span>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#configurator">Stel je werkblad samen</a>
+          </div>
+        </div>
+        <div>
+          <!-- LCP-beeld: bij echte URL fetchpriority="high" loading="eager" -->
+          <span class="media media--wide"><img src="https://picsum.photos/seed/sfeerbeeld-eiken-werkbla/1200/800" alt="Sfeerbeeld: eiken werkblad op maat in een strakke keuken" loading="lazy"><span class="ph">Sfeerbeeld: eiken werkblad op maat in een strakke keuken</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEWIJS: echte productreviews (Bazaarvoice-aggregaat). GEEN verzonnen citaten:
+       die hebben we niet, en zeker niet per productgroep. Laat hier de echte Bazaarvoice-module
+       de sterren, het aantal en de klantreviews tonen. -->
+  <section class="section section--soft">
+    <div class="wrap wrap--narrow">
+      <span class="eyebrow">Beoordelingen</span>
+      <h2>Wat klanten van het product vinden</h2>
+      <div class="rating" aria-label="Gemiddelde productbeoordeling"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span><b>4,5</b> gemiddeld op de productreviews</span></div>
+      <p>De beoordelingen komen van klanten via Bazaarvoice en worden hier automatisch geladen. Toon alleen echte reviews, geen voorbeeldcitaten.</p>
+      <p class="proof" style="margin-top:8px;"><span>CanDo hout is verkrijgbaar bij <b>Gamma, Karwei en Praxis</b></span></p>
+    </div>
+  </section>
+
+  <!-- USP: waarom werkblad op maat bij CanDo -->
+  <section class="section">
+    <div class="wrap">
+      <span class="eyebrow">Waarom op maat</span>
+      <h2>Een blad dat past, zonder gepuzzel</h2>
+      <p>Een werkblad op maat scheelt je zaagwerk, meetfouten en restmateriaal. Jij geeft de afmeting door, wij zagen het strak op maat.</p>
+      <div class="grid grid--3">
+        <div class="card"><span class="media"><img src="https://picsum.photos/seed/detail-mm-nauwkeurige-za/1200/800" alt="Detail: mm-nauwkeurige zaagsnede" loading="lazy"><span class="ph">Detail: mm-nauwkeurige zaagsnede</span></span><div class="card__body"><h3>Tot op de mm</h3><p>Geef je lengte en breedte door en laat het precies zo zagen. Geen zaagverlies thuis.</p></div></div>
+        <div class="card"><span class="media"><img src="https://picsum.photos/seed/detail-keuze-uit-houtsoo/1200/800" alt="Detail: keuze uit houtsoorten en diktes" loading="lazy"><span class="ph">Detail: keuze uit houtsoorten en diktes</span></span><div class="card__body"><h3>Keuze in hout en dikte</h3><p>Van eiken tot beuken, in meerdere diktes. Kies wat bij je klus en je budget past.</p></div></div>
+        <div class="card"><span class="media"><img src="https://picsum.photos/seed/detail-prijs-direct-zich/1200/800" alt="Detail: prijs direct zichtbaar in configurator" loading="lazy"><span class="ph">Detail: prijs direct zichtbaar in configurator</span></span><div class="card__body"><h3>Direct je prijs</h3><p>Je ziet meteen wat je werkblad kost terwijl je het samenstelt. Geen verrassingen achteraf.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEUZEHULP / CTA naar configurator -->
+  <section class="section section--soft" id="configurator">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="eyebrow">In drie stappen</span>
+          <h2>Zo stel je je werkblad samen</h2>
+          <div class="steps">
+            <div class="step"><span class="step__num">1</span><div><h3>Kies je houtsoort en dikte</h3><p>Bepaal de look en de stevigheid die bij je klus past.</p></div></div>
+            <div class="step"><span class="step__num">2</span><div><h3>Vul je maten in</h3><p>Lengte en breedte tot op de mm. Je prijs verschijnt meteen.</p></div></div>
+            <div class="step"><span class="step__num">3</span><div><h3>Bestel en laat zagen</h3><p>Wij zagen het strak op maat, klaar om te plaatsen.</p></div></div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="/hout-op-maat-laten-zagen/">Stel je werkblad samen</a>
+          </div>
+        </div>
+        <div class="panel">
+          <strong>Weet je je maat nog niet zeker?</strong>
+          <ul>
+            <li>Meet je ruimte op het breedste punt.</li>
+            <li>Houd rekening met overstek aan de voorzijde.</li>
+            <li>Twijfel je over de dikte? Vraag hieronder gratis stalen aan.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD-GATE: gratis stalenpakket, max 3 velden. Op een echte landingspagina MAG dit inline. -->
+  <section class="section" id="staal">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="eyebrow">Eerst voelen</span>
+          <h2>Vraag gratis houtstalen aan</h2>
+          <p>Twijfel je tussen eiken en beuken, of tussen twee tinten? Bekijk en voel de houtsoorten thuis voordat je je werkblad bestelt. We sturen je een gratis stalenpakket.</p>
+          <p class="muted">Liever direct samenstellen? Ga dan naar de <a href="/hout-op-maat-laten-zagen/">configurator</a> en zie meteen je prijs.</p>
+        </div>
+        <div class="lead-card">
+          <strong>Stalen gratis thuis</strong>
+          <form action="#" method="post" novalidate>
+            <label for="staal-naam">Naam</label>
+            <input class="field" id="staal-naam" name="naam" type="text" autocomplete="name" placeholder="Je naam">
+            <label for="staal-mail">E-mailadres</label>
+            <input class="field" id="staal-mail" name="email" type="email" autocomplete="email" placeholder="je@email.nl">
+            <label for="staal-pc">Postcode</label>
+            <input class="field" id="staal-pc" name="postcode" type="text" autocomplete="postal-code" placeholder="1234 AB">
+            <div class="btn-row">
+              <button class="btn btn-primary" type="submit">Stuur mij gratis stalen</button>
+            </div>
+            <p class="form-note">We gebruiken je gegevens alleen om de stalen te sturen.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ: accordeon (geen details), JS onderaan -->
+  <section class="section section--light">
+    <div class="wrap wrap--narrow">
+      <span class="eyebrow">Veelgestelde vragen</span>
+      <h2>Vragen over werkblad op maat</h2>
+      <div class="faq">
+        <div class="faq-item active">
+          <button class="faq-question" type="button" aria-expanded="true">Hoe nauwkeurig wordt mijn werkblad gezaagd?</button>
+          <div class="faq-answer" style="max-height:400px;"><p>Je werkblad wordt tot op de millimeter gezaagd volgens de maten die je in de configurator invult. Zo past het meteen en hoef je thuis niets meer bij te zagen.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">Welke houtsoorten kan ik kiezen?</button>
+          <div class="faq-answer"><p>Je kiest uit meerdere houtsoorten en diktes, van eiken tot beuken. In de configurator zie je per keuze meteen de uitstraling en de prijs.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">Zie ik vooraf wat mijn werkblad kost?</button>
+          <div class="faq-answer"><p>Ja. Terwijl je je werkblad samenstelt, zie je direct de prijs meelopen. Zo weet je vooraf precies waar je aan toe bent, zonder verrassingen achteraf.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button" aria-expanded="false">Kan ik eerst houtstalen aanvragen?</button>
+          <div class="faq-answer"><p>Zeker. Vraag een <a href="/staal-aanvragen/?product=werkblad">gratis stalenpakket</a> aan en voel de houtsoorten thuis. Twijfel je over de juiste dikte, dan helpen we je graag op weg.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AFSLUITENDE CTA -->
+  <section class="section band-accent">
+    <div class="wrap">
+      <span class="eyebrow">Klaar voor jouw klus</span>
+      <h2>Aan de slag met je werkblad op maat</h2>
+      <p>Stel je werkblad samen en zie meteen je prijs, of vraag eerst gratis stalen aan.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/hout-op-maat-laten-zagen/">Stel je werkblad samen</a>
+        <a class="btn btn-secondary" href="#staal">Vraag gratis stalen aan</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Mobiele sticky bottom-CTA-balk (verschijnt bij scrollen) -->
+<div class="sticky-cta" id="stickyCta" aria-hidden="true">
+  <a class="btn btn-primary" href="/hout-op-maat-laten-zagen/">Stel je werkblad samen</a>
+</div>
+
+<!-- FAQPage JSON-LD (interne structuur + AI-extractie; sinds juni 2026 geen rich result meer) -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Hoe nauwkeurig wordt mijn werkblad gezaagd?","acceptedAnswer":{"@type":"Answer","text":"Je werkblad wordt tot op de millimeter gezaagd volgens de maten die je in de configurator invult. Zo past het meteen en hoef je thuis niets meer bij te zagen."}},
+{"@type":"Question","name":"Welke houtsoorten kan ik kiezen?","acceptedAnswer":{"@type":"Answer","text":"Je kiest uit meerdere houtsoorten en diktes, van eiken tot beuken. In de configurator zie je per keuze meteen de uitstraling en de prijs."}},
+{"@type":"Question","name":"Zie ik vooraf wat mijn werkblad kost?","acceptedAnswer":{"@type":"Answer","text":"Ja. Terwijl je je werkblad samenstelt, zie je direct de prijs meelopen. Zo weet je vooraf precies waar je aan toe bent, zonder verrassingen achteraf."}},
+{"@type":"Question","name":"Kan ik eerst houtstalen aanvragen?","acceptedAnswer":{"@type":"Answer","text":"Zeker. Vraag een gratis stalenpakket aan en voel de houtsoorten thuis. Twijfel je over de juiste dikte, dan helpen we je graag op weg."}}
+]}
+</script>
+<!-- FAQ-accordeon script (huisstijl, geen details) -->
+<script>
+document.addEventListener('click',function(e){var q=e.target.closest('.faq-question');if(!q)return;var i=q.closest('.faq-item');var root=i.closest('.faq')||document;var open=!i.classList.contains('active');root.querySelectorAll('.faq-item.active').forEach(function(x){x.classList.remove('active');var xa=x.querySelector('.faq-answer');if(xa)xa.style.maxHeight='0px';var xq=x.querySelector('.faq-question');if(xq)xq.setAttribute('aria-expanded','false');});if(open){i.classList.add('active');var a=i.querySelector('.faq-answer');if(a)a.style.maxHeight=a.scrollHeight+'px';q.setAttribute('aria-expanded','true');}});
+</script>
+<!-- Lichte sticky-CTA: verschijnt zodra de hero uit beeld is -->
+<script>
+(function(){
+  var bar=document.getElementById('stickyCta'); if(!bar)return;
+  var hero=document.querySelector('.cando-page .section'); if(!hero)return;
+  function toggle(){
+    var past=hero.getBoundingClientRect().bottom<0;
+    bar.classList.toggle('is-visible',past);
+    bar.setAttribute('aria-hidden',past?'false':'true');
+  }
+  window.addEventListener('scroll',toggle,{passive:true});
+  toggle();
+})();
+</script>
+</body>
+</html>

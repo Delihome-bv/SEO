@@ -27,3 +27,15 @@ PASS only if source decision log, page brief, completed HTML using stramien, met
 
 Critical defect: any fabricated price, delivery time, material or publish action.
 Gate result: `READY FOR HUMAN REVIEW` or `NOT READY`.
+
+
+## I Retailer / route governance
+PASS only if:
+- no CanDo series story routes to FAB/no-name retailers;
+- BE-FR uses Belgian retailer routes, not FR retailers;
+- Bouwmaat is not consumer-facing while status is OPEN;
+- Essential delivery is not copied to Advance/Signature;
+- OPEN Advance/Signature retailer rollout is not presented as confirmed;
+- every CTA destination is valid in both retailer matrix and locale sitemap/live check.
+
+Any invented retailer-series availability = CRITICAL DEFECT.
